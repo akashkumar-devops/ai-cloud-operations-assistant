@@ -1,0 +1,13 @@
+ multiple Docker daemons together.
+ipvlan
+Connect containers to external VLANs.
+macvlan
+Containers appear as devices on the host's network.
+More information can be found in the network driver specific pages, including
+their configuration options and details about their functionality.
+Native Windows containers have a different set of drivers, see
+Windows container network drivers
+.
+Connecting to multiple networks
+Connecting a container to a network can be compared to connecting an Ethernet
+cable 

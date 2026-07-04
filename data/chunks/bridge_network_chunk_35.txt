@@ -1,0 +1,13 @@
+ched from user-defined networks on the fly
+.
+During a container's lifetime, you can connect or disconnect it from
+user-defined networks on the fly. To remove a container from the default
+bridge network, you need to stop the container and recreate it with different
+network options.
+Each user-defined network creates a configurable bridge
+.
+If your containers use the default bridge network, you can configure it, but
+all the containers use the same settings, such as MTU and
+iptables
+rules.
+In additi

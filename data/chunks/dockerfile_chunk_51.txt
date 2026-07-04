@@ -1,0 +1,21 @@
+y then
+word
+will be the result, otherwise the result is the empty string.
+${variable+word}
+indicates that if
+variable
+is set (even if empty) then
+word
+will be the result, otherwise the result is the empty string.
+The following variable replacements are supported in a pre-release version of
+Dockerfile syntax, when using the
+# syntax=docker/dockerfile-upstream:master
+syntax
+directive in your Dockerfile:
+${variable#pattern}
+removes the shortest match of
+pattern
+from
+variable
+,
+seeking from the star

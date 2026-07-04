@@ -1,0 +1,18 @@
+ies start linked containers in the correct order.
+Docker recommends that you use restart policies, and avoid using process
+managers to start containers.
+Restart policies are different from the
+--live-restore
+flag of the
+dockerd
+command. Using
+--live-restore
+lets you to keep your containers running during
+a Docker upgrade, though networking and user input are interrupted.
+Use a restart policy
+To configure the restart policy for a container, use the
+--restart
+flag
+when using the
+docker run
+command

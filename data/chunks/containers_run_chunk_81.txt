@@ -1,0 +1,27 @@
+
+containers on the host. Use this flag with caution.
+For more information about the
+--privileged
+flag, see the
+docker run
+reference
+.
+If you want to limit access to a specific device or devices you can use
+the
+--device
+flag. It allows you to specify one or more devices that
+will be accessible within the container.
+$
+docker run --device
+=
+/dev/snd:/dev/snd ...
+By default, the container will be able to
+read
+,
+write
+, and
+mknod
+these devices.
+This can be overridden using a third
+:rwm
+set of options

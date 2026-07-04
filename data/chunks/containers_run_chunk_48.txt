@@ -1,0 +1,31 @@
+r exit codes values.
+125
+Exit code
+125
+indicates that the error is with Docker daemon itself.
+$
+docker run --foo busybox
+;
+echo
+$?
+flag provided but not defined: --foo
+See 'docker run --help'.
+125
+126
+Exit code
+126
+indicates that the specified contained command can't be invoked.
+The container command in the following example is:
+/etc
+.
+$
+docker run busybox /etc
+;
+echo
+$?
+docker: Error response from daemon: Container command '/etc' could not be invoked.
+126
+127
+Exit code
+127
+indicates that the co

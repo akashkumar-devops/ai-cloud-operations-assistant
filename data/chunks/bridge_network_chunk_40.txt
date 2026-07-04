@@ -1,0 +1,19 @@
+cker.network.bridge.host_binding_ipv4
+all IPv4 and IPv6 addresses
+Default IP when binding container ports.
+com.docker.network.driver.mtu
+0
+(no limit)
+Set the containers network Maximum Transmission Unit (MTU).
+com.docker.network.container_iface_prefix
+eth
+Set a custom prefix for container interfaces.
+com.docker.network.bridge.inhibit_ipv4
+false
+Prevent Docker from
+assigning an IP address
+to the bridge.
+Some of these options are also available as flags to the
+dockerd
+CLI, and you
+can use them to 

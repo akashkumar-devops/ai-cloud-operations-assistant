@@ -1,0 +1,19 @@
+ /bin/bash example/redis -c ls -l
+$
+docker run -it --entrypoint /usr/bin/redis-cli example/redis --help
+You can reset a containers entrypoint by passing an empty string, for example:
+$
+docker run -it --entrypoint
+=
+""
+mysql bash
+Note
+Passing
+--entrypoint
+clears out any default command set on the image. That
+is, any
+CMD
+instruction in the Dockerfile used to build it.
+Exposed ports
+By default, when you run a container, none of the container's ports are exposed
+to the host. This means you won't be 

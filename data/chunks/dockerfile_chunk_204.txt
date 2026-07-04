@@ -1,0 +1,15 @@
+lar
+directory, and it might require a build script to be called after
+that. You can't just call
+ADD
+and
+RUN
+now, because you don't yet
+have access to the application source code, and it will be different for
+each application build. You could simply provide application developers
+with a boilerplate Dockerfile to copy-paste into their application, but
+that's inefficient, error-prone and difficult to update because it
+mixes with application-specific code.
+The solution is to use
+ONBUILD
+to register 

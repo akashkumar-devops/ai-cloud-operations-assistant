@@ -1,0 +1,22 @@
+files to and from the mounted location from the container. Changes that you
+make, such as adding or editing files, are reflected on the host filesystem:
+$
+docker run -it --mount
+type
+=
+bind,source
+=
+.,target
+=
+/foo busybox
+/ # echo "hello from container" > /foo/hello.txt
+/ # exit
+$
+cat hello.txt
+hello from container
+Exit status
+The exit code from
+docker run
+gives information about why the container
+failed to run or why it exited. The following sections describe the meanings of
+different containe

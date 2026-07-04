@@ -1,0 +1,26 @@
+ on a Docker registry, or a tag ID. The Docker client pulls the image
+if necessary and copies the artifact from there. The syntax is:
+COPY
+--from
+=
+nginx:latest /etc/nginx/nginx.conf /nginx.conf
+Use a previous stage as a new stage
+You can pick up where a previous stage left off by referring to it when using
+the
+FROM
+directive. For example:
+# syntax=docker/dockerfile:1
+FROM
+alpine:latest
+AS
+builder
+RUN
+apk --no-cache add build-base
+FROM
+builder
+AS
+build1
+COPY
+source1.cpp source.cpp
+RUN
+g++ -o /bi

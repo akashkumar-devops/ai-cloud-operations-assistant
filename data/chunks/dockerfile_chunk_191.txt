@@ -1,0 +1,26 @@
+s arguments
+from the command line and persist them in the final image by leveraging the
+ENV
+instruction. Variable expansion is only supported for
+a limited set of
+Dockerfile instructions.
+Predefined ARGs
+Docker has a set of predefined
+ARG
+variables that you can use without a
+corresponding
+ARG
+instruction in the Dockerfile.
+HTTP_PROXY
+http_proxy
+HTTPS_PROXY
+https_proxy
+FTP_PROXY
+ftp_proxy
+NO_PROXY
+no_proxy
+ALL_PROXY
+all_proxy
+To use these, pass them on the command line using the
+--build-arg
+flag,

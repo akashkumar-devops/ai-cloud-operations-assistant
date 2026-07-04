@@ -1,0 +1,28 @@
+
+10056               33                  /usr/sbin/apache2 -k start
+$
+/usr/bin/time docker stop
+test
+test
+real	0m 0.27s
+user	0m 0.03s
+sys	0m 0.03s
+Note
+You can override the
+ENTRYPOINT
+setting using
+--entrypoint
+,
+but this can only set the binary to exec (no
+sh -c
+will be used).
+Shell form ENTRYPOINT example
+You can specify a plain string for the
+ENTRYPOINT
+and it will execute in
+/bin/sh -c
+.
+This form will use shell processing to substitute shell environment variables,
+and will ignore any
+CMD
+or

@@ -1,0 +1,9 @@
+e network's subnets. By default, it:
+Allows unrestricted network access to containers in the network from
+the host, and from other containers connected to the same bridge network.
+Blocks access from containers in other networks and from outside the
+Docker host.
+Uses masquerading to give containers external network access. Devices on
+the host's external networks only see the IP address of the Docker host.
+Supports port publishing, where network traffic is forwarded between
+container ports and por

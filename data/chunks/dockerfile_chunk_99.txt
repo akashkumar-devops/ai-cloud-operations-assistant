@@ -1,0 +1,47 @@
+rmat
+option to show just the labels;
+$
+docker image inspect --format
+=
+'{{json .Config.Labels}}'
+myimage
+{
+"com.example.vendor"
+:
+"ACME Incorporated"
+,
+"com.example.label-with-value"
+:
+"foo"
+,
+"version"
+:
+"1.0"
+,
+"description"
+:
+"This text illustrates that label-values can span multiple lines."
+,
+"multi.label1"
+:
+"value1"
+,
+"multi.label2"
+:
+"value2"
+,
+"other"
+:
+"value3"
+}
+MAINTAINER (deprecated)
+MAINTAINER
+<name
+>
+The
+MAINTAINER
+instruction sets the
+Author
+field of the generated images.
+The
+LABE

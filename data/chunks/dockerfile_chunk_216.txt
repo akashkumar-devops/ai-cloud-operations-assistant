@@ -1,0 +1,27 @@
+ith
+docker inspect
+. Such output should be kept short (only the first 4096 bytes
+are stored currently).
+When the health status of a container changes, a
+health_status
+event is
+generated with the new status.
+SHELL
+SHELL
+[
+"executable"
+,
+"parameters"
+]
+The
+SHELL
+instruction allows the default shell used for the shell form of
+commands to be overridden. The default shell on Linux is
+["/bin/sh", "-c"]
+, and on
+Windows is
+["cmd", "/S", "/C"]
+. The
+SHELL
+instruction must be written in JSON
+form in a Do

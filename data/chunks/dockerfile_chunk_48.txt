@@ -1,0 +1,16 @@
+ecific version. Otherwise, your build may
+start to fail when new checks are added in the future versions.
+To combine both the
+skip
+and
+error
+options, use a semi-colon to separate
+them:
+# check=skip=JSONArgsRecommended;error=true
+To see all available checks, see the
+build checks reference
+.
+Note that the checks available depend on the Dockerfile syntax version. To make
+sure you're getting the most up-to-date checks, use the
+syntax
+directive to specify the Dockerfile syntax version to the latest s

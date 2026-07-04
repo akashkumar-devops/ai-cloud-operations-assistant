@@ -1,0 +1,13 @@
+$
+docker run --rm -it --network container:redis redis redis-cli -h 127.0.0.1
+Edit this page
+Request changes
+User-defined networks
+Drivers
+Connecting to multiple networks
+Published ports
+IP address and hostname
+Subnet allocation
+DNS services
+Custom hosts
+Container networks

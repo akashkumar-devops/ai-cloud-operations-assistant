@@ -1,0 +1,8 @@
+lds, enable CI/CD workflows, and collaborate securely through shared repositories.
+Key features
+Ability to containerize and share any application on any cloud platform, in multiple languages and frameworks.
+Quick installation and setup of a complete Docker development environment.
+Includes the latest version of Kubernetes.
+On Windows, the ability to toggle between Linux and Windows containers to build applications.
+Fast and reliable performance with native Windows Hyper-V virtualization.
+Ability

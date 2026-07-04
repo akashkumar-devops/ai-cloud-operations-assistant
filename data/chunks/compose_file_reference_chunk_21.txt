@@ -1,0 +1,36 @@
+
+sbx create droid
+sbx create gemini
+sbx create kiro
+sbx create opencode
+sbx create shell
+sbx diagnose
+sbx exec
+sbx kit
+sbx kit add
+sbx kit inspect
+sbx kit pack
+sbx kit pull
+sbx kit push
+sbx kit validate
+sbx login
+sbx logout
+sbx ls
+sbx policy
+sbx policy allow
+sbx policy allow network
+sbx policy deny
+sbx policy deny network
+sbx policy log
+sbx policy ls
+sbx policy reset
+sbx policy rm
+sbx policy rm network
+sbx policy set-default
+sbx ports
+sbx reset
+sbx rm
+sbx run
+sbx secret
+sbx secret ls
+sbx secret 

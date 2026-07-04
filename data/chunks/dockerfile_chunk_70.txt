@@ -1,0 +1,36 @@
+alidated by using the
+--no-cache
+flag, for example
+docker build --no-cache
+.
+See the
+Dockerfile Best Practices
+guide
+for more information.
+The cache for
+RUN
+instructions can be invalidated by
+ADD
+and
+COPY
+instructions.
+RUN --device
+Note
+Not yet available in stable syntax, use
+docker/dockerfile:1-labs
+version. It also needs BuildKit 0.20.0 or later.
+RUN
+--device
+=
+name,
+[
+required
+]
+RUN --device
+allows build to request
+CDI devices
+to be available to the build step.
+Warning
+The use of
+--device
+is 

@@ -1,0 +1,7 @@
+t are not exposed to replica mounts, and sub-mounts of replica mounts are not exposed to the original mount.
+rshared
+The same as shared, but the propagation also extends to and from mount points nested within any of the original or replica mount points.
+rslave
+The same as slave, but the propagation also extends to and from mount points nested within any of the original or replica mount points.
+rprivate
+The default. The same as private, meaning that no mount points anywhere within the original or

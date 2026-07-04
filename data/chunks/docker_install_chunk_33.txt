@@ -1,0 +1,17 @@
+s
+Docker Engine as one of its components.
+For information about the open source project, refer to the
+Moby project website
+.
+Upgrade path
+Patch releases are always backward compatible with its major and minor version.
+Licensing
+Commercial use of Docker Engine obtained via Docker Desktop
+within larger enterprises (exceeding 250 employees OR with annual revenue surpassing
+$10 million USD), requires a
+paid subscription
+.
+Apache License, Version 2.0. See
+LICENSE
+for the full license.
+Reporting secur

@@ -1,0 +1,22 @@
+isable specific checks using
+#check=skip=<check-name>
+. To specify
+multiple checks to skip, separate them with a comma:
+# check=skip=JSONArgsRecommended,StageNameCasing
+To disable all checks, use
+#check=skip=all
+.
+By default, builds with failing build checks exit with a zero status code
+despite warnings. To make the build fail on warnings, set
+#check=error=true
+.
+# check=error=true
+Note
+When using the
+check
+directive, with
+error=true
+option, it is recommended
+to pin the
+Dockerfile syntax
+to a sp

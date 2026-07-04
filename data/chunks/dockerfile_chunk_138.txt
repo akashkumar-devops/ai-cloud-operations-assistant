@@ -1,0 +1,21 @@
+interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to the root of the current build stage.
+# create /abs/test.txt
+COPY
+test.txt /abs/
+Trailing slashes are significant. For example,
+COPY test.txt /abs
+creates a
+file at
+/abs
+, whereas
+COPY test.txt /abs/
+creates
+/abs/test.txt
+.
+If the destination path doesn't begin with a leading slash, it's interpreted as
+relative to the working directory of the build container.
+WORKDIR
+/usr/src/app
+# create /

@@ -1,0 +1,31 @@
+oninteractive apt-get update
+&&
+apt-get install -y ...
+Or using
+ARG
+, which is not persisted in the final image:
+ARG
+DEBIAN_FRONTEND
+=
+noninteractive
+RUN
+apt-get update
+&&
+apt-get install -y ...
+Note
+Alternative syntax
+The
+ENV
+instruction also allows an alternative syntax
+ENV <key> <value>
+,
+omitting the
+=
+. For example:
+ENV
+MY_VAR my-value
+This syntax does not allow for multiple environment-variables to be set in a
+single
+ENV
+instruction, and can be confusing. For example, the following
+sets a 

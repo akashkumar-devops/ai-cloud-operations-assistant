@@ -1,0 +1,11 @@
+ow Compose works
+Install Compose
+Follow the instructions on how to install Docker Compose.
+Quickstart
+Learn the key concepts of Docker Compose whilst building a simple Python web application.
+View the release notes
+Find out about the latest enhancements and bug fixes.
+Explore the Compose file reference
+Find information on defining services, networks, and volumes for a Docker application.
+Use Compose Bridge
+Transform your Compose configuration file into configuration files for different platforms

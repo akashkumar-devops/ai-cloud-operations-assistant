@@ -1,0 +1,14 @@
+o be killed than for the Docker daemon
+or other system processes to be killed. You shouldn't try to circumvent
+these safeguards by manually setting
+--oom-score-adj
+to an extreme negative
+number on the daemon or a container, or by setting
+--oom-kill-disable
+on a
+container.
+For more information about the Linux kernel's OOM management, see
+Out of Memory Management
+.
+You can mitigate the risk of system instability due to OOME by:
+Perform tests to understand the memory requirements of your applicatio

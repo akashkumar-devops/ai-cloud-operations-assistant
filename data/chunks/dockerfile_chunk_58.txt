@@ -1,0 +1,24 @@
+utomatically uses a command shell, whereas the
+exec form does not.
+Exec form
+The exec form is parsed as a JSON array, which means that
+you must use double-quotes (") around words, not single-quotes (').
+ENTRYPOINT
+[
+"/bin/bash"
+,
+"-c"
+,
+"echo hello"
+]
+The exec form is best used to specify an
+ENTRYPOINT
+instruction, combined
+with
+CMD
+for setting default arguments that can be overridden at runtime. For
+more information, see
+ENTRYPOINT
+.
+Variable substitution
+Using the exec form doesn't automatical

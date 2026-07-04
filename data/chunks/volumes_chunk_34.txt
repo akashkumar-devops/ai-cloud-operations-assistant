@@ -1,0 +1,15 @@
+ainers simultaneously. When no
+running container is using a volume, the volume is still available to Docker
+and isn't removed automatically. You can remove unused volumes using
+docker volume prune
+.
+Mounting a volume over existing data
+If you mount a
+non-empty volume
+into a directory in the container in which
+files or directories exist, the pre-existing files are obscured by the mount.
+This is similar to if you were to save files into
+/mnt
+on a Linux host, and
+then mounted a USB drive into
+/mnt

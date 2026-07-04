@@ -1,0 +1,18 @@
+ivate"
+}
+]
+,
+This shows that the mount is a
+bind
+mount, it shows the correct source and
+destination, it shows that the mount is read-write, and that the propagation is
+set to
+rprivate
+.
+Stop and remove the container:
+$
+docker container rm -fv devtest
+Mount into a non-empty directory on the container
+If you bind-mount a directory into a non-empty directory on the container, the
+directory's existing contents are obscured by the bind mount. This can be
+beneficial, such as when you want to test a ne

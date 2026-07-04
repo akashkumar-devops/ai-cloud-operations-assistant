@@ -1,0 +1,8 @@
+prone to cross-site request forgery attacks if you happen to run
+Docker directly on your local machine, outside of a VM). You can then
+use traditional Unix permission checks to limit access to the control
+socket.
+You can also expose the REST API over HTTP if you explicitly decide to do so.
+However, if you do that, be aware of the above mentioned security implications.
+Note that even if you have a firewall to limit accesses to the REST API
+endpoint from other hosts in the network, the endpoint ca

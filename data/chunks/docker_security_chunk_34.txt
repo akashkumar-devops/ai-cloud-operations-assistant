@@ -1,0 +1,14 @@
+ merged in kernel 2.6.24.
+Docker daemon attack surface
+Running containers (and applications) with Docker implies running the
+Docker daemon. This daemon requires
+root
+privileges unless you opt-in
+to
+Rootless mode
+, and you should therefore be aware of
+some important details.
+First of all, only trusted users should be allowed to control your
+Docker daemon. This is a direct consequence of some powerful Docker
+features. Specifically, Docker allows you to share a directory between
+the Docker host and

@@ -1,0 +1,23 @@
+istory ls
+docker buildx history open
+docker buildx history rm
+docker buildx history trace
+docker buildx imagetools
+docker buildx imagetools create
+docker buildx imagetools inspect
+docker buildx inspect
+docker buildx ls
+docker buildx policy
+docker buildx policy eval
+docker buildx policy test
+docker buildx prune
+docker buildx rm
+docker buildx stop
+docker buildx use
+docker buildx version
+docker checkpoint
+docker checkpoint create
+docker checkpoint ls
+docker checkpoint rm
+docker compose
+docker compo

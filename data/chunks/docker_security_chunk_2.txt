@@ -1,0 +1,35 @@
+Catalog
+Profiles
+Toolkit UI
+Use with CLI
+Dynamic discovery
+Gateway
+Hub MCP server
+FAQs
+E2B sandboxes
+Model Runner
+Get started with DMR
+DMR REST API
+Configuration options
+DMR examples
+IDE and tool integrations
+Open WebUI integration
+Inference engines
+Gordon
+Use cases
+Concepts
+Capabilities
+Data privacy
+How-to guides
+Docker Desktop
+CLI
+Permissions
+Configure tools
+Usage limits
+AI and Docker Compose
+Use AI models in Compose
+Docker Agent
+Model providers
+Local models
+Building a coding agent
+Best practi

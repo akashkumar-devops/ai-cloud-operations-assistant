@@ -1,0 +1,21 @@
+atalog list
+docker mcp catalog ls
+docker mcp catalog pull
+docker mcp catalog push
+docker mcp catalog remove
+docker mcp catalog rm
+docker mcp catalog server
+docker mcp catalog server add
+docker mcp catalog server inspect
+docker mcp catalog server ls
+docker mcp catalog server remove
+docker mcp catalog show
+docker mcp catalog tag
+docker mcp client
+docker mcp client connect
+docker mcp client disconnect
+docker mcp client ls
+docker mcp feature
+docker mcp feature disable
+docker mcp feature enable
+docke

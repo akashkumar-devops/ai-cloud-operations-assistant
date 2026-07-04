@@ -1,0 +1,18 @@
+ffect the default bridge, they are not used by
+user-defined networks. The addresses in below are examples from the
+IPv6 documentation range.
+Option
+ipv6
+is required.
+Option
+bip6
+is optional, it specifies the address of the default bridge, which
+will be used as the default gateway by containers. It also specifies the subnet
+for the bridge network.
+Option
+fixed-cidr-v6
+is optional, it specifies the address range Docker may
+automatically allocate to containers.
+The prefix should normally be
+/64
+or 

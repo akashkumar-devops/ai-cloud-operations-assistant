@@ -1,0 +1,22 @@
+
+mount
+command example.
+This command mounts the
+/dev/loop5
+device to the path
+/external-drive
+on the system.
+$
+mount -t ext4 /dev/loop5 /external-drive
+The following
+docker run
+command achieves a similar result, from the point of view of the container being run.
+Running a container with this
+--mount
+option sets up the mount in the same way as if you had executed the
+mount
+command from the previous example.
+$
+docker run
+\
+--mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=dev

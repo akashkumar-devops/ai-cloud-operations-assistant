@@ -1,0 +1,26 @@
+<src>
+may contain wildcards and matching will be done
+using Go's
+filepath.Match
+rules.
+For example, to add all files and directories in the root of the build context
+ending with
+.png
+:
+ADD
+*.png /dest/
+In the following example,
+?
+is a single-character wildcard, matching e.g.
+index.js
+and
+index.ts
+.
+ADD
+index.?s /dest/
+When adding files or directories that contain special characters (such as
+[
+and
+]
+), you need to escape those paths following the Golang rules to prevent
+them from being treated as

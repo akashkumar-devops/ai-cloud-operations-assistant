@@ -1,0 +1,40 @@
+elated to service restart
+.
+Restarting foreground containers
+When you run a container in the foreground, stopping a container causes the
+attached CLI to exit as well, regardless of the restart policy of the
+container. This behavior is illustrated in the following example.
+Create a Dockerfile that prints the numbers 1 to 5 and then exits.
+FROM
+busybox:latest
+COPY
+--chmod
+=
+755
+<<
+"EOF"
+/start.sh
+echo
+"Starting..."
+for
+i in
+$(
+seq
+1
+5
+)
+;
+do
+echo
+"
+$i
+"
+sleep
+1
+done
+echo
+"Exiting..."
+exit
+1
+EOF
+EN

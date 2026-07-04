@@ -1,0 +1,18 @@
+curs.
+GPU
+For information on how to access NVIDIA GPUs from a container, see
+GPU access
+.
+Edit this page
+Request changes
+Memory
+Understand the risks of running out of memory
+Limit a container's access to memory
+--memory-swap
+details
+--memory-swappiness
+details
+CPU
+Configure the default CFS scheduler
+Configure the real-time scheduler
+GPU

@@ -1,0 +1,52 @@
+mmands:
+#!/usr/bin/env bash
+set
+-e
+if
+[
+"
+$1
+"
+=
+'postgres'
+]
+;
+then
+chown -R postgres
+"
+$PGDATA
+"
+if
+[
+-z
+"
+$(
+ls -A
+"
+$PGDATA
+"
+)
+"
+]
+;
+then
+gosu postgres initdb
+fi
+exec
+gosu postgres
+"
+$@
+"
+fi
+exec
+"
+$@
+"
+Lastly, if you need to do some extra cleanup (or communicate with other containers)
+on shutdown, or are co-ordinating more than one executable, you may need to ensure
+that the
+ENTRYPOINT
+script receives the Unix signals, passes them on, and then
+does some more work:
+#!/bin/sh
+# Note: I've wr

@@ -1,0 +1,16 @@
+configured correctly
+before you can
+configure the Docker daemon
+or
+configure individual containers
+.
+Warning
+CPU scheduling and prioritization are advanced kernel-level features. Most
+users don't need to change these values from their defaults. Setting these
+values incorrectly can cause your host system to become unstable or unusable.
+Configure the host machine's kernel
+Verify that
+CONFIG_RT_GROUP_SCHED
+is enabled in the Linux kernel by running
+zcat /proc/config.gz | grep CONFIG_RT_GROUP_SCHED
+o

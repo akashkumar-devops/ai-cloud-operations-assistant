@@ -1,0 +1,27 @@
+starting the buildkitd daemon with
+--allow-insecure-entitlement security.insecure
+flag or in
+buildkitd config
+,
+and for a build request with
+--allow security.insecure
+flag
+.
+Default sandbox mode can be activated via
+--security=sandbox
+, but that is no-op.
+Example: check entitlements
+# syntax=docker/dockerfile:1
+FROM
+ubuntu
+RUN
+--security
+=
+insecure cat /proc/self/status
+|
+grep CapEff
+#84 0.093 CapEff:	0000003fffffffff
+CMD
+The
+CMD
+instruction sets the command to be executed when running a contain

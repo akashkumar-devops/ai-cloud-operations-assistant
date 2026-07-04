@@ -1,0 +1,23 @@
+ons are functionally similar, but serve slightly different purposes.
+Learn more about the
+differences between
+ADD
+and
+COPY
+.
+Source
+You can specify multiple source files or directories with
+COPY
+. The last
+argument must always be the destination. For example, to copy two files,
+file1.txt
+and
+file2.txt
+, from the build context to
+/usr/src/things/
+in
+the build container:
+COPY
+file1.txt file2.txt /usr/src/things/
+If you specify multiple source files, either directly or using a wildcard, then
+the de

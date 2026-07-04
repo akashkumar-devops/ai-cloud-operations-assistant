@@ -1,0 +1,41 @@
+irectories to 755 and files to 644, while preserving the executable bit on files
+that already have it. (Capital
+X
+means "executable only if it's a directory or
+already executable.")
+For more information about symbolic notation syntax, see the
+chmod(1) manual
+.
+Examples using octal notation:
+COPY
+--chmod
+=
+755
+app.sh /app/
+COPY
+--chmod
+=
+644
+file.txt /data/
+ARG
+MODE
+=
+440
+COPY
+--chmod
+=
+$MODE
+. .
+Examples using symbolic notation:
+COPY
+--chmod
+=
++x script.sh /app/
+COPY
+--chmod
+=
+u
+=
+rwX,go
+=
+rX . 

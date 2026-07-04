@@ -1,0 +1,10 @@
+
+Namespaces provide the first and most straightforward form of
+isolation. Processes running within a container cannot see, and even
+less affect, processes running in another container, or in the host
+system.
+Each container also gets its own network stack, meaning that a
+container doesn't get privileged access to the sockets or interfaces
+of another container. Of course, if the host system is setup
+accordingly, containers can interact with each other through their
+respective network interfaces â

@@ -1,0 +1,8 @@
+revious build generated is reused and merged on top of the new
+layers. This also means you can easily rebase your images when the base images
+receive updates, without having to execute the whole build again. In backends
+that support it, BuildKit can do this rebase action without the need to push or
+pull any layers between the client and the registry. BuildKit will detect this
+case and only create new image manifest that contains the new layers and old
+layers in correct order.
+The same behavior w

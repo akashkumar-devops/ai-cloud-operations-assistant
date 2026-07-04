@@ -1,0 +1,9 @@
+re merged into the Compose Specification. It is implemented in versions 1.27.0 and above (also known as Compose v2) of the Docker Compose CLI.
+The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the
+Compose Specification repository
+.
+Use the following links to navigate key sections of the Compose Specification.
+Tip
+Want a better editing experience for Compose files in VS Code?
+Check out the
+Doc

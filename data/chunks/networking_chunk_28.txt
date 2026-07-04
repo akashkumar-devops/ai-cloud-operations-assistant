@@ -1,0 +1,8 @@
+working enabled by default, and they can make outgoing
+connections. A container has no information about what kind of network it's
+attached to, or whether its network peers are also Docker containers. A
+container only sees a network interface with an IP address, a gateway, a
+routing table, DNS services, and other networking details.
+This page describes networking from the point of view of the container,
+and the concepts around container networking.
+When Docker Engine on Linux starts for the firs

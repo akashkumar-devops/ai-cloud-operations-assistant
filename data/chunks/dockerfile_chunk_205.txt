@@ -1,0 +1,18 @@
+advance instructions to
+run later, during the next build stage.
+Here's how it works:
+When it encounters an
+ONBUILD
+instruction, the builder adds a
+trigger to the metadata of the image being built. The instruction
+doesn't otherwise affect the current build.
+At the end of the build, a list of all triggers is stored in the
+image manifest, under the key
+OnBuild
+. They can be inspected with
+the
+docker inspect
+command.
+Later the image may be used as a base for a new build, using the
+FROM
+instruction. 

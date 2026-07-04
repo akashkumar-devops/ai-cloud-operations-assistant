@@ -1,0 +1,11 @@
+he size of the containers using it. Using a
+volume is also faster; writing into a container's writable layer requires a
+storage driver
+to manage the
+filesystem. The storage driver provides a union filesystem, using the Linux
+kernel. This extra abstraction reduces performance as compared to using
+volumes, which write directly to the host filesystem.
+If your container generates non-persistent state data, consider using a
+tmpfs mount
+to avoid storing the data anywhere permanently, and to
+increase t

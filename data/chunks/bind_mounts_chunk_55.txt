@@ -1,0 +1,27 @@
+er run -d
+\
+-it \
+--name devtest \
+--mount type=bind,source="$(pwd)"/target,target=/app \
+--mount type=bind,source="$(pwd)"/target,target=/app2,readonly,bind-propagation=rslave \
+nginx:latest
+$
+docker run -d
+\
+-it \
+--name devtest \
+-v "$(pwd)"/target:/app \
+-v "$(pwd)"/target:/app2:ro,rslave \
+nginx:latest
+Now if you create
+/app/foo/
+,
+/app2/foo/
+also exists.
+Configure the SELinux label
+If you use SELinux, you can add the
+z
+or
+Z
+options to modify the SELinux
+label of the host file or directory 

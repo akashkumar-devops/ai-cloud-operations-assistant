@@ -1,0 +1,20 @@
+tes the build cache.
+Automatic platform ARGs in the global scope
+This feature is only available when using the
+BuildKit
+backend.
+BuildKit supports a predefined set of
+ARG
+variables with information on the platform of
+the node performing the build (build platform) and on the platform of the
+resulting image (target platform). The target platform can be specified with
+the
+--platform
+flag on
+docker build
+.
+The following
+ARG
+variables are set automatically:
+TARGETPLATFORM
+- platform of the build resu

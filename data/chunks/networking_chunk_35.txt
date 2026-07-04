@@ -1,0 +1,14 @@
+k for
+access to local services.
+Containers can also share networking stacks, see
+Container networks
+.
+When sending packets, if the destination is an address in a directly connected
+network, packets are sent to that network. Otherwise, packets are sent to
+a default gateway for routing to their destination. In the example above,
+the
+ipvlan
+network's gateway must be the default gateway.
+The default gateway is selected by Docker, and may change whenever a
+container's network connections change.
+To m

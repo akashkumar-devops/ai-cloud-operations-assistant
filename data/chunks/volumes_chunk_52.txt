@@ -1,0 +1,13 @@
+ing either of these examples, run the following commands to clean up
+the containers and volumes. Note volume removal is a separate step.
+$
+docker container stop nginxtest
+$
+docker container rm nginxtest
+$
+docker volume rm nginx-vol
+Use a read-only volume
+For some development applications, the container needs to write into the bind
+mount so that changes are propagated back to the Docker host. At other times,
+the container only needs read access to the data. Multiple
+containers can mount the same 

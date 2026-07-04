@@ -1,0 +1,20 @@
+iles from a Git repository
+To use a Git repository as the source for
+ADD
+, you can reference the
+repository's HTTP or SSH address as the source. The repository is cloned to the
+specified destination in the image.
+ADD
+https://github.com/user/repo.git /mydir/
+You can use URL fragments to specify a specific branch, tag, commit, or
+subdirectory. For example, to add the
+docs
+directory of the
+v0.14.1
+tag of
+the
+buildkit
+repository:
+ADD
+git@github.com:moby/buildkit.git#v0.14.1:docs /buildkit-docs
+For m

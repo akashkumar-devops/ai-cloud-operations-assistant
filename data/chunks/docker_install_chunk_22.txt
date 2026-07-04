@@ -1,0 +1,27 @@
+s
+Archive
+Delete
+Settings
+Usage and limits
+Pulls
+Optimize usage
+Troubleshoot
+Release notes
+Docker Scout
+Install
+Quickstart
+Explore
+Dashboard
+Docker Scout image analysis
+Docker Scout metrics exporter
+Image details view
+Manage vulnerability exceptions
+How-tos
+Create an exception using the GUI
+Create an exception using the VEX
+Docker Scout environment variables
+Docker Scout SBOMs
+Use Scout with different artifact types
+Deep dive
+Advisory database sources and matching service
+Data collection and sto

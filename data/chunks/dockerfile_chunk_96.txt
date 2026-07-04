@@ -1,0 +1,23 @@
+orporated"
+LABEL
+com.example.label-with-value
+=
+"foo"
+LABEL
+version
+=
+"1.0"
+LABEL
+description
+=
+"This text illustrates \
+that label-values can span multiple lines."
+An image can have more than one label. You can specify multiple labels on a
+single line. Prior to Docker 1.10, this decreased the size of the final image,
+but this is no longer the case. You may still choose to specify multiple labels
+in a single instruction, in one of the following two ways:
+LABEL
+multi.label1
+=
+"value1"
+multi.label

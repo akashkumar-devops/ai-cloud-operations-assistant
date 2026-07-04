@@ -1,0 +1,39 @@
+single environment variable (
+ONE
+) with value
+"TWO= THREE=world"
+:
+ENV
+ONE
+TWO
+=
+THREE
+=
+world
+The alternative syntax is supported for backward compatibility, but discouraged
+for the reasons outlined above, and may be removed in a future release.
+ADD
+ADD has two forms.
+The latter form is required for paths containing whitespace.
+ADD
+[
+OPTIONS
+]
+<src> ... <dest>
+ADD
+[
+OPTIONS
+]
+[
+"<src>"
+, ...
+"<dest>"
+]
+The available
+[OPTIONS]
+are:
+Option
+Minimum Dockerfile version
+--keep-git-dir
+1.1
+--checksum

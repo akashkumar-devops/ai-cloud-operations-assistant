@@ -1,0 +1,13 @@
+s well.
+$
+docker run -it -m 300M --memory-swap 1G ubuntu:24.04 /bin/bash
+We set both memory and swap memory, so the processes in the container can use
+300M memory and 700M swap memory.
+Memory reservation is a kind of memory soft limit that allows for greater
+sharing of memory. Under normal circumstances, containers can use as much of
+the memory as needed and are constrained only by the hard limits set with the
+-m
+/
+--memory
+option. When memory reservation is set, Docker detects memory
+contention

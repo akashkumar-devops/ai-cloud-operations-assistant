@@ -1,0 +1,30 @@
+ogs to be sent to the relevant special device instead. See the
+Dockerfile
+.
+The official
+httpd
+driver changes the
+httpd
+application's configuration to
+write its normal output directly to
+/proc/self/fd/1
+(which is
+STDOUT
+) and
+its errors to
+/proc/self/fd/2
+(which is
+STDERR
+). See the
+Dockerfile
+.
+Next steps
+Configure
+logging drivers
+.
+Write a
+Dockerfile
+.
+Edit this page
+Request changes
+Next steps

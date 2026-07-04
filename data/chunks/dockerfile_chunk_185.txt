@@ -1,0 +1,36 @@
+ when building images.
+A Dockerfile may include one or more
+ARG
+instructions. For example,
+the following is a valid Dockerfile:
+FROM
+busybox
+ARG
+user1
+ARG
+buildno
+# ...
+Default values
+An
+ARG
+instruction can optionally include a default value:
+FROM
+busybox
+ARG
+user1
+=
+someuser
+ARG
+buildno
+=
+1
+# ...
+If an
+ARG
+instruction has a default value and if there is no value passed
+at build-time, the builder uses the default.
+Scope
+An
+ARG
+variable comes into effect from the line on which it is declared in
+t

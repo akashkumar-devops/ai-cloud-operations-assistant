@@ -1,0 +1,19 @@
+ault values
+Scope
+Using ARG variables
+Predefined ARGs
+Automatic platform ARGs in the global scope
+BuildKit built-in build args
+Impact on build caching
+ONBUILD
+Copy or mount from stage, image, or context
+ONBUILD limitations
+STOPSIGNAL
+HEALTHCHECK
+SHELL
+Here-Documents
+Example: Running a multi-line script
+Example: Creating inline files
+Dockerfile examples
+Docker can build images automatically by reading the instructions from a
+Dockerfile. A Dockerfile is a text document that contains all the comman

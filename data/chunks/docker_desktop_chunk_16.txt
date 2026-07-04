@@ -1,0 +1,29 @@
+pment
+Install
+Plugin
+Standalone (Legacy)
+Uninstall
+Quickstart
+How-tos
+Specify a project name
+Use lifecycle hooks
+Use service profiles
+Control startup order
+Use environment variables
+Set environment variables
+Environment variables precedence
+Pre-defined environment variables
+Interpolation
+Best practices
+Build dependent images
+Use Compose Watch
+Secrets in Compose
+Networking
+Use multiple Compose files
+Merge
+Extend
+Include
+Enable GPU support
+Use Compose in production
+OCI artifact applications
+Use pr

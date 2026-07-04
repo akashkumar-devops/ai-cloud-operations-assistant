@@ -1,0 +1,27 @@
+ volume inspect my-vol
+[
+{
+"Driver": "local",
+"Labels": {},
+"Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
+"Name": "my-vol",
+"Options": {},
+"Scope": "local"
+}
+]
+Remove a volume:
+$
+docker volume rm my-vol
+Start a container with a volume
+If you start a container with a volume that doesn't yet exist, Docker creates
+the volume for you. The following example mounts the volume
+myvol2
+into
+/app/
+in the container.
+The following
+-v
+and
+--mount
+examples produce the same result. You can't
+run them b

@@ -1,0 +1,27 @@
+=64 time=0.076 ms
+64 bytes from 172.18.0.4: seq=1 ttl=64 time=0.091 ms
+--- alpine4 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.076/0.083/0.091 ms
+From
+alpine1
+, you can't connect to
+alpine3
+because it's on a different
+network:
+#
+ping -c
+2
+alpine3
+ping: bad address 'alpine3'
+You also can't connect by IP address. If
+alpine3
+'s IP is
+172.17.0.2
+:
+#
+ping -c
+2
+172.17.0.2
+PING 172.17.0.2 (172.17.0.2): 56 data bytes
+--- 172.17.0.2 ping statis

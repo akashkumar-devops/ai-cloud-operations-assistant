@@ -1,0 +1,23 @@
+Get started
+What is Docker?
+Introduction
+Get Docker Desktop
+Develop with containers
+Build and push your first image
+Docker concepts
+The basics
+What is a container?
+What is an image?
+What is a registry?
+What is Docker Compose?
+Building images
+Understanding the image layers
+Writing a Dockerfile
+Build, tag, and publish an image
+Using the build cache
+Multi-stage builds
+Running containers
+Publishing and exposing ports
+Overriding container defaults
+Persisting container data
+Sharing local files with co

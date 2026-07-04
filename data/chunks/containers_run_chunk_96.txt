@@ -1,0 +1,16 @@
+
+then the
+CMD
+or
+COMMAND
+get appended as arguments to the
+ENTRYPOINT
+.
+Default entrypoint
+--entrypoint="": Overwrite the default entrypoint set by the image
+The entrypoint refers to the default executable that's invoked when you run a
+container. A container's entrypoint is defined using the Dockerfile
+ENTRYPOINT
+instruction. It's similar to specifying a default command because
+it specifies, but the difference is that you need to pass an explicit flag to
+override the entrypoint, whereas you can o

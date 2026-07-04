@@ -1,0 +1,33 @@
+th the
+root
+group.
+On Windows, the user must be created first if it's not a built-in account.
+This can be done with the
+net user
+command called as part of a Dockerfile.
+FROM
+microsoft/windowsservercore
+# Create Windows user in the container
+RUN
+net user /add patrick
+# Set it for subsequent commands
+USER
+patrick
+WORKDIR
+WORKDIR
+/path/to/workdir
+The
+WORKDIR
+instruction sets the working directory for any
+RUN
+,
+CMD
+,
+ENTRYPOINT
+,
+COPY
+and
+ADD
+instructions that follow it in the Dockerfile.
+If the
+WOR

@@ -1,0 +1,35 @@
+unt
+flag consists of multiple key-value pairs, separated by commas
+and each consisting of a
+<key>=<value>
+tuple. The order of the keys isn't
+significant.
+$
+docker run --mount
+type
+=
+bind,src
+=
+<host-path>,dst
+=
+<container-path>
+[
+,<key>
+=
+<value>...
+]
+Valid options for
+--mount type=bind
+include:
+Option
+Description
+source
+,
+src
+The location of the file or directory on the host. This can be an absolute or relative path.
+destination
+,
+dst
+,
+target
+The path where the file or directory is mounted in 

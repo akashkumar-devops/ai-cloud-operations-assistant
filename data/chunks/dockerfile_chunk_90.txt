@@ -1,0 +1,18 @@
+
+=
+none pip install --find-links wheels mypackage
+pip
+will only be able to install the packages provided in the tarfile, which
+can be controlled by an earlier build stage.
+RUN --network=host
+The command is run in the host's network environment (similar to
+docker build --network=host
+, but on a per-instruction basis)
+Warning
+The use of
+--network=host
+is protected by the
+network.host
+entitlement,
+which needs to be enabled when starting the buildkitd daemon with
+--allow-insecure-entitlement network

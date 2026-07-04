@@ -1,0 +1,13 @@
+ and a
+directory with the same name exists at the destination, an error is raised.
+If you pass a Dockerfile through stdin to the build (
+docker build - < Dockerfile
+), there is no build context. In this case, you can only use the
+ADD
+instruction to copy remote files. You can also pass a tar archive through
+stdin: (
+docker build - < archive.tar
+), the Dockerfile at the root of the
+archive and the rest of the archive will be used as the context of the build.
+Pattern matching
+For local files, each

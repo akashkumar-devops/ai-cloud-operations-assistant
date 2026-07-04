@@ -1,0 +1,31 @@
+ike
+gzip
+or
+bzip2
+) when adding them
+to the image. Local tar archives are unpacked by default, whereas remote tar
+archives (where
+src
+is a URL) are downloaded without unpacking.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+# Download and unpack archive.tar.gz into /download:
+ADD
+--unpack
+=
+true
+https://example.com/archive.tar.gz /download
+# Add local tar without unpacking:
+ADD
+--unpack
+=
+false
+my-archive.tar.gz .
+ADD --exclude
+See
+COPY --exclude
+.
+COPY
+COPY has two forms.
+The latter form is required

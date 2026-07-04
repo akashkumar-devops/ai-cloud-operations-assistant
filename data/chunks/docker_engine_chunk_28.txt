@@ -1,0 +1,17 @@
+face (CLI) client
+docker
+.
+The CLI uses
+Docker APIs
+to control or interact with the Docker
+daemon through scripting or direct CLI commands. Many other Docker applications
+use the underlying API and CLI. The daemon creates and manages Docker objects,
+such as images, containers, networks, and volumes.
+For more details, see
+Docker Architecture
+.
+Install Docker Engine
+Learn how to install the open source Docker Engine for your distribution.
+Storage
+Use persistent data with Docker containers.
+Network

@@ -1,0 +1,20 @@
+e
+required to preface the
+docker run
+command with
+sudo
+. To avoid
+having to use
+sudo
+with the
+docker
+command, your system
+administrator can create a Unix group called
+docker
+and add users to
+it. For more information about this configuration, refer to the Docker
+installation documentation for your operating system.
+Foreground and background
+When you start a container, the container runs in the foreground by default.
+If you want to run the container in the background instead, you can use the
+--det

@@ -1,0 +1,49 @@
+t of the string.
+str
+=
+foobarbaz
+echo
+${
+str
+#f*b
+}
+# arbaz
+${variable##pattern}
+removes the longest match of
+pattern
+from
+variable
+,
+seeking from the start of the string.
+str
+=
+foobarbaz
+echo
+${
+str
+##f*b
+}
+# az
+${variable%pattern}
+removes the shortest match of
+pattern
+from
+variable
+,
+seeking backwards from the end of the string.
+string
+=
+foobarbaz
+echo
+${
+string
+%b*
+}
+# foobar
+${variable%%pattern}
+removes the longest match of
+pattern
+from
+variable
+,
+seeking backwards from the end of the string

@@ -1,0 +1,26 @@
+environment variable is set in the build
+environment, you can build this with the following command:
+$
+docker buildx build --secret
+id
+=
+API_KEY .
+RUN --mount=type=ssh
+This mount type allows the build container to access SSH keys via SSH agents,
+with support for passphrases.
+Option
+Description
+id
+ID of SSH agent socket or key. Defaults to "default".
+target
+,
+dst
+,
+destination
+SSH agent socket path. Defaults to
+/run/buildkit/ssh_agent.${N}
+.
+required
+If set to
+true
+, the instruction errors out wh

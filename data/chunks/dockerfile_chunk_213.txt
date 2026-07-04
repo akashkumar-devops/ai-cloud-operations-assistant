@@ -1,0 +1,12 @@
+health check for the container
+to be considered
+unhealthy
+.
+start period
+provides initialization time for containers that need time to bootstrap.
+Probe failure during that period will not be counted towards the maximum number of retries.
+However, if a health check succeeds during the start period, the container is considered
+started and all consecutive failures will be counted towards the maximum number of retries.
+start interval
+is the time between health checks during the start period.
+This op

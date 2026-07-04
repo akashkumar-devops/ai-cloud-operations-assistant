@@ -1,0 +1,15 @@
+nhancing deployment in
+production environments.
+What you'll learn
+Understanding image layers
+Writing a Dockerfile
+Build, tag and publish an image
+Using the build cache
+Multi-stage builds
+Modules
+Understanding the image layers
+This concept page will teach you about the layers of container image.
+Writing a Dockerfile
+This concept page will teach you how to create image using Dockerfile.
+Build, tag, and publish an image
+This concept page will teach you how to build, tag, and publish an image to Doc

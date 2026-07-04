@@ -1,0 +1,33 @@
+Source
+Destination
+ADD --keep-git-dir
+ADD --checksum
+ADD --chmod
+ADD --chown
+ADD --link
+ADD --unpack
+ADD --exclude
+COPY
+Source
+Destination
+COPY --from
+COPY --chmod
+COPY --chown
+COPY --link
+COPY --parents
+COPY --exclude
+ENTRYPOINT
+Exec form ENTRYPOINT example
+Shell form ENTRYPOINT example
+Understand how CMD and ENTRYPOINT interact
+VOLUME
+Notes about specifying volumes
+USER
+WORKDIR
+ARG
+Default values
+Scope
+Using ARG variables
+Predefined ARGs
+Automatic platform ARGs in the global scope
+BuildKit bui

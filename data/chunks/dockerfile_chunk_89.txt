@@ -1,0 +1,25 @@
+ype
+Description
+default
+(default)
+Run in the default network.
+none
+Run with no network access.
+host
+Run in the host's network environment.
+RUN --network=default
+Equivalent to not supplying a flag at all, the command is run in the default
+network for the build.
+RUN --network=none
+The command is run with no network access (
+lo
+is still available, but is
+isolated to this process)
+Example: isolating external effects
+# syntax=docker/dockerfile:1
+FROM
+python:3.6
+ADD
+mypackage.tgz wheels/
+RUN
+--network

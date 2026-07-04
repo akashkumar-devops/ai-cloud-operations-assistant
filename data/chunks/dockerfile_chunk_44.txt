@@ -1,0 +1,20 @@
+er, this syntax is, at best, confusing as it is not
+natural for paths on Windows, and at worst, error prone as not all commands on
+Windows support
+/
+as the path separator.
+By adding the
+escape
+parser directive, the following Dockerfile succeeds as
+expected with the use of natural platform semantics for file paths on Windows:
+# escape=`
+FROM
+microsoft/nanoserver
+COPY
+testfile.txt c:
+\
+RUN dir c:
+\
+Results in:
+PS E:\myproject> docker build -t succeeds --no-cache=true .
+Sending build context to Doc

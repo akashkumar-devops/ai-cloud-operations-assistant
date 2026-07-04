@@ -1,0 +1,10 @@
+ Another is to create volumes with a driver that
+supports writing files to an external storage system like NFS or Amazon S3.
+Volume drivers let you abstract the underlying storage system from the
+application logic. For example, if your services use a volume with an NFS
+driver, you can update the services to use a different driver. For example, to
+store data in the cloud, without changing the application logic.
+Use a volume driver
+When you create a volume using
+docker volume create
+, or when you 

@@ -1,0 +1,13 @@
+ain.
+Use multi-stage builds
+With multi-stage builds, you use multiple
+FROM
+statements in your Dockerfile.
+Each
+FROM
+instruction can use a different base, and each of them begins a new
+stage of the build. You can selectively copy artifacts from one stage to
+another, leaving behind everything you don't want in the final image.
+The following Dockerfile has two separate stages: one for building a binary,
+and another where the binary gets copied from the first stage into the next stage.
+# syntax=dock

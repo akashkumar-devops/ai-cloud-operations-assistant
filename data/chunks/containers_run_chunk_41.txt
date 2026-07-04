@@ -1,0 +1,15 @@
+ web
+PING web (172.18.0.2): 56 data bytes
+64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.326 ms
+64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.257 ms
+64 bytes from 172.18.0.2: seq=2 ttl=64 time=0.281 ms
+^C
+--- web ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.257/0.288/0.326 ms
+For more information about container networking, see
+Networking
+overview
+Filesystem mounts
+By default, the data in a container is stored in an ephemeral, writable
+c

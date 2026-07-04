@@ -1,0 +1,20 @@
+avigate Docker Desktop.
+Explore its key features
+Find information about
+Networking
+,
+Docker VMM
+,
+WSL
+, and more.
+View the release notes
+Find out about new features, improvements, and bug fixes.
+Browse common FAQs
+Explore general FAQs or FAQs for specific platforms.
+Give feedback
+Provide feedback on Docker Desktop or Docker Desktop features.
+Edit this page
+Request changes
+Key features
+Products inside Docker Desktop
+Next steps

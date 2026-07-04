@@ -1,0 +1,19 @@
+ dhi catalog get
+docker dhi catalog list
+docker dhi customization
+docker dhi customization build
+docker dhi customization build get
+docker dhi customization build list
+docker dhi customization build logs
+docker dhi customization create
+docker dhi customization delete
+docker dhi customization edit
+docker dhi customization get
+docker dhi customization list
+docker dhi customization prepare
+docker dhi mirror
+docker dhi mirror list
+docker dhi mirror start
+docker dhi mirror stop
+docker exec
+docker ima

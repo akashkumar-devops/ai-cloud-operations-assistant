@@ -1,0 +1,18 @@
+tion requires Docker Engine version 25.0 or later.
+There can only be one
+HEALTHCHECK
+instruction in a Dockerfile. If you list
+more than one then only the last
+HEALTHCHECK
+will take effect.
+The command after the
+CMD
+keyword can be either a shell command (e.g.
+HEALTHCHECK CMD /bin/check-running
+) or an exec array (as with other Dockerfile commands;
+see e.g.
+ENTRYPOINT
+for details).
+The command's exit status indicates the health status of the container.
+The possible values are:
+0: success - the con

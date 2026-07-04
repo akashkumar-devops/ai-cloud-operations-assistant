@@ -1,0 +1,18 @@
+st-path>,dst
+=
+<container-path>
+$
+docker run --volume <host-path>:<container-path>
+In general,
+--mount
+is preferred. The main difference is that the
+--mount
+flag is more explicit and supports all the available options.
+If you use
+--volume
+to bind-mount a file or directory that does not yet
+exist on the Docker host, Docker automatically creates the directory on the
+host for you. It's always created as a directory.
+By default,
+--mount
+does not automatically create a directory if the specified moun

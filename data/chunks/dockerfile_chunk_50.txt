@@ -1,0 +1,31 @@
+e, like
+${foo}_bar
+.
+The
+${variable_name}
+syntax also supports a few of the standard
+bash
+modifiers as specified below:
+${variable:-word}
+indicates that if
+variable
+is set and non-empty then
+the result will be that value. If
+variable
+is unset or empty then
+word
+will be the result.
+${variable-word}
+indicates that if
+variable
+is set (even if empty) then
+the result will be that value. If
+variable
+is unset then
+word
+will be
+the result.
+${variable:+word}
+indicates that if
+variable
+is set and non-empt

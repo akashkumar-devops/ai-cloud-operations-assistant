@@ -1,0 +1,10 @@
+fere
+with the other systems. This means that there are many different ways to
+harden a Docker host. Here are a few examples.
+You can run a kernel with GRSEC and PAX. This adds many safety
+checks, both at compile-time and run-time; it also defeats many
+exploits, thanks to techniques like address randomization. It doesn't
+require Docker-specific configuration, since those security features
+apply system-wide, independent of containers.
+If your distribution comes with security model templates for
+Do

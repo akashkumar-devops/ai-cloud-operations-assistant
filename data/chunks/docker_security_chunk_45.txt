@@ -1,0 +1,16 @@
+eny module loading
+This means that even if an intruder manages to escalate to root within a
+container, it is much harder to do serious damage, or to escalate
+to the host.
+This doesn't affect regular web apps, but reduces the vectors of attack by
+malicious users considerably. By default Docker
+drops all capabilities except
+those
+needed
+,
+an allowlist instead of a denylist approach. You can see a full list of
+available capabilities in
+Linux
+manpages
+.
+One primary risk with running Docker container

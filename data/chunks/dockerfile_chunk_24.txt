@@ -1,0 +1,25 @@
+Interface: ServiceError
+Interface: SpawnOptions
+Interface: Toast
+Registry API
+Latest
+Registry authentication
+Build checks
+ConsistentInstructionCasing
+CopyIgnoredFile
+DuplicateStageName
+ExposeInvalidFormat
+ExposeProtoCasing
+FromAsCasing
+FromPlatformFlagConstDisallowed
+InvalidDefaultArgInFrom
+InvalidDefinitionDescription
+JSONArgsRecommended
+LegacyKeyValueFormat
+MaintainerDeprecated
+MultipleInstructionsDisallowed
+NoEmptyContinuation
+RedundantTargetPlatform
+ReservedStageName
+SecretsUsedInArgOrEnv
+St

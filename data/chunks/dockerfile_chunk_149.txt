@@ -1,0 +1,19 @@
+ion
+directory was a path that contained a symlink,
+COPY/ADD
+can not follow it.
+In the final image the destination path created with
+--link
+will always be a
+path containing only directories.
+If you don't rely on the behavior of following symlinks in the destination
+path, using
+--link
+is always recommended. The performance of
+--link
+is
+equivalent or better than the default behavior and, it creates much better
+conditions for cache reuse.
+When copying a path into a subdirectory,
+--link
+will always c

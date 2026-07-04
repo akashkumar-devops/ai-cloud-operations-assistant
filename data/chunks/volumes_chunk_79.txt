@@ -1,0 +1,4 @@
+e volumes
+Remove anonymous volumes
+Remove all volumes
+Next steps

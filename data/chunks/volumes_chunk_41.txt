@@ -1,0 +1,28 @@
+ if the volume is empty. By default, content at the target destination gets copied into a mounted volume if empty.
+volume-opt
+Can be specified more than once, takes a key-value pair consisting of the option name and its value.
+Example
+$
+docker run --mount
+type
+=
+volume,src
+=
+myvolume,dst
+=
+/data,ro,volume-subpath
+=
+/foo
+Options for --volume
+The
+--volume
+or
+-v
+flag consists of three fields, separated by colon
+characters (
+:
+). The fields must be in the correct order.
+$
+docker run -v
+[
+<volume-nam

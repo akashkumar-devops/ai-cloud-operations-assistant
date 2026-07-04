@@ -1,0 +1,16 @@
+ity issues
+If you discover a security issue, we request that you bring it to our attention immediately.
+DO NOT file a public issue. Instead, submit your report privately to
+security@docker.com
+.
+Security reports are greatly appreciated, and Docker will publicly thank you for it.
+Get started
+After setting up Docker, you can learn the basics with
+Getting started with Docker
+.
+Edit this page
+Request changes
+Installation procedures for supported platforms
+Other Linux distributions
+Release channels
+S

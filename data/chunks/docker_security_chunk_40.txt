@@ -1,0 +1,9 @@
+ the
+possibility of an attacker causing a collision with an existing image.
+Finally, if you run Docker on a server, it is recommended to run
+exclusively Docker on the server, and move all other services within
+containers controlled by Docker. Of course, it is fine to keep your
+favorite admin tools (probably at least an SSH server), as well as
+existing monitoring/supervision processes, such as NRPE and collectd.
+Linux kernel capabilities
+By default, Docker starts containers with a restricted set 

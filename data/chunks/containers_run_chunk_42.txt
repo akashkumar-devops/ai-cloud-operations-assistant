@@ -1,0 +1,10 @@
+ontainer layer. Removing the container also removes its data. If you want to
+use persistent data with containers, you can use filesystem mounts to store the
+data persistently on the host system. Filesystem mounts can also let you share
+data between containers and the host.
+Docker supports two main categories of mounts:
+Volume mounts
+Bind mounts
+Volume mounts are great for persistently storing data for containers, and for
+sharing data between containers. Bind mounts, on the other hand, are for
+sh

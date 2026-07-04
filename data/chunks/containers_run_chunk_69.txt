@@ -1,0 +1,26 @@
+n get 50% CPU worth of run-time every 50ms.
+In addition to use
+--cpu-period
+and
+--cpu-quota
+for setting CPU period constraints,
+it is possible to specify
+--cpus
+with a float number to achieve the same purpose.
+For example, if there is 1 CPU, then
+--cpus=0.5
+will achieve the same result as
+setting
+--cpu-period=50000
+and
+--cpu-quota=25000
+(50% CPU).
+The default value for
+--cpus
+is
+0.000
+, which means there is no limit.
+For more information, see the
+CFS documentation on bandwidth limiting
+.
+Cpuset 

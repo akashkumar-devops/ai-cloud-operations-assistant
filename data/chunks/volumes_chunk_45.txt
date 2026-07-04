@@ -1,0 +1,44 @@
+oth unless you remove the
+devtest
+container and the
+myvol2
+volume
+after running the first one.
+--mount
+-v
+$
+docker run -d
+\
+--name devtest \
+--mount source=myvol2,target=/app \
+nginx:latest
+$
+docker run -d
+\
+--name devtest \
+-v myvol2:/app \
+nginx:latest
+Use
+docker inspect devtest
+to verify that Docker created the volume and it mounted
+correctly. Look for the
+Mounts
+section:
+"Mounts"
+:
+[
+{
+"Type"
+:
+"volume"
+,
+"Name"
+:
+"myvol2"
+,
+"Source"
+:
+"/var/lib/docker/volumes/myvol2/_data"
+,
+"Destination"
+:

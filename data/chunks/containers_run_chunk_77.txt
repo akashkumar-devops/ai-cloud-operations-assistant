@@ -1,0 +1,22 @@
+oth read
+and write rates must be a positive integer. You can specify the rate in
+kb
+(kilobytes),
+mb
+(megabytes), or
+gb
+(gigabytes).
+The
+--device-read-iops
+flag limits read rate (IO per second) from a device.
+For example, this command creates a container and limits the read rate to
+1000
+IO per second from
+/dev/sda
+:
+$
+docker run -it --device-read-iops /dev/sda:1000 ubuntu
+The
+--device-write-iops
+flag limits write rate (IO per second) to a device.
+For example, this command creates a container and 

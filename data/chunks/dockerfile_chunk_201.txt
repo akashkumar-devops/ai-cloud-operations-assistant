@@ -1,0 +1,29 @@
+the
+<value>
+changes, you get a cache miss.
+Consider another example under the same command line:
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+ENV
+CONT_IMG_VER
+=
+$CONT_IMG_VER
+RUN
+echo
+$CONT_IMG_VER
+In this example, the cache miss occurs on line 3. The miss happens because
+the variable's value in the
+ENV
+references the
+ARG
+variable and that
+variable is changed through the command line. In this example, the
+ENV
+command causes the image to include the value.
+If an
+ENV
+instruction overrides an
+ARG
+instruction of th

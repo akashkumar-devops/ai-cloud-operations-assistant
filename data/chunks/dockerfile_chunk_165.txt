@@ -1,0 +1,19 @@
+ with
+docker run -it --rm -p 80:80 --name test apache
+,
+you can then examine the container's processes with
+docker exec
+, or
+docker top
+,
+and then ask the script to stop Apache:
+$
+docker
+exec
+-it
+test
+ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0   4448   692 ?        Ss+  00:42   0:00 /bin/sh /run.sh 123 cmd cmd2
+root        19  0.0  0.2  71304  4440 ?        Ss   00:42   0:00 /usr/sbin/apache2 -k start
+www-data    20  0.2  0.2 360468  

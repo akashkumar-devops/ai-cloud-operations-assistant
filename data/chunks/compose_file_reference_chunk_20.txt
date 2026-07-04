@@ -1,0 +1,28 @@
+ker trust key load
+docker trust revoke
+docker trust sign
+docker trust signer
+docker trust signer add
+docker trust signer remove
+docker version
+docker volume
+docker volume create
+docker volume inspect
+docker volume ls
+docker volume prune
+docker volume rm
+docker volume update
+dockerd
+sbx
+sbx completion
+sbx completion bash
+sbx completion fish
+sbx completion powershell
+sbx completion zsh
+sbx cp
+sbx create
+sbx create claude
+sbx create codex
+sbx create copilot
+sbx create cursor
+sbx create docker-agent

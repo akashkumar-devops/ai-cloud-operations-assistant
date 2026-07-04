@@ -1,0 +1,22 @@
+ence
+Air-gapped containers
+Registry Access Management
+Image Access Management
+Namespace access
+Organization access tokens
+/
+/
+Docker Build
+/
+Building
+/
+Multi-stage
+Multi-stage builds
+Use multi-stage builds
+Name your build stages
+Stop at a specific build stage
+Use an external image as a stage
+Use a previous stage as a new stage
+Differences between legacy builder and BuildKit
+Multi-stage builds are useful to anyone who has struggled to optimize
+Dockerfiles while keeping them easy to read and maint

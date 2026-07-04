@@ -1,0 +1,9 @@
+cation: for example, if you instrument Docker
+from a web server to provision containers through an API, you should be
+even more careful than usual with parameter checking, to make sure that
+a malicious user cannot pass crafted parameters causing Docker to create
+arbitrary containers.
+For this reason, the REST API endpoint (used by the Docker CLI to
+communicate with the Docker daemon) changed in Docker 0.5.2, and now
+uses a Unix socket instead of a TCP socket bound on 127.0.0.1 (the
+latter being 

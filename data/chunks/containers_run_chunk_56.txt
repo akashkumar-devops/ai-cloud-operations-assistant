@@ -1,0 +1,18 @@
+ytes of memory, swap
+plus
+memory usage is double
+of that.
+memory=L<inf, memory-swap=S<inf, L<=S
+(specify both memory and memory-swap) The container is not allowed to
+use more than L bytes of memory, swap
+plus
+memory usage is limited
+by S.
+Examples:
+$
+docker run -it ubuntu:24.04 /bin/bash
+We set nothing about memory, this means the processes in the container can use
+as much memory and swap memory as they need.
+$
+docker run -it -m 300M --memory-swap -1 ubuntu:24.04 /bin/bash
+We set memory limit an

@@ -1,0 +1,15 @@
+ting
+--cpu-period="100000"
+and
+--cpu-quota="150000"
+.
+--cpu-period=<value>
+Specify the CPU CFS scheduler period, which is used alongside
+--cpu-quota
+. Defaults to 100000 microseconds (100 milliseconds). Most users don't change this from the default. For most use-cases,
+--cpus
+is a more convenient alternative.
+--cpu-quota=<value>
+Impose a CPU CFS quota on the container. The number of microseconds per
+--cpu-period
+that the container is limited to before being throttled. As such acting as the effec

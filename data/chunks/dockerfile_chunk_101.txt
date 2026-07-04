@@ -1,0 +1,13 @@
+r listens on the
+specified network ports at runtime. You can specify whether the port listens on
+TCP or UDP, and the default is TCP if you don't specify a protocol.
+The
+EXPOSE
+instruction doesn't actually publish the port. It functions as a
+type of documentation between the person who builds the image and the person who
+runs the container, about which ports are intended to be published. To
+publish the port when running the container, use the
+-p
+flag on
+docker run
+to publish and map one or more p

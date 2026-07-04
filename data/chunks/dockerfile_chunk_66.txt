@@ -1,0 +1,18 @@
+M
+references a multi-platform image. For example,
+linux/amd64
+,
+linux/arm64
+, or
+windows/amd64
+. By default, the target platform of the build
+request is used. Global build arguments can be used in the value of this flag,
+for example
+automatic platform ARGs
+allow you to force a stage to native build platform (
+--platform=$BUILDPLATFORM
+),
+and use it to cross-compile to the target platform inside the stage.
+Understand how ARG and FROM interact
+FROM
+instructions support variables that are declared 

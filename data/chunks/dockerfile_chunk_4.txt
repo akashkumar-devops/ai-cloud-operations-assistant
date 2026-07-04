@@ -1,0 +1,26 @@
+ages
+docker compose kill
+docker compose logs
+docker compose ls
+docker compose pause
+docker compose port
+docker compose ps
+docker compose publish
+docker compose pull
+docker compose push
+docker compose restart
+docker compose rm
+docker compose run
+docker compose scale
+docker compose start
+docker compose stats
+docker compose stop
+docker compose top
+docker compose unpause
+docker compose up
+docker compose version
+docker compose volumes
+docker compose wait
+docker compose watch
+docker config
+docker conf

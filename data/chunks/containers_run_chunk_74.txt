@@ -1,0 +1,36 @@
+ two containers at the same time, by, for example:
+$
+time
+dd
+if
+=
+/mnt/zerofile
+of
+=
+test.out
+bs
+=
+1M
+count
+=
+1024
+oflag
+=
+direct
+You'll find that the proportion of time is the same as the proportion of blkio
+weights of the two containers.
+The
+--blkio-weight-device="DEVICE_NAME:WEIGHT"
+flag sets a specific device weight.
+The
+DEVICE_NAME:WEIGHT
+is a string containing a colon-separated device name and weight.
+For example, to set
+/dev/sda
+device weight to
+200
+:
+$
+docker run -it
+\
+--blkio-weight-dev

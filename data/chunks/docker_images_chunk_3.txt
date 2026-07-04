@@ -1,0 +1,13 @@
+mages is both technical and an art. You want to keep the
+image small and focused to increase your security posture, but also need to
+balance potential tradeoffs, such as caching impacts. In this series, youâll
+deep dive into the secrets of images, how they are built and best practices.
+Skill level
+Beginner
+Time to complete
+25 minutes
+Prerequisites
+None
+About this series
+Learn how to build production-ready images that are lean and efficient Docker
+images, essential for minimizing overhead and e

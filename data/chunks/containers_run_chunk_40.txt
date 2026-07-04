@@ -1,0 +1,16 @@
+ate
+with each other, you can create a custom network and attach the containers to
+the network.
+When multiple containers are attached to the same custom network, they can
+communicate with each other using the container names as a DNS hostname. The
+following example creates a custom network named
+my-net
+, and runs two
+containers that attach to the network.
+$
+docker network create my-net
+$
+docker run -d --name web --network my-net nginx:alpine
+$
+docker run --rm -it --network my-net busybox
+/ # ping

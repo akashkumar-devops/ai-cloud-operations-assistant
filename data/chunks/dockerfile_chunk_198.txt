@@ -1,0 +1,37 @@
+fo from
+reproducible builds
+. Supported since Dockerfile 1.5, BuildKit 0.11
+Example: keep
+.git
+dir
+When using a Git context,
+.git
+dir is not kept on checkouts. It can be
+useful to keep it around if you want to retrieve git information during
+your build:
+# syntax=docker/dockerfile:1
+FROM
+alpine
+WORKDIR
+/src
+RUN
+--mount
+=
+target
+=
+.
+\
+make
+REVISION
+=
+$(
+git rev-parse HEAD
+)
+build
+$
+docker build --build-arg
+BUILDKIT_CONTEXT_KEEP_GIT_DIR
+=
+1
+https://github.com/user/repo.git#main
+Impact on build cach

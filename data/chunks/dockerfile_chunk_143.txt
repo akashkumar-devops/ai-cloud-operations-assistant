@@ -1,0 +1,30 @@
+/app/
+COPY
+--chmod
+=
+g
+=
+u config/ /config/
+The
+--chmod
+flag is not supported when building Windows containers.
+COPY --chown
+COPY
+[
+--chown
+=
+<user>:<group>
+]
+<src> ... <dest>
+Sets ownership of copied files. Without this flag, files are created with UID
+and GID of 0.
+The flag accepts usernames, group names, UIDs, or GIDs in any combination.
+If you specify only a user, the GID is set to the same numeric value as the UID.
+COPY
+--chown
+=
+55:mygroup files* /somedir/
+COPY
+--chown
+=
+bin files* /somedi

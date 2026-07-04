@@ -1,0 +1,25 @@
+TRYPOINT
+/start.sh
+Build an image from the Dockerfile.
+$
+docker build -t startstop .
+Run a container from the image, specifying
+always
+for its restart policy.
+The container prints the numbers 1..5 to stdout, and then exits. This causes
+the attached CLI to exit as well.
+$
+docker run --restart always startstop
+Starting...
+1
+2
+3
+4
+5
+Exiting...
+$
+Running
+docker ps
+shows that is still running or restarting, thanks to the
+restart policy. The CLI session has already exited, however. It doesn't
+survive 

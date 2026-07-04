@@ -1,0 +1,12 @@
+n
+before placing it into production.
+Ensure that your application runs only on hosts with adequate resources.
+Limit the amount of memory your container can use, as described below.
+Be mindful when configuring swap on your Docker hosts. Swap is slower than
+memory but can provide a buffer against running out of system memory.
+Consider converting your container to a
+service
+, and using service-level constraints
+and node labels to ensure that the application runs only on hosts with enough
+memory
+Lim

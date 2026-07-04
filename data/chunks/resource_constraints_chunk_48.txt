@@ -1,0 +1,14 @@
+r by checking for the
+existence of the file
+/sys/fs/cgroup/cpu.rt_runtime_us
+. For guidance on
+configuring the kernel real-time scheduler, consult the documentation for your
+operating system.
+Configure the Docker daemon
+To run containers using the real-time scheduler, run the Docker daemon with
+the
+--cpu-rt-runtime
+flag set to the maximum number of microseconds reserved
+for real-time tasks per runtime period. For instance, with the default period of
+1000000 microseconds (1 second), setting
+--cpu

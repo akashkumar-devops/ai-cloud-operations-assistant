@@ -1,0 +1,25 @@
+cker run -v /dbdata --name dbstore ubuntu /bin/bash
+In the next command:
+Launch a new container and mount the volume from the
+dbstore
+container
+Mount a local host directory as
+/backup
+Pass a command that tars the contents of the
+dbdata
+volume to a
+backup.tar
+file inside the
+/backup
+directory.
+$
+docker run --rm --volumes-from dbstore -v
+$(
+pwd
+)
+:/backup ubuntu tar cvf /backup/backup.tar /dbdata
+When the command completes and the container stops, it creates a backup of
+the
+dbdata
+volume.
+Restore 

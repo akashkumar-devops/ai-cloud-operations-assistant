@@ -1,0 +1,33 @@
+the anonymous volume using the
+random volume ID.
+Syntax
+To mount a volume with the
+docker run
+command, you can use either the
+--mount
+or
+--volume
+flag.
+$
+docker run --mount
+type
+=
+volume,src
+=
+<volume-name>,dst
+=
+<mount-path>
+$
+docker run --volume <volume-name>:<mount-path>
+In general,
+--mount
+is preferred. The main difference is that the
+--mount
+flag is more explicit and supports all the available options.
+You must use
+--mount
+if you want to:
+Specify
+volume driver options
+Mount a
+volume subdire

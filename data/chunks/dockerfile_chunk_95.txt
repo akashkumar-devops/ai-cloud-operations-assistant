@@ -1,0 +1,38 @@
+cified in the
+exec form
+.
+Note
+Don't confuse
+RUN
+with
+CMD
+.
+RUN
+actually runs a command and commits
+the result;
+CMD
+doesn't execute anything at build time, but specifies
+the intended command for the image.
+LABEL
+LABEL
+<key>
+=
+<value>
+[
+<key>
+=
+<value>...
+]
+The
+LABEL
+instruction adds metadata to an image. A
+LABEL
+is a
+key-value pair. To include spaces within a
+LABEL
+value, use quotes and
+backslashes as you would in command-line parsing. A few usage examples:
+LABEL
+"com.example.vendor"
+=
+"ACME Inc

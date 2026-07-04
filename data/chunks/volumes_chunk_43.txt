@@ -1,0 +1,20 @@
+as read-only
+.
+volume-nocopy
+If present, data at the destination isn't copied into the volume if the volume is empty. By default, content at the target destination gets copied into a mounted volume if empty.
+Example
+$
+docker run -v myvolume:/data:ro
+Create and manage volumes
+Unlike a bind mount, you can create and manage volumes outside the scope of any
+container.
+Create a volume:
+$
+docker volume create my-vol
+List volumes:
+$
+docker volume ls
+local               my-vol
+Inspect a volume:
+$
+docker

@@ -1,0 +1,18 @@
+hed Mem
+PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+1 root      20   0   19744   2336   2080 R  0.0  0.1   0:00.04 top
+To examine the result further, you can use
+docker exec
+:
+$
+docker
+exec
+-it
+test
+ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  2.6  0.1  19752  2352 ?        Ss+  08:24   0:00 top -b -H
+root         7  0.0  0.1  15572  2164 ?        R+   08:25   0:00 ps aux
+And you can gracefully request
+top
+to shut do

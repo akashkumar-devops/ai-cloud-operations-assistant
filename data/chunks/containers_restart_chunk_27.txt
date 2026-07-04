@@ -1,0 +1,23 @@
+ence
+Air-gapped containers
+Registry Access Management
+Image Access Management
+Namespace access
+Organization access tokens
+/
+/
+Docker Engine
+/
+Containers
+/
+Start containers automatically
+Start containers automatically
+Use a restart policy
+Restart policy details
+Restarting foreground containers
+Use a process manager
+Using a process manager inside containers
+Docker provides
+restart policies
+to control whether your containers start automatically when they exit, or when
+Docker restarts. Restart polic

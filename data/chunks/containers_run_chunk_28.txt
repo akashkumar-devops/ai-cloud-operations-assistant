@@ -1,0 +1,20 @@
+constraint
+CPU period constraint
+Cpuset constraint
+CPU quota constraint
+Block IO bandwidth (Blkio) constraint
+Additional groups
+Runtime privilege and Linux capabilities
+Overriding image defaults
+Default command and options
+Default entrypoint
+Exposed ports
+Environment variables
+Healthchecks
+User
+Working directory
+Docker runs processes in isolated containers. A container is a process
+which runs on a host. The host may be local or remote. When you
+execute
+docker run
+, the container process that run

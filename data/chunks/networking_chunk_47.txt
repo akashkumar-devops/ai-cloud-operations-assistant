@@ -1,0 +1,19 @@
+the IPv4 address works even in IPv6-only containers.
+If an application requires an explicit DNS server address, use
+127.0.0.11
+.
+You can configure DNS resolution on a per-container basis, using flags for the
+docker run
+or
+docker create
+command used to start the container.
+The following table describes the available
+docker run
+flags related to DNS
+configuration.
+Flag
+Description
+--dns
+The IP address of a DNS server. To specify multiple DNS servers, use multiple
+--dns
+flags. DNS requests will be f

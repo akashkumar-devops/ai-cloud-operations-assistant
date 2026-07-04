@@ -1,0 +1,21 @@
+n identifier for the container, you
+find out the IDs of containers using an image by using the
+--filter
+flag. For
+example, the following
+docker ps
+command gets the IDs of all running
+containers based on the
+nginx:alpine
+image:
+$
+docker ps -q --filter
+ancestor
+=
+nginx:alpine
+For more information about using filters, see
+Filtering
+.
+Container networking
+Containers have networking enabled by default, and they can make outgoing
+connections. If you're running multiple containers that need to communic

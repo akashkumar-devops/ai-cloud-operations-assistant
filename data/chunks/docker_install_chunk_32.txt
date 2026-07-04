@@ -1,0 +1,11 @@
+ilability.
+The
+test
+channel gives you pre-release versions that are ready for testing before
+general availability.
+Use the test channel with caution. Pre-release versions include experimental and
+early-access features that are subject to breaking changes.
+Support
+Docker Engine is an open source project, supported by the Moby project maintainers
+and community members. Docker doesn't provide support for Docker Engine.
+Docker provides support for Docker products, including Docker Desktop, which use

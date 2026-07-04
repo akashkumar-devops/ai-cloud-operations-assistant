@@ -1,0 +1,23 @@
+ No such file or directory\n"
+},
+{
+"Start": "2016-05-25T17:22:10.898802931Z",
+"End": "2016-05-25T17:22:10.969631866Z",
+"ExitCode": 1,
+"Output": "stat: can't stat '/etc/passwd': No such file or directory\n"
+},
+{
+"Start": "2016-05-25T17:22:12.971033523Z",
+"End": "2016-05-25T17:22:13.082015516Z",
+"ExitCode": 1,
+"Output": "stat: can't stat '/etc/passwd': No such file or directory\n"
+}
+]
+}
+The health status is also displayed in the
+docker ps
+output.
+User
+The default user within a container is
+root
+(u

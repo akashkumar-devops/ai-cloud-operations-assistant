@@ -1,0 +1,13 @@
+ recursively read-only if kernel is v5.12 or later. Otherwise, submounts are read-write.
+disabled
+Submounts are ignored (not included in the bind mount).
+writable
+Submounts are read-write.
+readonly
+Submounts are read-only. Requires kernel v5.12 or later.
+Configure bind propagation
+Bind propagation defaults to
+rprivate
+for both bind mounts and volumes. It is
+only configurable for bind mounts, and only on Linux host machines. Bind
+propagation is an advanced topic and many users never need to confi

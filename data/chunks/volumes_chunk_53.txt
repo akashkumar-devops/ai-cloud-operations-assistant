@@ -1,0 +1,24 @@
+volume. You can simultaneously mount a
+single volume as
+read-write
+for some containers and as
+read-only
+for others.
+The following example changes the previous one. It mounts the directory as a read-only
+volume, by adding
+ro
+to the (empty by default) list of options, after the
+mount point within the container. Where multiple options are present, you can separate
+them using commas.
+The
+--mount
+and
+-v
+examples have the same result.
+--mount
+-v
+$
+docker run -d
+\
+--name=nginxtest \
+--mount source=ngin

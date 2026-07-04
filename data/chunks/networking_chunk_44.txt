@@ -1,0 +1,32 @@
+tworks from
+172.17.0.0/16
+.
+Docker will allocate subnets
+172.17.0.0/24
+,
+172.17.1.0/24
+, and so on, up to
+172.17.255.0/24
+:
+{
+"default-address-pools"
+:
+[{
+"base"
+:
+"172.17.0.0/16"
+,
+"size"
+:
+24
+}]
+}
+You can also request a subnet with a specific prefix length from the default pools by using unspecified
+addresses in the
+--subnet
+option:
+$
+docker network create --ipv6 --subnet ::/56 --subnet 0.0.0.0/24 mynet
+6686a6746b17228f5052528113ddad0e6d68e2e3905d648e336b33409f2d3b64
+$
+docker network inspect m

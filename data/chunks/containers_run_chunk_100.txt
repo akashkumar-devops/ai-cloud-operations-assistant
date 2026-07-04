@@ -1,0 +1,21 @@
+able to access any ports that the
+container might be listening on. To make a container's ports accessible from
+the host, you need to publish the ports.
+You can start the container with the
+-P
+or
+-p
+flags to expose its ports:
+The
+-P
+(or
+--publish-all
+) flag publishes all the exposed ports to the
+host. Docker binds each exposed port to a random port on the host.
+The
+-P
+flag only publishes port numbers that are explicitly flagged as
+exposed, either using the Dockerfile
+EXPOSE
+instruction or the
+--e

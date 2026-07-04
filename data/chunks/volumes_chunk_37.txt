@@ -1,0 +1,11 @@
+persist even if you remove the container that uses
+them, except if you use the
+--rm
+flag when creating the container, in which
+case the anonymous volume associated with the container is destroyed. See
+Remove anonymous volumes
+.
+If you create multiple containers consecutively that each use anonymous
+volumes, each container creates its own volume. Anonymous volumes aren't reused
+or shared between containers automatically. To share an anonymous volume
+between two or more containers, you must mount 

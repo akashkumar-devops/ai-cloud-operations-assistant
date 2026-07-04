@@ -1,0 +1,27 @@
+equest changes
+General form
+Image references
+Options
+Commands and arguments
+Foreground and background
+Container identification
+Container networking
+Filesystem mounts
+Volume mounts
+Bind mounts
+Exit status
+125
+126
+127
+Other exit codes
+Runtime constraints on resources
+User memory constraints
+Swappiness constraint
+CPU share constraint
+CPU period constraint
+Cpuset constraint
+CPU quota constraint
+Block IO bandwidth (Blkio) constraint
+Additional groups
+Runtime privilege and Linux capabilities
+Overridin

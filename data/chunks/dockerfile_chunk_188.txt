@@ -1,0 +1,34 @@
+based on a shared base
+stage in the same Dockerfile where the variable is declared.
+For more information, refer to
+variable scoping
+.
+Using ARG variables
+You can use an
+ARG
+or an
+ENV
+instruction to specify variables that are
+available to the
+RUN
+instruction. Environment variables defined using the
+ENV
+instruction always override an
+ARG
+instruction of the same name. Consider
+this Dockerfile with an
+ENV
+and
+ARG
+instruction.
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+ENV
+CONT_IMG_VER
+=
+v1.0.0
+RUN
+echo
+$CONT_IMG_

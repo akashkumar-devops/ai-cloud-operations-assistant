@@ -1,0 +1,17 @@
+here BuildKit can avoid pulling down the base image can also
+happen when using
+--link
+and no other commands that would require access to
+the files in the base image. In that case BuildKit will only build the layers
+for the
+COPY
+commands and push them to the registry directly on top of the
+layers of the base image.
+Incompatibilities with
+--link=false
+When using
+--link
+the
+COPY/ADD
+commands are not allowed to read any files
+from the previous state. This means that if in previous state the destinat

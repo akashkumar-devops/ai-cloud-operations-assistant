@@ -1,0 +1,12 @@
+espaces and cgroups
+The attack surface of the Docker daemon itself
+Loopholes in the container configuration profile, either by default,
+or when customized by users.
+The "hardening" security features of the kernel and how they
+interact with containers.
+Kernel namespaces
+Docker containers are very similar to LXC containers, and they have
+similar security features. When you start a container with
+docker run
+, behind the scenes Docker creates a set of namespaces and control
+groups for the container.

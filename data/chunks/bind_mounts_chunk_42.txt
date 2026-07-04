@@ -1,0 +1,53 @@
+the
+devtest
+container after running the first
+one.
+--mount
+-v
+$
+docker run -d
+\
+-it \
+--name devtest \
+--mount type=bind,source="$(pwd)"/target,target=/app \
+nginx:latest
+$
+docker run -d
+\
+-it \
+--name devtest \
+-v "$(pwd)"/target:/app \
+nginx:latest
+Use
+docker inspect devtest
+to verify that the bind mount was created
+correctly. Look for the
+Mounts
+section:
+"Mounts"
+:
+[
+{
+"Type"
+:
+"bind"
+,
+"Source"
+:
+"/tmp/source/target"
+,
+"Destination"
+:
+"/app"
+,
+"Mode"
+:
+""
+,
+"RW"
+:
+true
+,
+"Propagation"
+:
+"rpr

@@ -1,0 +1,28 @@
+the same format as
+<src>
+,
+supporting wildcards and matching using Go's
+filepath.Match
+rules.
+For example, to add all files starting with "hom", excluding files with a
+.txt
+extension:
+# syntax=docker/dockerfile:1
+FROM
+scratch
+COPY
+--exclude
+=
+*.txt hom* /mydir/
+You can specify the
+--exclude
+option multiple times for a
+COPY
+instruction.
+Files matching any of the specified
+--exclude
+patterns are not copied,
+even if their paths match the pattern specified in
+<src>
+.
+To add all files starting with "

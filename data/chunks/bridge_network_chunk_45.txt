@@ -1,0 +1,15 @@
+he network,
+disconnect them
+first.
+$
+docker network rm my-net
+What's really happening?
+When you create or remove a user-defined bridge or connect or disconnect a
+container from a user-defined bridge, Docker uses tools specific to the
+operating system to manage the underlying network infrastructure (such as adding
+or removing bridge devices or configuring
+iptables
+rules on Linux). These
+details should be considered implementation details. Let Docker manage your
+user-defined networks for you.
+Conn

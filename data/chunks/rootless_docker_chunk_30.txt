@@ -1,0 +1,25 @@
+hoami
+)
+: /etc/subuid
+testuser:231072:65536
+$
+grep ^
+$(
+whoami
+)
+: /etc/subgid
+testuser:231072:65536
+The
+dockerd-rootless-setuptool.sh install
+script (see following) automatically shows help
+when the prerequisites are not satisfied.
+Install
+Note
+If the system-wide Docker daemon is already running, consider disabling it:
+$
+sudo systemctl disable --now docker.service docker.socket
+$
+sudo rm /var/run/docker.sock
+Should you choose not to shut down the
+docker
+service and socket, you will need to use 

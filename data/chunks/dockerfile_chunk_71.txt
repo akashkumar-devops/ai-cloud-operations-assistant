@@ -1,0 +1,32 @@
+protected by the
+device
+entitlement, which needs
+to be enabled when starting the buildkitd daemon with
+--allow-insecure-entitlement device
+flag or in
+buildkitd config
+,
+and for a build request with
+--allow device
+flag
+.
+The device
+name
+is provided by the CDI specification registered in BuildKit.
+In the following example, multiple devices are registered in the CDI
+specification for the
+vendor1.com/device
+vendor.
+cdiVersion
+:
+"0.6.0"
+kind
+:
+"vendor1.com/device"
+devices
+:
+-
+name
+:
+foo
+containerEdit

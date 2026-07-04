@@ -1,0 +1,13 @@
+
+it ping an Internet host:
+$
+docker run --rm -ti busybox ping -c1 docker.com
+PING docker.com (23.185.0.4): 56 data bytes
+64 bytes from 23.185.0.4: seq=0 ttl=62 time=6.564 ms
+--- docker.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 6.564/6.564/6.564 ms
+User-defined networks
+With the default configuration, containers attached to the default
+bridge network have unrestricted network access to each other using
+container IP addresses. They c

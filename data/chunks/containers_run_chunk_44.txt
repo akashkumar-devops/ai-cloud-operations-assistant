@@ -1,0 +1,30 @@
+s in this case:
+source
+and
+target
+.
+The value for the
+source
+parameter is the name of the volume. The value of
+target
+is the mount location of the volume inside the container. Once you've
+created the volume, any data you write to the volume is persisted, even if you
+stop or remove the container:
+$
+docker run --rm --mount
+source
+=
+my_volume,target
+=
+/foo busybox
+\
+echo "hello, volume!" > /foo/hello.txt
+$
+docker run --mount
+source
+=
+my_volume,target
+=
+/bar busybox
+cat /bar/hello.txt
+hello, volume!

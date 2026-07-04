@@ -1,0 +1,34 @@
+.conf
+file from the official Nginx image.
+COPY
+--from
+=
+nginx:latest /etc/nginx/nginx.conf /nginx.conf
+The source path of
+COPY --from
+is always resolved from filesystem root of the
+image or stage that you specify.
+COPY --chmod
+COPY
+[
+--chmod
+=
+<perms>
+]
+<src> ... <dest>
+The
+--chmod
+flag supports octal notation (e.g.,
+755
+,
+644
+) and symbolic
+notation (e.g.,
++x
+,
+g=u
+). Symbolic notation (added in Dockerfile version 1.14)
+is useful when octal isn't flexible enough. For example,
+u=rwX,go=rX
+sets
+d

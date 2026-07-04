@@ -1,0 +1,15 @@
+id = 0). You can set a default
+user to run the first process with the Dockerfile
+USER
+instruction. When
+starting a container, you can override the
+USER
+instruction by passing the
+-u
+option.
+-u="", --user="": Sets the username or UID used and optionally the groupname or GID for the specified command.
+The following examples are all valid:
+--user=[ user | user:group | uid | uid:gid | user:gid | uid:group ]
+Note
+If you pass a numeric user ID, it must be in the range of 0-2147483647. If
+you pass a us

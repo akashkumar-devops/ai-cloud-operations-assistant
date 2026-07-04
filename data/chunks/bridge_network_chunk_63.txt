@@ -1,0 +1,20 @@
+L+q
+.
+Clean up: stop the containers and remove them.
+$
+docker container stop alpine1 alpine2
+$
+docker container rm alpine1 alpine2
+Stopped containers lose their IP addresses.
+Use user-defined bridge networks
+This example shows how user-defined bridge networks provide better isolation
+and automatic DNS resolution between containers.
+Create the
+alpine-net
+network:
+$
+docker network create --driver bridge alpine-net
+List Docker's networks:
+$
+docker network ls
+NETWORK ID          NAME                

@@ -1,0 +1,36 @@
+emp
+USERDOMAIN
+=
+User
+Manager
+USERNAME
+=
+ContainerAdministrator
+USERPROFILE
+=
+C:
+\
+Users
+\
+ContainerAdministrator
+windir
+=
+C:
+\
+Windows
+Healthchecks
+The following flags for the
+docker run
+command let you control the parameters
+for container healthchecks:
+Option
+Description
+--health-cmd
+Command to run to check health
+--health-interval
+Time between running the check
+--health-retries
+Consecutive failures needed to report unhealthy
+--health-timeout
+Maximum time to allow one check to run
+--health-sta

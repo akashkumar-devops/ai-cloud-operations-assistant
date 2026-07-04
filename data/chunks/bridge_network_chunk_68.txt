@@ -1,0 +1,20 @@
+custom container names, not
+default automatically generated names.
+$
+docker container attach alpine1
+#
+ping -c
+2
+alpine2
+PING alpine2 (172.18.0.3): 56 data bytes
+64 bytes from 172.18.0.3: seq=0 ttl=64 time=0.085 ms
+64 bytes from 172.18.0.3: seq=1 ttl=64 time=0.090 ms
+--- alpine2 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.085/0.087/0.090 ms
+#
+ping -c
+2
+alpine4
+PING alpine4 (172.18.0.4): 56 data bytes
+64 bytes from 172.18.0.4: seq=0 ttl

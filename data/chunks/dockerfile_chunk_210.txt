@@ -1,0 +1,20 @@
+l
+flag on
+docker run
+and
+docker create
+.
+HEALTHCHECK
+The
+HEALTHCHECK
+instruction has two forms:
+HEALTHCHECK [OPTIONS] CMD command
+(check container health by running a command inside the container)
+HEALTHCHECK NONE
+(disable any healthcheck inherited from the base image)
+The
+HEALTHCHECK
+instruction tells Docker how to test a container to check that
+it's still working. This can detect cases such as a web server stuck in
+an infinite loop and unable to handle new connections, even though the server
+p

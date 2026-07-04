@@ -1,0 +1,29 @@
+[--platform=<platform
+>
+]
+<image>
+[
+@<digest>
+]
+[
+AS <name>
+]
+The
+FROM
+instruction initializes a new build stage and sets the
+base image
+for subsequent
+instructions. As such, a valid Dockerfile must start with a
+FROM
+instruction.
+The image can be any valid image.
+ARG
+is the only instruction that may precede
+FROM
+in the Dockerfile.
+See
+Understand how ARG and FROM interact
+.
+FROM
+can appear multiple times within a single Dockerfile to
+create multiple images or use one build stage as a dependency f

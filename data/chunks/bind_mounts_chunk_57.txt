@@ -1,0 +1,28 @@
+host machine files by hand.
+Important
+When using bind mounts with services, SELinux labels
+(
+:Z
+and
+:z
+), as well as
+:ro
+are ignored. See
+moby/moby #32579
+for details.
+This example sets the
+z
+option to specify that multiple containers can share
+the bind mount's contents:
+It is not possible to modify the SELinux label using the
+--mount
+flag.
+$
+docker run -d
+\
+-it \
+--name devtest \
+-v "$(pwd)"/target:/app:z \
+nginx:latest
+Use a bind mount with Docker Compose
+A single Docker Compose service with a

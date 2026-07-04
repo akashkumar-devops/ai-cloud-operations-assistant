@@ -1,0 +1,47 @@
+ter
+and
+*
+any number of characters (including zero). To match literal
+?
+and
+*
+,
+use a backslash escape:
+\?
+and
+\*
+.
+You can escape whole variable names by adding a
+\
+before the variable:
+\$foo
+or
+\${foo}
+,
+for example, will translate to
+$foo
+and
+${foo}
+literals respectively.
+Example (parsed representation is displayed after the
+#
+):
+FROM
+busybox
+ENV
+FOO
+=
+/bar
+WORKDIR
+${FOO
+}
+# WORKDIR /bar
+ADD
+.
+$FOO
+# ADD . /bar
+COPY
+\$
+FOO /quux
+# COPY $FOO /quux
+Environment variables are supported by the fol

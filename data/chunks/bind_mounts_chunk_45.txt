@@ -1,0 +1,15 @@
+p,target=/usr \
+nginx:latest
+docker: Error response from daemon: oci runtime error: container_linux.go:262:
+starting container process caused "exec: \"nginx\": executable file not found in $PATH".
+$
+docker run -d
+\
+-it \
+--name broken-container \
+-v /tmp:/usr \
+nginx:latest
+docker: Error response from daemon: oci runtime error: container_linux.go:262:
+starting container process caused "exec: \"nginx\": executable file not found in $PATH".
+The container is created but does not start. Remove it:
+$

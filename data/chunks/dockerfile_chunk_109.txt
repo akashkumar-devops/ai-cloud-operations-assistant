@@ -1,0 +1,33 @@
+
+1.6
+--chmod
+1.2
+--chown
+--link
+1.4
+--unpack
+1.17
+--exclude
+1.19
+The
+ADD
+instruction copies new files or directories from
+<src>
+and adds
+them to the filesystem of the image at the path
+<dest>
+. Files and directories
+can be copied from the build context, a remote URL, or a Git repository.
+The
+ADD
+and
+COPY
+instructions are functionally similar, but serve slightly different purposes.
+Learn more about the
+differences between
+ADD
+and
+COPY
+.
+Source
+You can specify multiple source files or directories 

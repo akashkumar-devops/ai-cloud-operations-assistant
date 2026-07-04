@@ -1,0 +1,16 @@
+onymous pages as swappable.
+By default, if you don't set
+--memory-swappiness
+, the value is
+inherited from the host machine.
+CPU
+By default, each container's access to the host machine's CPU cycles is unlimited.
+You can set various constraints to limit a given container's access to the host
+machine's CPU cycles. Most users use and configure the
+default CFS scheduler
+. You can also
+configure the
+real-time scheduler
+.
+Configure the default CFS scheduler
+The CFS is the Linux kernel CPU scheduler fo

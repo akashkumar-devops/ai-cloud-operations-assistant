@@ -1,0 +1,23 @@
+eceived, 0% packet loss
+round-trip min/avg/max = 0.074/0.078/0.082 ms
+#
+ping -c
+2
+alpine2
+PING alpine2 (172.18.0.3): 56 data bytes
+64 bytes from 172.18.0.3: seq=0 ttl=64 time=0.075 ms
+64 bytes from 172.18.0.3: seq=1 ttl=64 time=0.080 ms
+--- alpine2 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.075/0.077/0.080 ms
+#
+ping -c
+2
+alpine3
+ping: bad address 'alpine3'
+#
+ping -c
+2
+172.17.0.2
+PING 172.17.0.2 (172.17.0.2): 56 data bytes
+64 bytes fro

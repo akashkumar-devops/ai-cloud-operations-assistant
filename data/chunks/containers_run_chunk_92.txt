@@ -1,0 +1,12 @@
+
+docker run --rm -it --device /dev/fuse sshfs sshfs sven@10.10.10.20:/home/sven /mnt
+fusermount: mount failed: Operation not permitted
+$
+docker run --rm -it --cap-add SYS_ADMIN --device /dev/fuse sshfs
+#
+sshfs sven@10.10.10.20:/home/sven /mnt
+The authenticity of host '10.10.10.20 (10.10.10.20)' can't be established.
+ECDSA key fingerprint is 25:34:85:75:25:b0:17:46:05:19:04:93:b5:dd:5f:c6.
+Are you sure you want to continue connecting (yes/no)? yes
+sven@10.10.10.20's password:
+root@30aa0cfaf1b5:/#

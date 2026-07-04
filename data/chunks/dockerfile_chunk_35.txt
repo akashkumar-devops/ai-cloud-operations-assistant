@@ -1,0 +1,18 @@
+tion arguments, however, isn't ignored.
+The following example prints
+hello world
+with leading whitespace as specified:
+RUN
+echo
+"\
+hello\
+world"
+Parser directives
+Parser directives are optional, and affect the way in which subsequent lines
+in a Dockerfile are handled. Parser directives don't add layers to the build,
+and don't show up as build steps. Parser directives are written as a
+special type of comment in the form
+# directive=value
+. A single directive
+may only be used once.
+The following p

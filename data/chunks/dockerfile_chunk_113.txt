@@ -1,0 +1,18 @@
+file at
+./file.txt
+to the root of the
+filesystem in the build container.
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as
+ADD ../something /something
+, automatically removes any
+parent directory navigation (
+../
+). Trailing slashes in the source path are
+also disregarded, making
+ADD something/ /something
+equivalent to
+ADD something /something
+.
+If the source is a directory, the contents of the directory are copied,
+including filesystem metada

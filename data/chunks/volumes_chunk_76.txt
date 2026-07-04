@@ -1,0 +1,24 @@
+ For example,
+this command creates an anonymous
+/foo
+volume. When you remove the container,
+the Docker Engine removes the
+/foo
+volume but not the
+awesome
+volume.
+The
+--rm
+option works with both foreground and detached (
+-d
+) containers.
+The anonymous volumes are cleaned up when the container exits.
+$
+docker run --rm -v /foo -v awesome:/bar busybox top
+Note
+If another container binds the volumes with
+--volumes-from
+, the volume definitions are
+copied
+and the
+anonymous volume also stays after the 

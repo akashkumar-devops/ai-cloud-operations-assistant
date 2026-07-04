@@ -1,0 +1,29 @@
+2
+da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1
+Inspect the
+bridge
+network to see connected containers:
+$
+docker network inspect bridge
+The output shows both containers connected, with their assigned IP addresses
+(
+172.17.0.2
+for
+alpine1
+and
+172.17.0.3
+for
+alpine2
+).
+Connect to
+alpine1
+:
+$
+docker attach alpine1
+/ #
+Show the network interfaces for
+alpine1
+from within the container:
+#
+ip addr show
+1: lo: <LOOPBACK,UP

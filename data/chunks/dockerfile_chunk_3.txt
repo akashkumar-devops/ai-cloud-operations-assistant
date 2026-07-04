@@ -1,0 +1,20 @@
+se alpha dry-run
+docker compose alpha scale
+docker compose alpha watch
+docker compose attach
+docker compose bridge
+docker compose bridge convert
+docker compose bridge transformations
+docker compose bridge transformations create
+docker compose bridge transformations list
+docker compose build
+docker compose commit
+docker compose config
+docker compose convert
+docker compose cp
+docker compose create
+docker compose down
+docker compose events
+docker compose exec
+docker compose export
+docker compose im

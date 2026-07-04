@@ -1,0 +1,21 @@
+e to adjust this.
+Overriding image defaults
+When you build an image from a
+Dockerfile
+,
+or when committing it, you can set a number of default parameters that take
+effect when the image starts up as a container. When you run an image, you can
+override those defaults using flags for the
+docker run
+command.
+Default entrypoint
+Default command and options
+Expose ports
+Environment variables
+Healthcheck
+User
+Working directory
+Default command and options
+The command syntax for
+docker run
+supports optio

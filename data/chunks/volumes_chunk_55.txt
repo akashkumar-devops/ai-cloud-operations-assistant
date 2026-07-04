@@ -1,0 +1,19 @@
+
+,
+Stop and remove the container, and remove the volume. Volume removal is a
+separate step.
+$
+docker container stop nginxtest
+$
+docker container rm nginxtest
+$
+docker volume rm nginx-vol
+Mount a volume subdirectory
+When you mount a volume to a container, you can specify a subdirectory of the
+volume to use, with the
+volume-subpath
+parameter for the
+--mount
+flag. The
+subdirectory that you specify must exist in the volume before you attempt to
+mount it into a container; if it doesn't exist, the mou

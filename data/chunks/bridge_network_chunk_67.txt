@@ -1,0 +1,28 @@
+          About a minute ago   Up About a minute                       alpine1
+Inspect both networks again to see which containers are connected:
+$
+docker network inspect bridge
+Containers
+alpine3
+and
+alpine4
+are connected to the
+bridge
+network.
+$
+docker network inspect alpine-net
+Containers
+alpine1
+,
+alpine2
+, and
+alpine4
+are connected to
+alpine-net
+.
+On user-defined networks, containers can resolve each other by name. Connect
+to
+alpine1
+and test:
+Note
+Automatic service discovery only resolves 

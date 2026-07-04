@@ -1,0 +1,24 @@
+secret ls
+docker mcp secret rm
+docker mcp secret set
+docker mcp server
+docker mcp server init
+docker mcp tools
+docker mcp tools call
+docker mcp tools count
+docker mcp tools inspect
+docker mcp tools list
+docker mcp tools ls
+docker mcp version
+docker model
+docker model bench
+docker model context
+docker model context create
+docker model context inspect
+docker model context ls
+docker model context rm
+docker model context use
+docker model df
+docker model gateway
+docker model inspect
+docker model inst

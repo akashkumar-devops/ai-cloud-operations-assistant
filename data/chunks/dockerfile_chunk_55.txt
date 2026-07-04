@@ -1,0 +1,27 @@
+lowing list of instructions in
+the Dockerfile:
+ADD
+COPY
+ENV
+EXPOSE
+FROM
+LABEL
+STOPSIGNAL
+USER
+VOLUME
+WORKDIR
+ONBUILD
+(when combined with one of the supported instructions above)
+You can also use environment variables with
+RUN
+,
+CMD
+, and
+ENTRYPOINT
+instructions, but in those cases the variable substitution is handled by the
+command shell, not the builder. Note that instructions using the exec form
+don't invoke a command shell automatically. See
+Variable
+substitution
+.
+Environment variable substi

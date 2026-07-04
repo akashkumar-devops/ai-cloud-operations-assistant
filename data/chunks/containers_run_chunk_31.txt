@@ -1,0 +1,18 @@
+generate the image is unchanged,
+the digest value is predictable.
+The following example runs a container from the
+alpine
+image with the
+sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0
+digest:
+$
+docker run alpine@sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0 date
+Options
+[OPTIONS]
+let you configure options for the container. For example, you can
+give the container a name (
+--name
+), or run it as a background process (
+-d
+).
+You can also set option

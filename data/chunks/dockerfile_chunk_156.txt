@@ -1,0 +1,37 @@
+hom", excluding files with either
+.txt
+or
+.md
+extensions:
+# syntax=docker/dockerfile:1
+FROM
+scratch
+COPY
+--exclude
+=
+*.txt --exclude
+=
+*.md hom* /mydir/
+ENTRYPOINT
+An
+ENTRYPOINT
+allows you to configure a container that will run as an executable.
+ENTRYPOINT
+has two possible forms:
+The exec form, which is the preferred form:
+ENTRYPOINT
+[
+"executable"
+,
+"param1"
+,
+"param2"
+]
+The shell form:
+ENTRYPOINT
+command
+param1 param2
+For more information about the different forms, see
+Shell and exec form
+.
+Th

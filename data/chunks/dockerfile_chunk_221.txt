@@ -1,0 +1,32 @@
+
+SHELL
+[
+"powershell"
+,
+"-command"
+]
+RUN
+New-Item -ItemType Directory C:
+\E
+xample
+ADD
+Execute-MyCmdlet.ps1 c:
+\e
+xample
+\
+RUN c:
+\e
+xample
+\E
+xecute-MyCmdlet -sample
+'hello world'
+Resulting in:
+PS E:\myproject> docker build -t shell .
+Sending build context to Docker daemon 4.096 kB
+Step 1/5 : FROM microsoft/nanoserver
+---> 22738ff49c6d
+Step 2/5 : SHELL powershell -command
+---> Running in 6fcdb6855ae2
+---> 6331462d4300
+Removing intermediate container 6fcdb6855ae2
+Step 3/5 : RUN New-Item -ItemTyp

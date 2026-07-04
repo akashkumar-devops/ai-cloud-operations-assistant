@@ -1,0 +1,17 @@
+the initial container exit.
+$
+docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS     NAMES
+081991b35afe   startstop   "/bin/sh -c /start.sh"   9 seconds ago   Up 4 seconds             gallant_easley
+You can re-attach your terminal to the container between restarts, using the
+docker container attach
+command. It's detached again the next time the
+container exits.
+$
+docker container attach 081991b35afe
+4
+5
+Exiting...
+$
+Use a process manager
+If restart

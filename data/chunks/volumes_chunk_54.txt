@@ -1,0 +1,51 @@
+x-vol,destination=/usr/share/nginx/html,readonly \
+nginx:latest
+$
+docker run -d
+\
+--name=nginxtest \
+-v nginx-vol:/usr/share/nginx/html:ro \
+nginx:latest
+Use
+docker inspect nginxtest
+to verify that Docker created the read-only mount
+correctly. Look for the
+Mounts
+section:
+"Mounts"
+:
+[
+{
+"Type"
+:
+"volume"
+,
+"Name"
+:
+"nginx-vol"
+,
+"Source"
+:
+"/var/lib/docker/volumes/nginx-vol/_data"
+,
+"Destination"
+:
+"/usr/share/nginx/html"
+,
+"Driver"
+:
+"local"
+,
+"Mode"
+:
+""
+,
+"RW"
+:
+false
+,
+"Propagation"
+:
+""
+}
+]

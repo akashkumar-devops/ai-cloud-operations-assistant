@@ -1,0 +1,29 @@
+table, in which
+case you must specify an
+ENTRYPOINT
+instruction as well.
+If you would like your container to run the same executable every time, then
+you should consider using
+ENTRYPOINT
+in combination with
+CMD
+. See
+ENTRYPOINT
+. If the user specifies arguments to
+docker run
+then they will override the default specified in
+CMD
+, but still use the
+default
+ENTRYPOINT
+.
+If
+CMD
+is used to provide default arguments for the
+ENTRYPOINT
+instruction,
+both the
+CMD
+and
+ENTRYPOINT
+instructions should be spe

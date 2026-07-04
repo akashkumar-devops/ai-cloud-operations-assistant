@@ -1,0 +1,9 @@
+er will be executed in the context of the
+downstream build, as if it had been inserted immediately after the
+FROM
+instruction in the downstream Dockerfile.
+This is useful if you are building an image which will be used as a base
+to build other images, for example an application build environment or a
+daemon which may be customized with user-specific configuration.
+For example, if your image is a reusable Python application builder, it
+will require application source code to be added in a particu

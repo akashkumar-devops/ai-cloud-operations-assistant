@@ -1,0 +1,24 @@
+git
+directory.
+BUILDKIT_INLINE_CACHE
+2
+Bool
+Inline cache metadata to image config or not.
+BUILDKIT_MULTI_PLATFORM
+Bool
+Opt into deterministic output regardless of multi-platform output or not.
+BUILDKIT_SANDBOX_HOSTNAME
+String
+Set the hostname (default
+buildkitsandbox
+)
+BUILDKIT_SYNTAX
+String
+Set frontend image. Set to
+dockerfile.v0
+to ignore the Dockerfile
+# syntax=
+directive and use the built-in frontend instead.
+SOURCE_DATE_EPOCH
+Int
+Set the Unix timestamp for created image and layers. More in

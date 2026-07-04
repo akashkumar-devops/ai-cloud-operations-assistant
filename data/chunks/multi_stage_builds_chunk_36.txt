@@ -1,0 +1,36 @@
+o
+"base"
+FROM
+base
+AS
+stage1
+RUN
+echo
+"stage1"
+FROM
+base
+AS
+stage2
+RUN
+echo
+"stage2"
+With
+BuildKit enabled
+, building the
+stage2
+target in this Dockerfile means only
+base
+and
+stage2
+are processed.
+There is no dependency on
+stage1
+, so it's skipped.
+$
+DOCKER_BUILDKIT
+=
+1
+docker build --no-cache -f Dockerfile --target stage2 .
+[+] Building 0.4s (7/7) FINISHED
+=> [internal] load build definition from Dockerfile                                            0.0s
+=> => transferring dockerfile: 36B      

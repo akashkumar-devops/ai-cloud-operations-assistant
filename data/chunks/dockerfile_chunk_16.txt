@@ -1,0 +1,22 @@
+e
+docker sandbox create cagent
+docker sandbox create claude
+docker sandbox create codex
+docker sandbox create copilot
+docker sandbox create gemini
+docker sandbox create kiro
+docker sandbox create opencode
+docker sandbox create shell
+docker sandbox exec
+docker sandbox inspect
+docker sandbox ls
+docker sandbox network
+docker sandbox network log
+docker sandbox network proxy
+docker sandbox reset
+docker sandbox rm
+docker sandbox run
+docker sandbox save
+docker sandbox stop
+docker sandbox version
+docker

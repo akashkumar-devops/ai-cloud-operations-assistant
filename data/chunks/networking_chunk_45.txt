@@ -1,0 +1,22 @@
+ynet -f
+'{{json .IPAM.Config}}'
+|
+jq .
+[
+{
+"Subnet": "172.19.0.0/24",
+"Gateway": "172.19.0.1"
+},
+{
+"Subnet": "fdd3:6f80:972c::/56",
+"Gateway": "fdd3:6f80:972c::1"
+}
+]
+Note
+Support for unspecified addresses in
+--subnet
+was introduced in Docker 29.0.0.
+If Docker is downgraded to an older version, networks created in this way will become unusable.
+They can be removed and re-created, or will function again if the daemon is restored to 29.0.0 or later.
+DNS services
+Containers use the same DNS servers

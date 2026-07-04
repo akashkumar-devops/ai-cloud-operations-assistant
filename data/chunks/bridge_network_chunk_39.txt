@@ -1,0 +1,19 @@
+me to use when creating the Linux bridge.
+com.docker.network.bridge.enable_ip_masquerade
+true
+Enable IP masquerading.
+com.docker.network.host_ipv4
+com.docker.network.host_ipv6
+Address to use for source NAT. See
+Packet filtering and firewalls
+.
+com.docker.network.bridge.gateway_mode_ipv4
+com.docker.network.bridge.gateway_mode_ipv6
+nat
+Control external connectivity. See
+Packet filtering and firewalls
+.
+com.docker.network.bridge.enable_icc
+true
+Enable or Disable inter-container connectivity.
+com.do

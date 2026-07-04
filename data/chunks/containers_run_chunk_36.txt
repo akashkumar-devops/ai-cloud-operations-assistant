@@ -1,0 +1,26 @@
+58:40 [notice] 1#1: signal 2 (SIGINT) received, exiting
+...
+For more information about
+docker run
+flags related to foreground and
+background modes, see:
+docker run --detach
+: run container in background
+docker run --attach
+: attach to
+stdin
+,
+stdout
+, and
+stderr
+docker run --tty
+: allocate a pseudo-tty
+docker run --interactive
+: keep
+stdin
+open even if not attached
+For more information about re-attaching to a background container, see
+docker attach
+.
+Container identification
+You can identify a c

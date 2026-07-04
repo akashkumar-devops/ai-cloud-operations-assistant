@@ -1,0 +1,22 @@
+OPY
+--parents ./src/**/*.txt /parents/
+# Build context:
+# ./src/a.txt
+# ./src/x/b.txt
+# ./src/x/y/c.txt
+#
+# Output:
+# /parents/src/a.txt
+# /parents/src/x/b.txt
+# /parents/src/x/y/c.txt
+Note that, without the
+--parents
+flag specified, any filename collision will
+fail the Linux
+cp
+operation with an explicit error message
+(
+cp: will not overwrite just-created './x/a.txt' with './y/a.txt'
+), where the
+Buildkit will silently overwrite the target file at the destination.
+While it is possible to preser

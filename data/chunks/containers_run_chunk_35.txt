@@ -1,0 +1,15 @@
+        PORTS     NAMES
+0246aa4d1448   nginx     "/docker-entrypoint.â¦"   2 seconds ago   Up 1 second   80/tcp    pedantic_liskov
+$
+docker logs -n
+5
+0246aa4d1448
+2023/11/06 15:58:23 [notice] 1#1: start worker process 33
+2023/11/06 15:58:23 [notice] 1#1: start worker process 34
+2023/11/06 15:58:23 [notice] 1#1: start worker process 35
+2023/11/06 15:58:23 [notice] 1#1: start worker process 36
+2023/11/06 15:58:23 [notice] 1#1: start worker process 37
+$
+docker attach 0246aa4d1448
+^C
+2023/11/06 15:

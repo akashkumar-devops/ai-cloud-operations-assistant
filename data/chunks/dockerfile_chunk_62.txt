@@ -1,0 +1,54 @@
+&
+echo
+$HOME
+You can also use heredocs with the shell form to break up supported commands.
+RUN
+<<EOF
+source
+$HOME
+/.bashrc
+echo
+$HOME
+EOF
+For more information about heredocs, see
+Here-documents
+.
+Use a different shell
+You can change the default shell using the
+SHELL
+command. For example:
+SHELL
+[
+"/bin/bash"
+,
+"-c"
+]
+RUN
+echo
+hello
+For more information, see
+SHELL
+.
+FROM
+FROM
+[--platform=<platform
+>
+]
+<image>
+[
+AS <name>
+]
+Or
+FROM
+[--platform=<platform
+>
+]
+<image>
+[
+:<tag>
+]
+[
+AS <name>
+]
+Or
+FROM

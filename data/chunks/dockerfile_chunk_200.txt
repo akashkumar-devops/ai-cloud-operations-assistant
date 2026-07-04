@@ -1,0 +1,31 @@
+om caching unless there is a
+matching
+ARG
+statement in the Dockerfile.
+For example, consider these two Dockerfile:
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+RUN
+echo
+$CONT_IMG_VER
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+RUN
+echo
+hello
+If you specify
+--build-arg CONT_IMG_VER=<value>
+on the command line, in both
+cases, the specification on line 2 doesn't cause a cache miss; line 3 does
+cause a cache miss.
+ARG CONT_IMG_VER
+causes the
+RUN
+line to be identified
+as the same as running
+CONT_IMG_VER=<value> echo hello
+, so if 

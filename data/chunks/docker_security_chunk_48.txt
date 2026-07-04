@@ -1,0 +1,11 @@
+available with
+the CLI for enforcing and performing image signature verification.
+For more information on configuring Docker Content Trust Signature Verification, go to
+Content trust in Docker
+.
+Other kernel security features
+Capabilities are just one of the many security features provided by
+modern Linux kernels. It is also possible to leverage existing,
+well-known systems like TOMOYO, AppArmor, SELinux, GRSEC, etc. with
+Docker.
+While Docker currently only enables capabilities, it doesn't inter

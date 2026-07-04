@@ -1,0 +1,14 @@
+mespaces in Docker
+can be found in
+this blog post
+.
+Conclusions
+Docker containers are, by default, quite secure; especially if you
+run your processes as non-privileged users inside the container.
+You can add an extra layer of safety by enabling AppArmor, SELinux,
+GRSEC, or another appropriate hardening system.
+If you think of ways to make docker more secure, we welcome feature requests,
+pull requests, or comments on the Docker community forums.
+Related information
+Use trusted images
+Seccomp secu

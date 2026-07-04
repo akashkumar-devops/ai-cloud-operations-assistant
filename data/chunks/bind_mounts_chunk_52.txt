@@ -1,0 +1,10 @@
+e
+Mount propagation doesn't work with Docker Desktop.
+Propagation setting
+Description
+shared
+Sub-mounts of the original mount are exposed to replica mounts, and sub-mounts of replica mounts are also propagated to the original mount.
+slave
+similar to a shared mount, but only in one direction. If the original mount exposes a sub-mount, the replica mount can see it. However, if the replica mount exposes a sub-mount, the original mount cannot see it.
+private
+The mount is private. Sub-mounts within i

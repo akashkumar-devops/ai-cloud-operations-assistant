@@ -1,0 +1,20 @@
+age
+$
+docker network connect anet2 myctr
+Published ports
+When you create or run a container using
+docker create
+or
+docker run
+, all
+ports of containers on bridge networks are accessible from the Docker host and
+other containers connected to the same network. Ports are not accessible from
+outside the host or, with the default configuration, from containers in other
+networks.
+Use the
+--publish
+or
+-p
+flag to make a port available outside the host,
+and to containers in other bridge networks.
+For mor

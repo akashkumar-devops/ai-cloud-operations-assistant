@@ -1,0 +1,18 @@
+ntainers
+Multi-container applications
+Docker workshop
+Part 1: Containerize an application
+Part 2: Update the application
+Part 3: Share the application
+Part 4: Persist the DB
+Part 5: Use bind mounts
+Part 6: Multi-container apps
+Part 7: Use Docker Compose
+Part 8: Image-building best practices
+Part 9: What next
+Educational resources
+/
+Get started
+Get started
+If you're new to Docker, this section guides you through the essential resources to get started.
+Follow the guides to help you get started and

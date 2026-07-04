@@ -1,0 +1,32 @@
+ageNameCasing
+UndefinedArgInFrom
+UndefinedVar
+WorkdirRelativePath
+Compose file reference
+Version and name top-level elements
+Services
+Networks
+Volumes
+Configs
+Secrets
+Fragments
+Extensions
+Interpolation
+Merge
+Include
+Models
+Profiles
+Compose Build Specification
+Compose Deploy Specification
+Compose Develop Specification
+Legacy versions
+Dockerfile reference
+Glossary
+Samples
+.NET samples
+Agentic AI samples
+AI/ML samples
+Angular samples
+Cloudflared samples
+Django samples
+Elasticsearch / Logstash / Kib

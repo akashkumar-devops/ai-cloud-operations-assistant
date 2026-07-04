@@ -1,0 +1,20 @@
+to
+what_user
+, since at that
+point the
+username
+argument has a value of
+what_user
+which was passed on
+the command line. Prior to its definition by an
+ARG
+instruction, any use of
+a variable results in an empty string.
+An
+ARG
+variable declared within a build stage is automatically inherited by
+other stages based on that stage. Unrelated build stages do not have access to
+the variable. To use an argument in multiple distinct stages, each stage must
+include the
+ARG
+instruction, or they must both be 

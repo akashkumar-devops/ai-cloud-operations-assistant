@@ -1,0 +1,25 @@
+w version of your application
+without building a new image. However, it can also be surprising and this
+behavior differs from that of
+volumes
+.
+This example is contrived to be extreme, but replaces the contents of the
+container's
+/usr/
+directory with the
+/tmp/
+directory on the host machine. In
+most cases, this would result in a non-functioning container.
+The
+--mount
+and
+-v
+examples have the same end result.
+--mount
+-v
+$
+docker run -d
+\
+-it \
+--name broken-container \
+--mount type=bind,source=/tm

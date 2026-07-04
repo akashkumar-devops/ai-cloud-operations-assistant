@@ -1,0 +1,15 @@
+tage with all debugging symbols or tools enabled, and a
+lean
+production
+stage
+Using a
+testing
+stage in which your app gets populated with test data, but
+building for production using a different stage which uses real data
+Use an external image as a stage
+When using multi-stage builds, you aren't limited to copying from stages you
+created earlier in your Dockerfile. You can use the
+COPY --from
+instruction to
+copy from a separate image, either using the local image name, a tag available
+locally or

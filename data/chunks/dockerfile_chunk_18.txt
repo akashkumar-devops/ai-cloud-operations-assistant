@@ -1,0 +1,26 @@
+out recommendations
+docker scout repo
+docker scout repo disable
+docker scout repo enable
+docker scout repo list
+docker scout sbom
+docker scout stream
+docker scout version
+docker scout vex
+docker scout vex get
+docker scout watch
+docker search
+docker secret
+docker secret create
+docker secret inspect
+docker secret ls
+docker secret rm
+docker service
+docker service create
+docker service inspect
+docker service logs
+docker service ls
+docker service ps
+docker service rm
+docker service rollback
+docker se

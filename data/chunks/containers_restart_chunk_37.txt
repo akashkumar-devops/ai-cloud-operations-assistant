@@ -1,0 +1,14 @@
+ic
+process manager for more details.
+Using a process manager inside containers
+Process managers can also run within the container to check whether a process is
+running and starts/restart it if not.
+Warning
+These aren't Docker-aware, and only monitor operating system processes within
+the container. Docker doesn't recommend this approach, because it's
+platform-dependent and may differ between versions of a given Linux
+distribution.
+Edit this page
+Request changes
+Use a restart policy
+Restart policy

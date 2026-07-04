@@ -1,0 +1,27 @@
+ a matching pattern. For example, to add a file
+named
+arr[0].txt
+, use the following;
+ADD
+arr
+[[]
+0
+]
+.txt /dest/
+Adding local tar archives
+When using a local tar archive as the source for
+ADD
+, and the archive is in a
+recognized compression format (
+gzip
+,
+bzip2
+or
+xz
+, or uncompressed), the
+archive is decompressed and extracted into the specified destination. Local tar
+archives are extracted by default, see the [
+ADD --unpack
+flag].
+When a directory is extracted, it has the same behavior as
+ta

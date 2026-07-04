@@ -1,0 +1,33 @@
+5"
+,
+"mtu"
+:
+1500
+,
+"default-gateway"
+:
+"192.168.1.254"
+,
+"dns"
+:
+[
+"10.20.1.2"
+,
+"10.20.1.3"
+]
+}
+In this example:
+The bridge's address is "192.168.1.1/24" (from
+bip
+).
+The bridge network's subnet is "192.168.1.0/24" (from
+bip
+).
+Container addresses will be allocated from "192.168.1.0/25" (from
+fixed-cidr
+).
+Use IPv6 with the default bridge network
+IPv6 can be enabled for the default bridge using the following options in
+daemon.json
+, or their command line equivalents.
+These three options only a

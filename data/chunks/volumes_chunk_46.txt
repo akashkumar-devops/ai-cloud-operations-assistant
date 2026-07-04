@@ -1,0 +1,36 @@
+
+"/app"
+,
+"Driver"
+:
+"local"
+,
+"Mode"
+:
+""
+,
+"RW"
+:
+true
+,
+"Propagation"
+:
+""
+}
+]
+,
+This shows that the mount is a volume, it shows the correct source and
+destination, and that the mount is read-write.
+Stop the container and remove the volume. Note volume removal is a separate
+step.
+$
+docker container stop devtest
+$
+docker container rm devtest
+$
+docker volume rm myvol2
+Use a volume with Docker Compose
+The following example shows a single Docker Compose service with a volume:
+services
+:
+frontend

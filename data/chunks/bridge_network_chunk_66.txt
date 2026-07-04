@@ -1,0 +1,5 @@
+TED              STATUS              PORTS               NAMES
+156849ccd902        alpine              "ash"               41 seconds ago       Up 41 seconds                           alpine4
+fa1340b8d83e        alpine              "ash"               51 seconds ago       Up 51 seconds                           alpine3
+a535d969081e        alpine              "ash"               About a minute ago   Up About a minute                       alpine2
+0a02c449a6e9        alpine              "ash"     

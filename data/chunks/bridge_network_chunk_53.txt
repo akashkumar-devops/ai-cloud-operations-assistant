@@ -1,0 +1,36 @@
+shorter.
+For experimentation on a local network, it is better to use a Unique Local
+Address (ULA) prefix (matching
+fd00::/8
+) than a Link Local prefix (matching
+fe80::/10
+).
+Option
+default-gateway-v6
+is optional. If unspecified, the default is the first
+address in the
+fixed-cidr-v6
+subnet.
+{
+"ipv6"
+:
+true
+,
+"bip6"
+:
+"2001:db8::1111/64"
+,
+"fixed-cidr-v6"
+:
+"2001:db8::/64"
+,
+"default-gateway-v6"
+:
+"2001:db8:abcd::89"
+}
+If no
+bip6
+is specified,
+fixed-cidr-v6
+defines the subnet for the bridge
+networ

@@ -1,0 +1,24 @@
+ion of CPU shares:
+PID    container	CPU	CPU share
+100    {C0}		0	100% of CPU0
+101    {C1}		1	100% of CPU1
+102    {C1}		2	100% of CPU2
+CPU period constraint
+The default CPU CFS (Completely Fair Scheduler) period is 100ms. We can use
+--cpu-period
+to set the period of CPUs to limit the container's CPU usage.
+And usually
+--cpu-period
+should work with
+--cpu-quota
+.
+Examples:
+$
+docker run -it --cpu-period
+=
+50000
+--cpu-quota
+=
+25000
+ubuntu:24.04 /bin/bash
+If there is 1 CPU, this means the container ca

@@ -1,0 +1,16 @@
+es from the build context, paths are interpreted as
+relative to the root of the context.
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as
+COPY ../something /something
+, automatically removes
+any parent directory navigation (
+../
+). Trailing slashes in the source path
+are also disregarded, making
+COPY something/ /something
+equivalent to
+COPY something /something
+.
+If the source is a directory, the contents of the directory are copied,
+includin

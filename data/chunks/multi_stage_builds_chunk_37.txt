@@ -1,0 +1,6 @@
+                                                       0.0s
+=> [internal] load .dockerignore                                                               0.0s
+=> => transferring context: 2B                                                                 0.0s
+=> [internal] load metadata for docker.io/library/ubuntu:latest                                0.0s
+=> CACHED [base 1/2] FROM docker.io/library/ubuntu                                             0.0s
+=> [base 2/2] RUN echo "base"           

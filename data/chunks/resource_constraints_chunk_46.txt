@@ -1,0 +1,24 @@
+ve 1 CPU, each of the following commands guarantees the container at
+most 50% of the CPU every second.
+$
+docker run -it --cpus
+=
+".5"
+ubuntu /bin/bash
+Which is the equivalent to manually specifying
+--cpu-period
+and
+--cpu-quota
+;
+$
+docker run -it --cpu-period
+=
+100000
+--cpu-quota
+=
+50000
+ubuntu /bin/bash
+Configure the real-time scheduler
+You can configure your container to use the real-time scheduler, for tasks which
+can't use the CFS scheduler. You need to
+make sure the host machine's kernel is 

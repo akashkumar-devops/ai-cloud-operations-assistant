@@ -1,0 +1,15 @@
+e Directory C:\Example
+---> Running in d0eef8386e97
+Directory: C:\
+Mode         LastWriteTime              Length Name
+----         -------------              ------ ----
+d-----       10/28/2016  11:26 AM              Example
+---> 3f2fbf1395d9
+Removing intermediate container d0eef8386e97
+Step 4/5 : ADD Execute-MyCmdlet.ps1 c:\example\
+---> a955b2621c31
+Removing intermediate container b825593d39fc
+Step 5/5 : RUN c:\example\Execute-MyCmdlet 'hello world'
+---> Running in be6d8e63fe75
+hello world
+--

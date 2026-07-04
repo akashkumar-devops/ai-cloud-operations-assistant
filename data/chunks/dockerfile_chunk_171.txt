@@ -1,0 +1,24 @@
+0 top
+You can see from the output of
+top
+that the specified
+ENTRYPOINT
+is not
+PID 1
+.
+If you then run
+docker stop test
+, the container will not exit cleanly - the
+stop
+command will be forced to send a
+SIGKILL
+after the timeout:
+$
+docker
+exec
+-it
+test
+ps waux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.4  0.0   2612   604 pts/0    Ss+  13:58   0:00 /bin/sh -c top -b --ignored-param2
+root         6  0.0  0.1   5956  3188 pts/0    S+   13:58   0:00 top

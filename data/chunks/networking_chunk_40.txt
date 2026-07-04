@@ -1,0 +1,14 @@
+n the same way, a container's hostname defaults to be the container's ID in Docker.
+You can override the hostname using
+--hostname
+.
+When connecting to an existing network using
+docker network connect
+,
+you can use the
+--alias
+flag to specify an additional network alias for the container on that network.
+Subnet allocation
+Docker networks can use either explicitly configured subnets or automatically allocated ones from default pools.
+Explicit subnet configuration
+You can specify exact subnets whe

@@ -1,0 +1,11 @@
+t
+With this setup, the containers write their logs to separate subdirectories of
+the
+logs
+volume. The containers can't access the other container's logs.
+Share data between machines
+When building fault-tolerant applications, you may need to configure multiple
+replicas of the same service to have access to the same files.
+There are several ways to achieve this when developing your applications.
+One is to add logic to your application to store files on a cloud object
+storage system like Amazon S3.

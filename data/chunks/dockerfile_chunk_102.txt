@@ -1,0 +1,26 @@
+orts, or the
+-P
+flag to publish all exposed
+ports and map them to high-order ports.
+By default,
+EXPOSE
+assumes TCP. You can also specify UDP:
+EXPOSE
+80/udp
+To expose on both TCP and UDP, include two lines:
+EXPOSE
+80/tcp
+EXPOSE
+80/udp
+In this case, if you use
+-P
+with
+docker run
+, the port will be exposed once
+for TCP and once for UDP. Remember that
+-P
+uses an ephemeral high-ordered host
+port on the host, so TCP and UDP doesn't use the same port.
+Regardless of the
+EXPOSE
+settings, you can override

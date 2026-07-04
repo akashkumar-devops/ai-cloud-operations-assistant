@@ -1,0 +1,26 @@
+assword
+docker pass plugins 1password purge
+docker pass plugins 1password setup
+docker pass plugins disable
+docker pass plugins enable
+docker pass plugins ls
+docker pass rm
+docker pass run
+docker pass set
+docker plugin
+docker plugin create
+docker plugin disable
+docker plugin enable
+docker plugin inspect
+docker plugin install
+docker plugin ls
+docker plugin push
+docker plugin rm
+docker plugin set
+docker plugin upgrade
+docker ps
+docker pull
+docker push
+docker run
+docker sandbox
+docker sandbox creat

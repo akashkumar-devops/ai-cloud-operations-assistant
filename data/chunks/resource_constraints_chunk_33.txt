@@ -1,0 +1,11 @@
+it a container's access to memory
+Docker can enforce hard or soft memory limits.
+Hard limits let the container use no more than a fixed amount of memory.
+Soft limits let the container use as much memory as it needs unless certain
+conditions are met, such as when the kernel detects low memory or contention on
+the host machine.
+Some of these options have different effects when used alone or when more than
+one option is set.
+Most of these options take a positive integer, followed by a suffix of
+b
+,

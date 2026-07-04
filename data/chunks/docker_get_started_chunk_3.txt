@@ -1,0 +1,13 @@
+ learn how Docker can optimize your development workflows.
+For more advanced concepts and scenarios in Docker, see
+.
+Foundations of Docker
+Install Docker and jump into discovering what Docker is.
+Choose the best installation path for your setup.
+What is Docker?
+Learn about the Docker platform.
+Learn the foundational concepts and workflows of Docker.
+Introduction
+Get started with the basics and the benefits of containerizing your applications.
+Docker concepts
+Gain a better understanding of founda

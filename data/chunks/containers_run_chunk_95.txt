@@ -1,0 +1,39 @@
+nally specifying commands and
+arguments to the container's entrypoint, represented as
+[COMMAND]
+and
+[ARG...]
+in the following synopsis example:
+$
+docker run
+[
+OPTIONS
+]
+IMAGE
+[
+:TAG
+|
+@DIGEST
+]
+[
+COMMAND
+]
+[
+ARG...
+]
+This command is optional because whoever created the
+IMAGE
+may have already
+provided a default
+COMMAND
+, using the Dockerfile
+CMD
+instruction. When you
+run a container, you can override that
+CMD
+instruction just by specifying a
+new
+COMMAND
+.
+If the image also specifies an
+ENTRYPOINT

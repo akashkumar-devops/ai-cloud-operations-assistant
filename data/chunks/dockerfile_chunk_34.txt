@@ -1,0 +1,32 @@
+ollowing examples is equivalent.
+RUN
+echo
+hello
+\
+world
+Comments don't support line continuation characters.
+Note
+Note on whitespace
+For backward compatibility, leading whitespace before comments (
+#
+) and
+instructions (such as
+RUN
+) are ignored, but discouraged. Leading whitespace
+is not preserved in these cases, and the following examples are therefore
+equivalent:
+# this is a comment-line
+RUN
+echo
+hello
+RUN
+echo
+world
+# this is a comment-line
+RUN
+echo
+hello
+RUN
+echo
+world
+Whitespace in instruc

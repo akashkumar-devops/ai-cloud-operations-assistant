@@ -1,0 +1,18 @@
+ as the host by default, but you can
+override this with
+--dns
+.
+By default, containers inherit the DNS settings as defined in the
+/etc/resolv.conf
+configuration file.
+Containers that attach to the default
+bridge
+network receive a copy of this file.
+Containers that attach to a
+custom network
+use Docker's embedded DNS server.
+The embedded DNS server forwards external DNS lookups to the DNS servers configured on the host.
+The embedded DNS server address is
+127.0.0.11
+.
+There is no IPv6 equivalent; 

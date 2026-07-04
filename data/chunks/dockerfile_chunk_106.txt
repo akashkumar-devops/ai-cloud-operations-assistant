@@ -1,0 +1,19 @@
+ables that were set using
+ENV
+by its
+parent stage or any ancestor. Refer to the
+multi-stage builds section
+in the manual for more information.
+Environment variable persistence can cause unexpected side effects. For example,
+setting
+ENV DEBIAN_FRONTEND=noninteractive
+changes the behavior of
+apt-get
+,
+and may confuse users of your image.
+If an environment variable is only needed during build, and not in the final
+image, consider setting a value for a single command instead:
+RUN
+DEBIAN_FRONTEND
+=
+n

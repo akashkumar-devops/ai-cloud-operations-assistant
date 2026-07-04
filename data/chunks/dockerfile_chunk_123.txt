@@ -1,0 +1,10 @@
+ore information about Git URL fragments,
+see
+URL fragments
+.
+When adding from a Git repository, the permissions bits for files
+are 644. If a file in the repository has the executable bit set, it will have
+permissions set to 755. Directories have permissions set to 755.
+When using a Git repository as the source, the repository must be accessible
+from the build context. To add a repository via SSH, whether public or private,
+you must pass an SSH key for authentication. For example, given the follo

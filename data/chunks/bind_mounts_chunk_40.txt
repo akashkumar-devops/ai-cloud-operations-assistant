@@ -1,0 +1,28 @@
+agation
+.
+rslave
+Sets bind propagation to
+rslave
+for this mount. See
+Configure bind propagation
+.
+slave
+Sets bind propagation to
+slave
+for this mount. See
+Configure bind propagation
+.
+Example
+$
+docker run -v .:/project:ro,rshared
+Start a container with a bind mount
+Consider a case where you have a directory
+source
+and that when you build the
+source code, the artifacts are saved into another directory,
+source/target/
+.
+You want the artifacts to be available to the container at
+/app/
+, and you
+wan

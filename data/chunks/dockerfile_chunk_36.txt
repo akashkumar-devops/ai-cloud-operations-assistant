@@ -1,0 +1,16 @@
+arser directives are supported:
+syntax
+escape
+check
+(since Dockerfile v1.8.0)
+Once a comment, empty line or builder instruction has been processed, BuildKit
+no longer looks for parser directives. Instead it treats anything formatted
+as a parser directive as a comment and doesn't attempt to validate if it might
+be a parser directive. Therefore, all parser directives must be at the
+top of a Dockerfile.
+Parser directive keys, such as
+syntax
+or
+check
+, aren't case-sensitive, but
+they're lowercase by

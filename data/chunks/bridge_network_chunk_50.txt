@@ -1,0 +1,29 @@
+your container is connected to the default
+bridge
+network by
+default. Containers connected to the default
+bridge
+network can communicate,
+but only by IP address, unless they're linked using the
+legacy
+--link
+flag
+.
+Configure the default bridge network
+To configure the default
+bridge
+network, you specify options in
+daemon.json
+.
+Here is an example
+daemon.json
+with several options specified. Only specify
+the settings you need to customize.
+{
+"bip"
+:
+"192.168.1.1/24"
+,
+"fixed-cidr"
+:
+"192.168.1.0/2

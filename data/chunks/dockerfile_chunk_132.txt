@@ -1,0 +1,35 @@
+stination must be a directory (must end with a slash
+/
+).
+COPY
+accepts a flag
+--from=<name>
+that lets you specify the source location
+to be a build stage, context, or image. The following example copies files from
+a stage named
+build
+:
+FROM
+golang
+AS
+build
+WORKDIR
+/app
+RUN
+--mount
+=
+type
+=
+bind,target
+=
+. go build -o /myapp ./cmd
+COPY
+--from
+=
+build /myapp /usr/bin/
+For more information about copying from named sources, see the
+--from
+flag
+.
+Copying from the build context
+When copying source fil

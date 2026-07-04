@@ -1,0 +1,11 @@
+ to your
+default-address-pools
+. See
+Dynamic IPv6 subnet allocation
+for more information.
+Docker attempts to avoid address prefixes already in use on the host. However, you may need to customize
+default-address-pools
+to prevent routing conflicts in some network environments.
+The default pools use large subnets, which limits the number of networks you can create. You can divide base
+subnets into smaller pools to support more networks.
+For example, this configuration allows Docker to create 256 ne

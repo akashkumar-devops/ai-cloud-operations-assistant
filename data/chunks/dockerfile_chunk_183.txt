@@ -1,0 +1,42 @@
+IR
+explicitly.
+ARG
+ARG
+<name>
+[=
+<default value>
+]
+[
+<name>
+[=
+<default value>
+]
+...
+]
+The
+ARG
+instruction defines a variable that users can pass at build time to
+the builder with the
+docker build
+command using the
+--build-arg <varname>=<value>
+flag. This variable can be used in subsequent instructions such as
+FROM
+,
+ENV
+,
+WORKDIR
+, and others using the
+${VAR}
+or
+$VAR
+template syntax.
+It is also passed to all subsequent
+RUN
+instructions as a build-time
+environment variable.
+Unlike
+ENV
+, an
+ARG
+v

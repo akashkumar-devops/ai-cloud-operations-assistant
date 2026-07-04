@@ -1,0 +1,10 @@
+r normal Linux processes. Several
+runtime flags let you configure the amount of access to CPU resources your
+container has. When you use these settings, Docker modifies the settings for
+the container's cgroup on the host machine.
+Option
+Description
+--cpus=<value>
+Specify how much of the available CPU resources a container can use. For instance, if the host machine has two CPUs and you set
+--cpus="1.5"
+, the container is guaranteed at most one and a half of the CPUs. This is the equivalent of set

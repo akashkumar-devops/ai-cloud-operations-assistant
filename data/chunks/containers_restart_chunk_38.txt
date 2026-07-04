@@ -1,0 +1,4 @@
+ details
+Restarting foreground containers
+Use a process manager
+Using a process manager inside containers

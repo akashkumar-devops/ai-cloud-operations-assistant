@@ -1,0 +1,26 @@
+nary source.cpp
+FROM
+builder
+AS
+build2
+COPY
+source2.cpp source.cpp
+RUN
+g++ -o /binary source.cpp
+Differences between legacy builder and BuildKit
+The legacy Docker Engine builder processes all stages of a Dockerfile leading
+up to the selected
+--target
+. It will build a stage even if the selected
+target doesn't depend on that stage.
+BuildKit
+only builds the stages that the target stage
+depends on.
+For example, given the following Dockerfile:
+# syntax=docker/dockerfile:1
+FROM
+ubuntu
+AS
+base
+RUN
+ech

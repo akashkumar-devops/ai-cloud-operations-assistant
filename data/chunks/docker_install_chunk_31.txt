@@ -1,0 +1,16 @@
+uilt from modified source code. Docker isn't involved in releasing these
+packages and you should report any bugs or issues involving these packages to
+your Linux distribution's issue tracker.
+Docker provides
+binaries
+for manual installation of Docker Engine.
+These binaries are statically linked and you can use them on any Linux distribution.
+Release channels
+Docker Engine has two types of update channels,
+stable
+and
+test
+:
+The
+stable
+channel gives you the latest versions released for general ava

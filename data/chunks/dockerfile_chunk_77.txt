@@ -1,0 +1,24 @@
+ntainer.
+secret
+Allow the build container to access secure files such as private keys without baking them into the image or build cache.
+ssh
+Allow the build container to access SSH keys via SSH agents, with support for passphrases.
+RUN --mount=type=bind
+This mount type allows binding files or directories to the build container. A
+bind mount is read-only by default.
+Option
+Description
+target
+,
+dst
+,
+destination
+1
+Mount path.
+source
+Source path in the
+from
+. Defaults to the root of the
+from
+.
+from

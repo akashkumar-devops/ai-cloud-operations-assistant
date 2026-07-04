@@ -1,0 +1,15 @@
+y processes using ptrace(2).
+SYS_RAWIO
+Perform I/O port operations (iopl(2) and ioperm(2)).
+SYS_RESOURCE
+Override resource Limits.
+SYS_TIME
+Set system clock (settimeofday(2), stime(2), adjtimex(2)); set real-time (hardware) clock.
+SYS_TTY_CONFIG
+Use vhangup(2); employ various privileged ioctl(2) operations on virtual terminals.
+SYSLOG
+Perform privileged syslog(2) operations.
+WAKE_ALARM
+Trigger something that will wake up the system.
+Further reference information is available on the
+capabilities(

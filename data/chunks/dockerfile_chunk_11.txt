@@ -1,0 +1,21 @@
+r mcp feature list
+docker mcp feature ls
+docker mcp gateway
+docker mcp gateway run
+docker mcp profile
+docker mcp profile config
+docker mcp profile create
+docker mcp profile export
+docker mcp profile import
+docker mcp profile list
+docker mcp profile pull
+docker mcp profile push
+docker mcp profile remove
+docker mcp profile server
+docker mcp profile server add
+docker mcp profile server ls
+docker mcp profile server remove
+docker mcp profile show
+docker mcp profile tools
+docker mcp secret
+docker mcp 

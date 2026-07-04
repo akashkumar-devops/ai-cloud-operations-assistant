@@ -1,0 +1,15 @@
+ariable is not embedded in the image and is not available
+in the final container.
+Warning
+It isn't recommended to use build arguments for passing secrets such as
+user credentials, API tokens, etc. Build arguments are visible in the
+docker history
+command and in
+max
+mode provenance attestations,
+which are attached to the image by default if you use the Buildx GitHub Actions
+and your GitHub repository is public.
+Refer to the
+RUN --mount=type=secret
+section to
+learn about secure ways to use secrets

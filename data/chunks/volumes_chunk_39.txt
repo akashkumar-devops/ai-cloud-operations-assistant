@@ -1,0 +1,37 @@
+ctory
+Mount a volume into a Swarm service
+Options for --mount
+The
+--mount
+flag consists of multiple key-value pairs, separated by commas
+and each consisting of a
+<key>=<value>
+tuple. The order of the keys isn't
+significant.
+$
+docker run --mount
+type
+=
+volume
+[
+,src
+=
+<volume-name>
+]
+,dst
+=
+<mount-path>
+[
+,<key>
+=
+<value>...
+]
+Valid options for
+--mount type=volume
+include:
+Option
+Description
+source
+,
+src
+The source of the mount. For named volumes, this is the name of the volume. For anonymous vol

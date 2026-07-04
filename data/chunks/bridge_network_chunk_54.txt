@@ -1,0 +1,18 @@
+k. If no
+bip6
+or
+fixed-cidr-v6
+is specified, a ULA prefix will be
+chosen.
+Restart Docker for changes to take effect.
+Connection limit for bridge networks
+Due to limitations set by the Linux kernel, bridge networks become unstable and
+inter-container communications may break when 1000 containers or more connect
+to a single network.
+For more information about this limitation, see
+moby/moby#44973
+.
+Skip Bridge IP address configuration
+The bridge is normally assigned the network's
+--gateway
+address,

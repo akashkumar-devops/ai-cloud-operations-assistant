@@ -1,0 +1,23 @@
+
+k
+,
+m
+,
+g
+, to indicate bytes, kilobytes, megabytes, or gigabytes.
+Option
+Description
+-m
+or
+--memory=
+The maximum amount of memory the container can use. If you set this option, the minimum allowed value is
+6m
+(6 megabytes). That is, you must set the value to at least 6 megabytes.
+--memory-swap
+*
+The amount of memory this container is allowed to swap to disk. See
+--memory-swap
+details
+.
+--memory-swappiness
+By default, the host kernel can swap out a percentage of anonymous pages used by a contai

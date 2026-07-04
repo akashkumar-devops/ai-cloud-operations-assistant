@@ -1,0 +1,28 @@
+d mounts one
+of the subdirectories of the
+logs
+volume to each container. This example
+assumes that the processes in the containers write their logs to
+/var/log/app1
+and
+/var/log/app2
+.
+$
+docker volume create logs
+$
+docker run --rm
+\
+--mount src=logs,dst=/logs \
+alpine mkdir -p /logs/app1 /logs/app2
+$
+docker run -d
+\
+--name=app1 \
+--mount src=logs,dst=/var/log/app1,volume-subpath=app1 \
+app1:latest
+$
+docker run -d
+\
+--name=app2 \
+--mount src=logs,dst=/var/log/app2,volume-subpath=app2 \
+app2:lates

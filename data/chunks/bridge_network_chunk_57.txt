@@ -1,0 +1,23 @@
+ned bridge networks instead.
+List current networks:
+$
+docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+17e324f45964        bridge              bridge              local
+6ed54d316334        host                host                local
+7092879f2cc8        none                null                local
+The default
+bridge
+network is listed, along with
+host
+and
+none
+.
+Start two
+alpine
+containers running
+ash
+. The
+-dit
+flags mean detached,
+interactive, and with a TTY

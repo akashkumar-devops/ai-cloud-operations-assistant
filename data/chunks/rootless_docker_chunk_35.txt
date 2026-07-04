@@ -1,0 +1,17 @@
+FO] Using CLI context "rootless"
+Current context is now "rootless"
+[INFO] Make sure the following environment variable(s) are set (or add them to ~/.bashrc):
+export PATH=/home/testuser/bin:$PATH
+[INFO] Some applications may require the following environment variable too:
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+The binaries will be installed at
+~/bin
+.
+Run
+docker info
+to confirm that the
+docker
+client is connecting to the Rootless daemon:
+$
+docker info
+Client: Docker Engine - Communi

@@ -1,0 +1,33 @@
+thm.
+ADD
+--checksum
+=
+be1f38e https://github.com/moby/buildkit.git#v0.26.2 /
+ADD
+--checksum
+=
+sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
+ADD --chmod
+See
+COPY --chmod
+.
+ADD --chown
+See
+COPY --chown
+.
+ADD --link
+See
+COPY --link
+.
+ADD --unpack
+ADD
+[
+--unpack
+=
+<bool>
+]
+<src> ... <dir>
+The
+--unpack
+flag controls whether or not to automatically unpack tar
+archives (including compressed formats l

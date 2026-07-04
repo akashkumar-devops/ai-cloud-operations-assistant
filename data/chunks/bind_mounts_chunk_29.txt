@@ -1,0 +1,10 @@
+ code or build artifacts between a development environment on
+the Docker host and a container.
+When you want to create or generate files in a container and persist the
+files onto the host's filesystem.
+Sharing configuration files from the host machine to containers. This is how
+Docker provides DNS resolution to containers by default, by mounting
+/etc/resolv.conf
+from the host machine into each container.
+Bind mounts are also available for builds: you can bind mount source code from
+the host into

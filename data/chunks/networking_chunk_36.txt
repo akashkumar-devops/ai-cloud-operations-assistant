@@ -1,0 +1,27 @@
+ake Docker choose a specific default gateway when creating the container
+or connecting a new network, set a gateway priority. See option
+gw-priority
+for the
+docker run
+and
+docker network connect
+commands.
+The default
+gw-priority
+is
+0
+and the gateway in the network with the
+highest priority is the default gateway. So, when a network should always
+be the default gateway, it is enough to set its
+gw-priority
+to
+1
+.
+$
+docker run --network
+name
+=
+gwnet,gw-priority
+=
+1
+--network anet1 --name myctr myim

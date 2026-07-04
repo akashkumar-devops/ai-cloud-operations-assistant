@@ -1,0 +1,22 @@
+opUI
+Interface: Dialog
+Interface: Docker
+Interface: DockerCommand
+Interface: DockerDesktopClient
+Interface: Exec
+Interface: ExecOptions
+Interface: ExecProcess
+Interface: ExecResult
+Interface: ExecResultV0
+Interface: ExecStreamOptions
+Interface: Extension
+Interface: ExtensionCli
+Interface: ExtensionHost
+Interface: ExtensionVM
+Interface: Host
+Interface: HttpService
+Interface: NavigationIntents
+Interface: OpenDialogResult
+Interface: RawExecResult
+Interface: RequestConfig
+Interface: RequestConfigV0

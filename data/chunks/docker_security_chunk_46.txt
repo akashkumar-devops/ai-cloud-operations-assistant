@@ -1,0 +1,9 @@
+s is that the default set
+of capabilities and mounts given to a container may provide incomplete
+isolation, either independently, or when used in combination with
+kernel vulnerabilities.
+Docker supports the addition and removal of capabilities, allowing use
+of a non-default profile. This may make Docker more secure through
+capability removal, or less secure through the addition of capabilities.
+The best practice for users would be to remove all capabilities except
+those explicitly required for t

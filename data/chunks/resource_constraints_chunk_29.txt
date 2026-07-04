@@ -1,0 +1,14 @@
+the end of the output like
+the following:
+WARNING: No swap limit support
+Consult your operating system's documentation for enabling them. See also the
+Docker Engine troubleshooting guide
+for more information.
+Memory
+Understand the risks of running out of memory
+It's important not to allow a running container to consume too much of the
+host machine's memory. On Linux hosts, if the kernel detects that there isn't
+enough memory to perform important system functions, it throws an
+OOME
+, or
+Out Of Me

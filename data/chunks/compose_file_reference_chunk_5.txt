@@ -1,0 +1,24 @@
+ig create
+docker config inspect
+docker config ls
+docker config rm
+docker container
+docker container attach
+docker container commit
+docker container cp
+docker container create
+docker container diff
+docker container exec
+docker container export
+docker container inspect
+docker container kill
+docker container logs
+docker container ls
+docker container pause
+docker container port
+docker container prune
+docker container rename
+docker container restart
+docker container rm
+docker container run
+docker con

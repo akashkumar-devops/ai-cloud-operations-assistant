@@ -1,0 +1,24 @@
+ds:
+FROM
+alpine
+and
+FROM
+scratch
+COPY
+/foo /bar
+and merging all the layers of both images together.
+Benefits of using
+--link
+Use
+--link
+to reuse already built layers in subsequent builds with
+--cache-from
+even if the previous layers have changed. This is especially
+important for multi-stage builds where a
+COPY --from
+statement would
+previously get invalidated if any previous commands in the same stage changed,
+causing the need to rebuild the intermediate stages again. With
+--link
+the
+layer the p

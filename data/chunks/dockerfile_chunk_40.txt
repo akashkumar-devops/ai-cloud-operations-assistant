@@ -1,0 +1,19 @@
+utomatically use the
+latest Dockerfile version without having to upgrade BuildKit or Docker Engine,
+or even use a custom Dockerfile implementation.
+Most users will want to set this parser directive to
+docker/dockerfile:1
+,
+which causes BuildKit to pull the latest stable version of the Dockerfile
+syntax before the build.
+# syntax=docker/dockerfile:1
+For more information about how the parser directive works, see
+Custom Dockerfile syntax
+.
+escape
+# escape=\
+Or
+# escape=`
+The
+escape
+directive sets t

@@ -1,0 +1,17 @@
+ control a container's CPU priority when you
+start the container using
+docker run
+. Consult your operating system's
+documentation or the
+ulimit
+command for information on appropriate values.
+Option
+Description
+--cap-add=sys_nice
+Grants the container the
+CAP_SYS_NICE
+capability, which allows the container to raise process
+nice
+values, set real-time scheduling policies, set CPU affinity, and other operations.
+--cpu-rt-runtime=<value>
+The maximum number of microseconds the container can run at real

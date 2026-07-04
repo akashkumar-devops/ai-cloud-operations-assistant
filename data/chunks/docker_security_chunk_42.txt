@@ -1,0 +1,13 @@
+root
+, including the SSH daemon,
+cron
+daemon, logging daemons, kernel modules, network configuration tools,
+and more. A container is different, because almost all of those tasks are
+handled by the infrastructure around the container:
+SSH access are typically managed by a single server running on
+the Docker host
+cron
+, when necessary, should run as a user
+process, dedicated and tailored for the app that needs its
+scheduling service, rather than as a platform-wide facility
+Log management is also t

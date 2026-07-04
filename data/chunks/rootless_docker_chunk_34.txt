@@ -1,0 +1,18 @@
+ available for
+s390x
+, hence it is not supported for
+s390x
+.
+$
+curl -fsSL https://get.docker.com/rootless
+|
+sh
+...
+[INFO] Creating /home/testuser/.config/systemd/user/docker.service
+...
+[INFO] Installed docker.service successfully.
+[INFO] To control docker.service, run: `systemctl --user (start|stop|restart) docker.service`
+[INFO] To run docker.service on system startup, run: `sudo loginctl enable-linger testuser`
+[INFO] Creating CLI context "rootless"
+Successfully created context "rootless"
+[IN

@@ -1,0 +1,18 @@
+iver invokes the
+Linux
+mount
+syscall and forwards the options you pass to it unaltered.
+Docker doesn't implement any additional functionality on top of the native mount features supported by the Linux kernel.
+If you're familiar with the
+Linux
+mount
+command
+,
+you can think of the
+--mount
+options as forwarded to the
+mount
+command in the following manner:
+$
+mount -t <mount.volume-opt.type> <mount.volume-opt.device> <mount.dst> -o <mount.volume-opts.o>
+To explain this further, consider the following

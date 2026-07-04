@@ -1,0 +1,21 @@
+r Docker daemon
+Read the daemon logs
+Troubleshooting the Docker daemon
+Manage resources
+Docker contexts
+Docker object labels
+Prune unused Docker objects
+Logs and metrics
+Configure logging drivers
+Customize log driver output
+Logging drivers
+Amazon CloudWatch Logs logging driver
+ETW logging driver
+Fluentd logging driver
+Google Cloud Logging driver
+Graylog Extended Format logging driver
+Journald logging driver
+JSON File logging driver
+Local file logging driver
+Splunk logging driver
+Syslog logging d

@@ -1,0 +1,23 @@
+reate
+\
+-d rclone \
+--name rclonevolume \
+-o type=sftp \
+-o path=remote \
+-o sftp-host=1.2.3.4 \
+-o sftp-user=user \
+-o "sftp-password=$(cat file_containing_password_for_remote_host)"
+This volume can now be mounted into containers.
+Start a container which creates a volume using a volume driver
+Note
+If the volume driver requires you to pass any options,
+you must use the
+--mount
+flag to mount the volume, and not
+-v
+.
+$
+docker run -d
+\
+--name rclone-container \
+--mount type=volume,volume-driver=rcl

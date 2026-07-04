@@ -1,0 +1,17 @@
+volume from a backup
+With the backup just created, you can restore it to the same container,
+or to another container that you created elsewhere.
+For example, create a new container named
+dbstore2
+:
+$
+docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
+Then, un-tar the backup file in the new containerâs data volume:
+$
+docker run --rm --volumes-from dbstore2 -v
+$(
+pwd
+)
+:/backup ubuntu bash -c
+"cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+You can use these techniques to automate backup

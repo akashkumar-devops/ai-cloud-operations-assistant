@@ -1,0 +1,10 @@
+ker Hub or any other registry
+Using the build cache
+This concept page will teach you about the build cache, what changes invalidate the cache and how to effectively use the build cache.
+Multi-stage builds
+This concept page will teach you about the purpose of the multi-stage build and its benefits
+Edit this page
+Request changes
+Table of contents
+About this series
+What you'll learn

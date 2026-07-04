@@ -1,0 +1,15 @@
+DRIVER              SCOPE
+e9261a8c9a19        alpine-net          bridge              local
+17e324f45964        bridge              bridge              local
+6ed54d316334        host                host                local
+7092879f2cc8        none                null                local
+Inspect the
+alpine-net
+network:
+$
+docker network inspect alpine-net
+This shows the network's gateway (for example,
+172.18.0.1
+) and that no
+containers are connected yet.
+Create four containers. Three connect to

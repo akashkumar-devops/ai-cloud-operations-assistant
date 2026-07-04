@@ -1,0 +1,45 @@
+ bind mount looks like this:
+services
+:
+frontend
+:
+image
+:
+node:lts
+volumes
+:
+-
+type
+:
+bind
+source
+:
+./static
+target
+:
+/opt/app/static
+volumes
+:
+myapp:
+For more information about using volumes of the
+bind
+type with Compose, see
+Compose reference on the volumes top-level element
+.
+and
+Compose reference on the volume attribute
+.
+Next steps
+Learn about
+volumes
+.
+Learn about
+tmpfs mounts
+.
+Learn about
+storage drivers
+.
+Edit this page
+Request changes
+When to use bind mounts
+Bind-mounting over existin

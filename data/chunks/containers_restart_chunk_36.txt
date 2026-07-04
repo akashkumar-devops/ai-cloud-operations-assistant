@@ -1,0 +1,16 @@
+ policies don't suit your needs, such as when processes outside
+Docker depend on Docker containers, you can use a process manager such as
+systemd
+or
+supervisor
+instead.
+Warning
+Don't combine Docker restart policies with host-level process managers,
+as this creates conflicts.
+To use a process manager, configure it to start your container or service using
+the same
+docker start
+or
+docker service
+command you would normally use to
+start the container manually. Consult the documentation for the specif

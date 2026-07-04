@@ -1,0 +1,20 @@
+e path
+/external-drive
+mounts the
+disk.raw
+file from the host filesystem as a block device.
+When you're done, and the device is unmounted from the container,
+detach the loop device to remove the device from the host system:
+$
+losetup -d /dev/loop5
+Back up, restore, or migrate data volumes
+Volumes are useful for backups, restores, and migrations.
+Use the
+--volumes-from
+flag to create a new container that mounts that volume.
+Back up a volume
+For example, create a new container named
+dbstore
+:
+$
+do

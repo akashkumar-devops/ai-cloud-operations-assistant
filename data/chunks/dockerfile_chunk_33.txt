@@ -1,0 +1,28 @@
+hat are used in
+FROM
+lines in the Dockerfile.
+BuildKit treats lines that begin with
+#
+as a comment, unless the line is
+a valid
+parser directive
+. A
+#
+marker anywhere
+else in a line is treated as an argument. This allows statements like:
+# Comment
+RUN
+echo
+'we are running some # of cool things'
+Comment lines are removed before the Dockerfile instructions are executed.
+The comment in the following example is removed before the shell executes
+the
+echo
+command.
+RUN
+echo
+hello
+\
+# comment
+world
+The f

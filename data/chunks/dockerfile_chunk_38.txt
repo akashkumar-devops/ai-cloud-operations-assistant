@@ -1,0 +1,22 @@
+nvalid due to appearing twice:
+# directive=value1
+# directive=value2
+FROM
+ImageName
+Treated as a comment because it appears after a builder instruction:
+FROM
+ImageName
+# directive=value
+Treated as a comment because it appears after a comment that isn't a parser
+directive:
+# About my dockerfile
+# directive=value
+FROM
+ImageName
+The following
+unknowndirective
+is treated as a comment because it isn't
+recognized. The known
+syntax
+directive is treated as a comment because it
+appears after a comment th

@@ -1,0 +1,19 @@
+0
+Limit the CPU real-time runtime. In microseconds. Requires parent cgroups be set and cannot be higher than parent. Also check rtprio ulimits.
+--blkio-weight=0
+Block IO weight (relative weight) accepts a weight value between 10 and 1000.
+--blkio-weight-device=""
+Block IO weight (relative device weight, format:
+DEVICE_NAME:WEIGHT
+)
+--device-read-bps=""
+Limit read rate from a device (format:
+<device-path>:<number>[<unit>]
+). Number is a positive integer. Unit can be one of
+kb
+,
+mb
+, or
+gb
+.
+--dev

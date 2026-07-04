@@ -1,0 +1,30 @@
+the container. Must be an absolute path.
+readonly
+,
+ro
+If present, causes the bind mount to be
+mounted into the container as read-only
+.
+bind-propagation
+If present, changes the
+bind propagation
+.
+bind-create-src
+Automatically creates the source directory on the host if it doesn't exist. By default,
+--mount
+produces an error if the source path doesn't exist on the daemon.
+Example
+$
+docker run --mount
+type
+=
+bind,src
+=
+.,dst
+=
+/project,ro,bind-propagation
+=
+rshared
+Options for --volume
+The
+--volu

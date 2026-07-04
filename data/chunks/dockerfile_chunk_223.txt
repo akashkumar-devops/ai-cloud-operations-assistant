@@ -1,0 +1,23 @@
+-> 8e559e9bf424
+Removing intermediate container be6d8e63fe75
+Successfully built 8e559e9bf424
+PS E:\myproject>
+The
+SHELL
+instruction could also be used to modify the way in which
+a shell operates. For example, using
+SHELL cmd /S /C /V:ON|OFF
+on Windows, delayed
+environment variable expansion semantics could be modified.
+The
+SHELL
+instruction can also be used on Linux should an alternate shell be
+required such as
+zsh
+,
+csh
+,
+tcsh
+and others.
+Here-Documents
+Here-documents allow redirection of subse

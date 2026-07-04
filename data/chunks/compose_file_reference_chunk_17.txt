@@ -1,0 +1,22 @@
+ scout
+docker scout attestation
+docker scout attestation add
+docker scout attestation get
+docker scout attestation list
+docker scout cache
+docker scout cache df
+docker scout cache prune
+docker scout compare
+docker scout config
+docker scout cves
+docker scout enroll
+docker scout environment
+docker scout help
+docker scout integration
+docker scout integration configure
+docker scout integration delete
+docker scout integration list
+docker scout policy
+docker scout push
+docker scout quickview
+docker sc

@@ -1,0 +1,13 @@
+ such as an external drive or a drive partition, to a container.
+The following example shows how to create and use a file as a block storage device,
+and how to mount the block device as a container volume.
+Important
+The following procedure is only an example.
+The solution illustrated here isn't recommended as a general practice.
+Don't attempt this approach unless you're confident about what you're doing.
+How mounting block devices works
+Under the hood, the
+--mount
+flag using the
+local
+storage dr

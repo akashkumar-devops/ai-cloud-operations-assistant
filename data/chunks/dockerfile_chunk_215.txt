@@ -1,0 +1,19 @@
+tainer is healthy and ready for use
+1: unhealthy - the container isn't working correctly
+2: reserved - don't use this exit code
+For example, to check every five minutes or so that a web-server is able to
+serve the site's main page within three seconds:
+HEALTHCHECK
+--interval
+=
+5m --timeout
+=
+3s
+\
+CMD
+curl -f http://localhost/
+||
+exit
+1
+To help debug failing probes, any output text (UTF-8 encoded) that the command writes
+on stdout or stderr will be stored in the health status and can be queried w

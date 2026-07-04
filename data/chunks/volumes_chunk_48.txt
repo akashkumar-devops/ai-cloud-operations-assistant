@@ -1,0 +1,20 @@
+ to the
+Volumes
+section in the Compose specification.
+Start a service with volumes
+When you start a service and define a volume, each service container uses its own
+local volume. None of the containers can share this data if you use the
+local
+volume driver. However, some volume drivers do support shared storage.
+The following example starts an
+nginx
+service with four replicas, each of which
+uses a local volume called
+myvol2
+.
+$
+docker service create -d
+\
+--replicas=4 \
+--name devtest-service \
+-

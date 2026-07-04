@@ -1,0 +1,24 @@
+quent Dockerfile lines to the input of
+RUN
+or
+COPY
+commands. If such command contains a
+here-document
+the Dockerfile considers the next lines until the line only containing a
+here-doc delimiter as part of the same command.
+Example: Running a multi-line script
+# syntax=docker/dockerfile:1
+FROM
+debian
+RUN
+<<EOT bash
+set
+-ex
+apt-get update
+apt-get install -y vim
+EOT
+If the command only contains a here-document, its contents is evaluated with
+the default shell.
+# syntax=docker/dockerfile:1
+FROM
+debi

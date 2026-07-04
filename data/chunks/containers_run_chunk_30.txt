@@ -1,0 +1,18 @@
+use the image
+reference to create or run a container based on an image.
+docker run IMAGE[:TAG][@DIGEST]
+docker create IMAGE[:TAG][@DIGEST]
+An image tag is the image version, which defaults to
+latest
+when omitted. Use
+the tag to run a container from specific version of an image. For example, to
+run version
+24.04
+of the
+ubuntu
+image:
+docker run ubuntu:24.04
+.
+Image digests
+Images using the v2 or later image format have a content-addressable identifier
+called a digest. As long as the input used to 

@@ -1,0 +1,15 @@
+only as well. This is referred to as recursive
+read-only mounts. Recursive read-only mounts require Linux kernel version 5.12
+or later. If you're running an older kernel version, submounts are
+automatically mounted as read-write by default. Attempting to set submounts to
+be read-only on a kernel version earlier than 5.12, using the
+bind-recursive=readonly
+option, results in an error.
+Supported values for the
+bind-recursive
+option are:
+Value
+Description
+enabled
+(default)
+Read-only mounts are made

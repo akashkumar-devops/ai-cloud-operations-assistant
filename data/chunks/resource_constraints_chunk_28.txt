@@ -1,0 +1,11 @@
+source as the host's kernel scheduler allows. Docker provides ways
+to control how much memory, or CPU a container can use, setting runtime
+configuration flags of the
+docker run
+command. This section provides details
+on when you should set such limits and the possible implications of setting them.
+Many of these features require your kernel to support Linux capabilities. To
+check for support, you can use the
+docker info
+command. If a capability
+is disabled in your kernel, you may see a warning at 

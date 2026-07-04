@@ -1,0 +1,14 @@
+ the build container to test, lint, or compile a project.
+Bind-mounting over existing data
+If you bind mount file or directory into a directory in the container in which
+files or directories exist, the pre-existing files are obscured by the mount.
+This is similar to if you were to save files into
+/mnt
+on a Linux host, and
+then mounted a USB drive into
+/mnt
+. The contents of
+/mnt
+would be obscured
+by the contents of the USB drive until the USB drive was unmounted.
+With containers, there's no stra

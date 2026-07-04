@@ -1,0 +1,25 @@
+VER
+Then, assume this image is built with this command:
+$
+docker build --build-arg
+CONT_IMG_VER
+=
+v2.0.1 .
+In this case, the
+RUN
+instruction uses
+v1.0.0
+instead of the
+ARG
+setting
+passed by the user:
+v2.0.1
+This behavior is similar to a shell
+script where a locally scoped variable overrides the variables passed as
+arguments or inherited from environment, from its point of definition.
+Using the example above but a different
+ENV
+specification you can create more
+useful interactions between
+ARG
+and

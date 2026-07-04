@@ -1,0 +1,16 @@
+mes
+You can mount a Samba share directly in Docker without configuring a mount point on your host.
+$
+docker volume create
+\
+--driver local \
+--opt type=cifs \
+--opt device=//uxxxxx.your-server.de/backup \
+--opt o=addr=uxxxxx.your-server.de,username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
+--name cifs-volume
+The
+addr
+option is required if you specify a hostname instead of an IP.
+This lets Docker perform the hostname lookup.
+Block storage devices
+You can mount a block storage device,

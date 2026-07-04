@@ -1,0 +1,44 @@
+ for paths containing whitespace.
+COPY
+[
+OPTIONS
+]
+<src> ... <dest>
+COPY
+[
+OPTIONS
+]
+[
+"<src>"
+, ...
+"<dest>"
+]
+The available
+[OPTIONS]
+are:
+Option
+Minimum Dockerfile version
+--from
+--chmod
+1.2
+--chown
+--link
+1.4
+--parents
+1.20
+--exclude
+1.19
+The
+COPY
+instruction copies new files or directories from
+<src>
+and adds
+them to the filesystem of the image at the path
+<dest>
+. Files and directories
+can be copied from the build context, build stage, named context, or an image.
+The
+ADD
+and
+COPY
+instructi

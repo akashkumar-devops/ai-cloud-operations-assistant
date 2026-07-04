@@ -1,0 +1,6 @@
+                                                       0.1s
+=> [stage2 1/1] RUN echo "stage2"                                                              0.2s
+=> exporting to image                                                                          0.0s
+=> => exporting layers                                                                         0.0s
+=> => writing image sha256:f55003b607cef37614f607f0728e6fd4d113a4bf7ef12210da338c716f2cfd15    0.0s
+On the other hand, building the same tar

@@ -1,0 +1,9 @@
+cker containers, you can use them out of the box. For instance, we
+ship a template that works with AppArmor and Red Hat comes with SELinux
+policies for Docker. These templates provide an extra safety net (even
+though it overlaps greatly with capabilities).
+You can define your own policies using your favorite access control
+mechanism.
+Just as you can use third-party tools to augment Docker containers, including
+special network topologies or shared filesystems, tools exist to harden Docker
+contain

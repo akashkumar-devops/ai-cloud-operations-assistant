@@ -1,0 +1,9 @@
+e safely shared among multiple containers.
+New volumes can have their content pre-populated by a container or build.
+When your application requires high-performance I/O.
+Volumes are not a good choice if you need to access the files from the host, as
+the volume is completely managed by Docker. Use
+bind mounts
+if you need to access files or directories from both containers and the host.
+Volumes are often a better choice than writing data directly to a container,
+because a volume doesn't increase t

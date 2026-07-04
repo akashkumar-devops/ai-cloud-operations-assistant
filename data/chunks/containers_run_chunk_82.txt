@@ -1,0 +1,24 @@
+ to each
+--device
+flag:
+$
+docker run --device
+=
+/dev/sda:/dev/xvdc --rm -it ubuntu fdisk  /dev/xvdc
+Command (m for help): q
+$
+docker run --device
+=
+/dev/sda:/dev/xvdc:r --rm -it ubuntu fdisk  /dev/xvdc
+You will not be able to write the partition table.
+Command (m for help): q
+$
+docker run --device
+=
+/dev/sda:/dev/xvdc:w --rm -it ubuntu fdisk  /dev/xvdc
+crash....
+$
+docker run --device
+=
+/dev/sda:/dev/xvdc:m --rm -it ubuntu fdisk  /dev/xvdc
+fdisk: unable to open /dev/xvdc: Operation not permitted

@@ -1,0 +1,15 @@
+ker daemon 3.072 kB
+Step 1/3 : FROM microsoft/nanoserver
+---> 22738ff49c6d
+Step 2/3 : COPY testfile.txt c:\
+---> 96655de338de
+Removing intermediate container 4db9acbb1682
+Step 3/3 : RUN dir c:\
+---> Running in a2c157f842f5
+Volume in drive C has no label.
+Volume Serial Number is 7E6D-E0F7
+Directory of c:\
+10/05/2016  05:04 PM             1,894 License.txt
+10/05/2016  02:22 PM    <DIR>          Program Files
+10/05/2016  02:14 PM    <DIR>          Program Files (x86)
+10/28/2016  11:18 AM           

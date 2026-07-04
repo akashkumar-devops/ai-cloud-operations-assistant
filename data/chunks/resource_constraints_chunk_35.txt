@@ -1,0 +1,16 @@
+ner. You can set
+--memory-swappiness
+to a value between 0 and 100, to tune this percentage. See
+--memory-swappiness
+details
+.
+--memory-reservation
+Allows you to specify a soft limit smaller than
+--memory
+which is activated when Docker detects contention or low memory on the host machine. If you use
+--memory-reservation
+, it must be set lower than
+--memory
+for it to take precedence. Because it is a soft limit, it doesn't guarantee that the container doesn't exceed the limit.
+--oom-kill-disable
+By

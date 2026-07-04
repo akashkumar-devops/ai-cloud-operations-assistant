@@ -1,0 +1,21 @@
+sr/bin:/sbin:/bin
+TERM
+xterm
+if the container is allocated a pseudo-TTY
+Additionally, you can set any environment variable in the container by using
+one or more
+-e
+flags. You can even override the variables mentioned above, or
+variables defined using a Dockerfile
+ENV
+instruction when building the image.
+If you name an environment variable without specifying a value, the current
+value of the named variable on the host is propagated into the container's
+environment:
+$
+export
+today
+=
+Wednesday
+$
+do

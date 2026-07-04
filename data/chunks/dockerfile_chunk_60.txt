@@ -1,0 +1,18 @@
+substitution,
+not the builder.
+Backslashes
+In exec form, you must escape backslashes. This is particularly relevant on
+Windows where the backslash is the path separator. The following line would
+otherwise be treated as shell form due to not being valid JSON, and fail in an
+unexpected way:
+RUN
+[
+"c:\windows\system32\tasklist.exe"
+]
+The correct syntax for this example is:
+RUN
+[
+"c:\\windows\\system32\\tasklist.exe"
+]
+Shell form
+Unlike the exec form, instructions using the shell form always use a c

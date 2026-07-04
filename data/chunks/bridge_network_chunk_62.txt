@@ -1,0 +1,17 @@
+2.17.0.3): 56 data bytes
+64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.086 ms
+64 bytes from 172.17.0.3: seq=1 ttl=64 time=0.094 ms
+--- 172.17.0.3 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.086/0.090/0.094 ms
+This succeeds. Now try pinging by container name:
+#
+ping -c
+2
+alpine2
+ping: bad address 'alpine2'
+On the default bridge network, containers can't resolve each other by name.
+Detach from
+alpine1
+without stopping it using
+CTRL+p CTR

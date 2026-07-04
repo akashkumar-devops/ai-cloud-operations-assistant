@@ -1,0 +1,21 @@
+g
+--ipv6
+.
+$
+docker network create --ipv6 --ipv4
+=
+false
+v6net
+IPv4 address configuration cannot be disabled in the default bridge network.
+Use the default bridge network
+The default
+bridge
+network is considered a legacy detail of Docker and is not
+recommended for production use. Configuring it is a manual operation, and it has
+technical shortcomings
+.
+Connect a container to the default bridge network
+If you do not specify a network using the
+--network
+flag, and you do specify a
+network driver, 

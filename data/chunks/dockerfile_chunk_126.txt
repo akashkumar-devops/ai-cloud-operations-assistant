@@ -1,0 +1,25 @@
+directories
+in its path.
+If the source is a file, and the destination doesn't end with a trailing slash,
+the source file will be written to the destination path as a file.
+ADD --keep-git-dir
+ADD
+[
+--keep-git-dir
+=
+<boolean>
+]
+<src> ... <dir>
+When
+<src>
+is the HTTP or SSH address of a remote Git repository,
+BuildKit adds the contents of the Git repository to the image
+excluding the
+.git
+directory by default.
+The
+--keep-git-dir=true
+flag lets you preserve the
+.git
+directory.
+# syntax=docker/docker

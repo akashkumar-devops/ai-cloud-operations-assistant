@@ -1,0 +1,8 @@
+ta. The directory itself isn't copied, only its
+contents. If it contains subdirectories, these are also copied, and merged with
+any existing directories at the destination. Any conflicts are resolved in
+favor of the content being added, on a file-by-file basis, except if you're
+trying to copy a directory onto an existing file, in which case an error is
+raised.
+If the source is a file, the file and its metadata are copied to the
+destination. File permissions are preserved. If the source is a file

@@ -1,0 +1,13 @@
+nt
+flag expects a string value, representing the name or path
+of the binary that you want to invoke when the container starts. The following
+example shows you how to run a Bash shell in a container that has been set up
+to automatically run some other binary (like
+/usr/bin/redis-server
+):
+$
+docker run -it --entrypoint /bin/bash example/redis
+The following examples show how to pass additional parameters to the custom
+entrypoint, using the positional command arguments:
+$
+docker run -it --entrypoint

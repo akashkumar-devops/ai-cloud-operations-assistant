@@ -1,0 +1,11 @@
+one,src=rclonevolume,target=/app,volume-opt=type=sftp,volume-opt=path=remote, volume-opt=sftp-host=1.2.3.4,volume-opt=sftp-user=user,volume-opt=-o "sftp-password=$(cat file_containing_password_for_remote_host)" \
+nginx:latest
+Create a service which creates an NFS volume
+The following example shows how you can create an NFS volume when creating a service.
+It uses
+10.0.0.10
+as the NFS server and
+/var/docker-nfs
+as the exported directory on the NFS server.
+Note that the volume driver specified is
+l

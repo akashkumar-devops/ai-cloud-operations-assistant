@@ -1,0 +1,32 @@
+nted here
+# with the type of build progress is defined as `plain`.
+$
+eval
+$(
+ssh-agent
+)
+$
+ssh-add ~/.ssh/id_rsa
+(Input your passphrase here)
+$
+docker buildx build --ssh
+default
+=
+$SSH_AUTH_SOCK
+.
+You can also specify a path to
+*.pem
+file on the host directly instead of
+$SSH_AUTH_SOCK
+.
+However, pem files with passphrases are not supported.
+RUN --network
+RUN
+--network
+=
+<TYPE>
+RUN --network
+allows control over which networking environment the command
+is run in.
+The supported network types are:
+T

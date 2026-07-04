@@ -1,0 +1,19 @@
+<src> ... <dest>
+Enabling this flag in
+COPY
+or
+ADD
+commands allows you to copy files with
+enhanced semantics where your files remain independent on their own layer and
+don't get invalidated when commands on previous layers are changed.
+When
+--link
+is used your source files are copied into an empty destination
+directory. That directory is turned into a layer that is linked on top of your
+previous state.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+COPY
+--link /foo /bar
+Is equivalent of doing two buil

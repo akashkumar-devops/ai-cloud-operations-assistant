@@ -1,0 +1,22 @@
+ost directory
+(the mountpoint) is, by its nature, host-dependent. This is to preserve image
+portability, since a given host directory can't be guaranteed to be available
+on all hosts. For this reason, you can't mount a host directory from
+within the Dockerfile. The
+VOLUME
+instruction does not support specifying a
+host-dir
+parameter. You must specify the mountpoint when you create or run the container.
+USER
+USER
+<user>[:<group
+>
+]
+or
+USER
+<UID>[:<GID
+>
+]
+The
+USER
+instruction sets the user name (o

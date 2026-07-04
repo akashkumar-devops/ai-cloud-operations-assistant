@@ -1,0 +1,36 @@
+-command Write-Host default
+RUN
+powershell -command Write-Host default
+# Executed as powershell -command Write-Host hello
+SHELL
+[
+"powershell"
+,
+"-command"
+]
+RUN
+Write-Host hello
+# Executed as cmd /S /C echo hello
+SHELL
+[
+"cmd"
+,
+"/S"
+,
+"/C"
+]
+RUN
+echo
+hello
+The following instructions can be affected by the
+SHELL
+instruction when the
+shell form of them is used in a Dockerfile:
+RUN
+,
+CMD
+and
+ENTRYPOINT
+.
+The following example is a common pattern found on Windows which can be
+streamlined by using 

@@ -1,0 +1,20 @@
+ername, the user must exist in the container.
+Working directory
+The default working directory for running binaries within a container is the
+root directory (
+/
+). The default working directory of an image is set using
+the Dockerfile
+WORKDIR
+command. You can override the default working
+directory for an image using the
+-w
+(or
+--workdir
+) flag for the
+docker run
+command:
+$ docker run --rm -w /my/workdir alpine pwd
+/my/workdir
+If the directory doesn't already exist in the container, it's created.
+R

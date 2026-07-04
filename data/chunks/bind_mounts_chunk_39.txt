@@ -1,0 +1,32 @@
+t, causes the bind mount to be
+mounted into the container as read-only
+.
+z
+,
+Z
+Configures SELinux labeling. See
+Configure the SELinux label
+rprivate
+(default)
+Sets bind propagation to
+rprivate
+for this mount. See
+Configure bind propagation
+.
+private
+Sets bind propagation to
+private
+for this mount. See
+Configure bind propagation
+.
+rshared
+Sets bind propagation to
+rshared
+for this mount. See
+Configure bind propagation
+.
+shared
+Sets bind propagation to
+shared
+for this mount. See
+Configure bind prop

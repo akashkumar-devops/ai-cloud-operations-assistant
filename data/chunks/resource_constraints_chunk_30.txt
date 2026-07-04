@@ -1,0 +1,9 @@
+mory Exception
+, and starts killing processes to free up
+memory. Any process is subject to killing, including Docker and other important
+applications. This can effectively bring the entire system down if the wrong
+process is killed.
+Docker attempts to mitigate these risks by adjusting the OOM priority on the
+Docker daemon so that it's less likely to be killed than other processes
+on the system. The OOM priority on containers isn't adjusted. This makes it more
+likely for an individual container t

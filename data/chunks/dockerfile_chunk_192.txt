@@ -1,0 +1,23 @@
+ for
+example:
+$
+docker build --build-arg
+HTTPS_PROXY
+=
+https://my-proxy.example.com .
+By default, these pre-defined variables are excluded from the output of
+docker history
+. Excluding them reduces the risk of accidentally leaking
+sensitive authentication information in an
+HTTP_PROXY
+variable.
+For example, consider building the following Dockerfile using
+--build-arg HTTP_PROXY=http://user:pass@proxy.lon.example.com
+FROM
+ubuntu
+RUN
+echo
+"Hello World"
+In this case, the value of the
+HTTP_PROXY
+vari

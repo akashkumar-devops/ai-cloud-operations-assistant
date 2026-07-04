@@ -1,0 +1,27 @@
+s to control things like resource constraints and
+networking.
+Commands and arguments
+You can use the
+[COMMAND]
+and
+[ARG...]
+positional arguments to specify
+commands and arguments for the container to run when it starts up. For example,
+you can specify
+sh
+as the
+[COMMAND]
+, combined with the
+-i
+and
+-t
+flags,
+to start an interactive shell in the container (if the image you select has an
+sh
+executable on
+PATH
+).
+$
+docker run -it IMAGE sh
+Note
+Depending on your Docker system configuration, you may b

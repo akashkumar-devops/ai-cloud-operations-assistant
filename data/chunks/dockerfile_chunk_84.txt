@@ -1,0 +1,31 @@
+to the specified path. Defaults to
+/run/secrets/
++
+id
+if unset and if
+env
+is also unset.
+env
+Mount the secret to an environment variable instead of a file, or both. (since Dockerfile v1.10.0)
+required
+If set to
+true
+, the instruction errors out when the secret is unavailable. Defaults to
+false
+.
+mode
+File mode for secret file in octal. Default
+0400
+.
+uid
+User ID for secret file. Default
+0
+.
+gid
+Group ID for secret file. Default
+0
+.
+Example: access to S3
+# syntax=docker/dockerfile:1
+FROM
+python:3

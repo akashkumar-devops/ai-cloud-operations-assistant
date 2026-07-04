@@ -1,0 +1,19 @@
+ng you to share native host filesystem paths with
+containers running in the virtual machine.
+Containers with bind mounts are strongly tied to the host.
+Bind mounts rely on the host machine's filesystem having a specific directory
+structure available. This reliance means that containers with bind mounts may
+fail if run on a different host without the same directory structure.
+Syntax
+To create a bind mount, you can use either the
+--mount
+or
+--volume
+flag.
+$
+docker run --mount
+type
+=
+bind,src
+=
+<ho

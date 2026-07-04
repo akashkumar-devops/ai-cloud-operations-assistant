@@ -1,0 +1,12 @@
+am layers need to be rebuilt as well. Even if they wouldn't build
+anything differently, they still need to re-run.
+Other resources
+For more information on using cache to do efficient builds, see:
+Cache invalidation
+Optimize build cache
+Garbage collection
+Cache storage backends
+Edit this page
+Request changes
+How the build cache works
+Other resources

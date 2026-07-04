@@ -1,0 +1,16 @@
+es.
+SETGID
+Make arbitrary manipulations of process GIDs and supplementary GID list.
+SETPCAP
+Modify process capabilities.
+SETUID
+Make arbitrary manipulations of process UIDs.
+SYS_CHROOT
+Use chroot(2), change root directory.
+The next table shows the capabilities which are not granted by default and may be added.
+Capability Key
+Capability Description
+AUDIT_CONTROL
+Enable and disable kernel auditing; change auditing filter rules; retrieve auditing status and filtering rules.
+AUDIT_READ
+Allow reading

@@ -1,0 +1,12 @@
+y is
+heavily contended for, memory is allocated based on the reservation hints/setup.
+The following example limits the memory (
+-m
+) to 500M and sets the memory
+reservation to 200M.
+$
+docker run -it -m 500M --memory-reservation 200M ubuntu:24.04 /bin/bash
+Under this configuration, when the container consumes memory more than 200M and
+less than 500M, the next system memory reclaim attempts to shrink container
+memory below 200M.
+The following example set memory reservation to 1G without a hard mem

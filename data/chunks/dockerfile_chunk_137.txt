@@ -1,0 +1,28 @@
+PY
+*.png /dest/
+In the following example,
+?
+is a single-character wildcard, matching e.g.
+index.js
+and
+index.ts
+.
+COPY
+index.?s /dest/
+When adding files or directories that contain special characters (such as
+[
+and
+]
+), you need to escape those paths following the Golang rules to prevent
+them from being treated as a matching pattern. For example, to add a file
+named
+arr[0].txt
+, use the following;
+COPY
+arr
+[[]
+0
+]
+.txt /dest/
+Destination
+If the destination path begins with a forward slash, it's 

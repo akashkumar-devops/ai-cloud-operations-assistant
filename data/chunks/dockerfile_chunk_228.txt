@@ -1,0 +1,34 @@
+ript.sh
+Note that
+ARG FOO=bar
+is excessive here, and can be removed. The variable
+gets interpreted at runtime, when the script is invoked:
+$
+docker build -t heredoc .
+$
+docker run -e
+FOO
+=
+world heredoc
+hello world
+Dockerfile examples
+For examples of Dockerfiles, refer to:
+The
+building best practices page
+The
+"get started" tutorials
+The
+language-specific getting started guides
+Value required
+↩︎
+↩︎
+↩︎
+For Docker-integrated
+BuildKit
+and
+docker buildx build
+↩︎
+Request changes
+Overview
+Format
+Parser

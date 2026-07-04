@@ -1,0 +1,22 @@
+container's networking stack directly, using the
+--network container:<name|id>
+flag format.
+The following flags aren't supported for containers using the
+container:
+networking mode:
+--add-host
+--hostname
+--dns
+--dns-search
+--dns-option
+--mac-address
+--publish
+--publish-all
+--expose
+The following example runs a Redis container, with Redis binding to
+127.0.0.1, then running the
+redis-cli
+command and connecting to the Redis
+server over 127.0.0.1.
+$
+docker run -d --name redis redis --bind 127.0.0.1

@@ -1,0 +1,27 @@
+ the stage must be defined in the
+Dockerfile where
+ONBUILD
+gets triggered. If it's a named context, that
+context must be passed to the downstream build.
+ONBUILD limitations
+Chaining
+ONBUILD
+instructions using
+ONBUILD ONBUILD
+isn't allowed.
+The
+ONBUILD
+instruction may not trigger
+FROM
+or
+MAINTAINER
+instructions.
+STOPSIGNAL
+STOPSIGNAL
+signal
+The
+STOPSIGNAL
+instruction sets the system call signal that will be sent to the
+container to exit. This signal can be a signal name in the format
+SIG<NAME>
+,

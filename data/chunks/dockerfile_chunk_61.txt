@@ -1,0 +1,23 @@
+ommand
+shell. The shell form doesn't use the JSON array format, instead it's a regular
+string. The shell form string lets you escape newlines using the
+escape
+character
+(backslash by default) to continue a single instruction
+onto the next line. This makes it easier to use with longer commands, because
+it lets you split them up into multiple lines. For example, consider these two
+lines:
+RUN
+source
+$HOME
+/.bashrc
+&&
+\
+echo
+$HOME
+They're equivalent to the following line:
+RUN
+source
+$HOME
+/.bashrc
+&

@@ -1,0 +1,20 @@
+ice-write-bps=""
+Limit write rate to a device (format:
+<device-path>:<number>[<unit>]
+). Number is a positive integer. Unit can be one of
+kb
+,
+mb
+, or
+gb
+.
+--device-read-iops=""
+Limit read rate (IO per second) from a device (format:
+<device-path>:<number>
+). Number is a positive integer.
+--device-write-iops=""
+Limit write rate (IO per second) to a device (format:
+<device-path>:<number>
+). Number is a positive integer.
+--oom-kill-disable=false
+Whether to disable OOM Killer for the container or no

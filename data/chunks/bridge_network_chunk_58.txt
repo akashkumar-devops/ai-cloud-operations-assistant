@@ -1,0 +1,15 @@
+. Since you haven't specified a
+--network
+flag,
+the containers connect to the default
+bridge
+network.
+$
+docker run -dit --name alpine1 alpine ash
+$
+docker run -dit --name alpine2 alpine ash
+Verify both containers are running:
+$
+docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+602dbf1edc81        alpine              "ash"               4 seconds ago       Up 3 seconds                            alpine

@@ -1,0 +1,33 @@
+text>
+]
+<src> ... <dest>
+To copy from a build stage in a
+multi-stage build
+,
+specify the name of the stage you want to copy from. You specify stage names
+using the
+AS
+keyword with the
+FROM
+instruction.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+AS
+build
+COPY
+. .
+RUN
+apk add clang
+RUN
+clang -o /hello hello.c
+FROM
+scratch
+COPY
+--from
+=
+build /hello /
+You can also copy files directly from named contexts (specified with
+--build-context <name>=<source>
+) or images. The following example copies an
+nginx

@@ -1,0 +1,15 @@
+nt fails.
+Specifying
+volume-subpath
+is useful if you only want to share a specific
+portion of a volume with a container. Say for example that you have multiple
+containers running and you want to store logs from each container in a shared
+volume. You can create a subdirectory for each container in the shared volume,
+and mount the subdirectory to the container.
+The following example creates a
+logs
+volume and initiates the subdirectories
+app1
+and
+app2
+in the volume. It then starts two containers an

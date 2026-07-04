@@ -1,0 +1,46 @@
+
+RUN
+pip install awscli
+RUN
+--mount
+=
+type
+=
+secret,id
+=
+aws,target
+=
+/root/.aws/credentials
+\
+aws s3 cp s3://... ...
+$
+docker buildx build --secret
+id
+=
+aws,src
+=
+$HOME
+/.aws/credentials .
+Example: Mount as environment variable
+The following example takes the secret
+API_KEY
+and mounts it as an
+environment variable with the same name.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+RUN
+--mount
+=
+type
+=
+secret,id
+=
+API_KEY,env
+=
+API_KEY
+\
+some-command --token-from-env
+$API_KEY
+Assuming that the
+API_KEY

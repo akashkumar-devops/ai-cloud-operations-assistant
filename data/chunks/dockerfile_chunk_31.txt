@@ -1,0 +1,24 @@
+build stage from a base image.
+HEALTHCHECK
+Check a container's health on startup.
+LABEL
+Add metadata to an image.
+MAINTAINER
+Specify the author of an image.
+ONBUILD
+Specify instructions for when the image is used in a build.
+RUN
+Execute build commands.
+SHELL
+Set the default shell of an image.
+STOPSIGNAL
+Specify the system call signal for exiting a container.
+USER
+Set user and group ID.
+VOLUME
+Create volume mounts.
+WORKDIR
+Change working directory.
+Format
+Here is the format of the Dockerfile:
+# C

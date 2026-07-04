@@ -1,0 +1,18 @@
+N --mount
+allows you to create filesystem mounts that the build can access.
+This can be used to:
+Create bind mount to the host filesystem or other build stages
+Access build secrets or ssh-agent sockets
+Use a persistent package management cache to speed up your build
+The supported mount types are:
+Type
+Description
+bind
+(default)
+Bind-mount context directories (read-only).
+cache
+Mount a temporary directory to cache directories for compilers and package managers.
+tmpfs
+Mount a
+tmpfs
+in the build co

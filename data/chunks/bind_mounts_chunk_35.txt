@@ -1,0 +1,28 @@
+t
+path does not exist on the host. Instead, it produces an error:
+$
+docker run --mount
+type
+=
+bind,src
+=
+/dev/noexist,dst
+=
+/mnt/foo alpine
+docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /dev/noexist.
+You can use the
+bind-create-src
+option to automatically create the source directory
+on the host if it doesn't exist:
+$
+docker run --mount
+type
+=
+bind,src
+=
+/home/user/mydir,dst
+=
+/mnt/foo,bind-create-src alpine
+Options for --mount
+The
+--mo

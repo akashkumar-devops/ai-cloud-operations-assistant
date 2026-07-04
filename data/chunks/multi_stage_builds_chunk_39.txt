@@ -1,0 +1,21 @@
+get without BuildKit results in all
+stages being processed:
+$
+DOCKER_BUILDKIT
+=
+0
+docker build --no-cache -f Dockerfile --target stage2 .
+Sending build context to Docker daemon  219.1kB
+Step 1/6 : FROM ubuntu AS base
+---> a7870fd478f4
+Step 2/6 : RUN echo "base"
+---> Running in e850d0e42eca
+base
+Removing intermediate container e850d0e42eca
+---> d9f69f23cac8
+Step 3/6 : FROM base AS stage1
+---> d9f69f23cac8
+Step 4/6 : RUN echo "stage1"
+---> Running in 758ba6c1a9a3
+stage1
+Removing intermediate conta

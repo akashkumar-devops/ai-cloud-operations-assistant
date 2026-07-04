@@ -1,0 +1,11 @@
+tive ceiling. For most use-cases,
+--cpus
+is a more convenient alternative.
+--cpuset-cpus
+Limit the specific CPUs or cores a container can use. A comma-separated list or hyphen-separated range of CPUs a container can use, if you have more than one CPU. The first CPU is numbered 0. A valid value might be
+0-3
+(to use the first, second, third, and fourth CPU) or
+1,3
+(to use the second and fourth CPU).
+--cpu-shares
+Set this flag to a value greater or less than the default of 1024 to increase or reduc

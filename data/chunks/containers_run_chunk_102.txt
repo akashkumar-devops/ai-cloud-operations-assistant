@@ -1,0 +1,18 @@
+orts and the exposed ports, use the
+docker port
+command.
+Environment variables
+Docker automatically sets some environment variables when creating a Linux
+container. Docker doesn't set any environment variables when creating a Windows
+container.
+The following environment variables are set for Linux containers:
+Variable
+Value
+HOME
+Set based on the value of
+USER
+HOSTNAME
+The hostname associated with the container
+PATH
+Includes popular directories, such as
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/u

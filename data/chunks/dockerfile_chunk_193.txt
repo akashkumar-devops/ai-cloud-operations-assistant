@@ -1,0 +1,22 @@
+able is not available in the
+docker history
+and is not cached. If you were to change location, and your
+proxy server changed to
+http://user:pass@proxy.sfo.example.com
+, a subsequent
+build does not result in a cache miss.
+If you need to override this behaviour then you may do so by adding an
+ARG
+statement in the Dockerfile as follows:
+FROM
+ubuntu
+ARG
+HTTP_PROXY
+RUN
+echo
+"Hello World"
+When building this Dockerfile, the
+HTTP_PROXY
+is preserved in the
+docker history
+, and changing its value invalida

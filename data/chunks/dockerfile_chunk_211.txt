@@ -1,0 +1,27 @@
+rocess is still running.
+When a container has a healthcheck specified, it has a health status in
+addition to its normal status. This status is initially
+starting
+. Whenever a
+health check passes, it becomes
+healthy
+(whatever state it was previously in).
+After a certain number of consecutive failures, it becomes
+unhealthy
+.
+The options that can appear before
+CMD
+are:
+--interval=DURATION
+(default:
+30s
+)
+--timeout=DURATION
+(default:
+30s
+)
+--start-period=DURATION
+(default:
+0s
+)
+--start-interval=DURA

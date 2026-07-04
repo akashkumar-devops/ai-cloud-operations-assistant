@@ -1,0 +1,23 @@
+wing
+Dockerfile:
+# syntax=docker/dockerfile:1
+FROM
+alpine
+ADD
+git@git.example.com:foo/bar.git /bar
+To build this Dockerfile, pass the
+--ssh
+flag to the
+docker build
+to mount
+the SSH agent socket to the build. For example:
+$
+docker build --ssh default .
+For more information about building with secrets,
+see
+Build secrets
+.
+Destination
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to

@@ -1,0 +1,15 @@
+xpose
+flag for the
+docker run
+command.
+The
+-p
+(or
+--publish
+) flag lets you explicitly map a single port or range
+of ports in the container to the host.
+The port number inside the container (where the service listens) doesn't need
+to match the port number published on the outside of the container (where
+clients connect). For example, inside the container an HTTP service might be
+listening on port 80. At runtime, the port might be bound to 42800 on the host.
+To find the mapping between the host p

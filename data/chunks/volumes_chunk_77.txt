@@ -1,0 +1,29 @@
+first container is removed.
+Remove all volumes
+To remove all unused volumes and free up space:
+$
+docker volume prune
+Next steps
+Learn about
+bind mounts
+.
+Learn about
+tmpfs mounts
+.
+Learn about
+storage drivers
+.
+Learn about
+third-party volume driver plugins
+.
+Edit this page
+Request changes
+When to use volumes
+A volume's lifecycle
+Mounting a volume over existing data
+Named and anonymous volumes
+Syntax
+Options for --mount
+Options for --volume
+Create and manage volumes
+Start a container with a volum

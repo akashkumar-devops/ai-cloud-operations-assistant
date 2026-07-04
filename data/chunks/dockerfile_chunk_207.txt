@@ -1,0 +1,34 @@
+omething like this:
+ONBUILD
+ADD
+. /app/src
+ONBUILD
+RUN
+/usr/local/bin/python-build --dir /app/src
+Copy or mount from stage, image, or context
+As of Dockerfile syntax 1.11, you can use
+ONBUILD
+with instructions that copy
+or mount files from other stages, images, or build contexts. For example:
+# syntax=docker/dockerfile:1.11
+FROM
+alpine
+AS
+baseimage
+ONBUILD
+COPY
+--from
+=
+build /usr/bin/app /app
+ONBUILD
+RUN
+--mount
+=
+from
+=
+config,target
+=
+/opt/appconfig ...
+If the source of
+from
+is a build stage,

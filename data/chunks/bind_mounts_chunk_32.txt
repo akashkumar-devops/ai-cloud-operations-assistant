@@ -1,0 +1,14 @@
+ffect non-Docker
+processes on the host system.
+You can use the
+readonly
+or
+ro
+option to prevent the container from
+writing to the mount.
+Bind mounts are created to the Docker daemon host, not the client.
+If you're using a remote Docker daemon, you can't create a bind mount to
+access files on the client machine in a container.
+For Docker Desktop, the daemon runs inside a Linux VM, not directly on the
+native host. Docker Desktop has built-in mechanisms that transparently handle
+bind mounts, allowi

@@ -1,0 +1,25 @@
+me
+or
+-v
+flag consists of three fields, separated by colon
+characters (
+:
+). The fields must be in the correct order.
+$
+docker run -v <host-path>:<container-path>
+[
+:opts
+]
+The first field is the path on the host to bind mount into the container. The
+second field is the path where the file or directory is mounted in the
+container.
+The third field is optional, and is a comma-separated list of options. Valid
+options for
+--volume
+with a bind mount include:
+Option
+Description
+readonly
+,
+ro
+If presen

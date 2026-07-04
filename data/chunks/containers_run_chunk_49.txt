@@ -1,0 +1,34 @@
+ntained command can't be found.
+$
+docker run busybox foo
+;
+echo
+$?
+docker: Error response from daemon: Container command 'foo' not found or does not exist.
+127
+Other exit codes
+Any exit code other than
+125
+,
+126
+, and
+127
+represent the exit code of the
+provided container command.
+$
+docker run busybox /bin/sh -c
+'exit 3'
+$
+echo
+$?
+3
+Runtime constraints on resources
+The operator can also adjust the performance parameters of the
+container:
+Option
+Description
+-m
+,
+--memory=""
+Memory limit (format:
+<

@@ -1,0 +1,16 @@
+ess you've manually configured the gateway address on the bridge,
+or a device attached to it.
+This option can only be used with user-defined bridge networks.
+Usage examples
+This section provides hands-on examples for working with bridge networks.
+Use the default bridge network
+This example shows how the default
+bridge
+network works. You start two
+alpine
+containers on the default bridge and test how they communicate.
+Note
+The default
+bridge
+network is not recommended for production. Use
+user-defi

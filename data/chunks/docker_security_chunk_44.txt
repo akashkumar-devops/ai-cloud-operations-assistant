@@ -1,0 +1,10 @@
+hat in most cases, containers do not need "real" root
+privileges at all* And therefore, containers can run with a reduced
+capability set; meaning that "root" within a container has much less
+privileges than the real "root". For instance, it is possible to:
+Deny all "mount" operations
+Deny access to raw sockets (to prevent packet spoofing)
+Deny access to some filesystem operations, like creating new device
+nodes, changing the owner of files, or altering attributes (including
+the immutable flag)
+D

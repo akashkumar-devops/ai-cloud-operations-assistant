@@ -1,0 +1,29 @@
+ge
+docker image build
+docker image history
+docker image import
+docker image inspect
+docker image load
+docker image ls
+docker image prune
+docker image pull
+docker image push
+docker image rm
+docker image save
+docker image tag
+docker images
+docker info
+docker init
+docker inspect
+docker login
+docker logout
+docker manifest
+docker manifest annotate
+docker manifest create
+docker manifest inspect
+docker manifest push
+docker manifest rm
+docker mcp
+docker mcp catalog
+docker mcp catalog create
+docker mcp c

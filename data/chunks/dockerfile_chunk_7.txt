@@ -1,0 +1,23 @@
+nable model-runner
+docker desktop engine
+docker desktop engine ls
+docker desktop engine use
+docker desktop kubernetes
+docker desktop kubernetes images
+docker desktop logs
+docker desktop restart
+docker desktop start
+docker desktop status
+docker desktop stop
+docker desktop update
+docker desktop version
+docker dhi
+docker dhi attestation
+docker dhi attestation get
+docker dhi attestation list
+docker dhi attestation sbom
+docker dhi auth
+docker dhi auth apk
+docker dhi auth deb
+docker dhi catalog
+docker

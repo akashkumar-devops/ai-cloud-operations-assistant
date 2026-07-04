@@ -1,0 +1,9 @@
+ightforward way of removing a mount to reveal
+the obscured files again. Your best option is to recreate the container without
+the mount.
+Considerations and constraints
+Bind mounts have write access to files on the host by default.
+One side effect of using bind mounts is that you can change the host
+filesystem via processes running in a container, including creating,
+modifying, or deleting important system files or directories. This capability
+can have security implications. For example, it may a

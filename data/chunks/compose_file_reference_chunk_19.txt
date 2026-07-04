@@ -1,0 +1,28 @@
+rvice scale
+docker service update
+docker stack
+docker stack config
+docker stack deploy
+docker stack ls
+docker stack ps
+docker stack rm
+docker stack services
+docker swarm
+docker swarm ca
+docker swarm init
+docker swarm join
+docker swarm join-token
+docker swarm leave
+docker swarm unlock
+docker swarm unlock-key
+docker swarm update
+docker system
+docker system df
+docker system events
+docker system info
+docker system prune
+docker trust
+docker trust inspect
+docker trust key
+docker trust key generate
+doc

@@ -1,0 +1,28 @@
+
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 9.634/9.706/9.778 ms
+Detach with
+CTRL+p CTRL+q
+and repeat for
+alpine3
+and
+alpine1
+if
+desired.
+Clean up:
+$
+docker container stop alpine1 alpine2 alpine3 alpine4
+$
+docker container rm alpine1 alpine2 alpine3 alpine4
+$
+docker network rm alpine-net
+Next steps
+Learn about
+networking from the container's point of view
+Learn about
+overlay networks
+Learn about
+Macvlan networks
+Edit this page
+Request changes
+Differences b

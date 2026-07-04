@@ -1,0 +1,8 @@
+g image defaults
+Default command and options
+Default entrypoint
+Exposed ports
+Environment variables
+Healthchecks
+User
+Working directory

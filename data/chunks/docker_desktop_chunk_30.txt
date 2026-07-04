@@ -1,0 +1,24 @@
+ to work natively on Linux through WSL 2 on Windows machines.
+Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
+Products inside Docker Desktop
+Docker MCP Toolkit and Catalog
+Docker Model Runner
+Gordon
+Docker Offload
+Docker Engine
+Docker CLI client
+Docker Build
+Docker Compose
+Docker Scout
+Kubernetes
+Next steps
+Install Docker Desktop
+Install Docker Desktop on
+Mac
+,
+Windows
+, or
+Linux
+.
+Learn about Docker Desktop
+N

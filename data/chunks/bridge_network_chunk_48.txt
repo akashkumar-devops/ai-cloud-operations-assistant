@@ -1,0 +1,17 @@
+
+docker network disconnect my-net my-nginx
+Use IPv6 in a user-defined bridge network
+When you create your network, you can specify the
+--ipv6
+flag to enable IPv6.
+$
+docker network create --ipv6 --subnet 2001:db8:1234::/64 my-net
+If you do not provide a
+--subnet
+option, a Unique Local Address (ULA) prefix
+will be chosen automatically.
+IPv6-only bridge networks
+To skip IPv4 address configuration on the bridge and in its containers, create
+the network with option
+--ipv4=false
+, and enable IPv6 usin

@@ -1,0 +1,20 @@
+ach
+(or
+-d
+) flag. This starts the container without occupying your
+terminal window.
+$
+docker run -d <IMAGE>
+While the container runs in the background, you can interact with the container
+using other CLI commands. For example,
+docker logs
+lets you view the logs for
+the container, and
+docker attach
+brings it to the foreground.
+$
+docker run -d nginx
+0246aa4d1448a401cabd2ce8f242192b6e7af721527e48a810463366c7ff54f1
+$
+docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS

@@ -1,0 +1,24 @@
+ories after it will be preserved. This may be especially useful copies between stages
+with
+--from
+where the source paths need to be absolute.
+# syntax=docker/dockerfile:1
+FROM
+scratch
+COPY
+--parents ./x/./y/*.txt /parents/
+# Build context:
+# ./x/y/a.txt
+# ./x/y/b.txt
+#
+# Output:
+# /parents/y/a.txt
+# /parents/y/b.txt
+The
+**
+wildcard matches any number of path components, including none, and
+can be used to recursively match files across directory levels:
+# syntax=docker/dockerfile:1
+FROM
+scratch
+C

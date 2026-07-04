@@ -1,0 +1,11 @@
+ ls -la /mnt/src/docker
+total 1516
+drwxrwxr-x 1 1000 1000   4096 Dec  4 06:08 .
+drwxrwxr-x 1 1000 1000   4096 Dec  4 11:46 ..
+-rw-rw-r-- 1 1000 1000     16 Oct  8 00:09 .dockerignore
+-rwxrwxr-x 1 1000 1000    464 Oct  8 00:09 .drone.yml
+drwxrwxr-x 1 1000 1000   4096 Dec  4 06:11 .git
+-rw-rw-r-- 1 1000 1000    461 Dec  4 06:08 .gitignore
+....
+The default seccomp profile will adjust to the selected capabilities, in order to allow
+use of facilities allowed by the capabilities, so you should not hav

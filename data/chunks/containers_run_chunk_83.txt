@@ -1,0 +1,18 @@
+In addition to
+--privileged
+, the operator can have fine grain control over the
+capabilities using
+--cap-add
+and
+--cap-drop
+. By default, Docker has a default
+list of capabilities that are kept. The following table lists the Linux capability
+options which are allowed by default and can be dropped.
+Capability Key
+Capability Description
+AUDIT_WRITE
+Write records to kernel auditing log.
+CHOWN
+Make arbitrary changes to file UIDs and GIDs (see chown(2)).
+DAC_OVERRIDE
+Bypass file read, write, and exec

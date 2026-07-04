@@ -1,0 +1,34 @@
+s is isolated in
+that it has its own file system, its own networking, and its own
+isolated process tree separate from the host.
+This page details how to use the
+docker run
+command to run containers.
+General form
+A
+docker run
+command takes the following form:
+$
+docker run
+[
+OPTIONS
+]
+IMAGE
+[
+:TAG
+|
+@DIGEST
+]
+[
+COMMAND
+]
+[
+ARG...
+]
+The
+docker run
+command must specify an
+image reference
+to create the container from.
+Image references
+The image reference is the name and version of the image. You can 

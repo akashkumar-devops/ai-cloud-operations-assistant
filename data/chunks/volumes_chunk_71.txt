@@ -1,0 +1,23 @@
+te -l 1G disk.raw
+Build a filesystem onto the
+disk.raw
+file:
+$
+mkfs.ext4 disk.raw
+Create a loop device:
+$
+losetup -f --show disk.raw
+/dev/loop5
+Note
+losetup
+creates an ephemeral loop device that's removed after
+system reboot, or manually removed with
+losetup -d
+.
+Run a container that mounts the loop device as a volume:
+$
+docker run -it --rm
+\
+--mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4' \
+ubuntu bash
+When the container starts, th

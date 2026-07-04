@@ -1,0 +1,25 @@
+ -b
+root         7  0.0  0.1   5884  2816 pts/1    Rs+  13:58   0:00 ps waux
+$
+/usr/bin/time docker stop
+test
+test
+real	0m 10.19s
+user	0m 0.04s
+sys	0m 0.03s
+Understand how CMD and ENTRYPOINT interact
+Both
+CMD
+and
+ENTRYPOINT
+instructions define what command gets executed when running a container.
+There are few rules that describe their co-operation.
+Dockerfile should specify at least one of
+CMD
+or
+ENTRYPOINT
+commands.
+ENTRYPOINT
+should be defined when using the container as an executable.
+CMD
+sho

@@ -1,0 +1,14 @@
+to a physical host. Just as a host can be connected to multiple Ethernet
+networks, a container can be connected to multiple Docker networks.
+For example, a frontend container may be connected to a bridge network
+with external access, and a
+--internal
+network
+to communicate with containers running backend services that do not need
+external network access.
+A container may also be connected to different types of network. For example,
+an
+ipvlan
+network to provide internet access, and a
+bridge
+networ

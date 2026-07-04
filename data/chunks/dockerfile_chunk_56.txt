@@ -1,0 +1,39 @@
+tution use the same value for each variable
+throughout the entire instruction. Changing the value of a variable only takes
+effect in subsequent instructions. Consider the following example:
+ENV
+abc
+=
+hello
+ENV
+abc
+=
+bye
+def
+=
+$abc
+ENV
+ghi
+=
+$abc
+The value of
+def
+becomes
+hello
+The value of
+ghi
+becomes
+bye
+.dockerignore file
+You can use
+.dockerignore
+file to exclude files and directories from the
+build context. For more information, see
+.dockerignore file
+.
+Shell and exec form
+The
+RUN
+,
+CMD
+, and

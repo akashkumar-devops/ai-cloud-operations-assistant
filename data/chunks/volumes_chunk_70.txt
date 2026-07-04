@@ -1,0 +1,20 @@
+ice=/dev/loop5,volume-opt=type=ext4'
+You can't run the
+mount
+command inside the container directly,
+because the container is unable to access the
+/dev/loop5
+device.
+That's why the
+docker run
+command uses the
+--mount
+option.
+Example: Mounting a block device in a container
+The following steps create an
+ext4
+filesystem and mounts it into a container.
+The filesystem support of your system depends on the version of the Linux kernel you are using.
+Create a file and allocate some space to it:
+$
+falloca

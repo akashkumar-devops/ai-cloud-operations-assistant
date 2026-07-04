@@ -1,0 +1,10 @@
+annot refer to each other by name.
+It can be useful to separate groups of containers that should have full
+access to each other, but restricted access to containers in other groups.
+You can create custom, user-defined networks, and connect groups of containers
+to the same network. Once connected to a user-defined network, containers
+can communicate with each other using container IP addresses or container names.
+The following example creates a network using the
+bridge
+network driver and
+runs a c

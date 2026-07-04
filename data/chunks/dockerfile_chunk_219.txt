@@ -1,0 +1,26 @@
+the
+SHELL
+instruction:
+RUN
+powershell -command Execute-MyCmdlet -param1
+"c:\foo.txt"
+The command invoked by the builder will be:
+cmd
+/
+S
+/
+C
+powershell
+-command
+Execute-MyCmdlet
+-param1
+"c:\foo.txt"
+This is inefficient for two reasons. First, there is an unnecessary
+cmd.exe
+command processor (aka shell) being invoked. Second, each
+RUN
+instruction in
+the shell form requires an extra
+powershell -command
+prefixing the command.
+To make this more efficient, one of two mechanisms can be employed. One 

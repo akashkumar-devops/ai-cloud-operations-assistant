@@ -1,0 +1,20 @@
+ontainer. Don't rely on the output of
+free
+or similar tools to determine whether swap is present.
+Prevent a container from using swap
+If
+--memory
+and
+--memory-swap
+are set to the same value, this prevents
+containers from using any swap. This is because
+--memory-swap
+is the amount of
+combined memory and swap that can be used, while
+--memory
+is only the amount
+of physical memory that can be used.
+--memory-swappiness
+details
+A value of 0 turns off anonymous page swapping.
+A value of 100 sets all an

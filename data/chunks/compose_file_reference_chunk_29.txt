@@ -1,0 +1,15 @@
+ker DX
+extension for linting, code navigation, and vulnerability scanning.
+Version and name top-level element
+Understand version and name attributes for Compose.
+Services top-level element
+Explore all services attributes for Compose.
+Networks top-level element
+Find all networks attributes for Compose.
+Volumes top-level element
+Explore all volumes attributes for Compose.
+Configs top-level element
+Find out about configs in Compose.
+Secrets top-level element
+Learn about secrets in Compose.
+Edit thi

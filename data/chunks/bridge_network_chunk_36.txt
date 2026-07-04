@@ -1,0 +1,10 @@
+on, configuring the default bridge network happens outside of Docker
+itself, and requires a restart of Docker.
+User-defined bridge networks are created and configured using
+docker network create
+. If different groups of applications have different
+network requirements, you can configure each user-defined bridge separately,
+as you create it.
+Linked containers on the default bridge network share environment variables
+.
+Originally, the only way to share environment variables between two containers

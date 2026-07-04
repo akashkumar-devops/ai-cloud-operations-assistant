@@ -1,0 +1,20 @@
+tainer's publishing options. For example,
+-p 0.0.0.0:8080:80
+.
+Manage a user-defined bridge
+Use the
+docker network create
+command to create a user-defined bridge
+network.
+$
+docker network create my-net
+You can specify the subnet, the IP address range, the gateway, and other
+options. See the
+docker network create
+reference or the output of
+docker network create --help
+for details.
+Use the
+docker network rm
+command to remove a user-defined bridge
+network. If containers are currently connected to t

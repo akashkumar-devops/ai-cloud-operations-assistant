@@ -1,0 +1,13 @@
+cify a volume
+which does not already exist, an empty volume is created for you. This is a
+good way to pre-populate data that another container needs.
+To prevent Docker from copying a container's pre-existing files into an empty
+volume, use the
+volume-nocopy
+option, see
+Options for --mount
+.
+Named and anonymous volumes
+A volume may be named or anonymous. Anonymous volumes are given a random name
+that's guaranteed to be unique within a given Docker host. Just like named
+volumes, anonymous volumes 

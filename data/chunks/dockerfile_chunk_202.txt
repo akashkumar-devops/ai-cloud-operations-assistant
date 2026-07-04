@@ -1,0 +1,30 @@
+e same name, like
+this Dockerfile:
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+ENV
+CONT_IMG_VER
+=
+hello
+RUN
+echo
+$CONT_IMG_VER
+Line 3 doesn't cause a cache miss because the value of
+CONT_IMG_VER
+is a
+constant (
+hello
+). As a result, the environment variables and values used on
+the
+RUN
+(line 4) doesn't change between builds.
+ONBUILD
+ONBUILD
+<INSTRUCTION>
+The
+ONBUILD
+instruction adds to the image a trigger instruction to
+be executed at a later time, when the image is used as the base for
+another build. The trigg

@@ -1,0 +1,20 @@
+
+alpine-net
+, and one connects to
+the default
+bridge
+. Then connect one container to both networks:
+$
+docker run -dit --name alpine1 --network alpine-net alpine ash
+$
+docker run -dit --name alpine2 --network alpine-net alpine ash
+$
+docker run -dit --name alpine3 alpine ash
+$
+docker run -dit --name alpine4 --network alpine-net alpine ash
+$
+docker network connect bridge alpine4
+Verify all containers are running:
+$
+docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREA

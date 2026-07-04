@@ -1,0 +1,20 @@
+UT
+and
+STDERR
+. To read more about I/O and Linux, see the
+Linux Documentation Project article on I/O redirection
+.
+In some cases,
+docker logs
+may not show useful information unless you take
+additional steps.
+If you use a
+logging driver
+which sends logs to a file, an
+external host, a database, or another logging back-end, and have
+"dual logging"
+disabled,
+docker logs
+may not show useful information.
+If your image runs a non-interactive process such as a web server or a
+database, that application 

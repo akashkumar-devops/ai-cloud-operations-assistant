@@ -1,0 +1,10 @@
+[INFO] Installed docker.service successfully.
+[INFO] To control docker.service, run: `systemctl --user (start|stop|restart) docker.service`
+[INFO] To run docker.service on system startup, run: `sudo loginctl enable-linger testuser`
+[INFO] Creating CLI context "rootless"
+Successfully created context "rootless"
+[INFO] Using CLI context "rootless"
+Current context is now "rootless"
+[INFO] Make sure the following environment variable(s) are set (or add them to ~/.bashrc):
+export PATH=/usr/bin:$PATH
+[

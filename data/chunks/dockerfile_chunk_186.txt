@@ -1,0 +1,32 @@
+he Dockerfile. For example, consider this Dockerfile:
+FROM
+busybox
+USER
+${username:-some_user
+}
+ARG
+username
+USER
+$username
+# ...
+A user builds this file by calling:
+$
+docker build --build-arg
+username
+=
+what_user .
+The
+USER
+instruction on line 2 evaluates to the
+some_user
+fallback,
+because the
+username
+variable is not yet declared.
+The
+username
+variable is declared on line 3, and available for reference in
+Dockerfile instruction from that point onwards.
+The
+USER
+instruction on line 4 evaluates 

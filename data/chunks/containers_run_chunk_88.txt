@@ -1,0 +1,13 @@
+formance and observability privileged operations using perf_events, i915_perf and other kernel subsystems
+SYS_ADMIN
+Perform a range of system administration operations.
+SYS_BOOT
+Use reboot(2) and kexec_load(2), reboot and load a new kernel for later execution.
+SYS_MODULE
+Load and unload kernel modules.
+SYS_NICE
+Raise process nice value (nice(2), setpriority(2)) and change the nice value for arbitrary processes.
+SYS_PACCT
+Use acct(2), switch process accounting on or off.
+SYS_PTRACE
+Trace arbitrar

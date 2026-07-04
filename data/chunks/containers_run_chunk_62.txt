@@ -1,0 +1,15 @@
+rs where you have also set the
+-m/--memory
+option. If the
+-m
+flag is not set, this can result in the host
+running out of memory and require killing the host's system processes to free
+memory.
+The following example limits the memory to 100M and disables the OOM killer for
+this container:
+$
+docker run -it -m 100M --oom-kill-disable ubuntu:24.04 /bin/bash
+The following example, illustrates a dangerous way to use the flag:
+$
+docker run -it --oom-kill-disable ubuntu:24.04 /bin/bash
+The container has 

@@ -1,0 +1,50 @@
+ize"
+:
+16
+},
+{
+"base"
+:
+"172.20.0.0/14"
+,
+"size"
+:
+16
+},
+{
+"base"
+:
+"172.24.0.0/14"
+,
+"size"
+:
+16
+},
+{
+"base"
+:
+"172.28.0.0/14"
+,
+"size"
+:
+16
+},
+{
+"base"
+:
+"192.168.0.0/16"
+,
+"size"
+:
+20
+}
+]
+}
+base
+: The subnet that can be allocated from.
+size
+: The prefix length used for each allocated subnet.
+When an IPv6 subnet is required and there are no IPv6 addresses in
+default-address-pools
+, Docker allocates
+subnets from a Unique Local Address (ULA) prefix. To use specific IPv6 subnets instead, add them

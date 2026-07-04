@@ -1,0 +1,33 @@
+tor to write the contents of the here-document directly to a file. The
+following example creates a
+greeting.txt
+file containing
+hello world
+using
+a
+COPY
+instruction.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+COPY
+<<EOF greeting.txt
+hello world
+EOF
+Regular here-doc
+variable expansion and tab stripping rules
+apply.
+The following example shows a small Dockerfile that creates a
+hello.sh
+script
+file using a
+COPY
+instruction with a here-document.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+ARG
+FOO
+=
+bar
+C

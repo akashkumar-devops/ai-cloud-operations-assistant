@@ -1,0 +1,14 @@
+. The value of the
+--restart
+flag can be
+any of the following:
+Flag
+Description
+no
+Don't automatically restart the container. (Default)
+on-failure[:max-retries]
+Restart the container if it exits due to an error, which manifests as a non-zero exit code. Optionally, limit the number of times the Docker daemon attempts to restart the container using the
+:max-retries
+option. The
+on-failure
+policy only prompts a restart if the container exits with a failure. It doesn't restart the container if the da
