@@ -1,23 +1,24 @@
-wing
-Dockerfile:
-# syntax=docker/dockerfile:1
-FROM
-alpine
-ADD
-git@git.example.com:foo/bar.git /bar
-To build this Dockerfile, pass the
---ssh
-flag to the
-docker build
-to mount
-the SSH agent socket to the build. For example:
-$
-docker build --ssh default .
-For more information about building with secrets,
-see
-Build secrets
-.
-Destination
-If the destination path begins with a forward slash, it's interpreted as an
-absolute path, and the source files are copied into the specified destination
-relative to
+ a directory, the existing mode is
+overridden with the new mode from the copied path. If you need a specific mode
+for a directory, such as the more permissive
+/tmp
+directory, you may need to
+either avoid using
+--link
+, unroll the copy into its base components, or use
+--chmod
+to ensure the overwriting directory contains the same permissions.
+COPY --parents
+COPY
+[
+--parents
+[=
+<boolean>
+]]
+<src> ... <dest>
+The
+--parents
+flag preserves parent directories for
+src
+entries. This flag defaults to
+false

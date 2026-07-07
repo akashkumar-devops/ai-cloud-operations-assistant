@@ -1,19 +1,26 @@
-ault values
-Scope
-Using ARG variables
-Predefined ARGs
-Automatic platform ARGs in the global scope
-BuildKit built-in build args
-Impact on build caching
-ONBUILD
-Copy or mount from stage, image, or context
-ONBUILD limitations
+D
+COPY
+ENV
+EXPOSE
+FROM
+LABEL
 STOPSIGNAL
-HEALTHCHECK
-SHELL
-Here-Documents
-Example: Running a multi-line script
-Example: Creating inline files
-Dockerfile examples
-Docker can build images automatically by reading the instructions from a
-Dockerfile. A Dockerfile is a text document that contains all the comman
+USER
+VOLUME
+WORKDIR
+ONBUILD
+(when combined with one of the supported instructions above)
+You can also use environment variables with
+RUN
+,
+CMD
+, and
+ENTRYPOINT
+instructions, but in those cases the variable substitution is handled by the
+command shell, not the builder. Note that instructions using the exec form
+don't invoke a command shell automatically. See
+Variable
+substitution
+.
+Environment variable substitution use the same value for each variable
+throu

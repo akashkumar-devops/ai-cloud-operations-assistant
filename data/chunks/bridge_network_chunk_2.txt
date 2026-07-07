@@ -1,35 +1,11 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+on limit for bridge networks
+Skip Bridge IP address configuration
+Usage examples
+Use the default bridge network
+Use user-defined bridge networks
+Next steps
+A Docker bridge network has an IPv4 subnet and, optionally, an IPv6 subnet.
+Each container connected to the bridge network has a network interface with
+addresses in the network's subnets. By default, it:
+Allows unrestricted network access to containers in the network from
+the host, and from other containers connected to the same bridge networ

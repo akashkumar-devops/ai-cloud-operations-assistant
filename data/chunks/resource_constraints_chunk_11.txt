@@ -1,33 +1,22 @@
-ork driver plugins
-Docker Plugin API
-Docker volume plugins
-Plugin Config Version 1 of Plugin V2
-Use Docker Engine plugins
-Release notes
-Engine v29
-Engine v28
-Engine v27
-Engine v26.1
-Engine v26.0
-Engine v25.0
-Engine v24.0
-Engine v23.0
-Engine v20.10
-Engine v19.03
-Engine v18.09
-Engine v18.06
-Engine v18.05
-Engine v18.04
-Engine v18.03
-Engine v18.02
-Engine v18.01
-Engine v17.12
-Engine v17.11
-Engine v17.10
-Engine v17.09
-Engine v17.07
-Engine v17.06
-Engine v17.05
-Engine v17.04
-Engine v17.03
-Prior releases
+ to disk
+when the container has exhausted all the RAM that's available to it. There is a
+performance penalty for applications that swap memory to disk often.
+Its setting can have complicated effects:
+If
+--memory-swap
+is set to a positive integer, then both
+--memory
+and
+--memory-swap
+must be set.
+--memory-swap
+represents the total amount of
+memory and swap that can be used, and
+--memory
+controls the amount used by
+non-swap memory. So if
+--memory="300m"
+and
+--memory-swap="1g"
+, the
+container can u

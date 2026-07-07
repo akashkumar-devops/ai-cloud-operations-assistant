@@ -1,22 +1,21 @@
-nvalid due to appearing twice:
-# directive=value1
-# directive=value2
+ID output by the commit before each new
 FROM
-ImageName
-Treated as a comment because it appears after a builder instruction:
+instruction. Each
 FROM
-ImageName
-# directive=value
-Treated as a comment because it appears after a comment that isn't a parser
-directive:
-# About my dockerfile
-# directive=value
+instruction clears any state created by previous
+instructions.
+Optionally a name can be given to a new build stage by adding
+AS name
+to the
 FROM
-ImageName
-The following
-unknowndirective
-is treated as a comment because it isn't
-recognized. The known
-syntax
-directive is treated as a comment because it
-appears after a comment th
+instruction. The name can be used in subsequent
+FROM <name>
+,
+COPY --from=<name>
+,
+and
+RUN --mount=type=bind,from=<name>
+instructions
+to refer to the image built in this stage.
+Using a previous build stage as the base for a subsequent stage is a common
+pattern for sharing a common base 

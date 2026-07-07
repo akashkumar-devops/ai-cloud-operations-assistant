@@ -1,20 +1,36 @@
-er, this syntax is, at best, confusing as it is not
-natural for paths on Windows, and at worst, error prone as not all commands on
-Windows support
-/
-as the path separator.
-By adding the
-escape
-parser directive, the following Dockerfile succeeds as
-expected with the use of natural platform semantics for file paths on Windows:
-# escape=`
-FROM
-microsoft/nanoserver
+e
+docker build --no-cache
+.
+See the
+Dockerfile Best Practices
+guide
+for more information.
+The cache for
+RUN
+instructions can be invalidated by
+ADD
+and
 COPY
-testfile.txt c:
-\
-RUN dir c:
-\
-Results in:
-PS E:\myproject> docker build -t succeeds --no-cache=true .
-Sending build context to Doc
+instructions.
+RUN --device
+Note
+Not yet available in stable syntax, use
+docker/dockerfile:1-labs
+version. It also needs BuildKit 0.20.0 or later.
+RUN
+--device
+=
+name,
+[
+required
+]
+RUN --device
+allows build to request
+CDI devices
+to be available to the build step.
+Warning
+The use of
+--device
+is protected by the
+device
+entitlement, which needs

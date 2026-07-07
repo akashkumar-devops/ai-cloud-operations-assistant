@@ -1,31 +1,26 @@
-r exit codes values.
-125
-Exit code
-125
-indicates that the error is with Docker daemon itself.
+rtion of time is the same as the proportion of blkio
+weights of the two containers.
+The
+--blkio-weight-device="DEVICE_NAME:WEIGHT"
+flag sets a specific device weight.
+The
+DEVICE_NAME:WEIGHT
+is a string containing a colon-separated device name and weight.
+For example, to set
+/dev/sda
+device weight to
+200
+:
 $
-docker run --foo busybox
-;
-echo
-$?
-flag provided but not defined: --foo
-See 'docker run --help'.
-125
-126
-Exit code
-126
-indicates that the specified contained command can't be invoked.
-The container command in the following example is:
-/etc
-.
-$
-docker run busybox /etc
-;
-echo
-$?
-docker: Error response from daemon: Container command '/etc' could not be invoked.
-126
-127
-Exit code
-127
-indicates that the co
+docker run -it
+\
+--blkio-weight-device "/dev/sda:200" \
+ubuntu
+If you specify both the
+--blkio-weight
+and
+--blkio-weight-device
+, Docker
+uses the
+--blkio-weight
+as the default weight and uses

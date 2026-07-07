@@ -1,29 +1,38 @@
-the
-<value>
-changes, you get a cache miss.
-Consider another example under the same command line:
+ENTRYPOINT
+ash /script.sh
+In this case, file script prints "hello bar", because the variable is expanded
+when the
+COPY
+instruction gets executed.
+$
+docker build -t heredoc .
+$
+docker run heredoc
+hello bar
+If instead you were to quote any part of the here-document word
+EOT
+, the
+variable would not be expanded at build-time.
+# syntax=docker/dockerfile:1
 FROM
-ubuntu
+alpine
 ARG
-CONT_IMG_VER
-ENV
-CONT_IMG_VER
+FOO
 =
-$CONT_IMG_VER
-RUN
+bar
+COPY
+<<-
+"EOT"
+/script.sh
 echo
-$CONT_IMG_VER
-In this example, the cache miss occurs on line 3. The miss happens because
-the variable's value in the
-ENV
-references the
-ARG
-variable and that
-variable is changed through the command line. In this example, the
-ENV
-command causes the image to include the value.
-If an
-ENV
-instruction overrides an
-ARG
-instruction of th
+"hello
+${
+FOO
+}
+"
+EOT
+ENTRYPOINT
+ash /script.sh
+Note that
+ARG FOO=bar
+is excessive here, 

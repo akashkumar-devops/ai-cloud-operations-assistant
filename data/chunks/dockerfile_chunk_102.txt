@@ -1,26 +1,34 @@
-orts, or the
--P
-flag to publish all exposed
-ports and map them to high-order ports.
-By default,
-EXPOSE
-assumes TCP. You can also specify UDP:
-EXPOSE
-80/udp
-To expose on both TCP and UDP, include two lines:
-EXPOSE
-80/tcp
-EXPOSE
-80/udp
-In this case, if you use
--P
-with
-docker run
-, the port will be exposed once
-for TCP and once for UDP. Remember that
--P
-uses an ephemeral high-ordered host
-port on the host, so TCP and UDP doesn't use the same port.
-Regardless of the
-EXPOSE
-settings, you can override
+moby/buildkit.git#v0.26.2 /
+ADD
+--checksum
+=
+sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
+ADD --chmod
+See
+COPY --chmod
+.
+ADD --chown
+See
+COPY --chown
+.
+ADD --link
+See
+COPY --link
+.
+ADD --unpack
+ADD
+[
+--unpack
+=
+<bool>
+]
+<src> ... <dir>
+The
+--unpack
+flag controls whether or not to automatically unpack tar
+archives (including compressed formats like
+gzip
+or
+bzip2
+) when adding them
+to the image

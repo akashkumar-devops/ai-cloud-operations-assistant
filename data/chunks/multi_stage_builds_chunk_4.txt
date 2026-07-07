@@ -1,37 +1,16 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+s its base. The
+COPY --from=0
+line copies just the
+built artifact from the previous stage into this new stage. The Go SDK and any
+intermediate artifacts are left behind, and not saved in the final image.
+Name your build stages
+By default, the stages aren't named, and you refer to them by their integer
+number, starting with 0 for the first
+FROM
+instruction. However, you can
+name your stages, by adding an
+AS <NAME>
+to the
+FROM
+instruction. This
+example improves the previous one by naming the stage

@@ -1,36 +1,34 @@
- when building images.
-A Dockerfile may include one or more
-ARG
-instructions. For example,
-the following is a valid Dockerfile:
-FROM
-busybox
-ARG
-user1
-ARG
-buildno
-# ...
-Default values
-An
-ARG
-instruction can optionally include a default value:
-FROM
-busybox
-ARG
-user1
-=
-someuser
-ARG
-buildno
-=
-1
-# ...
-If an
-ARG
-instruction has a default value and if there is no value passed
-at build-time, the builder uses the default.
-Scope
-An
-ARG
-variable comes into effect from the line on which it is declared in
-t
+ealthcheck specified, it has a health status in
+addition to its normal status. This status is initially
+starting
+. Whenever a
+health check passes, it becomes
+healthy
+(whatever state it was previously in).
+After a certain number of consecutive failures, it becomes
+unhealthy
+.
+The options that can appear before
+CMD
+are:
+--interval=DURATION
+(default:
+30s
+)
+--timeout=DURATION
+(default:
+30s
+)
+--start-period=DURATION
+(default:
+0s
+)
+--start-interval=DURATION
+(default:
+5s
+)
+--retries=N
+(default:
+3
+)
+The

@@ -1,20 +1,8 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+ a
+--network
+specified, are attached to the default bridge network. This can be a risk, as unrelated stacks/services/containers are then able to communicate.
+Using a user-defined network provides a scoped network in which only containers attached to that network are able to communicate.
+Containers can be attached and detached from user-defined networks on the fly
+.
+During a container's lifetime, you can connect or disconnect it from
+user-defined networks on the fly. To remove a container from th

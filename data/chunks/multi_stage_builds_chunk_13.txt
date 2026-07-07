@@ -1,27 +1,20 @@
-ix targets
-Contexts
-Bake file reference
-Bake standard library functions
-Building with Bake from a Compose file
-Overriding configurations
-Remote Bake file definition
-Cache
-Build cache invalidation
-Build garbage collection
-Cache storage backends
-Amazon S3 cache
-Azure Blob Storage cache
-GitHub Actions cache
-Inline cache
-Local cache
-Registry cache
-Optimize cache usage in builds
-CI
-GitHub Actions
-Annotations
-Attestations
-Build checks
-Build secrets
-Build summary
-BuildKit configuration
-Cache management
+build context to Docker daemon  219.1kB
+Step 1/6 : FROM ubuntu AS base
+---> a7870fd478f4
+Step 2/6 : RUN echo "base"
+---> Running in e850d0e42eca
+base
+Removing intermediate container e850d0e42eca
+---> d9f69f23cac8
+Step 3/6 : FROM base AS stage1
+---> d9f69f23cac8
+Step 4/6 : RUN echo "stage1"
+---> Running in 758ba6c1a9a3
+stage1
+Removing intermediate container 758ba6c1a9a3
+---> 396baa55b8c3
+Step 5/6 : FROM base AS stage2
+---> d9f69f23cac8
+Step 6/6 : RUN echo "stage2"
+---> Running in bbc025b93175
+sta

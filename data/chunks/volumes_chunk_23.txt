@@ -1,26 +1,9 @@
-rage in Docker Scout
-Policy Evaluation
-Configure policies
-Docker Scout health scores
-Evaluate policy compliance in CI
-Remediation with Docker Scout
-View Docker Scout policy status
-Integrations
-Code quality
-SonarQube
-Container registries
-Amazon ECR
-Artifactory Container Registry
-Azure Container Registry
-Continuous Integration
-Azure DevOps Pipelines
-Circle CI
-GitHub Actions
-GitLab CI/CD
-Jenkins
-Integrating Docker Scout with environments
-Generic (CLI)
-Sysdig
-Source code management
-GitHub
-Team colla
+ps devtest-service
+ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
+4d7oz1j85wwn        devtest-service.1   nginx:latest        moby                Running             Running 14 seconds ago
+You can remove the service to stop the running tasks:
+$
+docker service rm devtest-service
+Removing the service doesn't remove any volumes created by the service.
+Volume removal is a separate step.
+Populate a

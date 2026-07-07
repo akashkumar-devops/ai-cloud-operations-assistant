@@ -1,33 +1,15 @@
-ork driver plugins
-Docker Plugin API
-Docker volume plugins
-Plugin Config Version 1 of Plugin V2
-Use Docker Engine plugins
-Release notes
-Engine v29
-Engine v28
-Engine v27
-Engine v26.1
-Engine v26.0
-Engine v25.0
-Engine v24.0
-Engine v23.0
-Engine v20.10
-Engine v19.03
-Engine v18.09
-Engine v18.06
-Engine v18.05
-Engine v18.04
-Engine v18.03
-Engine v18.02
-Engine v18.01
-Engine v17.12
-Engine v17.11
-Engine v17.10
-Engine v17.09
-Engine v17.07
-Engine v17.06
-Engine v17.05
-Engine v17.04
-Engine v17.03
-Prior releases
+. A few ideas:
+Multiple containers can mount a file or directory containing the shared
+information, using a Docker volume.
+Multiple containers can be started together using
+docker-compose
+and the
+compose file can define the shared variables.
+You can use swarm services instead of standalone containers, and take
+advantage of shared
+secrets
+and
+configs
+.
+Containers connected to the same user-defined bridge network effectively expose all ports
+to each other. For a port to be accessible to containers

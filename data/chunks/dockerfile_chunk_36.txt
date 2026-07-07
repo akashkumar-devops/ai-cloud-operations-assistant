@@ -1,16 +1,59 @@
-arser directives are supported:
-syntax
-escape
-check
-(since Dockerfile v1.8.0)
-Once a comment, empty line or builder instruction has been processed, BuildKit
-no longer looks for parser directives. Instead it treats anything formatted
-as a parser directive as a comment and doesn't attempt to validate if it might
-be a parser directive. Therefore, all parser directives must be at the
-top of a Dockerfile.
-Parser directive keys, such as
-syntax
-or
-check
-, aren't case-sensitive, but
-they're lowercase by
+hell form to break up supported commands.
+RUN
+<<EOF
+source
+$HOME
+/.bashrc
+echo
+$HOME
+EOF
+For more information about heredocs, see
+Here-documents
+.
+Use a different shell
+You can change the default shell using the
+SHELL
+command. For example:
+SHELL
+[
+"/bin/bash"
+,
+"-c"
+]
+RUN
+echo
+hello
+For more information, see
+SHELL
+.
+FROM
+FROM
+[--platform=<platform
+>
+]
+<image>
+[
+AS <name>
+]
+Or
+FROM
+[--platform=<platform
+>
+]
+<image>
+[
+:<tag>
+]
+[
+AS <name>
+]
+Or
+FROM
+[--platform=<platform
+>
+]
+<image>
+[
+@<digest>
+]
+[

@@ -1,26 +1,17 @@
-rage in Docker Scout
-Policy Evaluation
-Configure policies
-Docker Scout health scores
-Evaluate policy compliance in CI
-Remediation with Docker Scout
-View Docker Scout policy status
-Integrations
-Code quality
-SonarQube
-Container registries
-Amazon ECR
-Artifactory Container Registry
-Azure Container Registry
-Continuous Integration
-Azure DevOps Pipelines
-Circle CI
-GitHub Actions
-GitLab CI/CD
-Jenkins
-Integrating Docker Scout with environments
-Generic (CLI)
-Sysdig
-Source code management
-GitHub
-Team colla
+fault
+bridge
+network is considered a legacy detail of Docker and is not
+recommended for production use. Configuring it is a manual operation, and it has
+technical shortcomings
+.
+Connect a container to the default bridge network
+If you do not specify a network using the
+--network
+flag, and you do specify a
+network driver, your container is connected to the default
+bridge
+network by
+default. Containers connected to the default
+bridge
+network can communicate,
+but only by IP address, unless they're 

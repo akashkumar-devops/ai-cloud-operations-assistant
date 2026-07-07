@@ -1,22 +1,23 @@
-opy from the
-root of the filesystem. When copying a directory, the existing mode is
-overridden with the new mode from the copied path. If you need a specific mode
-for a directory, such as the more permissive
-/tmp
-directory, you may need to
-either avoid using
---link
-, unroll the copy into its base components, or use
---chmod
-to ensure the overwriting directory contains the same permissions.
-COPY --parents
-COPY
-[
---parents
-[=
-<boolean>
-]]
-<src> ... <dest>
-The
---parents
-flag preserves parent directo
+vol
+RUN
+echo
+"hello world"
+> /myvol/greeting
+VOLUME
+/myvol
+This Dockerfile results in an image that causes
+docker run
+to
+create a new mount point at
+/myvol
+and copy the
+greeting
+file
+into the newly created volume.
+Notes about specifying volumes
+Keep the following things in mind about volumes in the Dockerfile.
+Volumes on Windows-based containers
+: When using Windows-based containers,
+the destination of a volume inside the container must be one of:
+a non-existing or empty directory
+a drive other 

@@ -1,12 +1,20 @@
-000 means no limit.
---cpu-period=0
-Limit the CPU CFS (Completely Fair Scheduler) period
---cpuset-cpus=""
-CPUs in which to allow execution (0-3, 0,1)
---cpuset-mems=""
-Memory nodes (MEMs) in which to allow execution (0-3, 0,1). Only effective on NUMA systems.
---cpu-quota=0
-Limit the CPU CFS (Completely Fair Scheduler) quota
---cpu-rt-period=0
-Limit the CPU real-time period. In microseconds. Requires parent cgroups be set and cannot be higher than parent. Also check rtprio ulimits.
---cpu-rt-runtime=
+lag limits read rate (IO per second) from a device.
+For example, this command creates a container and limits the read rate to
+1000
+IO per second from
+/dev/sda
+:
+$
+docker run -it --device-read-iops /dev/sda:1000 ubuntu
+The
+--device-write-iops
+flag limits write rate (IO per second) to a device.
+For example, this command creates a container and limits the write rate to
+1000
+IO per second to
+/dev/sda
+:
+$
+docker run -it --device-write-iops /dev/sda:1000 ubuntu
+Both flags take limits in the
+<device-pa

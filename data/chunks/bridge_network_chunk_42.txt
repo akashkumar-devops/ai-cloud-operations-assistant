@@ -1,17 +1,15 @@
-ur own
-docker0
-bridge. Use this option if you want to run multiple daemon
-instances on the same host. For details, see
-Run multiple daemons
-.
-Default host binding address
-When no host address is given in port publishing options like
--p 80
-or
--p 8080:80
-, the default is to make the container's port 80 available on all
-host addresses, IPv4 and IPv6.
-The bridge network driver option
-com.docker.network.bridge.host_binding_ipv4
-can be used to modify the default address for published ports.
-Despite th
+72.18.0.3: seq=0 ttl=64 time=0.085 ms
+64 bytes from 172.18.0.3: seq=1 ttl=64 time=0.090 ms
+--- alpine2 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.085/0.087/0.090 ms
+#
+ping -c
+2
+alpine4
+PING alpine4 (172.18.0.4): 56 data bytes
+64 bytes from 172.18.0.4: seq=0 ttl=64 time=0.076 ms
+64 bytes from 172.18.0.4: seq=1 ttl=64 time=0.091 ms
+--- alpine4 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/a

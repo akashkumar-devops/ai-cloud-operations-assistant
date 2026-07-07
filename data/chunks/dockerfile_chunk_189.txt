@@ -1,25 +1,20 @@
-VER
-Then, assume this image is built with this command:
-$
-docker build --build-arg
-CONT_IMG_VER
+- the container isn't working correctly
+2: reserved - don't use this exit code
+For example, to check every five minutes or so that a web-server is able to
+serve the site's main page within three seconds:
+HEALTHCHECK
+--interval
 =
-v2.0.1 .
-In this case, the
-RUN
-instruction uses
-v1.0.0
-instead of the
-ARG
-setting
-passed by the user:
-v2.0.1
-This behavior is similar to a shell
-script where a locally scoped variable overrides the variables passed as
-arguments or inherited from environment, from its point of definition.
-Using the example above but a different
-ENV
-specification you can create more
-useful interactions between
-ARG
-and
+5m --timeout
+=
+3s
+\
+CMD
+curl -f http://localhost/
+||
+exit
+1
+To help debug failing probes, any output text (UTF-8 encoded) that the command writes
+on stdout or stderr will be stored in the health status and can be queried with
+docker inspect
+. Such output should be kept s

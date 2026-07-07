@@ -1,37 +1,19 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+he image version, which defaults to
+latest
+when omitted. Use
+the tag to run a container from specific version of an image. For example, to
+run version
+24.04
+of the
+ubuntu
+image:
+docker run ubuntu:24.04
+.
+Image digests
+Images using the v2 or later image format have a content-addressable identifier
+called a digest. As long as the input used to generate the image is unchanged,
+the digest value is predictable.
+The following example runs a container from the
+alpine
+image with the
+sha256:9cacb71397b64

@@ -1,42 +1,26 @@
-IR
-explicitly.
-ARG
-ARG
-<name>
-[=
-<default value>
-]
-[
-<name>
-[=
-<default value>
-]
-...
-]
-The
-ARG
-instruction defines a variable that users can pass at build time to
-the builder with the
-docker build
-command using the
---build-arg <varname>=<value>
-flag. This variable can be used in subsequent instructions such as
-FROM
-,
-ENV
-,
-WORKDIR
-, and others using the
-${VAR}
-or
-$VAR
-template syntax.
-It is also passed to all subsequent
-RUN
-instructions as a build-time
-environment variable.
-Unlike
-ENV
-, an
-ARG
-v
+ matches a position in the
+kernel's syscall table, for instance
+9
+. The default is
+SIGTERM
+if not
+defined.
+STOPSIGNAL
+applies to the signal sent by
+docker stop
+(and by the Docker
+daemon when stopping a container). It does not affect signals sent by keyboard
+shortcuts such as Ctrl+C, which sends
+SIGINT
+directly to the process
+regardless of the
+STOPSIGNAL
+setting.
+The image's default stopsignal can be overridden per container, using the
+--stop-signal
+flag on
+docker run
+and
+docker create
+.
+HEALTHCH

@@ -1,44 +1,15 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Bridge network driver
+Table of contents
+Differences between user-defined bridges and the default bridge
+Options
+Default host binding address
+Manage a user-defined bridge
+Connect a container to a user-defined bridge
+Disconnect a container from a user-defined bridge
+Use IPv6 in a user-defined bridge network
+IPv6-only bridge networks
+Use the default bridge network
+Connect a container to the default bridge network
+Configure the default bridge network
+Use IPv6 with the default bridge network
+Connecti

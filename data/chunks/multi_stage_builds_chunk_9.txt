@@ -1,19 +1,36 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+he legacy Docker Engine builder processes all stages of a Dockerfile leading
+up to the selected
+--target
+. It will build a stage even if the selected
+target doesn't depend on that stage.
+BuildKit
+only builds the stages that the target stage
+depends on.
+For example, given the following Dockerfile:
+# syntax=docker/dockerfile:1
+FROM
+ubuntu
+AS
+base
+RUN
+echo
+"base"
+FROM
+base
+AS
+stage1
+RUN
+echo
+"stage1"
+FROM
+base
+AS
+stage2
+RUN
+echo
+"stage2"
+With
+BuildKit enabled
+, building the
+stage2
+target in this Do

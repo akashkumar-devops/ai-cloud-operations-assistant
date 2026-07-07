@@ -1,33 +1,33 @@
-ion
-1
-Mount path.
-ro
-,
-readonly
-Read-only if set.
-sharing
-One of
-shared
-,
-private
-, or
-locked
-. Defaults to
-shared
-. A
-shared
-cache mount can be used concurrently by multiple writers.
-private
-creates a new mount if there are multiple writers.
-locked
-pauses the second writer until the first one releases the mount.
-from
-Build stage, context, or image name to use as a base of the cache mount. Defaults to empty directory.
-source
-Subpath in the
-from
-to mount. Defaults to the root of the
-from
+ws for multiple
+<key>=<value> ...
+variables to be set
+at one time, and the example below will yield the same net results in the final
+image:
+ENV
+MY_NAME
+=
+"John Doe"
+MY_DOG
+=
+Rex
+\
+The
+\
+Dog
+\
+MY_CAT
+=
+fluffy
+The environment variables set using
+ENV
+will persist when a container is run
+from the resulting image. You can view the values using
+docker inspect
+, and
+change them using
+docker run --env <key>=<value>
 .
-mode
-F
+A stage inherits any environment variables that were set using
+ENV
+by its
+parent stage

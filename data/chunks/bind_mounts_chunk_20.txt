@@ -1,37 +1,21 @@
-ge
-Use an image
-Use a Helm chart
-Use hardened packages
-Verify an image or chart
-Scan an image
-Enforce image usage
-Use the CLI
-Use DHI Select & Enterprise
-Core concepts
-Attestations
-CIS Benchmark
-Code signing
-CVEs
-Distroless images
-FIPS
-glibc and musl
-Hardening
-Image digests
-Image provenance
-Immutability
-SBOMs
-SLSA
-Software Supply Chain Security
-SSDLC
-STIG
-VEX
-Troubleshoot
-Additional resources
-Release notes
-CLI release notes
-Platform release notes
-Docker Hub
-Quickstart
-Library
-Search
-Trusted cont
+nt, so changes are propagated back to the
+Docker host. At other times, the container only needs read access.
+This example modifies the previous one, but mounts the directory as a read-only
+bind mount, by adding
+ro
+to the (empty by default) list of options, after the
+mount point within the container. Where multiple options are present, separate
+them by commas.
+The
+--mount
+and
+-v
+examples have the same result.
+--mount
+-v
+$
+docker run -d
+\
+-it \
+--name devtest \
+--mount type=bind,source="$(pwd)"/ta

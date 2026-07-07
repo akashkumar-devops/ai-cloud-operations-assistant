@@ -1,44 +1,17 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+View container logs
+Table of contents
+Next steps
+The
+docker logs
+command shows information logged by a running container. The
+docker service logs
+command shows information logged by all containers
+participating in a service. The information that's logged and the format of the
+log depends almost entirely on the container's endpoint command.
+By default,
+docker logs
+or
+docker service logs
+shows the command's output
+just as it would appear if you ran the command interactively in a terminal. Unix
+and

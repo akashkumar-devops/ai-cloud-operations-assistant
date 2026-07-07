@@ -1,14 +1,10 @@
--defined bridge networks are superior to the default
+2 alpine ash
+Verify both containers are running:
+$
+docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+602dbf1edc81        alpine              "ash"               4 seconds ago       Up 3 seconds                            alpine2
+da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1
+Inspect the
 bridge
-network.
-Differences between user-defined bridges and the default bridge
-User-defined bridges provide automatic DNS resolution between containers
-.
-Containers on the default bridge network can only access each other by IP
-addresses, unless you use the
---link
-option
-, which is
-considered legacy. On a user-defined bridge network, containers can resolve
-each other by name or alias.
-Imagine an application with a web front-end and a database
+network to see connected con

@@ -1,17 +1,30 @@
-ted volumes from native host or other
-containers. The value can be a JSON array,
-VOLUME ["/var/log/"]
-, or a plain
-string with multiple arguments, such as
-VOLUME /var/log
-or
-VOLUME /var/log /var/db
-. For more information/examples and mounting instructions via the
-Docker client, refer to
-Share Directories via Volumes
-documentation.
-The
-docker run
-command initializes the newly created volume with any data
-that exists at the specified location within the base image. For example,
-consider the follow
+er another example under the same command line:
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+ENV
+CONT_IMG_VER
+=
+$CONT_IMG_VER
+RUN
+echo
+$CONT_IMG_VER
+In this example, the cache miss occurs on line 3. The miss happens because
+the variable's value in the
+ENV
+references the
+ARG
+variable and that
+variable is changed through the command line. In this example, the
+ENV
+command causes the image to include the value.
+If an
+ENV
+instruction overrides an
+ARG
+instruction of the same name, like
+this Dockerfile:
+FROM
+ubuntu
+AR

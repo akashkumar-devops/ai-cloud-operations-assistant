@@ -1,20 +1,18 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+ can interact with the container
+using other CLI commands. For example,
+docker logs
+lets you view the logs for
+the container, and
+docker attach
+brings it to the foreground.
+$
+docker run -d nginx
+0246aa4d1448a401cabd2ce8f242192b6e7af721527e48a810463366c7ff54f1
+$
+docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        PORTS     NAMES
+0246aa4d1448   nginx     "/docker-entrypoint.â¦"   2 seconds ago   Up 1 second   80/tcp    pedantic_liskov
+$
+docker logs -n
+5
+0246a

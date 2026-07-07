@@ -1,23 +1,40 @@
-ds a
-user could call on the command line to assemble an image. This page describes
-the commands you can use in a Dockerfile.
-Overview
-The Dockerfile supports the following instructions:
-Instruction
-Description
-ADD
-Add local or remote files and directories.
-ARG
-Use build-time variables.
-CMD
-Specify default commands.
-COPY
-Copy files and directories.
-ENTRYPOINT
-Specify default executable.
+ghout the entire instruction. Changing the value of a variable only takes
+effect in subsequent instructions. Consider the following example:
 ENV
-Set environment variables.
-EXPOSE
-Describe which ports your application is listening on.
-FROM
-Create a new 
+abc
+=
+hello
+ENV
+abc
+=
+bye
+def
+=
+$abc
+ENV
+ghi
+=
+$abc
+The value of
+def
+becomes
+hello
+The value of
+ghi
+becomes
+bye
+.dockerignore file
+You can use
+.dockerignore
+file to exclude files and directories from the
+build context. For more information, see
+.dockerignore file
+.
+Shell and exec form
+The
+RUN
+,
+CMD
+, and
+ENTRYPOINT
+instructions all have two possible for

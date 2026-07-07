@@ -1,19 +1,22 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /dev/noexist.
+You can use the
+bind-create-src
+option to automatically create the source directory
+on the host if it doesn't exist:
+$
+docker run --mount
+type
+=
+bind,src
+=
+/home/user/mydir,dst
+=
+/mnt/foo,bind-create-src alpine
+Options for --mount
+The
+--mount
+flag consists of multiple key-value pairs, separated by commas
+and each consisting of a
+<key>=<value>
+tuple. The order of the keys isn't
+signi

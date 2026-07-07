@@ -1,21 +1,12 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+a, but
+building for production using a different stage which uses real data
+Use an external image as a stage
+When using multi-stage builds, you aren't limited to copying from stages you
+created earlier in your Dockerfile. You can use the
+COPY --from
+instruction to
+copy from a separate image, either using the local image name, a tag available
+locally or on a Docker registry, or a tag ID. The Docker client pulls the image
+if necessary and copies the artifact from there. The syntax is:
+COPY
+--from

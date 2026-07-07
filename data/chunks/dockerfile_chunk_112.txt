@@ -1,22 +1,23 @@
-d placed at
-the specified destination. See
-Adding files from a URL
+iles are copied into the specified destination
+relative to the root of the current build stage.
+# create /abs/test.txt
+COPY
+test.txt /abs/
+Trailing slashes are significant. For example,
+COPY test.txt /abs
+creates a
+file at
+/abs
+, whereas
+COPY test.txt /abs/
+creates
+/abs/test.txt
 .
-If
-<src>
-is a Git repository, the repository is cloned to the specified
-destination. See
-Adding files from a Git repository
-.
-Adding files from the build context
-Any relative or local path that doesn't begin with a
-http://
-,
-https://
-, or
-git@
-protocol prefix is considered a local file path. The local file path is
-relative to the build context. For example, if the build context is the current
-directory,
-ADD file.txt /
-adds the 
+If the destination path doesn't begin with a leading slash, it's interpreted as
+relative to the working directory of the build container.
+WORKDIR
+/usr/src/app
+# create /usr/src/app/rel/test.txt
+COPY
+test.txt rel/
+If de

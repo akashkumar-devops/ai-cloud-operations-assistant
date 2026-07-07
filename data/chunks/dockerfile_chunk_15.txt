@@ -1,26 +1,21 @@
-assword
-docker pass plugins 1password purge
-docker pass plugins 1password setup
-docker pass plugins disable
-docker pass plugins enable
-docker pass plugins ls
-docker pass rm
-docker pass run
-docker pass set
-docker plugin
-docker plugin create
-docker plugin disable
-docker plugin enable
-docker plugin inspect
-docker plugin install
-docker plugin ls
-docker plugin push
-docker plugin rm
-docker plugin set
-docker plugin upgrade
-docker ps
-docker pull
-docker push
-docker run
-docker sandbox
-docker sandbox creat
+rfile. If not specified, the default escape character is
+\
+.
+The escape character is used both to escape characters in a line, and to
+escape a newline. This allows a Dockerfile instruction to
+span multiple lines. Note that regardless of whether the
+escape
+parser
+directive is included in a Dockerfile, escaping is not performed in
+a
+RUN
+command, except at the end of a line.
+Setting the escape character to
+`
+is especially useful on
+Windows
+, where
+\
+is the directory path separator.
+`
+is consistent

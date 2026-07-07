@@ -1,17 +1,15 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+
+Warning
+Don't combine Docker restart policies with host-level process managers,
+as this creates conflicts.
+To use a process manager, configure it to start your container or service using
+the same
+docker start
+or
+docker service
+command you would normally use to
+start the container manually. Consult the documentation for the specific
+process manager for more details.
+Using a process manager inside containers
+Process managers can also run within the container to check whether a process is
+running 

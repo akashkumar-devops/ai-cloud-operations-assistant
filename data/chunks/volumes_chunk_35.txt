@@ -1,12 +1,12 @@
-. The contents of
-/mnt
-would be obscured
-by the contents of the USB drive until the USB drive was unmounted.
-With containers, there's no straightforward way of removing a mount to reveal
-the obscured files again. Your best option is to recreate the container without
-the mount.
-If you mount an
-empty volume
-into a directory in the container in which files
-or directories exist, these files or directories are propagated (copied) into
-the volume by default. Similarly, if you start a container and spe
+rrect way to escape the list.
+$
+docker service create
+\
+--mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"'
+--name myservice \
+<IMAGE>
+Initial setup
+The following example assumes that you have two nodes, the first of which is a Docker
+host and can connect to the second node using SSH.
+On the Docker host, install the
+rclone/docker-volume-rclo

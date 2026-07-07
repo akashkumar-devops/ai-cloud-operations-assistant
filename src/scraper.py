@@ -22,12 +22,12 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-from config import (
+from src.config import (
     HEADERS,
     REQUEST_TIMEOUT,
 )
 
-from sources.docker_source import DockerSource
+from src.sources.docker_source import DockerSource
 
 
 def fetch_page(url):

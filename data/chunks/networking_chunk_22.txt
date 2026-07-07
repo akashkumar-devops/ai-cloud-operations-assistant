@@ -1,27 +1,15 @@
-s
-Archive
-Delete
-Settings
-Usage and limits
-Pulls
-Optimize usage
-Troubleshoot
-Release notes
-Docker Scout
-Install
-Quickstart
-Explore
-Dashboard
-Docker Scout image analysis
-Docker Scout metrics exporter
-Image details view
-Manage vulnerability exceptions
-How-tos
-Create an exception using the GUI
-Create an exception using the VEX
-Docker Scout environment variables
-Docker Scout SBOMs
-Use Scout with different artifact types
-Deep dive
-Advisory database sources and matching service
-Data collection and sto
+search
+A DNS search domain to search non-fully qualified hostnames. To specify multiple DNS search prefixes, use multiple
+--dns-search
+flags.
+--dns-opt
+A key-value pair representing a DNS option and its value. See your operating system's documentation for
+resolv.conf
+for valid options.
+--hostname
+The hostname a container uses for itself. Defaults to the container's ID if not specified.
+Custom hosts
+Your container will have lines in
+/etc/hosts
+which define the hostname of the
+container itself, as

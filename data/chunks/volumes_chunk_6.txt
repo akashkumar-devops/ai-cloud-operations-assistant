@@ -1,24 +1,12 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+ge the
+filesystem. The storage driver provides a union filesystem, using the Linux
+kernel. This extra abstraction reduces performance as compared to using
+volumes, which write directly to the host filesystem.
+If your container generates non-persistent state data, consider using a
+tmpfs mount
+to avoid storing the data anywhere permanently, and to
+increase the container's performance by avoiding writing into the container's
+writable layer.
+Volumes use
+rprivate
+(recursive private) bind propagation,

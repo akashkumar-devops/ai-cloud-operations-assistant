@@ -1,32 +1,17 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+ork, they can
+communicate with each other using the container names as a DNS hostname. The
+following example creates a custom network named
+my-net
+, and runs two
+containers that attach to the network.
+$
+docker network create my-net
+$
+docker run -d --name web --network my-net nginx:alpine
+$
+docker run --rm -it --network my-net busybox
+/ # ping web
+PING web (172.18.0.2): 56 data bytes
+64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.326 ms
+64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.257 ms
+64 bytes

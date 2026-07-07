@@ -1,27 +1,30 @@
-and release your extension
-Share your extension
-Publish in the Marketplace
-Build multi-arch extensions
-Architecture
-Metadata
-Security
-Design and UI styling
-Guidelines
-Docker design principles
-MUI best practices
-Developer Guides
-Authentication
-Interacting with Kubernetes
-Invoke host binaries
-Use the Docker socket
-Developer SDK tools
-Test and debug
-Continuous Integration (CI)
-CLI reference
-Extension APIs
-Dashboard
-Docker
-Extension Backend
-Extension UI API
-Navigation
-Deprecated products and feature
+side the container. Once you've
+created the volume, any data you write to the volume is persisted, even if you
+stop or remove the container:
+$
+docker run --rm --mount
+source
+=
+my_volume,target
+=
+/foo busybox
+\
+echo "hello, volume!" > /foo/hello.txt
+$
+docker run --mount
+source
+=
+my_volume,target
+=
+/bar busybox
+cat /bar/hello.txt
+hello, volume!
+The
+target
+must always be an absolute path, such as
+/src/docs
+. An absolute
+path starts with a
+/
+(forward slash). Volume names must start with an
+alphanume

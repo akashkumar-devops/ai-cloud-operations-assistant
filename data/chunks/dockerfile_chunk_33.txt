@@ -1,28 +1,15 @@
-hat are used in
-FROM
-lines in the Dockerfile.
-BuildKit treats lines that begin with
-#
-as a comment, unless the line is
-a valid
-parser directive
-. A
-#
-marker anywhere
-else in a line is treated as an argument. This allows statements like:
-# Comment
-RUN
-echo
-'we are running some # of cool things'
-Comment lines are removed before the Dockerfile instructions are executed.
-The comment in the following example is removed before the shell executes
-the
-echo
-command.
-RUN
-echo
-hello
-\
-# comment
-world
-The f
+ shell processing, such as variable substitution, doesn't happen.
+For example,
+RUN [ "echo", "$HOME" ]
+won't handle variable substitution for
+$HOME
+.
+If you want shell processing then either use the shell form or execute a shell
+directly with the exec form, for example:
+RUN [ "sh", "-c", "echo $HOME" ]
+.
+When using the exec form and executing a shell directly, as in the case for the
+shell form, it's the shell that's doing the environment variable substitution,
+not the builder.
+Backslashes
+In exe

@@ -19,7 +19,7 @@ Project
 AI Cloud Operations Assistant
 """
 
-from extractors.base_extractor import BaseExtractor
+from src.extractors.base_extractor import BaseExtractor
 
 
 class BaseSource:

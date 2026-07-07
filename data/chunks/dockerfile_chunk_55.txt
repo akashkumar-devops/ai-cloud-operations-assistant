@@ -1,27 +1,46 @@
-lowing list of instructions in
-the Dockerfile:
-ADD
-COPY
-ENV
-EXPOSE
-FROM
-LABEL
-STOPSIGNAL
-USER
-VOLUME
-WORKDIR
-ONBUILD
-(when combined with one of the supported instructions above)
-You can also use environment variables with
+lang
 RUN
-,
-CMD
-, and
-ENTRYPOINT
-instructions, but in those cases the variable substitution is handled by the
-command shell, not the builder. Note that instructions using the exec form
-don't invoke a command shell automatically. See
-Variable
-substitution
-.
-Environment variable substi
+--mount
+=
+type
+=
+cache,target
+=
+/root/.cache/go-build
+\
+go build ...
+Example: cache apt packages
+# syntax=docker/dockerfile:1
+FROM
+ubuntu
+RUN
+rm -f /etc/apt/apt.conf.d/docker-clean
+;
+echo
+'Binary::apt::APT::Keep-Downloaded-Packages "true";'
+> /etc/apt/apt.conf.d/keep-cache
+RUN
+--mount
+=
+type
+=
+cache,target
+=
+/var/cache/apt,sharing
+=
+locked
+\
+--mount
+=
+type
+=
+cache,target
+=
+/var/lib/apt,sharing
+=
+locked
+\
+apt-get update
+&&
+apt-get --no-install-recommends install -y gcc
+Apt needs exclusiv

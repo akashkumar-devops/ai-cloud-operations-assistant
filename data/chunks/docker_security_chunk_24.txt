@@ -1,29 +1,10 @@
-boration
-Slack
-Release notes
-CLI release notes
-Platform release notes
-Platform
-Support
-Billing
-Add or update a payment method
-Manage your billing information
-3D Secure authentication
-Invoices and billing history
-Change your billing cycle
-Submit a tax exemption certificate
-FAQs
-Docker accounts
-Accounts
-Create an account
-Manage an account
-Deactivate an account
-Security
-Personal access tokens
-Two-factor authentication
-Recover your Docker account
-FAQs
-General
-Container
-Network and VM
-Security announ
+Linux
+policies for Docker. These templates provide an extra safety net (even
+though it overlaps greatly with capabilities).
+You can define your own policies using your favorite access control
+mechanism.
+Just as you can use third-party tools to augment Docker containers, including
+special network topologies or shared filesystems, tools exist to harden Docker
+containers without the need to modify Docker itself.
+As of Docker 1.10 User Namespaces are supported directly by the docker
+daemon. This fea

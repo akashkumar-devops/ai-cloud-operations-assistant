@@ -1,26 +1,17 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+g
+container named
+redis
+.
+$
+docker update --restart unless-stopped redis
+The following command ensures all running containers restart.
+$
+docker update --restart unless-stopped
+$(
+docker ps -q
+)
+Restart policy details
+Keep the following in mind when using restart policies:
+A restart policy only takes effect after a container starts successfully. In
+this case, starting successfully means that the container is up for at least
+10 seconds and Docker has started monitoring it. This prevents a containe

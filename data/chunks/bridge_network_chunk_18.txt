@@ -1,27 +1,18 @@
-and release your extension
-Share your extension
-Publish in the Marketplace
-Build multi-arch extensions
-Architecture
-Metadata
-Security
-Design and UI styling
-Guidelines
-Docker design principles
-MUI best practices
-Developer Guides
-Authentication
-Interacting with Kubernetes
-Invoke host binaries
-Use the Docker socket
-Developer SDK tools
-Test and debug
-Continuous Integration (CI)
-CLI reference
-Extension APIs
-Dashboard
-Docker
-Extension Backend
-Extension UI API
-Navigation
-Deprecated products and feature
+er network create my-net
+You can specify the subnet, the IP address range, the gateway, and other
+options. See the
+docker network create
+reference or the output of
+docker network create --help
+for details.
+Use the
+docker network rm
+command to remove a user-defined bridge
+network. If containers are currently connected to the network,
+disconnect them
+first.
+$
+docker network rm my-net
+What's really happening?
+When you create or remove a user-defined bridge or connect or disconnect a
+container from 

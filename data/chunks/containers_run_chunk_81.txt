@@ -1,27 +1,18 @@
-
-containers on the host. Use this flag with caution.
-For more information about the
---privileged
-flag, see the
+lowing flags for the
 docker run
-reference
-.
-If you want to limit access to a specific device or devices you can use
-the
---device
-flag. It allows you to specify one or more devices that
-will be accessible within the container.
-$
-docker run --device
-=
-/dev/snd:/dev/snd ...
-By default, the container will be able to
-read
-,
-write
-, and
-mknod
-these devices.
-This can be overridden using a third
-:rwm
-set of options
+command let you control the parameters
+for container healthchecks:
+Option
+Description
+--health-cmd
+Command to run to check health
+--health-interval
+Time between running the check
+--health-retries
+Consecutive failures needed to report unhealthy
+--health-timeout
+Maximum time to allow one check to run
+--health-start-period
+Start period for the container to initialize before starting health-retries countdown
+--health-start-interval
+Time between running the check durin

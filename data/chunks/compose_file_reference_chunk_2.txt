@@ -1,23 +1,10 @@
-istory ls
-docker buildx history open
-docker buildx history rm
-docker buildx history trace
-docker buildx imagetools
-docker buildx imagetools create
-docker buildx imagetools inspect
-docker buildx inspect
-docker buildx ls
-docker buildx policy
-docker buildx policy eval
-docker buildx policy test
-docker buildx prune
-docker buildx rm
-docker buildx stop
-docker buildx use
-docker buildx version
-docker checkpoint
-docker checkpoint create
-docker checkpoint ls
-docker checkpoint rm
-docker compose
-docker compo
+ns 1.27.0 and above (also known as Compose v2) of the Docker Compose CLI.
+The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the
+Compose Specification repository
+.
+Use the following links to navigate key sections of the Compose Specification.
+Tip
+Want a better editing experience for Compose files in VS Code?
+Check out the
+Docker DX
+extension for linting, code navigation, and vulnerability scan

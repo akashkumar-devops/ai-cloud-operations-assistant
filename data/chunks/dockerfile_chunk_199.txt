@@ -1,22 +1,31 @@
-ing
-ARG
-variables are not persisted into the built image as
-ENV
-variables are.
-However,
-ARG
-variables do impact the build cache in similar ways. If a
-Dockerfile defines an
-ARG
-variable whose value is different from a previous
-build, then a "cache miss" occurs upon its first usage, not its definition. In
-particular, all
+shebang header can be used to define an interpreter.
+# syntax=docker/dockerfile:1
+FROM
+python:3.6
 RUN
-instructions following an
-ARG
-instruction use the
-ARG
-variable implicitly (as an environment variable), thus can cause a cache miss.
-All predefined
-ARG
-variables are exempt fr
+<<EOT
+#!/usr/bin/env python
+print
+(
+"hello world"
+)
+EOT
+More complex examples may use multiple here-documents.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+RUN
+<<FILE1 cat > file1 && <<FILE
+2
+cat > file2
+I am
+first
+FILE1
+I am
+second
+FILE2
+Example: Creating inline files
+With
+COPY
+instructions, you can replace the source parameter with a here-doc
+indicator to write the contents of the here-document di

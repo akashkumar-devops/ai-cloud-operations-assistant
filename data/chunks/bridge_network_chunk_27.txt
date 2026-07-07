@@ -1,24 +1,37 @@
-ence
-Air-gapped containers
-Registry Access Management
-Image Access Management
-Namespace access
-Organization access tokens
-/
-/
-Docker Engine
-/
-Networking
-/
-Network drivers
-/
-Bridge network driver
-Bridge network driver
-Differences between user-defined bridges and the default bridge
-Options
-Default host binding address
-Manage a user-defined bridge
-Connect a container to a user-defined bridge
-Disconnect a container from a user-defined bridge
-Use IPv6 in a user-defined bridge network
-IPv6-only bridge
+ion
+default-gateway-v6
+is optional. If unspecified, the default is the first
+address in the
+fixed-cidr-v6
+subnet.
+{
+"ipv6"
+:
+true
+,
+"bip6"
+:
+"2001:db8::1111/64"
+,
+"fixed-cidr-v6"
+:
+"2001:db8::/64"
+,
+"default-gateway-v6"
+:
+"2001:db8:abcd::89"
+}
+If no
+bip6
+is specified,
+fixed-cidr-v6
+defines the subnet for the bridge
+network. If no
+bip6
+or
+fixed-cidr-v6
+is specified, a ULA prefix will be
+chosen.
+Restart Docker for changes to take effect.
+Connection limit for bridge networks
+Due to limitations set 

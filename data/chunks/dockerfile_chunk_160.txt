@@ -1,25 +1,37 @@
-p"
-,
-"-b"
-]
-CMD
-[
-"-c"
-]
-When you run the container, you can see that
-top
-is the only process:
+ile:
+FROM
+busybox
+USER
+${username:-some_user
+}
+ARG
+username
+USER
+$username
+# ...
+A user builds this file by calling:
 $
-docker run -it --rm --name
-test
-top -H
-top - 08:25:00 up  7:27,  0 users,  load average: 0.00, 0.01, 0.05
-Threads:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
-%
-Cpu
-(
-s
-)
-:  0.1 us,  0.1 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-KiB Mem:   2056668 total,  1616832 used,   439836 free,    99352 buffers
-KiB Swap:  1441840 total,        0 used,  1441840 free.  1324440 cac
+docker build --build-arg
+username
+=
+what_user .
+The
+USER
+instruction on line 2 evaluates to the
+some_user
+fallback,
+because the
+username
+variable is not yet declared.
+The
+username
+variable is declared on line 3, and available for reference in
+Dockerfile instruction from that point onwards.
+The
+USER
+instruction on line 4 evaluates to
+what_user
+, since at that
+point the
+username
+a

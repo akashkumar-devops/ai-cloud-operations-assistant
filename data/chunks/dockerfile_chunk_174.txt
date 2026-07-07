@@ -1,28 +1,31 @@
-
-/bin/sh -c exec_entry p1_entry
-exec_entry p1_entry exec_cmd p1_cmd
-CMD exec_cmd p1_cmd
-/bin/sh -c exec_cmd p1_cmd
-/bin/sh -c exec_entry p1_entry
-exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd
-Note
-If
-CMD
-is defined from the base image, setting
-ENTRYPOINT
-will
-reset
-CMD
-to an empty value. In this scenario,
-CMD
-must be defined in the
-current image to have a value.
-VOLUME
-VOLUME
-[
-"/data"
-]
-The
-VOLUME
-instruction creates a mount point with the specified name
-and marks it as holding externally moun
+nt in the Dockerfile.
+For example, consider these two Dockerfile:
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+RUN
+echo
+$CONT_IMG_VER
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+RUN
+echo
+hello
+If you specify
+--build-arg CONT_IMG_VER=<value>
+on the command line, in both
+cases, the specification on line 2 doesn't cause a cache miss; line 3 does
+cause a cache miss.
+ARG CONT_IMG_VER
+causes the
+RUN
+line to be identified
+as the same as running
+CONT_IMG_VER=<value> echo hello
+, so if the
+<value>
+changes, you get a cache miss.
+Consid

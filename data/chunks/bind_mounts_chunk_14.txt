@@ -1,32 +1,18 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+unt. See
+Configure bind propagation
+.
+Example
+$
+docker run -v .:/project:ro,rshared
+Start a container with a bind mount
+Consider a case where you have a directory
+source
+and that when you build the
+source code, the artifacts are saved into another directory,
+source/target/
+.
+You want the artifacts to be available to the container at
+/app/
+, and you
+want the container to get access to a new build each time you build the source
+on your development host. Use the following command to bind-mount the

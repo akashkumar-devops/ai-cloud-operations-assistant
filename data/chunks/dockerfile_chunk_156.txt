@@ -1,37 +1,30 @@
-hom", excluding files with either
-.txt
-or
-.md
-extensions:
-# syntax=docker/dockerfile:1
-FROM
-scratch
-COPY
---exclude
+file.
+For example:
+ENV
+DIRPATH
 =
-*.txt --exclude
-=
-*.md hom* /mydir/
-ENTRYPOINT
-An
-ENTRYPOINT
-allows you to configure a container that will run as an executable.
-ENTRYPOINT
-has two possible forms:
-The exec form, which is the preferred form:
-ENTRYPOINT
-[
-"executable"
-,
-"param1"
-,
-"param2"
-]
-The shell form:
-ENTRYPOINT
-command
-param1 param2
-For more information about the different forms, see
-Shell and exec form
-.
-Th
+/path
+WORKDIR
+$DIRPATH/$DIRNAME
+RUN
+pwd
+The output of the final
+pwd
+command in this Dockerfile would be
+/path/$DIRNAME
+If not specified, the default working directory is
+/
+. In practice, if you aren't building a Dockerfile from scratch (
+FROM scratch
+),
+the
+WORKDIR
+may likely be set by the base image you're using.
+Therefore, to avoid unintended operations in unknown directories, it's best practice to set your
+WORKDIR
+explicitly.
+ARG
+ARG
+<name>
+[=
+<default value>

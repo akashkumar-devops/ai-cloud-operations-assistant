@@ -1,20 +1,18 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+orks.
+For example, a frontend container may be connected to a bridge network
+with external access, and a
+--internal
+network
+to communicate with containers running backend services that do not need
+external network access.
+A container may also be connected to different types of network. For example,
+an
+ipvlan
+network to provide internet access, and a
+bridge
+network for
+access to local services.
+Containers can also share networking stacks, see
+Container networks
+.
+When sending packets, if the dest

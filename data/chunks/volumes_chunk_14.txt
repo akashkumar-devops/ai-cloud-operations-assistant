@@ -1,32 +1,13 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+h to a subdirectory within the volume to mount into the container. The subdirectory must exist in the volume before the volume is mounted to a container. See
+Mount a volume subdirectory
+.
+readonly
+,
+ro
+If present, causes the volume to be
+mounted into the container as read-only
+.
+volume-nocopy
+If present, data at the destination isn't copied into the volume if the volume is empty. By default, content at the target destination gets copied into a mounted volume if empty.
+volume-opt
+Can be specified

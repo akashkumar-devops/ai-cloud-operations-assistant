@@ -1,31 +1,41 @@
-om caching unless there is a
-matching
-ARG
-statement in the Dockerfile.
-For example, consider these two Dockerfile:
+rectly to a file. The
+following example creates a
+greeting.txt
+file containing
+hello world
+using
+a
+COPY
+instruction.
+# syntax=docker/dockerfile:1
 FROM
-ubuntu
-ARG
-CONT_IMG_VER
-RUN
-echo
-$CONT_IMG_VER
+alpine
+COPY
+<<EOF greeting.txt
+hello world
+EOF
+Regular here-doc
+variable expansion and tab stripping rules
+apply.
+The following example shows a small Dockerfile that creates a
+hello.sh
+script
+file using a
+COPY
+instruction with a here-document.
+# syntax=docker/dockerfile:1
 FROM
-ubuntu
+alpine
 ARG
-CONT_IMG_VER
-RUN
+FOO
+=
+bar
+COPY
+<<-EOT /script.sh
 echo
-hello
-If you specify
---build-arg CONT_IMG_VER=<value>
-on the command line, in both
-cases, the specification on line 2 doesn't cause a cache miss; line 3 does
-cause a cache miss.
-ARG CONT_IMG_VER
-causes the
-RUN
-line to be identified
-as the same as running
-CONT_IMG_VER=<value> echo hello
-, so if 
+"hello
+${
+FOO
+}
+"
+EOT

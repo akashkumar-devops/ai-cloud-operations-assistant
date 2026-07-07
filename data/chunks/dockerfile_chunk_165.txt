@@ -1,19 +1,29 @@
- with
-docker run -it --rm -p 80:80 --name test apache
-,
-you can then examine the container's processes with
-docker exec
-, or
-docker top
-,
-and then ask the script to stop Apache:
+m in the final image by leveraging the
+ENV
+instruction. Variable expansion is only supported for
+a limited set of
+Dockerfile instructions.
+Predefined ARGs
+Docker has a set of predefined
+ARG
+variables that you can use without a
+corresponding
+ARG
+instruction in the Dockerfile.
+HTTP_PROXY
+http_proxy
+HTTPS_PROXY
+https_proxy
+FTP_PROXY
+ftp_proxy
+NO_PROXY
+no_proxy
+ALL_PROXY
+all_proxy
+To use these, pass them on the command line using the
+--build-arg
+flag, for
+example:
 $
-docker
-exec
--it
-test
-ps aux
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         1  0.1  0.0   4448   692 ?        Ss+  00:42   0:00 /bin/sh /run.sh 123 cmd cmd2
-root        19  0.0  0.2  71304  4440 ?        Ss   00:42   0:00 /usr/sbin/apache2 -k start
-www-data    20  0.2  0.2 360468  
+docker build --build-arg
+HTTPS_PR

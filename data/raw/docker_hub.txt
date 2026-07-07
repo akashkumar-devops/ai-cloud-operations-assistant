@@ -14,10 +14,13 @@ Trusted content featuring high-quality, secure images
 In addition to the graphical interface, you can interact with Docker Hub using
 the
 Docker Hub API
-or experimental
+, the experimental
 Docker
 Hub CLI tool
-.
+, or the
+Docker Hub
+MCP server
+for AI agent integrations.
 Quickstart
 Step-by-step instructions on getting started on Docker Hub.
 Library
@@ -30,5 +33,7 @@ Organizations
 Learn about organization administration.
 Usage and limits
 Explore usage limits and how to better utilize Docker Hub.
+MCP server
+Use the Docker Hub MCP server to access image metadata and manage repositories with AI agents.
 Release notes
 Find out about new features, improvements, and bug fixes.

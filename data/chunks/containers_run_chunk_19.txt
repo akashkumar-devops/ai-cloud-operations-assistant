@@ -1,33 +1,37 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+ric character, followed by
+a-z0-9
+,
+_
+(underscore),
+.
+(period) or
+-
+(hyphen).
+Bind mounts
+To create a bind mount:
+$
+docker run -it --mount
+type
+=
+bind,source
+=[
+PATH
+]
+,target
+=[
+PATH
+]
+busybox
+In this case, the
+--mount
+flag takes three parameters. A type (
+bind
+), and
+two paths. The
+source
+path is the location on the host that you want to
+bind mount into the container. The
+target
+path is the mount destination
+inside the container.
+By default, bind mounts require the source path to exist on the 

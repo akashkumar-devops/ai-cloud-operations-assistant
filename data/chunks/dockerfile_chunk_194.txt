@@ -1,20 +1,33 @@
-tes the build cache.
-Automatic platform ARGs in the global scope
-This feature is only available when using the
-BuildKit
-backend.
-BuildKit supports a predefined set of
-ARG
-variables with information on the platform of
-the node performing the build (build platform) and on the platform of the
-resulting image (target platform). The target platform can be specified with
+s:
+RUN
+[
+"powershell"
+,
+"-command"
+,
+"Execute-MyCmdlet"
+,
+"-param1 \"c:\\foo.txt\""
+]
+While the JSON form is unambiguous and does not use the unnecessary
+cmd.exe
+,
+it does require more verbosity through double-quoting and escaping. The alternate
+mechanism is to use the
+SHELL
+instruction and the shell form,
+making a more natural syntax for Windows users, especially when combined with
 the
---platform
-flag on
-docker build
-.
-The following
-ARG
-variables are set automatically:
-TARGETPLATFORM
-- platform of the build resu
+escape
+parser directive:
+# escape=`
+FROM
+microsoft/nanoserver
+SHELL
+[
+"powershell"
+,
+"-command"
+]
+RUN
+New-Item

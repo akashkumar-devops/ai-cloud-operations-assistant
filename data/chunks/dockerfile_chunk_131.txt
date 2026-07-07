@@ -1,23 +1,27 @@
-ons are functionally similar, but serve slightly different purposes.
-Learn more about the
-differences between
-ADD
-and
-COPY
+ginx
+with its default
+content, listening on port 80:
+$
+docker run -i -t --rm -p 80:80 nginx
+Command line arguments to
+docker run <image>
+will be appended after all
+elements in an exec form
+ENTRYPOINT
+, and will override all elements specified
+using
+CMD
 .
-Source
-You can specify multiple source files or directories with
-COPY
-. The last
-argument must always be the destination. For example, to copy two files,
-file1.txt
-and
-file2.txt
-, from the build context to
-/usr/src/things/
-in
-the build container:
-COPY
-file1.txt file2.txt /usr/src/things/
-If you specify multiple source files, either directly or using a wildcard, then
-the de
+This allows arguments to be passed to the entry point, i.e.,
+docker run <image> -d
+will pass the
+-d
+argument to the entry point. You can override
+the
+ENTRYPOINT
+instruction using the
+docker run --entrypoint
+flag.
+The shell form of
+ENTRYPOINT
+ign

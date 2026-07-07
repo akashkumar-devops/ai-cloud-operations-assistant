@@ -1,11 +1,11 @@
-he container's performance by avoiding writing into the container's
-writable layer.
-Volumes use
-rprivate
-(recursive private) bind propagation, and bind propagation isn't
-configurable for volumes.
-A volume's lifecycle
-A volume's contents exist outside the lifecycle of a given container. When a
-container is destroyed, the writable layer is destroyed with it. Using a volume
-ensures that the data is persisted even if the container using it is removed.
-A given volume can be mounted into multiple cont
+t you abstract the underlying storage system from the
+application logic. For example, if your services use a volume with an NFS
+driver, you can update the services to use a different driver. For example, to
+store data in the cloud, without changing the application logic.
+Use a volume driver
+When you create a volume using
+docker volume create
+, or when you start a
+container which uses a not-yet-created volume, you can specify a volume driver.
+The following examples use the
+rclone/docker-volume-rc

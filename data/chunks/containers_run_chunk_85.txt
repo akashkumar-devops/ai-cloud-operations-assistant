@@ -1,16 +1,23 @@
-es.
-SETGID
-Make arbitrary manipulations of process GIDs and supplementary GID list.
-SETPCAP
-Modify process capabilities.
-SETUID
-Make arbitrary manipulations of process UIDs.
-SYS_CHROOT
-Use chroot(2), change root directory.
-The next table shows the capabilities which are not granted by default and may be added.
-Capability Key
-Capability Description
-AUDIT_CONTROL
-Enable and disable kernel auditing; change auditing filter rules; retrieve auditing status and filtering rules.
-AUDIT_READ
-Allow reading
+ stat '/etc/passwd': No such file or directory\n"
+},
+{
+"Start": "2016-05-25T17:22:12.971033523Z",
+"End": "2016-05-25T17:22:13.082015516Z",
+"ExitCode": 1,
+"Output": "stat: can't stat '/etc/passwd': No such file or directory\n"
+}
+]
+}
+The health status is also displayed in the
+docker ps
+output.
+User
+The default user within a container is
+root
+(uid = 0). You can set a default
+user to run the first process with the Dockerfile
+USER
+instruction. When
+starting a container, you can override the
+USER
+inst

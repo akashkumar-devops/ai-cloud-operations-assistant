@@ -1,18 +1,15 @@
-use the image
-reference to create or run a container based on an image.
-docker run IMAGE[:TAG][@DIGEST]
-docker create IMAGE[:TAG][@DIGEST]
-An image tag is the image version, which defaults to
-latest
-when omitted. Use
-the tag to run a container from specific version of an image. For example, to
-run version
-24.04
-of the
-ubuntu
-image:
-docker run ubuntu:24.04
-.
-Image digests
-Images using the v2 or later image format have a content-addressable identifier
-called a digest. As long as the input used to 
+llowed to
+use more than L bytes of memory, swap
+plus
+memory usage is limited
+by S.
+Examples:
+$
+docker run -it ubuntu:24.04 /bin/bash
+We set nothing about memory, this means the processes in the container can use
+as much memory and swap memory as they need.
+$
+docker run -it -m 300M --memory-swap -1 ubuntu:24.04 /bin/bash
+We set memory limit and disabled swap memory limit, this means the processes in
+the container can use 300M memory and as much swap memory as they need (if the
+host supports swap 

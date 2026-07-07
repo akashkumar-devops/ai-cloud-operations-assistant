@@ -1,44 +1,28 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+UN
+go build -o /bin/hello ./main.go
+FROM
+scratch
+COPY
+--from
+=
+0
+/bin/hello /bin/hello
+CMD
+[
+"/bin/hello"
+]
+You only need the single Dockerfile. No need for a separate build script. Just
+run
+docker build
+.
+$
+docker build -t hello .
+The end result is a tiny production image with nothing but the binary inside.
+None of the build tools required to build the application are included in the
+resulting image.
+How does it work? The second
+FROM
+instruction starts a new build stage with
+the
+scratch
+image a

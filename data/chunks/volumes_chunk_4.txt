@@ -1,37 +1,9 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+dependent on the
+directory structure and OS of the host machine, volumes are completely managed by
+Docker. Volumes are a good choice for the following use cases:
+Volumes are easier to back up or migrate than bind mounts.
+You can manage volumes using Docker CLI commands or the Docker API.
+Volumes work on both Linux and Windows containers.
+Volumes can be more safely shared among multiple containers.
+New volumes can have their content pre-populated by a container or build.
+When your application req

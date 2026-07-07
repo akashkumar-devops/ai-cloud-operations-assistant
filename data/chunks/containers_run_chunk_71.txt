@@ -1,16 +1,16 @@
-24.04 /bin/bash
-This example restricts the processes in the container to only use memory from
-memory nodes 1 and 3.
-$
-docker run -it --cpuset-mems
-=
-"0-2"
-ubuntu:24.04 /bin/bash
-This example restricts the processes in the container to only use memory from
-memory nodes 0, 1 and 2.
-CPU quota constraint
+e container
+as if it were that
+binary
+, complete with default options, and you can pass in more options as
+commands. But there are cases where you may want to run something else inside
+the container. This is when overriding the default entrypoint at runtime comes
+in handy, using the
+--entrypoint
+flag for the
+docker run
+command.
 The
---cpu-quota
-flag limits the container's CPU usage. The default 0 value
-allows the container to take 100% of a CPU resource (1 CPU). The CFS (Completely Fair
-Scheduler) handles resource allocatio
+--entrypoint
+flag expects a string value, representing the name or path
+of the binary that you want to invoke when the container starts. The following
+example shows y

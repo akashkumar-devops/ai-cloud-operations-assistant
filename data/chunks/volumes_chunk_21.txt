@@ -1,33 +1,30 @@
-ent
-Catalogs
-Mirror
-Repositories
-Create
-Manage
-Repository information
-Access
-Images
-Tags
-Immutable tags
-Image Management
-Software artifacts
-Push images
-Move images
-Bulk migrate images
-Image security insights
-Webhooks
-Automated builds
-Deprecated
-Set up
-Link accounts
-Automated repository tests
-Advanced options
-Migrate
-Manage autobuilds
-Troubleshoot
-Trusted content
-Docker Official Images
-Docker Verified Publisher Program
-Docker-Sponsored Open Source Program
-Insights and analytics
-Export repositorie
+ses the same volume when you run the command subsequently.
+You can create a volume directly outside of Compose using
+docker volume create
+and
+then reference it inside
+compose.yaml
+as follows:
+services
+:
+frontend
+:
+image
+:
+node:lts
+volumes
+:
+-
+myapp:/home/node/app
+volumes
+:
+myapp
+:
+external
+:
+true
+For more information about using volumes with Compose, refer to the
+Volumes
+section in the Compose specification.
+Start a service with volumes
+When you start a service and define a volume, each service 

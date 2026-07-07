@@ -1,22 +1,22 @@
-oth read
-and write rates must be a positive integer. You can specify the rate in
-kb
-(kilobytes),
-mb
-(megabytes), or
-gb
-(gigabytes).
-The
---device-read-iops
-flag limits read rate (IO per second) from a device.
-For example, this command creates a container and limits the read rate to
-1000
-IO per second from
-/dev/sda
-:
+more
+-e
+flags. You can even override the variables mentioned above, or
+variables defined using a Dockerfile
+ENV
+instruction when building the image.
+If you name an environment variable without specifying a value, the current
+value of the named variable on the host is propagated into the container's
+environment:
 $
-docker run -it --device-read-iops /dev/sda:1000 ubuntu
-The
---device-write-iops
-flag limits write rate (IO per second) to a device.
-For example, this command creates a container and 
+export
+today
+=
+Wednesday
+$
+docker run -e
+"deep=purple"
+-e today --rm alpine env
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=d2219b854598
+deep=purple
+today

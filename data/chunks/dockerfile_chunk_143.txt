@@ -1,30 +1,29 @@
-/app/
-COPY
---chmod
-=
-g
-=
-u config/ /config/
-The
---chmod
-flag is not supported when building Windows containers.
-COPY --chown
-COPY
-[
---chown
-=
-<user>:<group>
-]
-<src> ... <dest>
-Sets ownership of copied files. Without this flag, files are created with UID
-and GID of 0.
-The flag accepts usernames, group names, UIDs, or GIDs in any combination.
-If you specify only a user, the GID is set to the same numeric value as the UID.
-COPY
---chown
-=
-55:mygroup files* /somedir/
-COPY
---chown
-=
-bin files* /somedi
+  R     3164   0%   0% top -b
+Which exits cleanly on
+docker stop
+:
+$
+/usr/bin/time docker stop
+test
+test
+real	0m 0.20s
+user	0m 0.02s
+sys	0m 0.04s
+If you forget to add
+exec
+to the beginning of your
+ENTRYPOINT
+:
+FROM
+ubuntu
+ENTRYPOINT
+top -b
+CMD
+-- --ignored-param1
+You can then run it (giving it a name for the next step):
+$
+docker run -it --name
+test
+top --ignored-param2
+top - 13:58:24 up 17 min,  0 users,  load average: 0.00, 0.00, 0.00
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   

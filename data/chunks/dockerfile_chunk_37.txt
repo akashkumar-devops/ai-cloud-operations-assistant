@@ -1,14 +1,23 @@
- convention. Values for a directive are case-sensitive and
-must be written in the appropriate case for the directive. For example,
-#check=skip=jsonargsrecommended
-is invalid because the check name must use
-Pascal case, not lowercase. It's also conventional to include a blank line
-following any parser directives. Line continuation characters aren't supported
-in parser directives.
-Due to these rules, the following examples are all invalid:
-Invalid due to line continuation:
-# direc \
-tive
-=
-value
-I
+
+AS <name>
+]
+The
+FROM
+instruction initializes a new build stage and sets the
+base image
+for subsequent
+instructions. As such, a valid Dockerfile must start with a
+FROM
+instruction.
+The image can be any valid image.
+ARG
+is the only instruction that may precede
+FROM
+in the Dockerfile.
+See
+Understand how ARG and FROM interact
+.
+FROM
+can appear multiple times within a single Dockerfile to
+create multiple images or use one build stage as a dependency for another.
+Simply make a note of the last image 

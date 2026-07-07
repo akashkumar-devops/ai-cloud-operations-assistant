@@ -1,44 +1,12 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+ose changes to
+appear in the image. In other words, Docker will invalidate the cache for this
+layer.
+If a layer changes, all other layers that come after it are also affected. When
+the layer with the
+COPY
+command gets invalidated, all layers that follow will
+need to run again, too:
+And that's the Docker build cache in a nutshell. Once a layer changes, then all
+downstream layers need to be rebuilt as well. Even if they wouldn't build
+anything differently, they still need to re-run.
+Other resource

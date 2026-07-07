@@ -1,8 +1,18 @@
-g filesystem metadata. The directory itself isn't copied, only its
-contents. If it contains subdirectories, these are also copied, and merged with
-any existing directories at the destination. Any conflicts are resolved in
-favor of the content being added, on a file-by-file basis, except if you're
-trying to copy a directory onto an existing file, in which case an error is
-raised.
-If the source is a file, the file and its metadata are copied to the
-destination. File permissions are preserved. If t
+er, you can see that
+top
+is the only process:
+$
+docker run -it --rm --name
+test
+top -H
+top - 08:25:00 up  7:27,  0 users,  load average: 0.00, 0.01, 0.05
+Threads:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
+%
+Cpu
+(
+s
+)
+:  0.1 us,  0.1 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   2056668 total,  1616832 used,   439836 free,    99352 buffers
+KiB Swap:  1441840 total,        0 used,  1441840 free.  1324440 cached Mem
+PID USER      PR  NI    VIRT    RES    SH

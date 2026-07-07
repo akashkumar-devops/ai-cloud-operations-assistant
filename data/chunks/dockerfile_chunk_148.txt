@@ -1,17 +1,27 @@
-here BuildKit can avoid pulling down the base image can also
-happen when using
---link
-and no other commands that would require access to
-the files in the base image. In that case BuildKit will only build the layers
-for the
-COPY
-commands and push them to the registry directly on top of the
-layers of the base image.
-Incompatibilities with
---link=false
-When using
---link
-the
-COPY/ADD
-commands are not allowed to read any files
-from the previous state. This means that if in previous state the destinat
+ry exec_cmd p1_cmd
+CMD exec_cmd p1_cmd
+/bin/sh -c exec_cmd p1_cmd
+/bin/sh -c exec_entry p1_entry
+exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd
+Note
+If
+CMD
+is defined from the base image, setting
+ENTRYPOINT
+will
+reset
+CMD
+to an empty value. In this scenario,
+CMD
+must be defined in the
+current image to have a value.
+VOLUME
+VOLUME
+[
+"/data"
+]
+The
+VOLUME
+instruction creates a mount point with the specified name
+and marks it as holding externally mounted volumes from native host or other
+containers.

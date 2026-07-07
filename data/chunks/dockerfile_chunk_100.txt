@@ -1,25 +1,30 @@
-L
-instruction is a much more flexible version of this and you should use
-it instead, as it enables setting any metadata you require, and can be viewed
-easily, for example with
-docker inspect
-. To set a label corresponding to the
-MAINTAINER
-field you could use:
-LABEL
-org.opencontainers.image.authors
-=
-"SvenDowideit@home.org.au"
-This will then be visible from
-docker inspect
-with the other labels.
-EXPOSE
-EXPOSE
-<port
->
+ and the destination doesn't end with a trailing slash,
+the source file will be written to the destination path as a file.
+ADD --keep-git-dir
+ADD
 [
-<port>/<protocol>...
+--keep-git-dir
+=
+<boolean>
 ]
+<src> ... <dir>
+When
+<src>
+is the HTTP or SSH address of a remote Git repository,
+BuildKit adds the contents of the Git repository to the image
+excluding the
+.git
+directory by default.
 The
-EXPOSE
-instruction informs Docker that the containe
+--keep-git-dir=true
+flag lets you preserve the
+.git
+directory.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+ADD
+--keep-git-dir
+=
+true
+http

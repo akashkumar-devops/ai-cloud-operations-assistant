@@ -1,28 +1,13 @@
-testation storage
-Provenance attestations
-SBOM attestations
-SLSA definitions
-Exporters
-Image and registry exporters
-Local and tar exporters
-OCI and Docker exporters
-BuildKit
-buildkitd.toml
-Configure BuildKit
-Custom Dockerfile syntax
-Dockerfile release notes
-Debugging
-OpenTelemetry support
-Build release notes
-Docker Build Cloud
-Setup
-Usage
-Continuous integration
-Optimization
-Builder settings
-Release notes
-Docker Compose
-Introduction to Compose
-How Compose works
-Why use Compose?
-History and develo
+m. Processes (like web servers) that
+just need to bind on a port below 1024 do not need to run as root: they
+can just be granted the
+net_bind_service
+capability instead. And there
+are many other capabilities, for almost all the specific areas where root
+privileges are usually needed. This means a lot for container security.
+Typical servers run several processes as
+root
+, including the SSH daemon,
+cron
+daemon, logging daemons, kernel modules, network configuration tools,
+and more. A container is 

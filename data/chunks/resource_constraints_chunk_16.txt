@@ -1,29 +1,16 @@
-pment
-Install
-Plugin
-Standalone (Legacy)
-Uninstall
-Quickstart
-How-tos
-Specify a project name
-Use lifecycle hooks
-Use service profiles
-Control startup order
-Use environment variables
-Set environment variables
-Environment variables precedence
-Pre-defined environment variables
-Interpolation
-Best practices
-Build dependent images
-Use Compose Watch
-Secrets in Compose
-Networking
-Use multiple Compose files
-Merge
-Extend
-Include
-Enable GPU support
-Use Compose in production
-OCI artifact applications
-Use pr
+r modifies the settings for
+the container's cgroup on the host machine.
+Option
+Description
+--cpus=<value>
+Specify how much of the available CPU resources a container can use. For instance, if the host machine has two CPUs and you set
+--cpus="1.5"
+, the container is guaranteed at most one and a half of the CPUs. This is the equivalent of setting
+--cpu-period="100000"
+and
+--cpu-quota="150000"
+.
+--cpu-period=<value>
+Specify the CPU CFS scheduler period, which is used alongside
+--cpu-quota
+. Default

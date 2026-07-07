@@ -1,28 +1,15 @@
-rvice scale
-docker service update
-docker stack
-docker stack config
-docker stack deploy
-docker stack ls
-docker stack ps
-docker stack rm
-docker stack services
-docker swarm
-docker swarm ca
-docker swarm init
-docker swarm join
-docker swarm join-token
-docker swarm leave
-docker swarm unlock
-docker swarm unlock-key
-docker swarm update
-docker system
-docker system df
-docker system events
-docker system info
-docker system prune
-docker trust
-docker trust inspect
-docker trust key
-docker trust key generate
-doc
+oserver
+---> 22738ff49c6d
+Step 2/3 : COPY testfile.txt c:\
+---> 96655de338de
+Removing intermediate container 4db9acbb1682
+Step 3/3 : RUN dir c:\
+---> Running in a2c157f842f5
+Volume in drive C has no label.
+Volume Serial Number is 7E6D-E0F7
+Directory of c:\
+10/05/2016  05:04 PM             1,894 License.txt
+10/05/2016  02:22 PM    <DIR>          Program Files
+10/05/2016  02:14 PM    <DIR>          Program Files (x86)
+10/28/2016  11:18 AM                62 testfile.txt
+10/28/2016  11:20 AM    <DIR

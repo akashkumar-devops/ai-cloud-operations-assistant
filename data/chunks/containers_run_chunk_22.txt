@@ -1,27 +1,27 @@
-s
-Archive
-Delete
-Settings
-Usage and limits
-Pulls
-Optimize usage
-Troubleshoot
-Release notes
-Docker Scout
-Install
-Quickstart
-Explore
-Dashboard
-Docker Scout image analysis
-Docker Scout metrics exporter
-Image details view
-Manage vulnerability exceptions
-How-tos
-Create an exception using the GUI
-Create an exception using the VEX
-Docker Scout environment variables
-Docker Scout SBOMs
-Use Scout with different artifact types
-Deep dive
-Advisory database sources and matching service
-Data collection and sto
+ined: --foo
+See 'docker run --help'.
+125
+126
+Exit code
+126
+indicates that the specified contained command can't be invoked.
+The container command in the following example is:
+/etc
+.
+$
+docker run busybox /etc
+;
+echo
+$?
+docker: Error response from daemon: Container command '/etc' could not be invoked.
+126
+127
+Exit code
+127
+indicates that the contained command can't be found.
+$
+docker run busybox foo
+;
+echo
+$?
+docker: Error response from daemon: Container command 'foo' not found or does not exist.

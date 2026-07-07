@@ -1,24 +1,24 @@
-ds:
-FROM
-alpine
+  Rs+  13:58   0:00 ps waux
+$
+/usr/bin/time docker stop
+test
+test
+real	0m 10.19s
+user	0m 0.04s
+sys	0m 0.03s
+Understand how CMD and ENTRYPOINT interact
+Both
+CMD
 and
-FROM
-scratch
-COPY
-/foo /bar
-and merging all the layers of both images together.
-Benefits of using
---link
-Use
---link
-to reuse already built layers in subsequent builds with
---cache-from
-even if the previous layers have changed. This is especially
-important for multi-stage builds where a
-COPY --from
-statement would
-previously get invalidated if any previous commands in the same stage changed,
-causing the need to rebuild the intermediate stages again. With
---link
-the
-layer the p
+ENTRYPOINT
+instructions define what command gets executed when running a container.
+There are few rules that describe their co-operation.
+Dockerfile should specify at least one of
+CMD
+or
+ENTRYPOINT
+commands.
+ENTRYPOINT
+should be defined when using the container as an executable.
+CMD
+should be used as a way of defining default argument

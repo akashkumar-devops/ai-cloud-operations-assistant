@@ -1,23 +1,15 @@
-nd mount into the container. The
-target
-path is the mount destination
-inside the container.
-By default, bind mounts require the source path to exist on the daemon host. If the
-source path doesn't exist, an error is returned. To create the source path on
-the daemon host if it doesn't exist, use the
-bind-create-src
-option:
-$
-docker run -it --mount
-type
-=
-bind,source
-=[
-PATH
-]
-,target
-=[
-PATH
-]
-,bind-create-src busybox
-Bind mounts are read-write by default, meaning that you can both read and write
+ltiple CPUs, adjust the
+--cpu-quota
+as necessary.
+For more information, see the
+CFS documentation on bandwidth limiting
+.
+Block IO bandwidth (Blkio) constraint
+By default, all containers get the same proportion of block IO bandwidth
+(blkio). This proportion is 500. To modify this proportion, change the
+container's blkio weight relative to the weighting of all other running
+containers using the
+--blkio-weight
+flag.
+Note
+The blkio weight setting is only available for direct IO. Buffered IO is not

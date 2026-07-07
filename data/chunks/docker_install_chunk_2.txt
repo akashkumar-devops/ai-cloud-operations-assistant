@@ -1,35 +1,42 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+tforms
+Click on a platform's link to view the relevant installation procedure.
+Platform
+x86_64 / amd64
+arm64 / aarch64
+arm (32-bit)
+ppc64le
+s390x
+CentOS
+â
+â
+â
+Debian
+â
+â
+â
+â
+Fedora
+â
+â
+â
+Raspberry Pi OS (32-bit)
+â ï¸
+RHEL
+â
+â
+â
+Ubuntu
+â
+â
+â
+â
+â
+Binaries
+â
+â
+â
+Other Linux distributions
+Note
+While the following instructions may work, Docker doesn't test or verify
+installation on distribution derivatives.
+If you use Debian derivatives such as "BunsenLabs Linux", "Kali Linux" 

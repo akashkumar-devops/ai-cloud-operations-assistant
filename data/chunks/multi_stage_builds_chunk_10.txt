@@ -1,17 +1,17 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+ckerfile means only
+base
+and
+stage2
+are processed.
+There is no dependency on
+stage1
+, so it's skipped.
+$
+DOCKER_BUILDKIT
+=
+1
+docker build --no-cache -f Dockerfile --target stage2 .
+[+] Building 0.4s (7/7) FINISHED
+=> [internal] load build definition from Dockerfile                                            0.0s
+=> => transferring dockerfile: 36B                                                             0.0s
+=> [internal] load .dockerignore                                                      

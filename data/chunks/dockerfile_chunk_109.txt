@@ -1,33 +1,16 @@
-
-1.6
---chmod
-1.2
---chown
---link
-1.4
---unpack
-1.17
---exclude
-1.19
-The
-ADD
-instruction copies new files or directories from
-<src>
-and adds
-them to the filesystem of the image at the path
-<dest>
-. Files and directories
-can be copied from the build context, a remote URL, or a Git repository.
-The
-ADD
-and
+ name exists at the destination, an error is raised.
+If you pass a Dockerfile through stdin to the build (
+docker build - < Dockerfile
+), there is no build context. In this case, you can only use the
 COPY
-instructions are functionally similar, but serve slightly different purposes.
-Learn more about the
-differences between
-ADD
-and
-COPY
-.
-Source
-You can specify multiple source files or directories 
+instruction to copy files from other stages, named contexts, or images,
+using the
+--from
+flag
+. You can also pass a tar archive
+through stdin: (
+docker build - < archive.tar
+), the Dockerfile at the root of
+the archive and the rest of the archive will be used as the context of the
+build.
+When u

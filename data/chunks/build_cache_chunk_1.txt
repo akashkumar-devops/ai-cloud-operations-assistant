@@ -1,44 +1,17 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Docker build cache
+Table of contents
+How the build cache works
+Other resources
+When you build the same Docker image multiple times, knowing how to optimize
+the build cache is a great tool for making sure the builds run fast.
+How the build cache works
+Understanding Docker's build cache helps you write better Dockerfiles that
+result in faster builds.
+The following example shows a small Dockerfile for a program written in C.
+# syntax=docker/dockerfile:1
+FROM
+ubuntu:latest
+RUN
+apt-get update
+&&
+apt-

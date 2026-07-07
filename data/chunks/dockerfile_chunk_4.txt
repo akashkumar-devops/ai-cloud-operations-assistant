@@ -1,26 +1,24 @@
-ages
-docker compose kill
-docker compose logs
-docker compose ls
-docker compose pause
-docker compose port
-docker compose ps
-docker compose publish
-docker compose pull
-docker compose push
-docker compose restart
-docker compose rm
-docker compose run
-docker compose scale
-docker compose start
-docker compose stats
-docker compose stop
-docker compose top
-docker compose unpause
-docker compose up
-docker compose version
-docker compose volumes
-docker compose wait
-docker compose watch
-docker config
-docker conf
+ble an image. This page describes
+the commands you can use in a Dockerfile.
+Overview
+The Dockerfile supports the following instructions:
+Instruction
+Description
+ADD
+Add local or remote files and directories.
+ARG
+Use build-time variables.
+CMD
+Specify default commands.
+COPY
+Copy files and directories.
+ENTRYPOINT
+Specify default executable.
+ENV
+Set environment variables.
+EXPOSE
+Describe which ports your application is listening on.
+FROM
+Create a new build stage from a base image.
+HEALTHCHECK
+Check 

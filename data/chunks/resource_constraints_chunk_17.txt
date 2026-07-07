@@ -1,28 +1,11 @@
-ovider services
-Compose Bridge
-Usage
-Customize
-Use Model Runner
-Compose SDK
-New
-Trust model for Compose files
-Support and feedback
-FAQs
-Give feedback
-Release notes
-Docker Extensions
-Marketplace extensions
-Non-marketplace extensions
-Configure a private marketplace
-Settings and feedback
-Extensions SDK
-The build and publish process
-Quickstart
-Part one: Build
-Create a simple extension
-Create an advanced frontend extension
-Add a backend to your extension
-Part two: Publish
-Add labels
-Validate
-Package 
+s to 100000 microseconds (100 milliseconds). Most users don't change this from the default. For most use-cases,
+--cpus
+is a more convenient alternative.
+--cpu-quota=<value>
+Impose a CPU CFS quota on the container. The number of microseconds per
+--cpu-period
+that the container is limited to before being throttled. As such acting as the effective ceiling. For most use-cases,
+--cpus
+is a more convenient alternative.
+--cpuset-cpus
+Limit the specific CPUs or cores a container can use. A comma-separat

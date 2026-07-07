@@ -1,33 +1,29 @@
-ent
-Catalogs
-Mirror
-Repositories
-Create
-Manage
-Repository information
-Access
-Images
-Tags
-Immutable tags
-Image Management
-Software artifacts
-Push images
-Move images
-Bulk migrate images
-Image security insights
-Webhooks
-Automated builds
-Deprecated
-Set up
-Link accounts
-Automated repository tests
-Advanced options
-Migrate
-Manage autobuilds
-Troubleshoot
-Trusted content
-Docker Official Images
-Docker Verified Publisher Program
-Docker-Sponsored Open Source Program
-Insights and analytics
-Export repositorie
+ocker run -it --mount
+type
+=
+bind,source
+=
+.,target
+=
+/foo busybox
+/ # echo "hello from container" > /foo/hello.txt
+/ # exit
+$
+cat hello.txt
+hello from container
+Exit status
+The exit code from
+docker run
+gives information about why the container
+failed to run or why it exited. The following sections describe the meanings of
+different container exit codes values.
+125
+Exit code
+125
+indicates that the error is with Docker daemon itself.
+$
+docker run --foo busybox
+;
+echo
+$?
+flag provided but not def

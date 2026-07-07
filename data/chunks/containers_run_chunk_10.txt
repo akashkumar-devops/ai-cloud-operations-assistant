@@ -1,17 +1,25 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+ker run --detach
+: run container in background
+docker run --attach
+: attach to
+stdin
+,
+stdout
+, and
+stderr
+docker run --tty
+: allocate a pseudo-tty
+docker run --interactive
+: keep
+stdin
+open even if not attached
+For more information about re-attaching to a background container, see
+docker attach
+.
+Container identification
+You can identify a container in three ways:
+Identifier type
+Example value
+UUID long identifier
+f78375b1c487e03c9438c729345e54db9d20cfa2ac1fc3494b6eb60872e74778
+UUID short ident

@@ -1,44 +1,26 @@
-cements
-Subscription
-Compare
-Setup
-Upgrade or change
-Scale
-Docker Desktop license agreement
-FAQs
-Release notes
-Enterprise
-Administration
-Organization
-Setup
-Create
-Onboard
-Change information
-Convert account
-Manage
-Members
-Teams
-License assignment
-Seats
-Docker products
-Deactivate
-FAQs
-Company
-Create
-Manage
-Organizations
-Owners
-Users
-FAQs
-Activity logs
-Insights
-Deploy Docker Desktop
-MSI installer
-PKG installer
-MS Store
-Deploy with Intune
-Deploy with Jamf Pro
-Microsoft Dev Box
-FAQs
-Security
-Add and 
+usr/share/nginx/html
+directory. This is where Nginx stores its default HTML
+content.
+The
+--mount
+and
+-v
+examples have the same end result.
+--mount
+-v
+$
+docker run -d
+\
+--name=nginxtest \
+--mount source=nginx-vol,destination=/usr/share/nginx/html \
+nginx:latest
+$
+docker run -d
+\
+--name=nginxtest \
+-v nginx-vol:/usr/share/nginx/html \
+nginx:latest
+After running either of these examples, run the following commands to clean up
+the containers and volumes. Note volume removal is a separate step.
+$
+doc

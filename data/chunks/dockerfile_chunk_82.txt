@@ -1,20 +1,44 @@
-tall-recommends install -y gcc
-Apt needs exclusive access to its data, so the caches use the option
-sharing=locked
-, which will make sure multiple parallel builds using
-the same cache mount will wait for each other and not access the same
-cache files at the same time. You could also use
-sharing=private
-if
-you prefer to have each build create another cache directory in this
-case.
-RUN --mount=type=tmpfs
-This mount type allows mounting
-tmpfs
-in the build container.
+WO= THREE=world"
+:
+ENV
+ONE
+TWO
+=
+THREE
+=
+world
+The alternative syntax is supported for backward compatibility, but discouraged
+for the reasons outlined above, and may be removed in a future release.
+ADD
+ADD has two forms.
+The latter form is required for paths containing whitespace.
+ADD
+[
+OPTIONS
+]
+<src> ... <dest>
+ADD
+[
+OPTIONS
+]
+[
+"<src>"
+, ...
+"<dest>"
+]
+The available
+[OPTIONS]
+are:
 Option
-Description
-target
-,
-dst
-,
+Minimum Dockerfile version
+--keep-git-dir
+1.1
+--checksum
+1.6
+--chmod
+1.2
+--chown
+--link
+1.4
+--unpack
+1.17

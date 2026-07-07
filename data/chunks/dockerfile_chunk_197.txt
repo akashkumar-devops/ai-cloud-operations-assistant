@@ -1,24 +1,25 @@
-git
-directory.
-BUILDKIT_INLINE_CACHE
-2
-Bool
-Inline cache metadata to image config or not.
-BUILDKIT_MULTI_PLATFORM
-Bool
-Opt into deterministic output regardless of multi-platform output or not.
-BUILDKIT_SANDBOX_HOSTNAME
-String
-Set the hostname (default
-buildkitsandbox
-)
-BUILDKIT_SYNTAX
-String
-Set frontend image. Set to
-dockerfile.v0
-to ignore the Dockerfile
-# syntax=
-directive and use the built-in frontend instead.
-SOURCE_DATE_EPOCH
-Int
-Set the Unix timestamp for created image and layers. More in
+e6d8e63fe75
+Successfully built 8e559e9bf424
+PS E:\myproject>
+The
+SHELL
+instruction could also be used to modify the way in which
+a shell operates. For example, using
+SHELL cmd /S /C /V:ON|OFF
+on Windows, delayed
+environment variable expansion semantics could be modified.
+The
+SHELL
+instruction can also be used on Linux should an alternate shell be
+required such as
+zsh
+,
+csh
+,
+tcsh
+and others.
+Here-Documents
+Here-documents allow redirection of subsequent Dockerfile lines to the input of
+RUN
+or
+COP

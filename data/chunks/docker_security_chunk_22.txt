@@ -1,27 +1,12 @@
-s
-Archive
-Delete
-Settings
-Usage and limits
-Pulls
-Optimize usage
-Troubleshoot
-Release notes
-Docker Scout
-Install
-Quickstart
-Explore
-Dashboard
-Docker Scout image analysis
-Docker Scout metrics exporter
-Image details view
-Manage vulnerability exceptions
-How-tos
-Create an exception using the GUI
-Create an exception using the VEX
-Docker Scout environment variables
-Docker Scout SBOMs
-Use Scout with different artifact types
-Deep dive
-Advisory database sources and matching service
-Data collection and sto
+Trust Signature Verification, go to
+Content trust in Docker
+.
+Other kernel security features
+Capabilities are just one of the many security features provided by
+modern Linux kernels. It is also possible to leverage existing,
+well-known systems like TOMOYO, AppArmor, SELinux, GRSEC, etc. with
+Docker.
+While Docker currently only enables capabilities, it doesn't interfere
+with the other systems. This means that there are many different ways to
+harden a Docker host. Here are a few examples.
+You can 

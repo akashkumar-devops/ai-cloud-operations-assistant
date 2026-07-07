@@ -1,38 +1,46 @@
-default
-RUN --network=none
-RUN --network=host
-RUN --security
-CMD
-LABEL
-MAINTAINER (deprecated)
-EXPOSE
+o). To match literal
+?
+and
+*
+,
+use a backslash escape:
+\?
+and
+\*
+.
+You can escape whole variable names by adding a
+\
+before the variable:
+\$foo
+or
+\${foo}
+,
+for example, will translate to
+$foo
+and
+${foo}
+literals respectively.
+Example (parsed representation is displayed after the
+#
+):
+FROM
+busybox
 ENV
-ADD
-Source
-Destination
-ADD --keep-git-dir
-ADD --checksum
-ADD --chmod
-ADD --chown
-ADD --link
-ADD --unpack
-ADD --exclude
-COPY
-Source
-Destination
-COPY --from
-COPY --chmod
-COPY --chown
-COPY --link
-COPY --parents
-COPY --exclude
-ENTRYPOINT
-Exec form ENTRYPOINT example
-Shell form ENTRYPOINT example
-Understand how CMD and ENTRYPOINT interact
-VOLUME
-Notes about specifying volumes
-USER
+FOO
+=
+/bar
 WORKDIR
-ARG
-Def
+${FOO
+}
+# WORKDIR /bar
+ADD
+.
+$FOO
+# ADD . /bar
+COPY
+\$
+FOO /quux
+# COPY $FOO /quux
+Environment variables are supported by the following list of instructions in
+the Dockerfile:
+AD

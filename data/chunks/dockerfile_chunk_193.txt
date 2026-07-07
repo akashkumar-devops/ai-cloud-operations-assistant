@@ -1,22 +1,25 @@
-able is not available in the
-docker history
-and is not cached. If you were to change location, and your
-proxy server changed to
-http://user:pass@proxy.sfo.example.com
-, a subsequent
-build does not result in a cache miss.
-If you need to override this behaviour then you may do so by adding an
-ARG
-statement in the Dockerfile as follows:
-FROM
-ubuntu
-ARG
-HTTP_PROXY
+ecute-MyCmdlet -param1
+"c:\foo.txt"
+The command invoked by the builder will be:
+cmd
+/
+S
+/
+C
+powershell
+-command
+Execute-MyCmdlet
+-param1
+"c:\foo.txt"
+This is inefficient for two reasons. First, there is an unnecessary
+cmd.exe
+command processor (aka shell) being invoked. Second, each
 RUN
-echo
-"Hello World"
-When building this Dockerfile, the
-HTTP_PROXY
-is preserved in the
-docker history
-, and changing its value invalida
+instruction in
+the shell form requires an extra
+powershell -command
+prefixing the command.
+To make this more efficient, one of two mechanisms can be employed. One is to
+use the JSON form of the
+RUN
+command such a

@@ -1,33 +1,51 @@
-ana samples
-Express samples
-FastAPI samples
-Flask samples
-Gitea samples
-Go samples
-Java samples
-JavaScript samples
-MariaDB samples
-Minecraft samples
-MongoDB samples
-MS-SQL samples
-MySQL samples
-Nextcloud samples
-NGINX samples
-Node.js samples
-PHP samples
-Pi-hole samples
-Plex samples
-Portainer samples
-PostgreSQL samples
-Prometheus samples
-Python samples
-Rails samples
-React samples
-Redis samples
-Ruby samples
-Rust samples
-Spark samples
-Spring Boot samples
-Traefik samples
-TypeScript samples
-Vue.js sa
+
+}
+# arbaz
+${variable##pattern}
+removes the longest match of
+pattern
+from
+variable
+,
+seeking from the start of the string.
+str
+=
+foobarbaz
+echo
+${
+str
+##f*b
+}
+# az
+${variable%pattern}
+removes the shortest match of
+pattern
+from
+variable
+,
+seeking backwards from the end of the string.
+string
+=
+foobarbaz
+echo
+${
+string
+%b*
+}
+# foobar
+${variable%%pattern}
+removes the longest match of
+pattern
+from
+variable
+,
+seeking backwards from the end of the string.
+string
+=
+foobarbaz
+echo
+${
+string
+%%b*
+}
+# foo

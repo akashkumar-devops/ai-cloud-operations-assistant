@@ -1,22 +1,20 @@
-opUI
-Interface: Dialog
-Interface: Docker
-Interface: DockerCommand
-Interface: DockerDesktopClient
-Interface: Exec
-Interface: ExecOptions
-Interface: ExecProcess
-Interface: ExecResult
-Interface: ExecResultV0
-Interface: ExecStreamOptions
-Interface: Extension
-Interface: ExtensionCli
-Interface: ExtensionHost
-Interface: ExtensionVM
-Interface: Host
-Interface: HttpService
-Interface: NavigationIntents
-Interface: OpenDialogResult
-Interface: RawExecResult
-Interface: RequestConfig
-Interface: RequestConfigV0
+t variables (declared with
+the
+ENV
+statement
+) can also be
+used in certain instructions as variables to be interpreted by the
+Dockerfile. Escapes are also handled for including variable-like syntax
+into a statement literally.
+Environment variables are notated in the Dockerfile either with
+$variable_name
+or
+${variable_name}
+. They are treated equivalently and the
+brace syntax is typically used to address issues with variable names with no
+whitespace, like
+${foo}_bar
+.
+The
+${variable_name}
+syntax 

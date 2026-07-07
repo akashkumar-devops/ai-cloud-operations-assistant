@@ -1,27 +1,23 @@
-and release your extension
-Share your extension
-Publish in the Marketplace
-Build multi-arch extensions
-Architecture
-Metadata
-Security
-Design and UI styling
-Guidelines
-Docker design principles
-MUI best practices
-Developer Guides
-Authentication
-Interacting with Kubernetes
-Invoke host binaries
-Use the Docker socket
-Developer SDK tools
-Test and debug
-Continuous Integration (CI)
-CLI reference
-Extension APIs
-Dashboard
-Docker
-Extension Backend
-Extension UI API
-Navigation
-Deprecated products and feature
+is example is contrived to be extreme, but replaces the contents of the
+container's
+/usr/
+directory with the
+/tmp/
+directory on the host machine. In
+most cases, this would result in a non-functioning container.
+The
+--mount
+and
+-v
+examples have the same end result.
+--mount
+-v
+$
+docker run -d
+\
+-it \
+--name broken-container \
+--mount type=bind,source=/tmp,target=/usr \
+nginx:latest
+docker: Error response from daemon: oci runtime error: container_linux.go:262:
+starting container process caused "exe

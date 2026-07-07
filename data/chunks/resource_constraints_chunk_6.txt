@@ -1,24 +1,12 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+e, as described below.
+Be mindful when configuring swap on your Docker hosts. Swap is slower than
+memory but can provide a buffer against running out of system memory.
+Consider converting your container to a
+service
+, and using service-level constraints
+and node labels to ensure that the application runs only on hosts with enough
+memory
+Limit a container's access to memory
+Docker can enforce hard or soft memory limits.
+Hard limits let the container use no more than a fixed amount of memory.
+Soft

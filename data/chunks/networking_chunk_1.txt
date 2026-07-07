@@ -1,44 +1,16 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Networking overview
+Table of contents
+User-defined networks
+Drivers
+Connecting to multiple networks
+Published ports
+IP address and hostname
+Subnet allocation
+DNS services
+Custom hosts
+Container networks
+Container networking refers to the ability for containers to connect to and
+communicate with each other, and with non-Docker network services.
+Containers have networking enabled by default, and they can make outgoing
+connections. A container has no information about what kind of network it's
+atta

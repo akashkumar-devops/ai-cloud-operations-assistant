@@ -1,26 +1,38 @@
-rage in Docker Scout
-Policy Evaluation
-Configure policies
-Docker Scout health scores
-Evaluate policy compliance in CI
-Remediation with Docker Scout
-View Docker Scout policy status
-Integrations
-Code quality
-SonarQube
-Container registries
-Amazon ECR
-Artifactory Container Registry
-Azure Container Registry
-Continuous Integration
-Azure DevOps Pipelines
-Circle CI
-GitHub Actions
-GitLab CI/CD
-Jenkins
-Integrating Docker Scout with environments
-Generic (CLI)
-Sysdig
-Source code management
-GitHub
-Team colla
+127
+Other exit codes
+Any exit code other than
+125
+,
+126
+, and
+127
+represent the exit code of the
+provided container command.
+$
+docker run busybox /bin/sh -c
+'exit 3'
+$
+echo
+$?
+3
+Runtime constraints on resources
+The operator can also adjust the performance parameters of the
+container:
+Option
+Description
+-m
+,
+--memory=""
+Memory limit (format:
+<number>[<unit>]
+). Number is a positive integer. Unit can be one of
+b
+,
+k
+,
+m
+, or
+g
+. Minimum is 6M.
+--memory-swap=""
+Total memory limit (memory + swap, fo

@@ -1,27 +1,32 @@
-and release your extension
-Share your extension
-Publish in the Marketplace
-Build multi-arch extensions
-Architecture
-Metadata
-Security
-Design and UI styling
-Guidelines
-Docker design principles
-MUI best practices
-Developer Guides
-Authentication
-Interacting with Kubernetes
-Invoke host binaries
-Use the Docker socket
-Developer SDK tools
-Test and debug
-Continuous Integration (CI)
-CLI reference
-Extension APIs
-Dashboard
-Docker
-Extension Backend
-Extension UI API
-Navigation
-Deprecated products and feature
+address-pools"
+:
+[{
+"base"
+:
+"172.17.0.0/16"
+,
+"size"
+:
+24
+}]
+}
+You can also request a subnet with a specific prefix length from the default pools by using unspecified
+addresses in the
+--subnet
+option:
+$
+docker network create --ipv6 --subnet ::/56 --subnet 0.0.0.0/24 mynet
+6686a6746b17228f5052528113ddad0e6d68e2e3905d648e336b33409f2d3b64
+$
+docker network inspect mynet -f
+'{{json .IPAM.Config}}'
+|
+jq .
+[
+{
+"Subnet": "172.19.0.0/24",
+"Gateway": "172.19.0.1"
+},
+{
+"Subnet": "fdd3:6f80:972c::/56",
+"Ga

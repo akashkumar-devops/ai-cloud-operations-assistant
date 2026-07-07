@@ -1,11 +1,25 @@
-rvice rm devtest-service
-Removing the service doesn't remove any volumes created by the service.
-Volume removal is a separate step.
-Populate a volume using a container
-If you start a container which creates a new volume, and the container
-has files or directories in the directory to be mounted such as
-/app/
-,
-Docker copies the directory's contents into the volume. The container then
-mounts and uses the volume, and other containers which use the volume also
-have access to the pre-populated conten
+the
+awesome
+volume.
+The
+--rm
+option works with both foreground and detached (
+-d
+) containers.
+The anonymous volumes are cleaned up when the container exits.
+$
+docker run --rm -v /foo -v awesome:/bar busybox top
+Note
+If another container binds the volumes with
+--volumes-from
+, the volume definitions are
+copied
+and the
+anonymous volume also stays after the first container is removed.
+Remove all volumes
+To remove all unused volumes and free up space:
+$
+docker volume prune
+Next steps
+Learn about
+bi

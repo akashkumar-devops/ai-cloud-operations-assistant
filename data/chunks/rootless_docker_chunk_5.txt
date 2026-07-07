@@ -1,26 +1,19 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+ckages (RPM/DEB)
+Without packages
+If you installed Docker 20.10 or later with
+RPM/DEB packages
+, you should have
+dockerd-rootless-setuptool.sh
+in
+/usr/bin
+.
+Run
+dockerd-rootless-setuptool.sh install
+as a non-root user to set up the daemon:
+$
+dockerd-rootless-setuptool.sh install
+[INFO] Creating /home/testuser/.config/systemd/user/docker.service
+...
+[INFO] Installed docker.service successfully.
+[INFO] To control docker.service, run: `systemctl --user (start|stop|restart) docker.service`
+[INFO] To

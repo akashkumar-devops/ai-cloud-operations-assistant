@@ -1,44 +1,18 @@
-cements
-Subscription
-Compare
-Setup
-Upgrade or change
-Scale
-Docker Desktop license agreement
-FAQs
-Release notes
-Enterprise
-Administration
-Organization
-Setup
-Create
-Onboard
-Change information
-Convert account
-Manage
-Members
-Teams
-License assignment
-Seats
-Docker products
-Deactivate
-FAQs
-Company
-Create
-Manage
-Organizations
-Owners
-Users
-FAQs
-Activity logs
-Insights
-Deploy Docker Desktop
-MSI installer
-PKG installer
-MS Store
-Deploy with Intune
-Deploy with Jamf Pro
-Microsoft Dev Box
-FAQs
-Security
-Add and 
+ge network's subnet is "192.168.1.0/24" (from
+bip
+).
+Container addresses will be allocated from "192.168.1.0/25" (from
+fixed-cidr
+).
+Use IPv6 with the default bridge network
+IPv6 can be enabled for the default bridge using the following options in
+daemon.json
+, or their command line equivalents.
+These three options only affect the default bridge, they are not used by
+user-defined networks. The addresses in below are examples from the
+IPv6 documentation range.
+Option
+ipv6
+is required.
+Option
+bip6

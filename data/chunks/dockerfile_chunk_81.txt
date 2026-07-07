@@ -1,48 +1,32 @@
- Go packages
-# syntax=docker/dockerfile:1
-FROM
-golang
+y ...
+Or using
+ARG
+, which is not persisted in the final image:
+ARG
+DEBIAN_FRONTEND
+=
+noninteractive
 RUN
---mount
-=
-type
-=
-cache,target
-=
-/root/.cache/go-build
-\
-go build ...
-Example: cache apt packages
-# syntax=docker/dockerfile:1
-FROM
-ubuntu
-RUN
-rm -f /etc/apt/apt.conf.d/docker-clean
-;
-echo
-'Binary::apt::APT::Keep-Downloaded-Packages "true";'
-> /etc/apt/apt.conf.d/keep-cache
-RUN
---mount
-=
-type
-=
-cache,target
-=
-/var/cache/apt,sharing
-=
-locked
-\
---mount
-=
-type
-=
-cache,target
-=
-/var/lib/apt,sharing
-=
-locked
-\
 apt-get update
 &&
-apt-get --no-ins
+apt-get install -y ...
+Note
+Alternative syntax
+The
+ENV
+instruction also allows an alternative syntax
+ENV <key> <value>
+,
+omitting the
+=
+. For example:
+ENV
+MY_VAR my-value
+This syntax does not allow for multiple environment-variables to be set in a
+single
+ENV
+instruction, and can be confusing. For example, the following
+sets a single environment variable (
+ONE
+) with value
+"T

@@ -1,49 +1,27 @@
-t of the string.
-str
-=
-foobarbaz
-echo
-${
-str
-#f*b
-}
-# arbaz
-${variable##pattern}
-removes the longest match of
-pattern
-from
-variable
+ of the source. Defaults to the build context.
+rw
 ,
-seeking from the start of the string.
-str
-=
-foobarbaz
-echo
-${
-str
-##f*b
-}
-# az
-${variable%pattern}
-removes the shortest match of
-pattern
-from
-variable
+readwrite
+Allow writes on the mount. Written data will be discarded after the
+RUN
+instruction completes and will not be committed to the image layer.
+RUN --mount=type=cache
+This mount type allows the build container to cache directories for compilers
+and package managers.
+Option
+Description
+id
+Optional ID to identify separate/different caches. Defaults to value of
+target
+.
+target
 ,
-seeking backwards from the end of the string.
-string
-=
-foobarbaz
-echo
-${
-string
-%b*
-}
-# foobar
-${variable%%pattern}
-removes the longest match of
-pattern
-from
-variable
+dst
 ,
-seeking backwards from the end of the string
+destination
+1
+Mount path.
+ro
+,
+readonly
+Read-only if set.

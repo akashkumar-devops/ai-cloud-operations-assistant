@@ -1,27 +1,25 @@
- volume inspect my-vol
-[
-{
-"Driver": "local",
-"Labels": {},
-"Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
-"Name": "my-vol",
-"Options": {},
-"Scope": "local"
-}
-]
-Remove a volume:
-$
-docker volume rm my-vol
-Start a container with a volume
-If you start a container with a volume that doesn't yet exist, Docker creates
-the volume for you. The following example mounts the volume
-myvol2
-into
-/app/
-in the container.
-The following
--v
-and
+the
+/dev/loop5
+device.
+That's why the
+docker run
+command uses the
 --mount
-examples produce the same result. You can't
-run them b
+option.
+Example: Mounting a block device in a container
+The following steps create an
+ext4
+filesystem and mounts it into a container.
+The filesystem support of your system depends on the version of the Linux kernel you are using.
+Create a file and allocate some space to it:
+$
+fallocate -l 1G disk.raw
+Build a filesystem onto the
+disk.raw
+file:
+$
+mkfs.ext4 disk.raw
+Create a loop device:
+$
+losetup -f --show disk.raw
+/dev/loop

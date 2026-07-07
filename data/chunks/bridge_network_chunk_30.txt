@@ -1,8 +1,17 @@
-ts on host IP addresses. The published ports
-can be accessed from outside the Docker host, on its IP addresses.
-In terms of Docker, a bridge network uses a software bridge which lets
-containers connected to the same bridge network communicate, while providing
-isolation from containers that aren't connected to that bridge network. By
-default, the Docker bridge driver automatically installs rules in the host
-machine so that containers connected to different bridge networks can only
-communicate wit
+ section provides hands-on examples for working with bridge networks.
+Use the default bridge network
+This example shows how the default
+bridge
+network works. You start two
+alpine
+containers on the default bridge and test how they communicate.
+Note
+The default
+bridge
+network is not recommended for production. Use
+user-defined bridge networks instead.
+List current networks:
+$
+docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+17e324f45964        bridge             

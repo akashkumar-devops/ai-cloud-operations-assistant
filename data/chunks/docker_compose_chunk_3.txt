@@ -1,44 +1,9 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+e whilst building a simple Python web application.
+View the release notes
+Find out about the latest enhancements and bug fixes.
+Explore the Compose file reference
+Find information on defining services, networks, and volumes for a Docker application.
+Use Compose Bridge
+Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
+Browse common FAQs
+Explore general FAQs and find out how to give feedback.

@@ -1,17 +1,16 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+disable the OOM killer on containers where you have also set the
+-m/--memory
+option. If the
+-m
+flag isn't set, the host can run out of memory and the kernel may need to kill the host system's processes to free memory.
+For more information about cgroups and memory in general, see the documentation
+for
+Memory Resource Controller
+.
+--memory-swap
+details
+--memory-swap
+is a modifier flag that only has meaning if
+--memory
+is also
+set. Using swap allows the container to write excess memory requirements

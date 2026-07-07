@@ -1,44 +1,9 @@
-cements
-Subscription
-Compare
-Setup
-Upgrade or change
-Scale
-Docker Desktop license agreement
-FAQs
-Release notes
-Enterprise
-Administration
-Organization
-Setup
-Create
-Onboard
-Change information
-Convert account
-Manage
-Members
-Teams
-License assignment
-Seats
-Docker products
-Deactivate
-FAQs
-Company
-Create
-Manage
-Organizations
-Owners
-Users
-FAQs
-Activity logs
-Insights
-Deploy Docker Desktop
-MSI installer
-PKG installer
-MS Store
-Deploy with Intune
-Deploy with Jamf Pro
-Microsoft Dev Box
-FAQs
-Security
-Add and 
+t-mems=""
+Memory nodes (MEMs) in which to allow execution (0-3, 0,1). Only effective on NUMA systems.
+--cpu-quota=0
+Limit the CPU CFS (Completely Fair Scheduler) quota
+--cpu-rt-period=0
+Limit the CPU real-time period. In microseconds. Requires parent cgroups be set and cannot be higher than parent. Also check rtprio ulimits.
+--cpu-rt-runtime=0
+Limit the CPU real-time runtime. In microseconds. Requires parent cgroups be set and cannot be higher than parent. Also check rtprio ulimits.
+--blkio-weig

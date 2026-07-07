@@ -1,37 +1,15 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+ the container in which
+files or directories exist, the pre-existing files are obscured by the mount.
+This is similar to if you were to save files into
+/mnt
+on a Linux host, and
+then mounted a USB drive into
+/mnt
+. The contents of
+/mnt
+would be obscured
+by the contents of the USB drive until the USB drive was unmounted.
+With containers, there's no straightforward way of removing a mount to reveal
+the obscured files again. Your best option is to recreate the container without
+the mount.
+Considera

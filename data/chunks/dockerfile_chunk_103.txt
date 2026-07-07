@@ -1,26 +1,29 @@
- them at runtime by using
-the
--p
-flag. For example
-$
-docker run -p 80:80/tcp -p 80:80/udp ...
-To set up port redirection on the host system, see
-using the -P flag
-.
-The
-docker network
-command supports creating networks for communication among
-containers without the need to expose or publish specific ports, because the
-containers connected to the network can communicate with each other over any
-port. For detailed information, see the
-overview of this feature
-.
-ENV
-ENV
-<key>
+. Local tar archives are unpacked by default, whereas remote tar
+archives (where
+src
+is a URL) are downloaded without unpacking.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+# Download and unpack archive.tar.gz into /download:
+ADD
+--unpack
 =
-<value>
+true
+https://example.com/archive.tar.gz /download
+# Add local tar without unpacking:
+ADD
+--unpack
+=
+false
+my-archive.tar.gz .
+ADD --exclude
+See
+COPY --exclude
+.
+COPY
+COPY has two forms.
+The latter form is required for paths containing whitespace.
+COPY
 [
-<key>
-=
-<v
+OPTIONS

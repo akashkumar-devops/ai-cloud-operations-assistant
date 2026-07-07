@@ -1,33 +1,11 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+strained. When plenty of CPU cycles are available, all containers use as much CPU as they need. In that way, this is a soft limit.
+--cpu-shares
+doesn't prevent containers from being scheduled in Swarm mode. It prioritizes container CPU resources for the available CPU cycles. It doesn't guarantee or reserve any specific CPU access.
+If you have 1 CPU, each of the following commands guarantees the container at
+most 50% of the CPU every second.
+$
+docker run -it --cpus
+=
+".5"
+ubuntu /bin/bash
+Which i

@@ -1,27 +1,20 @@
-t.
---oom-score-adj=0
-Tune container's OOM preferences (-1000 to 1000)
---memory-swappiness=""
-Tune a container's memory swappiness behavior. Accepts an integer between 0 and 100.
---shm-size=""
-Size of
-/dev/shm
-. The format is
-<number><unit>
+vices (see
+the documentation on
+cgroups devices
+).
+The
+--privileged
+flag gives all capabilities to the container. When the operator
+executes
+docker run --privileged
+, Docker enables access to all devices on
+the host, and reconfigures AppArmor or SELinux to allow the container
+nearly all the same access to the host as processes running outside
+containers on the host. Use this flag with caution.
+For more information about the
+--privileged
+flag, see the
+docker run
+reference
 .
-number
-must be greater than
-0
-. Unit is optional and can be
-b
-(bytes),
-k
-(kilobytes),
-m
-(megabytes), or
-g
-(gigabytes). If you omit the unit, the system uses bytes. If you omit the size entirely, the system uses
-64m
-.
-User memory constraints
-We have four ways
+If you want to limit a

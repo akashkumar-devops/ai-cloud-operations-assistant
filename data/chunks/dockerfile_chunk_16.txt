@@ -1,22 +1,16 @@
-e
-docker sandbox create cagent
-docker sandbox create claude
-docker sandbox create codex
-docker sandbox create copilot
-docker sandbox create gemini
-docker sandbox create kiro
-docker sandbox create opencode
-docker sandbox create shell
-docker sandbox exec
-docker sandbox inspect
-docker sandbox ls
-docker sandbox network
-docker sandbox network log
-docker sandbox network proxy
-docker sandbox reset
-docker sandbox rm
-docker sandbox run
-docker sandbox save
-docker sandbox stop
-docker sandbox version
-docker
+with
+Windows PowerShell
+.
+Consider the following example which would fail in a non-obvious way on
+Windows. The second
+\
+at the end of the second line would be interpreted as an
+escape for the newline, instead of a target of the escape from the first
+\
+.
+Similarly, the
+\
+at the end of the third line would, assuming it was actually
+handled as an instruction, cause it be treated as a line continuation. The result
+of this Dockerfile is that second and third lines are considered a single
+instruction:

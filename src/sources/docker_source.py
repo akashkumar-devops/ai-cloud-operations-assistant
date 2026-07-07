@@ -15,12 +15,12 @@ Project
 AI Cloud Operations Assistant
 """
 
-from sources.base_source import BaseSource
+from src.sources.base_source import BaseSource
 
-from docs.docker_urls import DOCKER_URLS
-from extractors.docker_extractor import DockerExtractor
+from src.docs.docker_urls import DOCKER_URLS
+from src.extractors.docker_extractor import DockerExtractor
 
-from config import RAW_DATA_DIR
+from src.config import RAW_DATA_DIR
 
 
 class DockerSource(BaseSource):

@@ -1,29 +1,16 @@
-ries for
-src
-entries. This flag defaults to
-false
-.
-# syntax=docker/dockerfile:1
-FROM
-scratch
-COPY
-./x/a.txt ./y/a.txt /no_parents/
-COPY
---parents ./x/a.txt ./y/a.txt /parents/
-# /no_parents/a.txt
-# /parents/x/a.txt
-# /parents/y/a.txt
-This behavior is similar to the
-Linux
-cp
-utility's
---parents
-or
-rsync
---relative
-flag.
-As with Rsync, it is possible to limit which parent directories are preserved by
-inserting a dot and a slash (
-./
-) into the source path. If such point exists, only parent
-direct
+than
+C:
+Changing the volume from within the Dockerfile
+: If any build steps change the
+data within the volume after it has been declared, those changes will be discarded
+when using the legacy builder. When using Buildkit, the changes will instead be kept.
+JSON formatting
+: The list is parsed as a JSON array.
+You must enclose words with double quotes (
+"
+) rather than single quotes (
+'
+).
+The host directory is declared at container run-time
+: The host directory
+(the mountpoint) is, by its nature,

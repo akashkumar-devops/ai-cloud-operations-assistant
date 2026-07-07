@@ -1,20 +1,11 @@
-ach
-(or
--d
-) flag. This starts the container without occupying your
-terminal window.
+mory
+reservation to 200M.
 $
-docker run -d <IMAGE>
-While the container runs in the background, you can interact with the container
-using other CLI commands. For example,
-docker logs
-lets you view the logs for
-the container, and
-docker attach
-brings it to the foreground.
+docker run -it -m 500M --memory-reservation 200M ubuntu:24.04 /bin/bash
+Under this configuration, when the container consumes memory more than 200M and
+less than 500M, the next system memory reclaim attempts to shrink container
+memory below 200M.
+The following example set memory reservation to 1G without a hard memory limit.
 $
-docker run -d nginx
-0246aa4d1448a401cabd2ce8f242192b6e7af721527e48a810463366c7ff54f1
-$
-docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS
+docker run -it --memory-reservation 1G ubuntu:24.04 /bin/bash
+The container can use as much memory as it needs. The memory reservation setting

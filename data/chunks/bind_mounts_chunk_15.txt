@@ -1,28 +1,29 @@
-testation storage
-Provenance attestations
-SBOM attestations
-SLSA definitions
-Exporters
-Image and registry exporters
-Local and tar exporters
-OCI and Docker exporters
-BuildKit
-buildkitd.toml
-Configure BuildKit
-Custom Dockerfile syntax
-Dockerfile release notes
-Debugging
-OpenTelemetry support
-Build release notes
-Docker Build Cloud
-Setup
-Usage
-Continuous integration
-Optimization
-Builder settings
-Release notes
-Docker Compose
-Introduction to Compose
-How Compose works
-Why use Compose?
-History and develo
+target/
+directory into your container at
+/app/
+. Run the command from within the
+source
+directory. The
+$(pwd)
+sub-command expands to the current working
+directory on Linux or macOS hosts.
+If you're on Windows, see also
+Path conversions on Windows
+.
+The following
+--mount
+and
+-v
+examples produce the same result. You can't
+run them both unless you remove the
+devtest
+container after running the first
+one.
+--mount
+-v
+$
+docker run -d
+\
+-it \
+--name devtest \
+--mount type=bind,source="$(pwd)"/target,ta

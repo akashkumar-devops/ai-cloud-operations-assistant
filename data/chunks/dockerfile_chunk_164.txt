@@ -1,20 +1,32 @@
-itten this using sh so it works in the busybox container too
-# USE the trap if you need to also do manual cleanup after the service is stopped,
-#     or need to start multiple services in the one container
-trap
-"echo TRAPed signal"
-HUP INT QUIT TERM
-# start service in background here
-/usr/sbin/apachectl start
+NV
+CONT_IMG_VER
+=
+${
+CONT_IMG_VER
+:-
+v1
+.0.0
+}
+RUN
 echo
-"[hit enter key to exit] or run 'docker stop <container>'"
-read
-# stop service and clean up here
-echo
-"stopping apache"
-/usr/sbin/apachectl stop
-echo
-"exited
-$0
-"
-If you run this image
+$CONT_IMG_VER
+Unlike an
+ARG
+instruction,
+ENV
+values are always persisted in the built
+image. Consider a docker build without the
+--build-arg
+flag:
+$
+docker build .
+Using this Dockerfile example,
+CONT_IMG_VER
+is still persisted in the image but
+its value would be
+v1.0.0
+as it is the default set in line 3 by the
+ENV
+instruction.
+The variable expansion technique in this example allows you to pass arguments
+from the command line and persist the

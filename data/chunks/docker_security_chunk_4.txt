@@ -1,37 +1,9 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+allowed between containers. They can ping each other,
+send/receive UDP packets, and establish TCP connections, but that can be
+restricted if necessary. From a network architecture point of view, all
+containers on a given Docker host are sitting on bridge interfaces. This
+means that they are just like physical machines connected through a
+common Ethernet switch; no more, no less.
+How mature is the code providing kernel namespaces and private
+networking? Kernel namespaces were introduced
+between k

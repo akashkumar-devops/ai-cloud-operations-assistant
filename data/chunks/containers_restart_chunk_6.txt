@@ -1,24 +1,12 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+r
+which doesn't start at all from going into a restart loop.
+If you manually stop a container, the restart policy is ignored until the
+Docker daemon restarts or the container is manually restarted. This prevents
+a restart loop.
+Restart policies only apply to containers. To configure restart policies for
+Swarm services, see
+flags related to service restart
+.
+Restarting foreground containers
+When you run a container in the foreground, stopping a container causes the
+attached CLI to exit as well, r

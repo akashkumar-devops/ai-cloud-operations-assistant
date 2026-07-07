@@ -1,13 +1,16 @@
- it when referring to the container in a
-user-defined network. This works for both background and foreground Docker
-containers.
-A container identifier is not the same thing as an image reference. The image
-reference specifies which image to use when you run a container. You can't run
-docker exec nginx:alpine sh
-to open a shell in a container based on the
-nginx:alpine
-image, because
-docker exec
-expects a container identifier
-(name or ID), not an image.
-While the image used by a container is not a
+ou are not using
+--memory-swappiness
+, memory swappiness value will be inherited from the parent.
+For example, you can set:
+$
+docker run -it --memory-swappiness
+=
+0
+ubuntu:24.04 /bin/bash
+Setting the
+--memory-swappiness
+option is helpful when you want to retain the
+container's working set and to avoid swapping performance penalties.
+CPU share constraint
+By default, all containers get the same proportion of CPU cycles. This proportion
+can be modified by changing the container's CPU share weightin

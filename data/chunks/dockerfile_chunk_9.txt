@@ -1,29 +1,20 @@
-ge
-docker image build
-docker image history
-docker image import
-docker image inspect
-docker image load
-docker image ls
-docker image prune
-docker image pull
-docker image push
-docker image rm
-docker image save
-docker image tag
-docker images
-docker info
-docker init
-docker inspect
-docker login
-docker logout
-docker manifest
-docker manifest annotate
-docker manifest create
-docker manifest inspect
-docker manifest push
-docker manifest rm
-docker mcp
-docker mcp catalog
-docker mcp catalog create
-docker mcp c
+wing example prints
+hello world
+with leading whitespace as specified:
+RUN
+echo
+"\
+hello\
+world"
+Parser directives
+Parser directives are optional, and affect the way in which subsequent lines
+in a Dockerfile are handled. Parser directives don't add layers to the build,
+and don't show up as build steps. Parser directives are written as a
+special type of comment in the form
+# directive=value
+. A single directive
+may only be used once.
+The following parser directives are supported:
+syntax
+escape
+che

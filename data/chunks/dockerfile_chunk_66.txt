@@ -1,18 +1,30 @@
-M
-references a multi-platform image. For example,
-linux/amd64
+re-entitlement security.insecure
+flag or in
+buildkitd config
 ,
-linux/arm64
-, or
-windows/amd64
-. By default, the target platform of the build
-request is used. Global build arguments can be used in the value of this flag,
-for example
-automatic platform ARGs
-allow you to force a stage to native build platform (
---platform=$BUILDPLATFORM
-),
-and use it to cross-compile to the target platform inside the stage.
-Understand how ARG and FROM interact
+and for a build request with
+--allow security.insecure
+flag
+.
+Default sandbox mode can be activated via
+--security=sandbox
+, but that is no-op.
+Example: check entitlements
+# syntax=docker/dockerfile:1
 FROM
-instructions support variables that are declared 
+ubuntu
+RUN
+--security
+=
+insecure cat /proc/self/status
+|
+grep CapEff
+#84 0.093 CapEff:	0000003fffffffff
+CMD
+The
+CMD
+instruction sets the command to be executed when running a container
+from an image.
+You can specify
+CMD
+instruction

@@ -1,20 +1,10 @@
-to
-what_user
-, since at that
-point the
-username
-argument has a value of
-what_user
-which was passed on
-the command line. Prior to its definition by an
-ARG
-instruction, any use of
-a variable results in an empty string.
-An
-ARG
-variable declared within a build stage is automatically inherited by
-other stages based on that stage. Unrelated build stages do not have access to
-the variable. To use an argument in multiple distinct stages, each stage must
-include the
-ARG
-instruction, or they must both be 
+nhealthy
+.
+start period
+provides initialization time for containers that need time to bootstrap.
+Probe failure during that period will not be counted towards the maximum number of retries.
+However, if a health check succeeds during the start period, the container is considered
+started and all consecutive failures will be counted towards the maximum number of retries.
+start interval
+is the time between health checks during the start period.
+This option requires Docker Engine version 25.0 or later

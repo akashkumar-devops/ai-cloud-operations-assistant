@@ -1,25 +1,21 @@
-f shared
-secrets
-and
-configs
-.
-Containers connected to the same user-defined bridge network effectively expose all ports
-to each other. For a port to be accessible to containers or non-Docker hosts on
-different networks, that port must be
-published
-using the
--p
-or
---publish
-flag.
-Options
-The following table describes the driver-specific options that you can pass to
---opt
-when creating a custom network using the
+ host                host                local
+7092879f2cc8        none                null                local
+Inspect the
+alpine-net
+network:
+$
+docker network inspect alpine-net
+This shows the network's gateway (for example,
+172.18.0.1
+) and that no
+containers are connected yet.
+Create four containers. Three connect to
+alpine-net
+, and one connects to
+the default
 bridge
-driver.
-Option
-Default
-Description
-com.docker.network.bridge.name
-Interface na
+. Then connect one container to both networks:
+$
+docker run -dit --name alpine1 --network alpine-net alpine ash
+$
+docker run

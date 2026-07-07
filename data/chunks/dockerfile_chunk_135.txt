@@ -1,15 +1,20 @@
-he source is a file and a
-directory with the same name exists at the destination, an error is raised.
-If you pass a Dockerfile through stdin to the build (
-docker build - < Dockerfile
-), there is no build context. In this case, you can only use the
-COPY
-instruction to copy files from other stages, named contexts, or images,
-using the
---from
-flag
-. You can also pass a tar archive
-through stdin: (
-docker build - < archive.tar
-), the Dockerfile at the root of
-the archive and the rest of the archive
+R S %CPU %MEM     TIME+ COMMAND
+1 root      20   0   19744   2336   2080 R  0.0  0.1   0:00.04 top
+To examine the result further, you can use
+docker exec
+:
+$
+docker
+exec
+-it
+test
+ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  2.6  0.1  19752  2352 ?        Ss+  08:24   0:00 top -b -H
+root         7  0.0  0.1  15572  2164 ?        R+   08:25   0:00 ps aux
+And you can gracefully request
+top
+to shut down using
+docker stop test
+.
+The following Dockerf

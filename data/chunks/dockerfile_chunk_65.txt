@@ -1,40 +1,27 @@
-ge is a common
-pattern for sharing a common base environment:
-FROM
-ubuntu
-AS
-base
+ld request with
+--allow network.host
+flag
+.
+RUN --security
 RUN
-apt-get update
-&&
-apt-get install -y shared-tooling
-FROM
-base
-AS
-dev
-RUN
-apt-get install -y dev-tooling
-FROM
-base
-AS
-prod
-COPY
---from
+--security
 =
-build /app /app
-The
-tag
-or
-digest
-values are optional. If you omit either of them, the
-builder assumes a
-latest
-tag by default. The builder returns an error if it
-can't find the
-tag
-value.
-The optional
---platform
-flag can be used to specify the platform of the image
-in case
-FRO
+<sandbox
+|
+insecure>
+The default security mode is
+sandbox
+.
+With
+--security=insecure
+, the builder runs the command without sandbox in insecure
+mode, which allows to run flows requiring elevated privileges (e.g. containerd).
+This is equivalent to running
+docker run --privileged
+.
+Warning
+In order to access this feature, entitlement
+security.insecure
+should be
+enabled when starting the buildkitd daemon with
+--allow-insecu

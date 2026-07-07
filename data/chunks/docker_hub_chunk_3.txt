@@ -1,44 +1,13 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+and more.
+Repositories
+Create a repository to share your images with your team, customers, or the Docker community.
+Settings
+Learn about settings in Docker Hub.
+Organizations
+Learn about organization administration.
+Usage and limits
+Explore usage limits and how to better utilize Docker Hub.
+MCP server
+Use the Docker Hub MCP server to access image metadata and manage repositories with AI agents.
+Release notes
+Find out about new features, improvements, and bug fixes.

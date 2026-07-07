@@ -1,29 +1,11 @@
-2
-=
-"value2"
-other
-=
-"value3"
-LABEL
-multi.label1
-=
-"value1"
-\
-multi.label2
-=
-"value2"
-\
-other
-=
-"value3"
-Note
-Be sure to use double quotes and not single quotes. Particularly when you are
-using string interpolation (e.g.
-LABEL example="foo-$ENV_VAR"
-), single
-quotes will take the string as is without unpacking the variable's value.
-Labels included in base images (images in the
-FROM
-line) are inherited by
-your image. If a label already exists but with a different value, the
-most-recently-applied 
+fragments
+.
+When adding from a Git repository, the permissions bits for files
+are 644. If a file in the repository has the executable bit set, it will have
+permissions set to 755. Directories have permissions set to 755.
+When using a Git repository as the source, the repository must be accessible
+from the build context. To add a repository via SSH, whether public or private,
+you must pass an SSH key for authentication. For example, given the following
+Dockerfile:
+# syntax=docker/dockerfile:1
+FRO

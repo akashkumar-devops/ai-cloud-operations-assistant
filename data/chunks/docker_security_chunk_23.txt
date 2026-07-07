@@ -1,26 +1,8 @@
-rage in Docker Scout
-Policy Evaluation
-Configure policies
-Docker Scout health scores
-Evaluate policy compliance in CI
-Remediation with Docker Scout
-View Docker Scout policy status
-Integrations
-Code quality
-SonarQube
-Container registries
-Amazon ECR
-Artifactory Container Registry
-Azure Container Registry
-Continuous Integration
-Azure DevOps Pipelines
-Circle CI
-GitHub Actions
-GitLab CI/CD
-Jenkins
-Integrating Docker Scout with environments
-Generic (CLI)
-Sysdig
-Source code management
-GitHub
-Team colla
+run a kernel with GRSEC and PAX. This adds many safety
+checks, both at compile-time and run-time; it also defeats many
+exploits, thanks to techniques like address randomization. It doesn't
+require Docker-specific configuration, since those security features
+apply system-wide, independent of containers.
+If your distribution comes with security model templates for
+Docker containers, you can use them out of the box. For instance, we
+ship a template that works with AppArmor and Red Hat comes with SE

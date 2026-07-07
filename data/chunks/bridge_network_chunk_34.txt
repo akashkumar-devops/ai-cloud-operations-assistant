@@ -1,11 +1,21 @@
-ipulate the
-/etc/hosts
-files within the containers,
-but this creates problems that are difficult to debug.
-User-defined bridges provide better isolation
+ver
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+27: eth0@if28: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
+link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff
+inet 172.17.0.2/16 scope global eth0
+valid_lft forever preferred_lft forever
+In this example, the
+eth0
+interface has the IP address
+172.17.0.2
 .
-All containers without a
---network
-specified, are attached to the default bridge network. This can be a risk, as unrelated stacks/services/containers are then able to communicate.
-Using a user-defined network provides a scoped network in which only containers attached to that network are able to communicate.
-Containers can be attached and deta
+From within
+alpine1
+, verify you can connect to the internet:
+#
+ping -c
+2
+google.com
+PING google.com (172.217.3.174): 56 data bytes
+64 bytes from 1

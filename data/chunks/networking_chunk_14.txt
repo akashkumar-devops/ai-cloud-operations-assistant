@@ -1,32 +1,14 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+en connecting to an existing network using
+docker network connect
+,
+you can use the
+--alias
+flag to specify an additional network alias for the container on that network.
+Subnet allocation
+Docker networks can use either explicitly configured subnets or automatically allocated ones from default pools.
+Explicit subnet configuration
+You can specify exact subnets when creating a network:
+$
+docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
+Automatic subnet allocation
+Whe

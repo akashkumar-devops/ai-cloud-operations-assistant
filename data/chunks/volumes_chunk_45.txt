@@ -1,44 +1,19 @@
-oth unless you remove the
-devtest
-container and the
-myvol2
-volume
-after running the first one.
---mount
--v
+5
+Note
+losetup
+creates an ephemeral loop device that's removed after
+system reboot, or manually removed with
+losetup -d
+.
+Run a container that mounts the loop device as a volume:
 $
-docker run -d
+docker run -it --rm
 \
---name devtest \
---mount source=myvol2,target=/app \
-nginx:latest
-$
-docker run -d
-\
---name devtest \
--v myvol2:/app \
-nginx:latest
-Use
-docker inspect devtest
-to verify that Docker created the volume and it mounted
-correctly. Look for the
-Mounts
-section:
-"Mounts"
-:
-[
-{
-"Type"
-:
-"volume"
-,
-"Name"
-:
-"myvol2"
-,
-"Source"
-:
-"/var/lib/docker/volumes/myvol2/_data"
-,
-"Destination"
-:
+--mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4' \
+ubuntu bash
+When the container starts, the path
+/external-drive
+mounts the
+disk.raw
+file from the host filesystem as a block device.
+When you're done, and the device is unmounted from

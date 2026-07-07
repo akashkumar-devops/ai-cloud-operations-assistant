@@ -1,27 +1,19 @@
-ix targets
-Contexts
-Bake file reference
-Bake standard library functions
-Building with Bake from a Compose file
-Overriding configurations
-Remote Bake file definition
-Cache
-Build cache invalidation
-Build garbage collection
-Cache storage backends
-Amazon S3 cache
-Azure Blob Storage cache
-GitHub Actions cache
-Inline cache
-Local cache
-Registry cache
-Optimize cache usage in builds
-CI
-GitHub Actions
-Annotations
-Attestations
-Build checks
-Build secrets
-Build summary
-BuildKit configuration
-Cache management
+ddress to use for source NAT. See
+Packet filtering and firewalls
+.
+com.docker.network.bridge.gateway_mode_ipv4
+com.docker.network.bridge.gateway_mode_ipv6
+nat
+Control external connectivity. See
+Packet filtering and firewalls
+.
+com.docker.network.bridge.enable_icc
+true
+Enable or Disable inter-container connectivity.
+com.docker.network.bridge.host_binding_ipv4
+all IPv4 and IPv6 addresses
+Default IP when binding container ports.
+com.docker.network.driver.mtu
+0
+(no limit)
+Set the containers network 

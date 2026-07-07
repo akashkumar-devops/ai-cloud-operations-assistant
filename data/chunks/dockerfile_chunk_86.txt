@@ -1,26 +1,23 @@
-environment variable is set in the build
-environment, you can build this with the following command:
-$
-docker buildx build --secret
-id
-=
-API_KEY .
-RUN --mount=type=ssh
-This mount type allows the build container to access SSH keys via SSH agents,
-with support for passphrases.
-Option
-Description
-id
-ID of SSH agent socket or key. Defaults to "default".
-target
-,
-dst
-,
-destination
-SSH agent socket path. Defaults to
-/run/buildkit/ssh_agent.${N}
+ files from a URL
 .
-required
-If set to
-true
-, the instruction errors out wh
+If
+<src>
+is a Git repository, the repository is cloned to the specified
+destination. See
+Adding files from a Git repository
+.
+Adding files from the build context
+Any relative or local path that doesn't begin with a
+http://
+,
+https://
+, or
+git@
+protocol prefix is considered a local file path. The local file path is
+relative to the build context. For example, if the build context is the current
+directory,
+ADD file.txt /
+adds the file at
+./file.txt
+to the root of the
+filesystem 

@@ -1,21 +1,20 @@
-or another.
-Simply make a note of the last image ID output by the commit before each new
-FROM
-instruction. Each
-FROM
-instruction clears any state created by previous
-instructions.
-Optionally a name can be given to a new build stage by adding
-AS name
-to the
-FROM
-instruction. The name can be used in subsequent
-FROM <name>
+
+pip
+will only be able to install the packages provided in the tarfile, which
+can be controlled by an earlier build stage.
+RUN --network=host
+The command is run in the host's network environment (similar to
+docker build --network=host
+, but on a per-instruction basis)
+Warning
+The use of
+--network=host
+is protected by the
+network.host
+entitlement,
+which needs to be enabled when starting the buildkitd daemon with
+--allow-insecure-entitlement network.host
+flag or in
+buildkitd config
 ,
-COPY --from=<name>
-,
-and
-RUN --mount=type=bind,from=<name>
-instructions
-to refer to the image built in this stage.
-Using a previous build stage as the base for a subsequent sta
+and for a bui

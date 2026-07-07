@@ -1,37 +1,32 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
+fications and easy access to running containers on the localhost network.
+Products inside Docker Desktop
+Docker MCP Toolkit and Catalog
+Docker Model Runner
+Gordon
+Docker Offload
 Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+Docker CLI client
+Docker Build
+Docker Compose
+Docker Scout
+Kubernetes
+Next steps
+Install Docker Desktop
+Install Docker Desktop on
+Mac
+,
+Windows
+, or
+Linux
+.
+Learn about Docker Desktop
+Navigate Docker Desktop.
+Explore its key features
+Find information about
+Networking
+,
+Docker VMM
+,
+WSL
+, and more.
+View the 

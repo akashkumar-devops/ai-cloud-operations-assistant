@@ -1,24 +1,34 @@
-configure the default
-docker0
-bridge when starting the Docker
-daemon. The following table shows which options have equivalent flags in the
-dockerd
-CLI.
-Option
-Flag
-com.docker.network.bridge.name
--
-com.docker.network.bridge.enable_ip_masquerade
---ip-masq
-com.docker.network.bridge.enable_icc
---icc
-com.docker.network.bridge.host_binding_ipv4
---ip
-com.docker.network.driver.mtu
---mtu
-com.docker.network.container_iface_prefix
--
-The Docker daemon supports a
---bridge
-flag, which you can use to define
-yo
+
+Containers
+alpine3
+and
+alpine4
+are connected to the
+bridge
+network.
+$
+docker network inspect alpine-net
+Containers
+alpine1
+,
+alpine2
+, and
+alpine4
+are connected to
+alpine-net
+.
+On user-defined networks, containers can resolve each other by name. Connect
+to
+alpine1
+and test:
+Note
+Automatic service discovery only resolves custom container names, not
+default automatically generated names.
+$
+docker container attach alpine1
+#
+ping -c
+2
+alpine2
+PING alpine2 (172.18.0.3): 56 data bytes
+64 bytes from 1

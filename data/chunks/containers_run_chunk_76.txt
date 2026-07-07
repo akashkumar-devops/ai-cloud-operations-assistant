@@ -1,21 +1,18 @@
-es per second) from a device.
-For example, this command creates a container and limits the read rate to
-1mb
-per second from
-/dev/sda
-:
-$
-docker run -it --device-read-bps /dev/sda:1mb ubuntu
-The
---device-write-bps
-flag limits the write rate (bytes per second) to a device.
-For example, this command creates a container and limits the write rate to
-1mb
-per second for
-/dev/sda
-:
-$
-docker run -it --device-write-bps /dev/sda:1mb ubuntu
-Both flags take limits in the
-<device-path>:<limit>[unit]
-format. B
+ntainer. Docker doesn't set any environment variables when creating a Windows
+container.
+The following environment variables are set for Linux containers:
+Variable
+Value
+HOME
+Set based on the value of
+USER
+HOSTNAME
+The hostname associated with the container
+PATH
+Includes popular directories, such as
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+TERM
+xterm
+if the container is allocated a pseudo-TTY
+Additionally, you can set any environment variable in the container by using
+one or 

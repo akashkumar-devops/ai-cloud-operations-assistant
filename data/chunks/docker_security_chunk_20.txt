@@ -1,37 +1,9 @@
-ge
-Use an image
-Use a Helm chart
-Use hardened packages
-Verify an image or chart
-Scan an image
-Enforce image usage
-Use the CLI
-Use DHI Select & Enterprise
-Core concepts
-Attestations
-CIS Benchmark
-Code signing
-CVEs
-Distroless images
-FIPS
-glibc and musl
-Hardening
-Image digests
-Image provenance
-Immutability
-SBOMs
-SLSA
-Software Supply Chain Security
-SSDLC
-STIG
-VEX
-Troubleshoot
-Additional resources
-Release notes
-CLI release notes
-Platform release notes
-Docker Hub
-Quickstart
-Library
-Search
-Trusted cont
+when used in combination with
+kernel vulnerabilities.
+Docker supports the addition and removal of capabilities, allowing use
+of a non-default profile. This may make Docker more secure through
+capability removal, or less secure through the addition of capabilities.
+The best practice for users would be to remove all capabilities except
+those explicitly required for their processes.
+Docker Content Trust signature verification
+Docker Engine can be configured to only run signed images. The Docker Con

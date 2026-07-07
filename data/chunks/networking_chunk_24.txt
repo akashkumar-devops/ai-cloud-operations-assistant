@@ -1,29 +1,21 @@
-boration
-Slack
-Release notes
-CLI release notes
-Platform release notes
-Platform
-Support
-Billing
-Add or update a payment method
-Manage your billing information
-3D Secure authentication
-Invoices and billing history
-Change your billing cycle
-Submit a tax exemption certificate
-FAQs
-Docker accounts
-Accounts
-Create an account
-Manage an account
-Deactivate an account
-Security
-Personal access tokens
-Two-factor authentication
-Recover your Docker account
-FAQs
-General
-Container
-Network and VM
-Security announ
+ntainers using the
+container:
+networking mode:
+--add-host
+--hostname
+--dns
+--dns-search
+--dns-option
+--mac-address
+--publish
+--publish-all
+--expose
+The following example runs a Redis container, with Redis binding to
+127.0.0.1, then running the
+redis-cli
+command and connecting to the Redis
+server over 127.0.0.1.
+$
+docker run -d --name redis redis --bind 127.0.0.1
+$
+docker run --rm -it --network container:redis redis redis-cli -h 127.0.0.1

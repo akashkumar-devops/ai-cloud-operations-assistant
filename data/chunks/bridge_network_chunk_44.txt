@@ -1,20 +1,22 @@
-tainer's publishing options. For example,
--p 0.0.0.0:8080:80
-.
-Manage a user-defined bridge
-Use the
-docker network create
-command to create a user-defined bridge
-network.
+ainers.
+However, you need to use
+alpine3
+'s IP address:
 $
-docker network create my-net
-You can specify the subnet, the IP address range, the gateway, and other
-options. See the
-docker network create
-reference or the output of
-docker network create --help
-for details.
-Use the
-docker network rm
-command to remove a user-defined bridge
-network. If containers are currently connected to t
+docker container attach alpine4
+#
+ping -c
+2
+alpine1
+PING alpine1 (172.18.0.2): 56 data bytes
+64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.074 ms
+64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.082 ms
+--- alpine1 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.074/0.078/0.082 ms
+#
+ping -c
+2
+alpine2
+PING alpine2 (172.18.0.3): 56 data bytes
+64 bytes from 172.18.0.3: seq=0 ttl=64 time=0.

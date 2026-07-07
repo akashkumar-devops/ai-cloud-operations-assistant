@@ -1,37 +1,16 @@
-ctory
-Mount a volume into a Swarm service
-Options for --mount
-The
---mount
-flag consists of multiple key-value pairs, separated by commas
-and each consisting of a
-<key>=<value>
-tuple. The order of the keys isn't
-significant.
+t=type=nfs,volume-opt=device=:/var/docker-nfs,volume-opt=o=addr=10.0.0.10' \
+nginx:latest
+NFSv4
 $
-docker run --mount
-type
-=
-volume
-[
-,src
-=
-<volume-name>
-]
-,dst
-=
-<mount-path>
-[
-,<key>
-=
-<value>...
-]
-Valid options for
---mount type=volume
-include:
-Option
-Description
-source
-,
-src
-The source of the mount. For named volumes, this is the name of the volume. For anonymous vol
+docker service create -d
+\
+--name nfs-service \
+--mount 'type=volume,source=nfsvolume,target=/app,volume-driver=local,volume-opt=type=nfs,volume-opt=device=:/var/docker-nfs,"volume-opt=o=addr=10.0.0.10,rw,nfsvers=4,async"' \
+nginx:latest
+Create CIFS/Samba volumes
+You can mount a Samba share directly in Docker without configuring a mount point on your host.
+$
+docker volume create
+\
+--driver local \
+-

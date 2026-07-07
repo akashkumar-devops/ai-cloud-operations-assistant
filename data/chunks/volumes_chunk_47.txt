@@ -1,39 +1,23 @@
-:
-image
-:
-node:lts
-volumes
-:
--
-myapp:/home/node/app
-volumes
-:
-myapp:
-Running
-docker compose up
-for the first time creates a volume. Docker reuses the same volume when you run the command subsequently.
-You can create a volume directly outside of Compose using
-docker volume create
-and
-then reference it inside
-compose.yaml
-as follows:
-services
-:
-frontend
-:
-image
-:
-node:lts
-volumes
-:
--
-myapp:/home/node/app
-volumes
-:
-myapp
-:
-external
-:
-true
-For more information about using volumes with Compose, refer
+r
+Mount a local host directory as
+/backup
+Pass a command that tars the contents of the
+dbdata
+volume to a
+backup.tar
+file inside the
+/backup
+directory.
+$
+docker run --rm --volumes-from dbstore -v
+$(
+pwd
+)
+:/backup ubuntu tar cvf /backup/backup.tar /dbdata
+When the command completes and the container stops, it creates a backup of
+the
+dbdata
+volume.
+Restore volume from a backup
+With the backup just created, you can restore it to the same container,
+or to another container that you created elsewher

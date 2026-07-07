@@ -1,22 +1,23 @@
- scout
-docker scout attestation
-docker scout attestation add
-docker scout attestation get
-docker scout attestation list
-docker scout cache
-docker scout cache df
-docker scout cache prune
-docker scout compare
-docker scout config
-docker scout cves
-docker scout enroll
-docker scout environment
-docker scout help
-docker scout integration
-docker scout integration configure
-docker scout integration delete
-docker scout integration list
-docker scout policy
-docker scout push
-docker scout quickview
-docker sc
+
+FROM
+microsoft/nanoserver
+COPY
+testfile.txt c:
+\\
+RUN dir c:
+\
+Results in:
+PS E:\myproject> docker build -t cmd .
+Sending build context to Docker daemon 3.072 kB
+Step 1/2 : FROM microsoft/nanoserver
+---> 22738ff49c6d
+Step 2/2 : COPY testfile.txt c:\RUN dir c:
+GetFileAttributesEx c:RUN: The system cannot find the file specified.
+PS E:\myproject>
+One solution to the above would be to use
+/
+as the target of both the
+COPY
+instruction, and
+dir
+. However, this syntax is, at best, confusing as it is n

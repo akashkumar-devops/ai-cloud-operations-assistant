@@ -1,27 +1,32 @@
-and release your extension
-Share your extension
-Publish in the Marketplace
-Build multi-arch extensions
-Architecture
-Metadata
-Security
-Design and UI styling
-Guidelines
-Docker design principles
-MUI best practices
-Developer Guides
-Authentication
-Interacting with Kubernetes
-Invoke host binaries
-Use the Docker socket
-Developer SDK tools
-Test and debug
-Continuous Integration (CI)
-CLI reference
-Extension APIs
-Dashboard
-Docker
-Extension Backend
-Extension UI API
-Navigation
-Deprecated products and feature
+ {},
+"Scope": "local"
+}
+]
+Remove a volume:
+$
+docker volume rm my-vol
+Start a container with a volume
+If you start a container with a volume that doesn't yet exist, Docker creates
+the volume for you. The following example mounts the volume
+myvol2
+into
+/app/
+in the container.
+The following
+-v
+and
+--mount
+examples produce the same result. You can't
+run them both unless you remove the
+devtest
+container and the
+myvol2
+volume
+after running the first one.
+--mount
+-v
+$
+docker run -d
+\
+--name devtest \
+-

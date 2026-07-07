@@ -1,28 +1,16 @@
- if the volume is empty. By default, content at the target destination gets copied into a mounted volume if empty.
-volume-opt
-Can be specified more than once, takes a key-value pair consisting of the option name and its value.
-Example
-$
-docker run --mount
-type
-=
-volume,src
-=
-myvolume,dst
-=
-/data,ro,volume-subpath
-=
-/foo
-Options for --volume
-The
---volume
-or
--v
-flag consists of three fields, separated by colon
-characters (
-:
-). The fields must be in the correct order.
-$
-docker run -v
-[
-<volume-nam
+evice,
+and how to mount the block device as a container volume.
+Important
+The following procedure is only an example.
+The solution illustrated here isn't recommended as a general practice.
+Don't attempt this approach unless you're confident about what you're doing.
+How mounting block devices works
+Under the hood, the
+--mount
+flag using the
+local
+storage driver invokes the
+Linux
+mount
+syscall and forwards the options you pass to it unaltered.
+Docker doesn't implement any additional functionality 

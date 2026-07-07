@@ -1,20 +1,18 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+ou can remove unused volumes using
+docker volume prune
+.
+Mounting a volume over existing data
+If you mount a
+non-empty volume
+into a directory in the container in which
+files or directories exist, the pre-existing files are obscured by the mount.
+This is similar to if you were to save files into
+/mnt
+on a Linux host, and
+then mounted a USB drive into
+/mnt
+. The contents of
+/mnt
+would be obscured
+by the contents of the USB drive until the USB drive was unmounted.
+With containers, there's no strai

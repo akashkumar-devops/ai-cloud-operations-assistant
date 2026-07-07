@@ -1,29 +1,28 @@
-pment
-Install
-Plugin
-Standalone (Legacy)
-Uninstall
-Quickstart
-How-tos
-Specify a project name
-Use lifecycle hooks
-Use service profiles
-Control startup order
-Use environment variables
-Set environment variables
-Environment variables precedence
-Pre-defined environment variables
-Interpolation
-Best practices
-Build dependent images
-Use Compose Watch
-Secrets in Compose
-Networking
-Use multiple Compose files
-Merge
-Extend
-Include
-Enable GPU support
-Use Compose in production
-OCI artifact applications
-Use pr
+"
+:
+16
+},
+{
+"base"
+:
+"192.168.0.0/16"
+,
+"size"
+:
+20
+}
+]
+}
+base
+: The subnet that can be allocated from.
+size
+: The prefix length used for each allocated subnet.
+When an IPv6 subnet is required and there are no IPv6 addresses in
+default-address-pools
+, Docker allocates
+subnets from a Unique Local Address (ULA) prefix. To use specific IPv6 subnets instead, add them to your
+default-address-pools
+. See
+Dynamic IPv6 subnet allocation
+for more information.
+Docker attempts to avoid address prefixes alr

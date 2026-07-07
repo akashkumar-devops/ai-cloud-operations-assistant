@@ -1,44 +1,11 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
+or
+"LMDE" (Debian-based Mint) should follow the installation instructions for
 Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+, substitute the version of your distribution for the
+corresponding Debian release. Refer to the documentation of your distribution to find
+which Debian release corresponds with your derivative version.
+Likewise, if you use Ubuntu derivatives such as "Kubuntu", "Lubuntu" or "Xubuntu"
+you should follow the installation instructions for
+Ubuntu
+,
+substituting the version of your distribution for the corresponding U

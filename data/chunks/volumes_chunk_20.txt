@@ -1,37 +1,29 @@
-ge
-Use an image
-Use a Helm chart
-Use hardened packages
-Verify an image or chart
-Scan an image
-Enforce image usage
-Use the CLI
-Use DHI Select & Enterprise
-Core concepts
-Attestations
-CIS Benchmark
-Code signing
-CVEs
-Distroless images
-FIPS
-glibc and musl
-Hardening
-Image digests
-Image provenance
-Immutability
-SBOMs
-SLSA
-Software Supply Chain Security
-SSDLC
-STIG
-VEX
-Troubleshoot
-Additional resources
-Release notes
-CLI release notes
-Platform release notes
-Docker Hub
-Quickstart
-Library
-Search
-Trusted cont
+t source and
+destination, and that the mount is read-write.
+Stop the container and remove the volume. Note volume removal is a separate
+step.
+$
+docker container stop devtest
+$
+docker container rm devtest
+$
+docker volume rm myvol2
+Use a volume with Docker Compose
+The following example shows a single Docker Compose service with a volume:
+services
+:
+frontend
+:
+image
+:
+node:lts
+volumes
+:
+-
+myapp:/home/node/app
+volumes
+:
+myapp:
+Running
+docker compose up
+for the first time creates a volume. Docker reu

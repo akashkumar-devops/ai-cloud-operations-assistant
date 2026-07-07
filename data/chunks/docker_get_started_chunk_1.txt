@@ -1,23 +1,13 @@
 Get started
+If you're new to Docker, this section guides you through the essential resources to get started.
+Follow the guides to help you get started and learn how Docker can optimize your development workflows.
+For more advanced concepts and scenarios in Docker, see
+Guides
+.
+Foundations of Docker
+Install Docker and jump into discovering what Docker is.
+Get Docker
+Choose the best installation path for your setup.
 What is Docker?
-Introduction
-Get Docker Desktop
-Develop with containers
-Build and push your first image
-Docker concepts
-The basics
-What is a container?
-What is an image?
-What is a registry?
-What is Docker Compose?
-Building images
-Understanding the image layers
-Writing a Dockerfile
-Build, tag, and publish an image
-Using the build cache
-Multi-stage builds
-Running containers
-Publishing and exposing ports
-Overriding container defaults
-Persisting container data
-Sharing local files with co
+Learn about the Docker platform.
+Learn the foundational concepts a

@@ -1,19 +1,16 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+a4d1448
+2023/11/06 15:58:23 [notice] 1#1: start worker process 33
+2023/11/06 15:58:23 [notice] 1#1: start worker process 34
+2023/11/06 15:58:23 [notice] 1#1: start worker process 35
+2023/11/06 15:58:23 [notice] 1#1: start worker process 36
+2023/11/06 15:58:23 [notice] 1#1: start worker process 37
+$
+docker attach 0246aa4d1448
+^C
+2023/11/06 15:58:40 [notice] 1#1: signal 2 (SIGINT) received, exiting
+...
+For more information about
+docker run
+flags related to foreground and
+background modes, see:
+doc

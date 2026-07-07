@@ -1,32 +1,16 @@
-ollowing examples is equivalent.
+c form, you must escape backslashes. This is particularly relevant on
+Windows where the backslash is the path separator. The following line would
+otherwise be treated as shell form due to not being valid JSON, and fail in an
+unexpected way:
 RUN
-echo
-hello
-\
-world
-Comments don't support line continuation characters.
-Note
-Note on whitespace
-For backward compatibility, leading whitespace before comments (
-#
-) and
-instructions (such as
+[
+"c:\windows\system32\tasklist.exe"
+]
+The correct syntax for this example is:
 RUN
-) are ignored, but discouraged. Leading whitespace
-is not preserved in these cases, and the following examples are therefore
-equivalent:
-# this is a comment-line
-RUN
-echo
-hello
-RUN
-echo
-world
-# this is a comment-line
-RUN
-echo
-hello
-RUN
-echo
-world
-Whitespace in instruc
+[
+"c:\\windows\\system32\\tasklist.exe"
+]
+Shell form
+Unlike the exec form, instructions using the shell form always use a command
+shell. The shell form doesn't use the JSON

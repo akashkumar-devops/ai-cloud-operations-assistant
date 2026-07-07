@@ -1,9 +1,10 @@
-e network's subnets. By default, it:
-Allows unrestricted network access to containers in the network from
-the host, and from other containers connected to the same bridge network.
-Blocks access from containers in other networks and from outside the
-Docker host.
-Uses masquerading to give containers external network access. Devices on
-the host's external networks only see the IP address of the Docker host.
-Supports port publishing, where network traffic is forwarded between
-container ports and por
+ay address being assigned to the bridge. This is useful
+if you want to configure the gateway IP address for the bridge manually. For
+instance if you add a physical interface to your bridge, and need it to have
+the gateway address.
+With this configuration, north-south traffic (to and from the bridge network)
+won't work unless you've manually configured the gateway address on the bridge,
+or a device attached to it.
+This option can only be used with user-defined bridge networks.
+Usage examples
+This

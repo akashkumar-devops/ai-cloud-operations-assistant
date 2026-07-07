@@ -1,42 +1,11 @@
-
+buntu:24.04 /bin/bash
+This example restricts the processes in the container to only use memory from
+memory nodes 0, 1 and 2.
+CPU quota constraint
 The
-target
-must always be an absolute path, such as
-/src/docs
-. An absolute
-path starts with a
-/
-(forward slash). Volume names must start with an
-alphanumeric character, followed by
-a-z0-9
-,
-_
-(underscore),
-.
-(period) or
--
-(hyphen).
-Bind mounts
-To create a bind mount:
-$
-docker run -it --mount
-type
-=
-bind,source
-=[
-PATH
-]
-,target
-=[
-PATH
-]
-busybox
-In this case, the
---mount
-flag takes three parameters. A type (
-bind
-), and
-two paths. The
-source
-path is the location on the host that you want to
-bi
+--cpu-quota
+flag limits the container's CPU usage. The default 0 value
+allows the container to take 100% of a CPU resource (1 CPU). The CFS (Completely Fair
+Scheduler) handles resource allocation for executing processes and is default
+Linux Scheduler used by the kernel. Set this value to 50000 to limit the container
+to 50% of a CPU resource. For mu

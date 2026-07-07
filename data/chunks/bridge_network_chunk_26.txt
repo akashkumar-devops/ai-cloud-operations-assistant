@@ -1,35 +1,18 @@
-manage domains
-Single sign-on
-Setup
-Manage connections
-Troubleshoot
-FAQs
-General
-Domains
-Enforcement
-Identity providers
-User management
-Provision
-SCIM
-Setup
-Group mapping
-Migrate
-Just-in-Time
-Auto-provision
-Troubleshoot
-Enforce sign-in
-Configure
-Roles and permissions
-Core roles
-Custom roles
-Hardened Docker Desktop
-Enhanced Container Isolation
-Enable ECI
-Configure advanced settings
-Limitations
-FAQs
-Settings Management
-Use a JSON file
-Use the Admin Console
-Desktop settings reporting
-Settings refer
+
+is optional, it specifies the address of the default bridge, which
+will be used as the default gateway by containers. It also specifies the subnet
+for the bridge network.
+Option
+fixed-cidr-v6
+is optional, it specifies the address range Docker may
+automatically allocate to containers.
+The prefix should normally be
+/64
+or shorter.
+For experimentation on a local network, it is better to use a Unique Local
+Address (ULA) prefix (matching
+fd00::/8
+) than a Link Local prefix (matching
+fe80::/10
+).
+Opt

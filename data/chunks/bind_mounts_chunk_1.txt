@@ -1,44 +1,18 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Bind mounts
+Table of contents
+When to use bind mounts
+Bind-mounting over existing data
+Considerations and constraints
+Syntax
+Options for --mount
+Options for --volume
+Start a container with a bind mount
+Mount into a non-empty directory on the container
+Use a read-only bind mount
+Recursive mounts
+Configure bind propagation
+Configure the SELinux label
+Use a bind mount with Docker Compose
+Next steps
+When you use a bind mount, a file or directory on the host machine is mounted
+from the host into a co

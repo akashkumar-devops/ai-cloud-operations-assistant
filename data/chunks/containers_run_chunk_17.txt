@@ -1,28 +1,33 @@
-ovider services
-Compose Bridge
-Usage
-Customize
-Use Model Runner
-Compose SDK
-New
-Trust model for Compose files
-Support and feedback
-FAQs
-Give feedback
-Release notes
-Docker Extensions
-Marketplace extensions
-Non-marketplace extensions
-Configure a private marketplace
-Settings and feedback
-Extensions SDK
-The build and publish process
-Quickstart
-Part one: Build
-Create a simple extension
-Create an advanced frontend extension
-Add a backend to your extension
-Part two: Publish
-Add labels
-Validate
-Package 
+sections show basic examples of how to create volumes and bind
+mounts. For more in-depth examples and descriptions, refer to the section of
+the
+storage section
+in the documentation.
+Volume mounts
+To create a volume mount:
+$
+docker run --mount
+source
+=
+<VOLUME_NAME>,target
+=[
+PATH
+]
+[
+IMAGE
+]
+[
+COMMAND...
+]
+The
+--mount
+flag takes two parameters in this case:
+source
+and
+target
+.
+The value for the
+source
+parameter is the name of the volume. The value of
+target
+is the mount location of the volume in

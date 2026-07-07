@@ -1,19 +1,13 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+e default
+bridge network, you need to stop the container and recreate it with different
+network options.
+Each user-defined network creates a configurable bridge
+.
+If your containers use the default bridge network, you can configure it, but
+all the containers use the same settings, such as MTU and
+iptables
+rules.
+In addition, configuring the default bridge network happens outside of Docker
+itself, and requires a restart of Docker.
+User-defined bridge networks are created and configured using
+dock

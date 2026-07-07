@@ -1,33 +1,14 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+a user-defined bridge, Docker uses tools specific to the
+operating system to manage the underlying network infrastructure (such as adding
+or removing bridge devices or configuring
+iptables
+rules on Linux). These
+details should be considered implementation details. Let Docker manage your
+user-defined networks for you.
+Connect a container to a user-defined bridge
+When you create a new container, you can specify one or more
+--network
+flags.
+This example connects an Nginx container to the
+my-net
+net

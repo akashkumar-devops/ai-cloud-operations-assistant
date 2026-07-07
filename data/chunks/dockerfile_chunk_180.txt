@@ -1,33 +1,18 @@
-th the
-root
-group.
-On Windows, the user must be created first if it's not a built-in account.
-This can be done with the
-net user
-command called as part of a Dockerfile.
+ownstream builder looks for
+ONBUILD
+triggers, and executes
+them in the same order they were registered. If any of the triggers
+fail, the
 FROM
-microsoft/windowsservercore
-# Create Windows user in the container
-RUN
-net user /add patrick
-# Set it for subsequent commands
-USER
-patrick
-WORKDIR
-WORKDIR
-/path/to/workdir
-The
-WORKDIR
-instruction sets the working directory for any
-RUN
-,
-CMD
-,
-ENTRYPOINT
-,
-COPY
-and
+instruction is aborted which in turn causes the
+build to fail. If all triggers succeed, the
+FROM
+instruction
+completes and the build continues as usual.
+Triggers are cleared from the final image after being executed. In
+other words they aren't inherited by "grand-children" builds.
+For example you might add something like this:
+ONBUILD
 ADD
-instructions that follow it in the Dockerfile.
-If the
-WOR
+. /app/src
+ONBUIL

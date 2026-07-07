@@ -1,20 +1,18 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+you set this option, the minimum allowed value is
+6m
+(6 megabytes). That is, you must set the value to at least 6 megabytes.
+--memory-swap
+*
+The amount of memory this container is allowed to swap to disk. See
+--memory-swap
+details
+.
+--memory-swappiness
+By default, the host kernel can swap out a percentage of anonymous pages used by a container. You can set
+--memory-swappiness
+to a value between 0 and 100, to tune this percentage. See
+--memory-swappiness
+details
+.
+--memory-reservation
+Allows you 

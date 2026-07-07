@@ -1,21 +1,19 @@
-with
-ADD
-. The last
-argument must always be the destination. For example, to add two files,
-file1.txt
-and
-file2.txt
-, from the build context to
-/usr/src/things/
-in
-the build container:
-ADD
-file1.txt file2.txt /usr/src/things/
-If you specify multiple source files, either directly or using a wildcard, then
-the destination must be a directory (must end with a slash
-/
-).
-To add files from a remote location, you can specify a URL or the address of a
-Git repository as the source. For example:
-ADD
-http
+sing a Git repository as the build context, the permissions bits for
+copied files are 644. If a file in the repository has the executable bit set,
+it will have permissions set to 755. Directories have permissions set to 755.
+Pattern matching
+For local files, each
+<src>
+may contain wildcards and matching will be done
+using Go's
+filepath.Match
+rules.
+For example, to add all files and directories in the root of the build context
+ending with
+.png
+:
+COPY
+*.png /dest/
+In the following example,
+?
+is a 

@@ -1,28 +1,19 @@
-ker trust key load
-docker trust revoke
-docker trust sign
-docker trust signer
-docker trust signer add
-docker trust signer remove
-docker version
-docker volume
-docker volume create
-docker volume inspect
-docker volume ls
-docker volume prune
-docker volume rm
-docker volume update
-dockerd
-sbx
-sbx completion
-sbx completion bash
-sbx completion fish
-sbx completion powershell
-sbx completion zsh
-sbx cp
-sbx create
-sbx create claude
-sbx create codex
-sbx create copilot
-sbx create cursor
-sbx create docker-agent
+>          Users
+10/28/2016  11:20 AM    <DIR>          Windows
+2 File(s)          1,956 bytes
+4 Dir(s)  21,259,096,064 bytes free
+---> 01c7f3bef04f
+Removing intermediate container a2c157f842f5
+Successfully built 01c7f3bef04f
+PS E:\myproject>
+check
+# check=skip=<checks|all>
+# check=error=<boolean>
+The
+check
+directive is used to configure how
+build checks
+are evaluated. By default, all checks are run, and failures are treated as
+warnings.
+You can disable specific checks using
+#check=skip=<check-n

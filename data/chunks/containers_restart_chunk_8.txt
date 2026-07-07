@@ -1,20 +1,21 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+iner prints the numbers 1..5 to stdout, and then exits. This causes
+the attached CLI to exit as well.
+$
+docker run --restart always startstop
+Starting...
+1
+2
+3
+4
+5
+Exiting...
+$
+Running
+docker ps
+shows that is still running or restarting, thanks to the
+restart policy. The CLI session has already exited, however. It doesn't
+survive the initial container exit.
+$
+docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS     NAMES
+081991b35afe   startstop   "/

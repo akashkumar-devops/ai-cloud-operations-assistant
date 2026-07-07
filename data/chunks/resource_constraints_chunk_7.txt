@@ -1,21 +1,20 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+ limits let the container use as much memory as it needs unless certain
+conditions are met, such as when the kernel detects low memory or contention on
+the host machine.
+Some of these options have different effects when used alone or when more than
+one option is set.
+Most of these options take a positive integer, followed by a suffix of
+b
+,
+k
+,
+m
+,
+g
+, to indicate bytes, kilobytes, megabytes, or gigabytes.
+Option
+Description
+-m
+or
+--memory=
+The maximum amount of memory the container can use. If 

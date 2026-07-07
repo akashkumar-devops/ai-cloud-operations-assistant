@@ -1,20 +1,10 @@
-e
-required to preface the
-docker run
-command with
-sudo
-. To avoid
-having to use
-sudo
-with the
-docker
-command, your system
-administrator can create a Unix group called
-docker
-and add users to
-it. For more information about this configuration, refer to the Docker
-installation documentation for your operating system.
-Foreground and background
-When you start a container, the container runs in the foreground by default.
-If you want to run the container in the background instead, you can use the
---det
+erwise the hard
+limit takes precedence. A reservation of 0 is the same as setting no
+reservation. By default (without reservation set), memory reservation is the
+same as the hard memory limit.
+Memory reservation is a soft-limit feature and does not guarantee the limit
+won't be exceeded. Instead, the feature attempts to ensure that, when memory is
+heavily contended for, memory is allocated based on the reservation hints/setup.
+The following example limits the memory (
+-m
+) to 500M and sets the me

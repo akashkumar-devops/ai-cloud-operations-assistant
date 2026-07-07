@@ -1,24 +1,21 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+'t necessarily need to build the entire
+Dockerfile including every stage. You can specify a target build stage. The
+following command assumes you are using the previous
+Dockerfile
+but stops at
+the stage named
+build
+:
+$
+docker build --target build -t hello .
+A few scenarios where this might be useful are:
+Debugging a specific build stage
+Using a
+debug
+stage with all debugging symbols or tools enabled, and a
+lean
+production
+stage
+Using a
+testing
+stage in which your app gets populated with test dat

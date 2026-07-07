@@ -1,10 +1,25 @@
-ontainer layer. Removing the container also removes its data. If you want to
-use persistent data with containers, you can use filesystem mounts to store the
-data persistently on the host system. Filesystem mounts can also let you share
-data between containers and the host.
-Docker supports two main categories of mounts:
-Volume mounts
-Bind mounts
-Volume mounts are great for persistently storing data for containers, and for
-sharing data between containers. Bind mounts, on the other hand, are for
-sh
+The default CPU CFS (Completely Fair Scheduler) period is 100ms. We can use
+--cpu-period
+to set the period of CPUs to limit the container's CPU usage.
+And usually
+--cpu-period
+should work with
+--cpu-quota
+.
+Examples:
+$
+docker run -it --cpu-period
+=
+50000
+--cpu-quota
+=
+25000
+ubuntu:24.04 /bin/bash
+If there is 1 CPU, this means the container can get 50% CPU worth of run-time every 50ms.
+In addition to use
+--cpu-period
+and
+--cpu-quota
+for setting CPU period constraints,
+it is possible to specify
+--

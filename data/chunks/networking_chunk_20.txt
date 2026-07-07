@@ -1,37 +1,17 @@
-ge
-Use an image
-Use a Helm chart
-Use hardened packages
-Verify an image or chart
-Scan an image
-Enforce image usage
-Use the CLI
-Use DHI Select & Enterprise
-Core concepts
-Attestations
-CIS Benchmark
-Code signing
-CVEs
-Distroless images
-FIPS
-glibc and musl
-Hardening
-Image digests
-Image provenance
-Immutability
-SBOMs
-SLSA
-Software Supply Chain Security
-SSDLC
-STIG
-VEX
-Troubleshoot
-Additional resources
-Release notes
-CLI release notes
-Platform release notes
-Docker Hub
-Quickstart
-Library
-Search
-Trusted cont
+resolv.conf
+configuration file.
+Containers that attach to the default
+bridge
+network receive a copy of this file.
+Containers that attach to a
+custom network
+use Docker's embedded DNS server.
+The embedded DNS server forwards external DNS lookups to the DNS servers configured on the host.
+The embedded DNS server address is
+127.0.0.11
+.
+There is no IPv6 equivalent; the IPv4 address works even in IPv6-only containers.
+If an application requires an explicit DNS server address, use
+127.0.0.11
+.
+You ca

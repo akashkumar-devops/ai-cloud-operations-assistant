@@ -1,35 +1,9 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+ntainer. By contrast, when you use a volume, a new
+directory is created within Docker's storage directory on the host machine.
+Docker creates and maintains this storage location, but containers access it
+directly using standard filesystem operations.
+When to use bind mounts
+Bind mounts are appropriate for the following types of use case:
+Sharing source code or build artifacts between a development environment on
+the Docker host and a container.
+When you want to create or generate files in a cont

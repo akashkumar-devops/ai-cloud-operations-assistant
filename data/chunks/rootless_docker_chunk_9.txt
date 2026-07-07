@@ -1,19 +1,29 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+bashrc):
+export PATH=/home/testuser/bin:$PATH
+[INFO] Some applications may require the following environment variable too:
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+The binaries will be installed at
+~/bin
+.
+Run
+docker info
+to confirm that the
+docker
+client is connecting to the Rootless daemon:
+$
+docker info
+Client: Docker Engine - Community
+Version:    28.3.3
+Context:    rootless
+...
+Server:
+...
+Security Options:
+seccomp
+Profile: builtin
+rootless
+cgroupns
+...
+See
+Troubleshooting
+if yo

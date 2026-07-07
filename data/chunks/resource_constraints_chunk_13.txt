@@ -1,27 +1,21 @@
-ix targets
-Contexts
-Bake file reference
-Bake standard library functions
-Building with Bake from a Compose file
-Overriding configurations
-Remote Bake file definition
-Cache
-Build cache invalidation
-Build garbage collection
-Cache storage backends
-Amazon S3 cache
-Azure Blob Storage cache
-GitHub Actions cache
-Inline cache
-Local cache
-Registry cache
-Optimize cache usage in builds
-CI
-GitHub Actions
-Annotations
-Attestations
-Build checks
-Build secrets
-Build summary
-BuildKit configuration
-Cache management
+emory="300m"
+and
+--memory-swap
+is
+not set, the container can use 600m in total of memory and swap.
+If
+--memory-swap
+is explicitly set to
+-1
+, the container is allowed to use
+unlimited swap, up to the amount available on the host system.
+Inside the container, tools like
+free
+report the host's available swap, not what's available inside the container. Don't rely on the output of
+free
+or similar tools to determine whether swap is present.
+Prevent a container from using swap
+If
+--memory
+and
+--memory

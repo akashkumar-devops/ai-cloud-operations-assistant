@@ -1,10 +1,18 @@
-unlimited memory which can cause the host to run out memory
-and require killing system processes to free memory. The
---oom-score-adj
-parameter can be changed to select the priority of which containers will
-be killed when the system is out of memory, with negative scores making them
-less likely to be killed, and positive scores more likely.
-Swappiness constraint
-By default, a container's kernel can swap out a percentage of anonymous pages.
-To set this percentage for a container, specify a
---memor
+ (settimeofday(2), stime(2), adjtimex(2)); set real-time (hardware) clock.
+SYS_TTY_CONFIG
+Use vhangup(2); employ various privileged ioctl(2) operations on virtual terminals.
+SYSLOG
+Perform privileged syslog(2) operations.
+WAKE_ALARM
+Trigger something that will wake up the system.
+Further reference information is available on the
+capabilities(7) - Linux man page
+,
+and in the
+Linux kernel source code
+.
+Both flags support the value
+ALL
+, so to allow a container to use all capabilities
+except for
+MK

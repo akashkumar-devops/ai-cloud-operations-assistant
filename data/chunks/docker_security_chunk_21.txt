@@ -1,33 +1,12 @@
-ent
-Catalogs
-Mirror
-Repositories
-Create
-Manage
-Repository information
-Access
-Images
-Tags
-Immutable tags
-Image Management
-Software artifacts
-Push images
-Move images
-Bulk migrate images
-Image security insights
-Webhooks
-Automated builds
-Deprecated
-Set up
-Link accounts
-Automated repository tests
-Advanced options
-Migrate
-Manage autobuilds
-Troubleshoot
-Trusted content
-Docker Official Images
-Docker Verified Publisher Program
-Docker-Sponsored Open Source Program
-Insights and analytics
-Export repositorie
+tent
+Trust signature verification feature is built directly into the
+dockerd
+binary.
+This is configured in the Dockerd configuration file.
+To enable this feature, trustpinning can be configured in
+daemon.json
+, whereby
+only repositories signed with a user-specified root key can be pulled and run.
+This feature provides more insight to administrators than previously available with
+the CLI for enforcing and performing image signature verification.
+For more information on configuring Docker Content 

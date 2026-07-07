@@ -1,26 +1,15 @@
-rage in Docker Scout
-Policy Evaluation
-Configure policies
-Docker Scout health scores
-Evaluate policy compliance in CI
-Remediation with Docker Scout
-View Docker Scout policy status
-Integrations
-Code quality
-SonarQube
-Container registries
-Amazon ECR
-Artifactory Container Registry
-Azure Container Registry
-Continuous Integration
-Azure DevOps Pipelines
-Circle CI
-GitHub Actions
-GitLab CI/CD
-Jenkins
-Integrating Docker Scout with environments
-Generic (CLI)
-Sysdig
-Source code management
-GitHub
-Team colla
+running an older kernel version, submounts are
+automatically mounted as read-write by default. Attempting to set submounts to
+be read-only on a kernel version earlier than 5.12, using the
+bind-recursive=readonly
+option, results in an error.
+Supported values for the
+bind-recursive
+option are:
+Value
+Description
+enabled
+(default)
+Read-only mounts are made recursively read-only if kernel is v5.12 or later. Otherwise, submounts are read-write.
+disabled
+Submounts are ignored (not included in the bind 

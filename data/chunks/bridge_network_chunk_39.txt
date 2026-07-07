@@ -1,19 +1,12 @@
-me to use when creating the Linux bridge.
-com.docker.network.bridge.enable_ip_masquerade
-true
-Enable IP masquerading.
-com.docker.network.host_ipv4
-com.docker.network.host_ipv6
-Address to use for source NAT. See
-Packet filtering and firewalls
-.
-com.docker.network.bridge.gateway_mode_ipv4
-com.docker.network.bridge.gateway_mode_ipv6
-nat
-Control external connectivity. See
-Packet filtering and firewalls
-.
-com.docker.network.bridge.enable_icc
-true
-Enable or Disable inter-container connectivity.
-com.do
+ -dit --name alpine2 --network alpine-net alpine ash
+$
+docker run -dit --name alpine3 alpine ash
+$
+docker run -dit --name alpine4 --network alpine-net alpine ash
+$
+docker network connect bridge alpine4
+Verify all containers are running:
+$
+docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
+156849ccd902        alpine              "ash"               41 seconds ago       Up 41 seconds                    

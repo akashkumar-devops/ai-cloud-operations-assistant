@@ -1,24 +1,10 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+ are pretty mature.
+Control groups
+Control Groups are another key component of Linux containers. They
+implement resource accounting and limiting. They provide many
+useful metrics, but they also help ensure that each container gets
+its fair share of memory, CPU, disk I/O; and, more importantly, that a
+single container cannot bring the system down by exhausting one of those
+resources.
+So while they do not play a role in preventing one container from
+accessing or affecting the data and processes of

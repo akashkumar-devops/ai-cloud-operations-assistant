@@ -1,37 +1,16 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
+ (see following) automatically shows help
+when the prerequisites are not satisfied.
 Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+Note
+If the system-wide Docker daemon is already running, consider disabling it:
+$
+sudo systemctl disable --now docker.service docker.socket
+$
+sudo rm /var/run/docker.sock
+Should you choose not to shut down the
+docker
+service and socket, you will need to use the
+--force
+parameter in the next section. There are no known issues, but until you shutdown and disable you're
+still running rootful Docker.
+With pa

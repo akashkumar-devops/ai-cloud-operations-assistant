@@ -1,18 +1,28 @@
-substitution,
-not the builder.
-Backslashes
-In exec form, you must escape backslashes. This is particularly relevant on
-Windows where the backslash is the path separator. The following line would
-otherwise be treated as shell form due to not being valid JSON, and fail in an
-unexpected way:
-RUN
-[
-"c:\windows\system32\tasklist.exe"
-]
-The correct syntax for this example is:
-RUN
-[
-"c:\\windows\\system32\\tasklist.exe"
-]
-Shell form
-Unlike the exec form, instructions using the shell form always use a c
+ent, you can build this with the following command:
+$
+docker buildx build --secret
+id
+=
+API_KEY .
+RUN --mount=type=ssh
+This mount type allows the build container to access SSH keys via SSH agents,
+with support for passphrases.
+Option
+Description
+id
+ID of SSH agent socket or key. Defaults to "default".
+target
+,
+dst
+,
+destination
+SSH agent socket path. Defaults to
+/run/buildkit/ssh_agent.${N}
+.
+required
+If set to
+true
+, the instruction errors out when the key is unavailable. Defaults to
+false
+.
+mo

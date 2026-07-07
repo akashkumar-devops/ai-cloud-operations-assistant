@@ -1,20 +1,32 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+=
+nginx:latest /etc/nginx/nginx.conf /nginx.conf
+Use a previous stage as a new stage
+You can pick up where a previous stage left off by referring to it when using
+the
+FROM
+directive. For example:
+# syntax=docker/dockerfile:1
+FROM
+alpine:latest
+AS
+builder
+RUN
+apk --no-cache add build-base
+FROM
+builder
+AS
+build1
+COPY
+source1.cpp source.cpp
+RUN
+g++ -o /binary source.cpp
+FROM
+builder
+AS
+build2
+COPY
+source2.cpp source.cpp
+RUN
+g++ -o /binary source.cpp
+Differences between legacy builder and BuildKit
+T

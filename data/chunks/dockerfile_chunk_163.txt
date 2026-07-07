@@ -1,52 +1,31 @@
-mmands:
-#!/usr/bin/env bash
-set
--e
-if
-[
-"
-$1
-"
+mmand:
+$
+docker build --build-arg
+CONT_IMG_VER
 =
-'postgres'
-]
-;
-then
-chown -R postgres
-"
-$PGDATA
-"
-if
-[
--z
-"
-$(
-ls -A
-"
-$PGDATA
-"
-)
-"
-]
-;
-then
-gosu postgres initdb
-fi
-exec
-gosu postgres
-"
-$@
-"
-fi
-exec
-"
-$@
-"
-Lastly, if you need to do some extra cleanup (or communicate with other containers)
-on shutdown, or are co-ordinating more than one executable, you may need to ensure
-that the
-ENTRYPOINT
-script receives the Unix signals, passes them on, and then
-does some more work:
-#!/bin/sh
-# Note: I've wr
+v2.0.1 .
+In this case, the
+RUN
+instruction uses
+v1.0.0
+instead of the
+ARG
+setting
+passed by the user:
+v2.0.1
+This behavior is similar to a shell
+script where a locally scoped variable overrides the variables passed as
+arguments or inherited from environment, from its point of definition.
+Using the example above but a different
+ENV
+specification you can create more
+useful interactions between
+ARG
+and
+ENV
+instructions:
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+E

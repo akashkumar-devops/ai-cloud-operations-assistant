@@ -1,18 +1,61 @@
-table
-version.
-Environment replacement
-Environment variables (declared with
-the
-ENV
-statement
-) can also be
-used in certain instructions as variables to be interpreted by the
-Dockerfile. Escapes are also handled for including variable-like syntax
-into a statement literally.
-Environment variables are notated in the Dockerfile either with
-$variable_name
-or
-${variable_name}
-. They are treated equivalently and the
-brace syntax is typically used to address issues with variable names with no
-whitespac
+ Answer only newline formatted JSON with keys
+"country"
+,
+"population_1900"
+,
+"population_2024"
+with
+10
+items.
+A:
+[
+{
+EOF
+FROM
+ghcr.io/ggml-org/llama.cpp:full-cuda-b5124
+RUN
+--device
+=
+nvidia.com/gpu
+=
+all
+\
+--mount
+=
+from
+=
+model,target
+=
+/models
+\
+--mount
+=
+from
+=
+prompt,target
+=
+/tmp
+\
+./llama-cli -m /models/model.gguf -no-cnv -ngl
+99
+-f /tmp/prompt.txt
+RUN --mount
+RUN
+--mount
+=[
+type
+=
+<TYPE>
+][
+,option
+=
+<value>
+[
+,option
+=
+<value>
+]
+...
+]
+RUN --mount
+allows you to create filesystem mounts 

@@ -1,15 +1,13 @@
-ute permission checks.
-FOWNER
-Bypass permission checks on operations that normally require the file system UID of the process to match the UID of the file.
-FSETID
-Don't clear set-user-ID and set-group-ID permission bits when a file is modified.
-KILL
-Bypass permission checks for sending signals.
-MKNOD
-Create special files using mknod(2).
-NET_BIND_SERVICE
-Bind a socket to internet domain privileged ports (port numbers less than 1024).
-NET_RAW
-Use RAW and PACKET sockets.
-SETFCAP
-Set file capabiliti
+ 4096   regular file\nDevice: 32h/50d\tInode: 12          Links: 1\nAccess: (0664/-rw-rw-r--)  Uid: (    0/    root)   Gid: (    0/    root)\nAccess: 2015-12-05 22:05:32.000000000\nModify: 2015..."
+},
+{
+"Start": "2016-05-25T17:22:08.823956535Z",
+"End": "2016-05-25T17:22:08.897359124Z",
+"ExitCode": 1,
+"Output": "stat: can't stat '/etc/passwd': No such file or directory\n"
+},
+{
+"Start": "2016-05-25T17:22:10.898802931Z",
+"End": "2016-05-25T17:22:10.969631866Z",
+"ExitCode": 1,
+"Output": "stat: can't

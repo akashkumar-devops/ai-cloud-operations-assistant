@@ -1,19 +1,49 @@
-     62 testfile.txt
-10/28/2016  11:20 AM    <DIR>          Users
-10/28/2016  11:20 AM    <DIR>          Windows
-2 File(s)          1,956 bytes
-4 Dir(s)  21,259,096,064 bytes free
----> 01c7f3bef04f
-Removing intermediate container a2c157f842f5
-Successfully built 01c7f3bef04f
-PS E:\myproject>
-check
-# check=skip=<checks|all>
-# check=error=<boolean>
-The
-check
-directive is used to configure how
-build checks
-are evaluated. By default, all checks are run, and failures are treated as
-warnings.
-You can d
+
+:
+org.mobyproject.buildkit.device.class
+:
+class1
+containerEdits
+:
+env
+:
+-
+BAR=injected
+-
+name
+:
+baz
+annotations
+:
+org.mobyproject.buildkit.device.class
+:
+class1
+containerEdits
+:
+env
+:
+-
+BAZ=injected
+-
+name
+:
+qux
+annotations
+:
+org.mobyproject.buildkit.device.class
+:
+class2
+containerEdits
+:
+env
+:
+-
+QUX=injected
+annotations
+:
+org.mobyproject.buildkit.device.autoallow
+:
+true
+The device name format is flexible and accepts various patterns to support
+multiple device configurations:
+vendor1.com/device

@@ -1,35 +1,13 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+ of the
+docker run
+command. This section provides details
+on when you should set such limits and the possible implications of setting them.
+Many of these features require your kernel to support Linux capabilities. To
+check for support, you can use the
+docker info
+command. If a capability
+is disabled in your kernel, you may see a warning at the end of the output like
+the following:
+WARNING: No swap limit support
+Consult your operating system's documentation for enabling them. See also the
+Docker 

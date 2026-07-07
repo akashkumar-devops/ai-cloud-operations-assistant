@@ -1,22 +1,15 @@
-ost directory
-(the mountpoint) is, by its nature, host-dependent. This is to preserve image
-portability, since a given host directory can't be guaranteed to be available
-on all hosts. For this reason, you can't mount a host directory from
-within the Dockerfile. The
-VOLUME
-instruction does not support specifying a
-host-dir
-parameter. You must specify the mountpoint when you create or run the container.
-USER
-USER
-<user>[:<group
->
-]
-or
-USER
-<UID>[:<GID
->
-]
-The
-USER
-instruction sets the user name (o
+t to be called after
+that. You can't just call
+ADD
+and
+RUN
+now, because you don't yet
+have access to the application source code, and it will be different for
+each application build. You could simply provide application developers
+with a boilerplate Dockerfile to copy-paste into their application, but
+that's inefficient, error-prone and difficult to update because it
+mixes with application-specific code.
+The solution is to use
+ONBUILD
+to register advance instructions to
+run later, during the nex

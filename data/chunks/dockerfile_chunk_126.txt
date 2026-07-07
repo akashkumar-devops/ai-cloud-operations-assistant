@@ -1,25 +1,26 @@
-directories
-in its path.
-If the source is a file, and the destination doesn't end with a trailing slash,
-the source file will be written to the destination path as a file.
-ADD --keep-git-dir
-ADD
-[
---keep-git-dir
-=
-<boolean>
-]
-<src> ... <dir>
-When
-<src>
-is the HTTP or SSH address of a remote Git repository,
-BuildKit adds the contents of the Git repository to the image
-excluding the
-.git
-directory by default.
+ecially useful copies between stages
+with
+--from
+where the source paths need to be absolute.
+# syntax=docker/dockerfile:1
+FROM
+scratch
+COPY
+--parents ./x/./y/*.txt /parents/
+# Build context:
+# ./x/y/a.txt
+# ./x/y/b.txt
+#
+# Output:
+# /parents/y/a.txt
+# /parents/y/b.txt
 The
---keep-git-dir=true
-flag lets you preserve the
-.git
-directory.
-# syntax=docker/docker
+**
+wildcard matches any number of path components, including none, and
+can be used to recursively match files across directory levels:
+# syntax=docker/dockerfile:1
+FROM
+scratch
+COPY
+--parents ./src/**/*.txt /parents/
+# Build co

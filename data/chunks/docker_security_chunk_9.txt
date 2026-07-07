@@ -1,19 +1,12 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+ontainer where the
+/host
+directory is the
+/
+directory
+on your host; and the container can alter your host filesystem
+without any restriction. This is similar to how virtualization systems
+allow filesystem resource sharing. Nothing prevents you from sharing your
+root filesystem (or even your root block device) with a virtual machine.
+This has a strong security implication: for example, if you instrument Docker
+from a web server to provision containers through an API, you should be
+even more caref

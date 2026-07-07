@@ -1,15 +1,27 @@
-h each other using published ports.
-Bridge networks apply to containers running on the same Docker daemon host.
-For communication among containers running on different Docker daemon hosts, you
-can either manage routing at the OS level, or you can use an
-overlay network
-.
-When you start Docker, a
-default bridge network
-(also
-called
+ bridge              local
+6ed54d316334        host                host                local
+7092879f2cc8        none                null                local
+The default
 bridge
-) is created automatically, and newly-started containers connect
-to it unless otherwise specified. You can also create user-defined custom bridge
-networks.
-User
+network is listed, along with
+host
+and
+none
+.
+Start two
+alpine
+containers running
+ash
+. The
+-dit
+flags mean detached,
+interactive, and with a TTY. Since you haven't specified a
+--network
+flag,
+the containers connect to the default
+bridge
+network.
+$
+docker run -dit --name alpine1 alpine ash
+$
+docker run -dit --name alpine

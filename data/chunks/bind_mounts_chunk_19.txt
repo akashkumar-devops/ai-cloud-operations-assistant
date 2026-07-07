@@ -1,33 +1,16 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+c: \"nginx\": executable file not found in $PATH".
+$
+docker run -d
+\
+-it \
+--name broken-container \
+-v /tmp:/usr \
+nginx:latest
+docker: Error response from daemon: oci runtime error: container_linux.go:262:
+starting container process caused "exec: \"nginx\": executable file not found in $PATH".
+The container is created but does not start. Remove it:
+$
+docker container rm broken-container
+Use a read-only bind mount
+For some development applications, the container needs to
+write into the bind mou

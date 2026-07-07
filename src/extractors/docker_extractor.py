@@ -18,7 +18,7 @@ AI Cloud Operations Assistant
 
 from bs4 import BeautifulSoup
 
-from extractors.base_extractor import BaseExtractor
+from src.extractors.base_extractor import BaseExtractor
 
 
 class DockerExtractor(BaseExtractor):

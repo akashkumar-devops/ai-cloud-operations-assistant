@@ -1,47 +1,23 @@
-by any
-ARG
-instructions that occur before the first
-FROM
-.
-ARG
-CODE_VERSION
-=
-latest
-FROM
-base:${CODE_VERSION
-}
+s using
+shell or exec forms
+:
+CMD ["executable","param1","param2"]
+(exec form)
+CMD ["param1","param2"]
+(exec form, as default parameters to
+ENTRYPOINT
+)
+CMD command param1 param2
+(shell form)
+There can only be one
 CMD
-/code/run-app
-FROM
-extras:${CODE_VERSION
-}
+instruction in a Dockerfile. If you list more than
+one
 CMD
-/code/run-extras
-An
-ARG
-declared before a
-FROM
-is outside of a build stage, so it
-can't be used in any instruction after a
-FROM
-. To use the default value of
-an
-ARG
-declared before the first
-FROM
-use an
-ARG
-instruction without
-a value inside of a build stage:
-ARG
-VERSION
-=
-latest
-FROM
-busybox:$VERSION
-ARG
-VERSION
-RUN
-echo
-$VERSION
-> im
+, only the last one takes effect.
+The purpose of a
+CMD
+is to provide defaults for an executing container. These
+defaults can include an executable, or they can omit the executable, in which
+case you must specify an
+ENTRYPOI

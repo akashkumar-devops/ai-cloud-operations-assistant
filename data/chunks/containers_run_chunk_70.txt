@@ -1,23 +1,9 @@
-constraint
-We can set cpus in which to allow execution for containers.
-Examples:
-$
-docker run -it --cpuset-cpus
-=
-"1,3"
-ubuntu:24.04 /bin/bash
-This means processes in container can be executed on cpu 1 and cpu 3.
-$
-docker run -it --cpuset-cpus
-=
-"0-2"
-ubuntu:24.04 /bin/bash
-This means processes in container can be executed on cpu 0, cpu 1 and cpu 2.
-We can set mems in which to allow execution for containers. Only effective
-on NUMA systems.
-Examples:
-$
-docker run -it --cpuset-mems
-=
-"1,3"
-ubuntu:
+
+The entrypoint refers to the default executable that's invoked when you run a
+container. A container's entrypoint is defined using the Dockerfile
+ENTRYPOINT
+instruction. It's similar to specifying a default command because
+it specifies, but the difference is that you need to pass an explicit flag to
+override the entrypoint, whereas you can override default commands with
+positional arguments. The defines a container's default behavior, with the idea
+that when you set an entrypoint you can run th

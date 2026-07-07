@@ -1,18 +1,51 @@
-
-Mount a volume subdirectory
-Share data between machines
-Use a volume driver
-Initial setup
-Create a volume using a volume driver
-Start a container which creates a volume using a volume driver
-Create a service which creates an NFS volume
-Create CIFS/Samba volumes
-Block storage devices
-Back up, restore, or migrate data volumes
-Back up a volume
-Restore volume from a backup
-Remove volumes
-Remove anonymous volumes
-Remove all volumes
-Next steps
-Volumes are persistent data stores for containers, create
+ginx:latest
+Use
+docker inspect nginxtest
+to verify that Docker created the read-only mount
+correctly. Look for the
+Mounts
+section:
+"Mounts"
+:
+[
+{
+"Type"
+:
+"volume"
+,
+"Name"
+:
+"nginx-vol"
+,
+"Source"
+:
+"/var/lib/docker/volumes/nginx-vol/_data"
+,
+"Destination"
+:
+"/usr/share/nginx/html"
+,
+"Driver"
+:
+"local"
+,
+"Mode"
+:
+""
+,
+"RW"
+:
+false
+,
+"Propagation"
+:
+""
+}
+]
+,
+Stop and remove the container, and remove the volume. Volume removal is a
+separate step.
+$
+docker container stop nginxtest
+$
+docker contain

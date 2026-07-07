@@ -1,21 +1,21 @@
-interpreted as an
-absolute path, and the source files are copied into the specified destination
-relative to the root of the current build stage.
-# create /abs/test.txt
-COPY
-test.txt /abs/
-Trailing slashes are significant. For example,
-COPY test.txt /abs
-creates a
-file at
-/abs
-, whereas
-COPY test.txt /abs/
-creates
-/abs/test.txt
-.
-If the destination path doesn't begin with a leading slash, it's interpreted as
-relative to the working directory of the build container.
-WORKDIR
-/usr/src/app
-# create /
+ntainer too
+# USE the trap if you need to also do manual cleanup after the service is stopped,
+#     or need to start multiple services in the one container
+trap
+"echo TRAPed signal"
+HUP INT QUIT TERM
+# start service in background here
+/usr/sbin/apachectl start
+echo
+"[hit enter key to exit] or run 'docker stop <container>'"
+read
+# stop service and clean up here
+echo
+"stopping apache"
+/usr/sbin/apachectl stop
+echo
+"exited
+$0
+"
+If you run this image with
+docker run -it --rm -p 80:80 --name test ap

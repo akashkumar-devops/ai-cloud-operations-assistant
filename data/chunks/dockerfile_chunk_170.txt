@@ -1,12 +1,35 @@
-total,   1 running,   1 sleeping,   0 stopped,   0 zombie
-%
-Cpu
-(
-s
-)
-: 16.7 us, 33.3 sy,  0.0 ni, 50.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :   1990.8 total,   1354.6 free,    231.4 used,    404.7 buff/cache
-MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   1639.8 avail Mem
-PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-1 root      20   0    2612    604    536 S   0.0   0.0   0:00.02 sh
-6 root      20   0    5956   3188   2768 R   0.0   0.2   0:00.0
+ese arguments inside the build stage redefine it without value.
+For example:
+FROM
+alpine
+ARG
+TARGETPLATFORM
+RUN
+echo
+"I'm building for
+$TARGETPLATFORM
+"
+BuildKit built-in build args
+Arg
+Type
+Description
+BUILDKIT_BUILD_NAME
+String
+Override the build name shown in
+buildx history
+command
+and
+Docker Desktop Builds view
+.
+BUILDKIT_CACHE_MOUNT_NS
+String
+Set optional cache ID namespace.
+BUILDKIT_CONTEXT_KEEP_GIT_DIR
+Bool
+Trigger Git context to keep the
+.git
+directory.
+BUILDKIT_INLINE_CACHE
+2
+Bool
+Inlin

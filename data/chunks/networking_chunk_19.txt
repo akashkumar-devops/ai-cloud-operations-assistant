@@ -1,33 +1,16 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+teway": "fdd3:6f80:972c::1"
+}
+]
+Note
+Support for unspecified addresses in
+--subnet
+was introduced in Docker 29.0.0.
+If Docker is downgraded to an older version, networks created in this way will become unusable.
+They can be removed and re-created, or will function again if the daemon is restored to 29.0.0 or later.
+DNS services
+Containers use the same DNS servers as the host by default, but you can
+override this with
+--dns
+.
+By default, containers inherit the DNS settings as defined in the
+/etc/

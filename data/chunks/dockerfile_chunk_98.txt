@@ -1,19 +1,21 @@
-value overrides any previously-set value.
-In a multi-stage build, labels from intermediate stages are only present in
-the final image if the final stage is directly or indirectly based on them
-(via
-FROM
-). Labels from a stage that you only reference with
-COPY --from
-or
-RUN --mount=from=
-are not included in the output image.
-Labels from the base image specified in the final
-FROM
-instruction are
-always inherited.
-To view an image's labels, use the
-docker image inspect
-command. You can use
-the
---fo
+M
+alpine
+ADD
+git@git.example.com:foo/bar.git /bar
+To build this Dockerfile, pass the
+--ssh
+flag to the
+docker build
+to mount
+the SSH agent socket to the build. For example:
+$
+docker build --ssh default .
+For more information about building with secrets,
+see
+Build secrets
+.
+Destination
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to the root of the current build stage.
+# create /a

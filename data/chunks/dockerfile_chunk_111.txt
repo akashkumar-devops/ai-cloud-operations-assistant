@@ -1,21 +1,25 @@
-s://example.com/archive.zip /usr/src/things/
-ADD
-git@github.com:user/repo.git /usr/src/things/
-BuildKit detects the type of
-<src>
-and processes it accordingly.
-If
-<src>
-is a local file or directory, the contents of the directory are
-copied to the specified destination. See
-Adding files from the build context
+single-character wildcard, matching e.g.
+index.js
+and
+index.ts
 .
-If
-<src>
-is a local tar archive, it is decompressed and extracted to the
-specified destination. See
-Adding local tar archives
-.
-If
-<src>
-is a URL, the contents of the URL are downloaded an
+COPY
+index.?s /dest/
+When adding files or directories that contain special characters (such as
+[
+and
+]
+), you need to escape those paths following the Golang rules to prevent
+them from being treated as a matching pattern. For example, to add a file
+named
+arr[0].txt
+, use the following;
+COPY
+arr
+[[]
+0
+]
+.txt /dest/
+Destination
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source f

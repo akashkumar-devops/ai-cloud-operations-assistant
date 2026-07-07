@@ -1,26 +1,17 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+emon hosts, you
+can either manage routing at the OS level, or you can use an
+overlay network
+.
+When you start Docker, a
+default bridge network
+(also
+called
+bridge
+) is created automatically, and newly-started containers connect
+to it unless otherwise specified. You can also create user-defined custom bridge
+networks.
+User-defined bridge networks are superior to the default
+bridge
+network.
+Differences between user-defined bridges and the default bridge
+User-defined bridges provide automatic DNS r

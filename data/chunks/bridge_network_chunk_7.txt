@@ -1,21 +1,12 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+ you run the same application stack on the default bridge network, you need
+to manually create links between the containers (using the legacy
+--link
+flag). These links need to be created in both directions, so you can see this
+gets complex with more than two containers which need to communicate.
+Alternatively, you can manipulate the
+/etc/hosts
+files within the containers,
+but this creates problems that are difficult to debug.
+User-defined bridges provide better isolation
+.
+All containers without

@@ -1,38 +1,23 @@
-
-Dog
-ENV
-MY_CAT
-=
-fluffy
-The
-ENV
-instruction allows for multiple
-<key>=<value> ...
-variables to be set
-at one time, and the example below will yield the same net results in the final
-image:
-ENV
-MY_NAME
-=
-"John Doe"
-MY_DOG
-=
-Rex
-\
-The
-\
-Dog
-\
-MY_CAT
-=
-fluffy
-The environment variables set using
-ENV
-will persist when a container is run
-from the resulting image. You can view the values using
-docker inspect
-, and
-change them using
-docker run --env <key>=<value>
+different purposes.
+Learn more about the
+differences between
+ADD
+and
+COPY
 .
-A stage inherits any environment vari
+Source
+You can specify multiple source files or directories with
+COPY
+. The last
+argument must always be the destination. For example, to copy two files,
+file1.txt
+and
+file2.txt
+, from the build context to
+/usr/src/things/
+in
+the build container:
+COPY
+file1.txt file2.txt /usr/src/things/
+If you specify multiple source files, either directly or using a wildcard, then
+the destination must be a directory (must end with a sl

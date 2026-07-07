@@ -1,28 +1,26 @@
-the same format as
-<src>
-,
-supporting wildcards and matching using Go's
-filepath.Match
-rules.
-For example, to add all files starting with "hom", excluding files with a
-.txt
-extension:
-# syntax=docker/dockerfile:1
-FROM
-scratch
-COPY
---exclude
-=
-*.txt hom* /mydir/
-You can specify the
---exclude
-option multiple times for a
-COPY
-instruction.
-Files matching any of the specified
---exclude
-patterns are not copied,
-even if their paths match the pattern specified in
-<src>
+'s not used in any
+subsequent Dockerfile instruction.
+The
+WORKDIR
+instruction can be used multiple times in a Dockerfile. If a
+relative path is provided, it will be relative to the path of the previous
+WORKDIR
+instruction. For example:
+WORKDIR
+/a
+WORKDIR
+b
+WORKDIR
+c
+RUN
+pwd
+The output of the final
+pwd
+command in this Dockerfile would be
+/a/b/c
 .
-To add all files starting with "
+The
+WORKDIR
+instruction can resolve environment variables previously set using
+ENV
+. You can only use environment variables explicitly set in the Docker

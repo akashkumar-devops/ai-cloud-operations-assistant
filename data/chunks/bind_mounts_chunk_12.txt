@@ -1,39 +1,25 @@
-
-Docker Offload
-Quickstart
-About
-Configure
-Usage
-Optimize usage
-Troubleshoot
-Give feedback
-Docker Build
-Core concepts
-Docker Build Overview
-Dockerfile overview
-Build context
-Build checks
-Building
-Multi-stage
-Variables
-Secrets
-Multi-platform
-Export binaries
-Container Device Interface (CDI)
-Best practices
-Base images
-Builders
-Build drivers
-Docker container driver
-Docker driver
-Kubernetes driver
-Remote driver
-Manage builders
-Bake
-Introduction
-Targets
-Inheritance
-Variables
-Expressions
-Functions
-Matr
+<container-path>
+[
+:opts
+]
+The first field is the path on the host to bind mount into the container. The
+second field is the path where the file or directory is mounted in the
+container.
+The third field is optional, and is a comma-separated list of options. Valid
+options for
+--volume
+with a bind mount include:
+Option
+Description
+readonly
+,
+ro
+If present, causes the bind mount to be
+mounted into the container as read-only
+.
+z
+,
+Z
+Configures SELinux labeling. See
+Configure the SELinux label
+rpriva

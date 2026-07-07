@@ -1,44 +1,17 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Multi-stage builds
+Table of contents
+Use multi-stage builds
+Name your build stages
+Stop at a specific build stage
+Use an external image as a stage
+Use a previous stage as a new stage
+Differences between legacy builder and BuildKit
+Multi-stage builds are useful to anyone who has struggled to optimize
+Dockerfiles while keeping them easy to read and maintain.
+Use multi-stage builds
+With multi-stage builds, you use multiple
+FROM
+statements in your Dockerfile.
+Each
+FROM
+instruction can use a differen

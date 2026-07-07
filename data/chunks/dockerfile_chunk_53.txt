@@ -1,50 +1,27 @@
+
+sharing
+One of
+shared
+,
+private
+, or
+locked
+. Defaults to
+shared
+. A
+shared
+cache mount can be used concurrently by multiple writers.
+private
+creates a new mount if there are multiple writers.
+locked
+pauses the second writer until the first one releases the mount.
+from
+Build stage, context, or image name to use as a base of the cache mount. Defaults to empty directory.
+source
+Subpath in the
+from
+to mount. Defaults to the root of the
+from
 .
-string
-=
-foobarbaz
-echo
-${
-string
-%%b*
-}
-# foo
-${variable/pattern/replacement}
-replace the first occurrence of
-pattern
-in
-variable
-with
-replacement
-string
-=
-foobarbaz
-echo
-${
-string
-/ba/fo
-}
-# fooforbaz
-${variable//pattern/replacement}
-replaces all occurrences of
-pattern
-in
-variable
-with
-replacement
-string
-=
-foobarbaz
-echo
-${
-string
-//ba/fo
-}
-# fooforfoz
-In all cases,
-word
-can be any string, including additional environment
-variables.
-pattern
-is a glob pattern where
-?
-matches any single charac
+mode
+File mode for new cache directory in octal. Defaul

@@ -1,35 +1,26 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+ Linux commands typically open three I/O streams when they run, called
+STDIN
+,
+STDOUT
+, and
+STDERR
+.
+STDIN
+is the command's input stream, which
+may include input from the keyboard or input from another command.
+STDOUT
+is
+usually a command's normal output, and
+STDERR
+is typically used to output
+error messages. By default,
+docker logs
+shows the command's
+STDOUT
+and
+STDERR
+. To read more about I/O and Linux, see the
+Linux Documentation Project article on I/O redirection
+.
+In some cases,
+docker logs

@@ -1,13 +1,40 @@
-ly invoke a command shell. This means
-that normal shell processing, such as variable substitution, doesn't happen.
-For example,
-RUN [ "echo", "$HOME" ]
-won't handle variable substitution for
+et,id
+=
+aws,target
+=
+/root/.aws/credentials
+\
+aws s3 cp s3://... ...
+$
+docker buildx build --secret
+id
+=
+aws,src
+=
 $HOME
-.
-If you want shell processing then either use the shell form or execute a shell
-directly with the exec form, for example:
-RUN [ "sh", "-c", "echo $HOME" ]
-.
-When using the exec form and executing a shell directly, as in the case for the
-shell form, it's the shell that's doing the environment variable 
+/.aws/credentials .
+Example: Mount as environment variable
+The following example takes the secret
+API_KEY
+and mounts it as an
+environment variable with the same name.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+RUN
+--mount
+=
+type
+=
+secret,id
+=
+API_KEY,env
+=
+API_KEY
+\
+some-command --token-from-env
+$API_KEY
+Assuming that the
+API_KEY
+environment variable is set in the build
+environm

@@ -1,34 +1,27 @@
-ntained command can't be found.
+
+--blkio-weight-device
+to override this default with a new value on a specific device.
+The following example uses a default weight of
+300
+and overrides this default
+on
+/dev/sda
+setting that weight to
+200
+:
 $
-docker run busybox foo
-;
-echo
-$?
-docker: Error response from daemon: Container command 'foo' not found or does not exist.
-127
-Other exit codes
-Any exit code other than
-125
-,
-126
-, and
-127
-represent the exit code of the
-provided container command.
+docker run -it
+\
+--blkio-weight 300 \
+--blkio-weight-device "/dev/sda:200" \
+ubuntu
+The
+--device-read-bps
+flag limits the read rate (bytes per second) from a device.
+For example, this command creates a container and limits the read rate to
+1mb
+per second from
+/dev/sda
+:
 $
-docker run busybox /bin/sh -c
-'exit 3'
-$
-echo
-$?
-3
-Runtime constraints on resources
-The operator can also adjust the performance parameters of the
-container:
-Option
-Description
--m
-,
---memory=""
-Memory limit (format:
-<
+docker run -it --de

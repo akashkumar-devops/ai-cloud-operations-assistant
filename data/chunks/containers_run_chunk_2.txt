@@ -1,35 +1,17 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+capabilities
+Overriding image defaults
+Default command and options
+Default entrypoint
+Exposed ports
+Environment variables
+Healthchecks
+User
+Working directory
+Docker runs processes in isolated containers. A container is a process
+which runs on a host. The host may be local or remote. When you
+execute
+docker run
+, the container process that runs is isolated in
+that it has its own file system, its own networking, and its own
+isolated process tree separate from the host.
+This page details how to use

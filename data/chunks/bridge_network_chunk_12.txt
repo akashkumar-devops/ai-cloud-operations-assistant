@@ -1,39 +1,25 @@
-
-Docker Offload
-Quickstart
-About
-Configure
-Usage
-Optimize usage
-Troubleshoot
-Give feedback
-Docker Build
-Core concepts
-Docker Build Overview
-Dockerfile overview
-Build context
-Build checks
-Building
-Multi-stage
-Variables
-Secrets
-Multi-platform
-Export binaries
-Container Device Interface (CDI)
-Best practices
-Base images
-Builders
-Build drivers
-Docker container driver
-Docker driver
-Kubernetes driver
-Remote driver
-Manage builders
-Bake
-Introduction
-Targets
-Inheritance
-Variables
-Expressions
-Functions
-Matr
+ or non-Docker hosts on
+different networks, that port must be
+published
+using the
+-p
+or
+--publish
+flag.
+Options
+The following table describes the driver-specific options that you can pass to
+--opt
+when creating a custom network using the
+bridge
+driver.
+Option
+Default
+Description
+com.docker.network.bridge.name
+Interface name to use when creating the Linux bridge.
+com.docker.network.bridge.enable_ip_masquerade
+true
+Enable IP masquerading.
+com.docker.network.host_ipv4
+com.docker.network.host_ipv6
+A

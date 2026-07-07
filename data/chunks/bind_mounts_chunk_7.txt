@@ -1,21 +1,24 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+host.
+Bind mounts rely on the host machine's filesystem having a specific directory
+structure available. This reliance means that containers with bind mounts may
+fail if run on a different host without the same directory structure.
+Syntax
+To create a bind mount, you can use either the
+--mount
+or
+--volume
+flag.
+$
+docker run --mount
+type
+=
+bind,src
+=
+<host-path>,dst
+=
+<container-path>
+$
+docker run --volume <host-path>:<container-path>
+In general,
+--mount
+is preferred. The main difference is that t

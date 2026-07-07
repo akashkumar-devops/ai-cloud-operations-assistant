@@ -1,11 +1,13 @@
-ory limit.
-$
-docker run -it --memory-reservation 1G ubuntu:24.04 /bin/bash
-The container can use as much memory as it needs. The memory reservation setting
-ensures the container doesn't consume too much memory for long time, because
-every memory reclaim shrinks the container's consumption to the reservation.
-By default, kernel kills processes in a container if an out-of-memory (OOM)
-error occurs. To change this behaviour, use the
---oom-kill-disable
-option.
-Only disable the OOM killer on containe
+de flags.
+MAC_ADMIN
+Allow MAC configuration or state changes. Implemented for the Smack LSM.
+MAC_OVERRIDE
+Override Mandatory Access Control (MAC). Implemented for the Smack Linux Security Module (LSM).
+NET_ADMIN
+Perform various network-related operations.
+NET_BROADCAST
+Make socket broadcasts, and listen to multicasts.
+PERFMON
+Allow system performance and observability privileged operations using perf_events, i915_perf and other kernel subsystems
+SYS_ADMIN
+Perform a range of system administration

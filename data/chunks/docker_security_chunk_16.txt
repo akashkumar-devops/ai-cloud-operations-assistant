@@ -1,29 +1,11 @@
-pment
-Install
-Plugin
-Standalone (Legacy)
-Uninstall
-Quickstart
-How-tos
-Specify a project name
-Use lifecycle hooks
-Use service profiles
-Control startup order
-Use environment variables
-Set environment variables
-Environment variables precedence
-Pre-defined environment variables
-Interpolation
-Best practices
-Build dependent images
-Use Compose Watch
-Secrets in Compose
-Networking
-Use multiple Compose files
-Merge
-Extend
-Include
-Enable GPU support
-Use Compose in production
-OCI artifact applications
-Use pr
+different, because almost all of those tasks are
+handled by the infrastructure around the container:
+SSH access are typically managed by a single server running on
+the Docker host
+cron
+, when necessary, should run as a user
+process, dedicated and tailored for the app that needs its
+scheduling service, rather than as a platform-wide facility
+Log management is also typically handed to Docker, or to
+third-party services like Loggly or Splunk
+Hardware management is irrelevant, meaning that you never

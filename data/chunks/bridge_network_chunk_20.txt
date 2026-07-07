@@ -1,37 +1,20 @@
-ge
-Use an image
-Use a Helm chart
-Use hardened packages
-Verify an image or chart
-Scan an image
-Enforce image usage
-Use the CLI
-Use DHI Select & Enterprise
-Core concepts
-Attestations
-CIS Benchmark
-Code signing
-CVEs
-Distroless images
-FIPS
-glibc and musl
-Hardening
-Image digests
-Image provenance
-Immutability
-SBOMs
-SLSA
-Software Supply Chain Security
-SSDLC
-STIG
-VEX
-Troubleshoot
-Additional resources
-Release notes
-CLI release notes
-Platform release notes
-Docker Hub
-Quickstart
-Library
-Search
-Trusted cont
+work. It also
+publishes port 80 in the container to port 8080 on the Docker host, so external
+clients can access that port. Any other container connected to the
+my-net
+network has access to all ports on the
+my-nginx
+container, and vice versa.
+$
+docker create --name my-nginx
+\
+--network my-net \
+--publish 8080:80 \
+nginx:latest
+To connect a
+running
+container to an existing user-defined bridge, use the
+docker network connect
+command. The following command connects an already-running
+my-nginx
+conta

@@ -1,18 +1,32 @@
-is the directory path separator.
-`
-is consistent
+any commands to create a new layer on top of
+the current image. The added layer is used in the next step in the Dockerfile.
+RUN
+has two forms:
+# Shell form:
+RUN
+[
+OPTIONS
+]
+<command> ...
+# Exec form:
+RUN
+[
+OPTIONS
+]
+[
+"<command>"
+, ...
+]
+For more information about the differences between these two forms, see
+shell or exec forms
+.
+The shell form is most commonly used, and lets you break up longer
+instructions into multiple lines, either using newline
+escapes
+, or
 with
-Windows PowerShell
-.
-Consider the following example which would fail in a non-obvious way on
-Windows. The second
-\
-at the end of the second line would be interpreted as an
-escape for the newline, instead of a target of the escape from the first
-\
-.
-Similarly, the
-\
-at the end of the third line would, assuming it was actually
-handled as an instruction, cause it be treated as a line continuation. The result
-of this Dockerfile is that second and
+heredocs
+:
+RUN
+<<EOF
+apt-get

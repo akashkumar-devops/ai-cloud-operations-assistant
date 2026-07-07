@@ -1,22 +1,10 @@
-ontainer in three ways:
-Identifier type
-Example value
-UUID long identifier
-f78375b1c487e03c9438c729345e54db9d20cfa2ac1fc3494b6eb60872e74778
-UUID short identifier
-f78375b1c487
-Name
-evil_ptolemy
-The UUID identifier is a random ID assigned to the container by the daemon.
-The daemon generates a random string name for containers automatically. You can
-also define a custom name using
-the
---name
-flag
-.
-Defining a
-name
-can be a handy way to add meaning to a container. If you
-specify a
-name
-, you can use
+d to select the priority of which containers will
+be killed when the system is out of memory, with negative scores making them
+less likely to be killed, and positive scores more likely.
+Swappiness constraint
+By default, a container's kernel can swap out a percentage of anonymous pages.
+To set this percentage for a container, specify a
+--memory-swappiness
+value
+between 0 and 100. A value of 0 turns off anonymous page swapping. A value of
+100 sets all anonymous pages as swappable. By default, if y

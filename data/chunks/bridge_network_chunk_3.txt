@@ -1,44 +1,9 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+k.
+Blocks access from containers in other networks and from outside the
+Docker host.
+Uses masquerading to give containers external network access. Devices on
+the host's external networks only see the IP address of the Docker host.
+Supports port publishing, where network traffic is forwarded between
+container ports and ports on host IP addresses. The published ports
+can be accessed from outside the Docker host, on its IP addresses.
+In terms of Docker, a bridge network uses a software bridge which

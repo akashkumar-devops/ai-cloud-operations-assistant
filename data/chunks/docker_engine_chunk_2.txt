@@ -1,35 +1,16 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+ect CLI commands. Many other Docker applications
+use the underlying API and CLI. The daemon creates and manages Docker objects,
+such as images, containers, networks, and volumes.
+For more details, see
+Docker Architecture
+.
+Install Docker Engine
+Learn how to install the open source Docker Engine for your distribution.
+Storage
+Use persistent data with Docker containers.
+Networking
+Manage network connections between containers.
+Container logs
+Learn how to view and read container logs.
+Prune
+Tidy up

@@ -1,44 +1,15 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Docker Engine security
+Table of contents
+Kernel namespaces
+Control groups
+Docker daemon attack surface
+Linux kernel capabilities
+Docker Content Trust signature verification
+Other kernel security features
+Conclusions
+Related information
+There are four major areas to consider when reviewing Docker security:
+The intrinsic security of the kernel and its support for
+namespaces and cgroups
+The attack surface of the Docker daemon itself
+Loopholes in the container configuration profile, either by defaul

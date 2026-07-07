@@ -1,25 +1,17 @@
-er
-from an image.
-You can specify
-CMD
-instructions using
-shell or exec forms
-:
-CMD ["executable","param1","param2"]
-(exec form)
-CMD ["param1","param2"]
-(exec form, as default parameters to
-ENTRYPOINT
-)
-CMD command param1 param2
-(shell form)
-There can only be one
-CMD
-instruction in a Dockerfile. If you list more than
-one
-CMD
-, only the last one takes effect.
-The purpose of a
-CMD
-is to provide defaults for an executing container. These
-defaults can include an executable, or they can omit the execu
+ied to the destination.
+Adding files from a URL
+In the case where source is a remote file URL, the destination will have
+permissions of 600. If the HTTP response contains a
+Last-Modified
+header, the
+timestamp from that header will be used to set the
+mtime
+on the destination
+file. However, like any other file processed during an
+ADD
+,
+mtime
+isn't
+included in the determination of whether or not the file has changed and the
+cache should be updated.
+If remote file is a tar archive, the archive is no

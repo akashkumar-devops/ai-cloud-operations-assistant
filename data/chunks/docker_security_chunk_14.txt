@@ -1,32 +1,10 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+ to run
+exclusively Docker on the server, and move all other services within
+containers controlled by Docker. Of course, it is fine to keep your
+favorite admin tools (probably at least an SSH server), as well as
+existing monitoring/supervision processes, such as NRPE and collectd.
+Linux kernel capabilities
+By default, Docker starts containers with a restricted set of
+capabilities. What does that mean?
+Capabilities turn the binary "root/non-root" dichotomy into a
+fine-grained access control syste

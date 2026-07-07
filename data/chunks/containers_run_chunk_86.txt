@@ -1,13 +1,12 @@
- the audit log via multicast netlink socket.
-BLOCK_SUSPEND
-Allow preventing system suspends.
-BPF
-Allow creating BPF maps, loading BPF Type Format (BTF) data, retrieve JITed code of BPF programs, and more.
-CHECKPOINT_RESTORE
-Allow checkpoint/restore related operations. Introduced in kernel 5.9.
-DAC_READ_SEARCH
-Bypass file read permission checks and directory read and execute permission checks.
-IPC_LOCK
-Lock memory (mlock(2), mlockall(2), mmap(2), shmctl(2)).
-IPC_OWNER
-Bypass permission checks for
+ruction by passing the
+-u
+option.
+-u="", --user="": Sets the username or UID used and optionally the groupname or GID for the specified command.
+The following examples are all valid:
+--user=[ user | user:group | uid | uid:gid | user:gid | uid:group ]
+Note
+If you pass a numeric user ID, it must be in the range of 0-2147483647. If
+you pass a username, the user must exist in the container.
+Working directory
+The default working directory for running binaries within a container is the
+root directory 

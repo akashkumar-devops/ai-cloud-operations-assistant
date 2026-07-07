@@ -1,37 +1,23 @@
-ge
-Use an image
-Use a Helm chart
-Use hardened packages
-Verify an image or chart
-Scan an image
-Enforce image usage
-Use the CLI
-Use DHI Select & Enterprise
-Core concepts
-Attestations
-CIS Benchmark
-Code signing
-CVEs
-Distroless images
-FIPS
-glibc and musl
-Hardening
-Image digests
-Image provenance
-Immutability
-SBOMs
-SLSA
-Software Supply Chain Security
-SSDLC
-STIG
-VEX
-Troubleshoot
-Additional resources
-Release notes
-CLI release notes
-Platform release notes
-Docker Hub
-Quickstart
-Library
-Search
-Trusted cont
+daemon host. If the
+source path doesn't exist, an error is returned. To create the source path on
+the daemon host if it doesn't exist, use the
+bind-create-src
+option:
+$
+docker run -it --mount
+type
+=
+bind,source
+=[
+PATH
+]
+,target
+=[
+PATH
+]
+,bind-create-src busybox
+Bind mounts are read-write by default, meaning that you can both read and write
+files to and from the mounted location from the container. Changes that you
+make, such as adding or editing files, are reflected on the host filesystem:
+$
+d

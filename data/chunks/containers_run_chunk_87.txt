@@ -1,15 +1,16 @@
- operations on System V IPC objects.
-LEASE
-Establish leases on arbitrary files (see fcntl(2)).
-LINUX_IMMUTABLE
-Set the FS_APPEND_FL and FS_IMMUTABLE_FL i-node flags.
-MAC_ADMIN
-Allow MAC configuration or state changes. Implemented for the Smack LSM.
-MAC_OVERRIDE
-Override Mandatory Access Control (MAC). Implemented for the Smack Linux Security Module (LSM).
-NET_ADMIN
-Perform various network-related operations.
-NET_BROADCAST
-Make socket broadcasts, and listen to multicasts.
-PERFMON
-Allow system per
+(
+/
+). The default working directory of an image is set using
+the Dockerfile
+WORKDIR
+command. You can override the default working
+directory for an image using the
+-w
+(or
+--workdir
+) flag for the
+docker run
+command:
+$ docker run --rm -w /my/workdir alpine pwd
+/my/workdir
+If the directory doesn't already exist in the container, it's created.

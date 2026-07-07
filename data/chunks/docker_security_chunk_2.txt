@@ -1,35 +1,13 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+t,
+or when customized by users.
+The "hardening" security features of the kernel and how they
+interact with containers.
+Kernel namespaces
+Docker containers are very similar to LXC containers, and they have
+similar security features. When you start a container with
+docker run
+, behind the scenes Docker creates a set of namespaces and control
+groups for the container.
+Namespaces provide the first and most straightforward form of
+isolation. Processes running within a container cannot see, and even
+l

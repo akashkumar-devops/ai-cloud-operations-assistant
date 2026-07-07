@@ -1,39 +1,32 @@
-
-Docker Offload
-Quickstart
-About
-Configure
-Usage
-Optimize usage
-Troubleshoot
-Give feedback
-Docker Build
-Core concepts
-Docker Build Overview
-Dockerfile overview
-Build context
-Build checks
-Building
-Multi-stage
-Variables
-Secrets
-Multi-platform
-Export binaries
-Container Device Interface (CDI)
-Best practices
-Base images
-Builders
-Build drivers
-Docker container driver
-Docker driver
-Kubernetes driver
-Remote driver
-Manage builders
-Bake
-Introduction
-Targets
-Inheritance
-Variables
-Expressions
-Functions
-Matr
+se 300m of memory and 700m (
+1g - 300m
+) swap.
+If
+--memory-swap
+is set to
+0
+, the setting is ignored, and the value is
+treated as unset.
+If
+--memory-swap
+is set to the same value as
+--memory
+, and
+--memory
+is
+set to a positive integer,
+the container doesn't have access to swap
+.
+See
+Prevent a container from using swap
+.
+If
+--memory-swap
+is unset, and
+--memory
+is set, the container can use
+as much swap as the
+--memory
+setting, if the host container has swap
+memory configured. For instance, if
+--m

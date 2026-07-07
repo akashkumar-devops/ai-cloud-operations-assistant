@@ -1,26 +1,20 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+ these packages to
+your Linux distribution's issue tracker.
+Docker provides
+binaries
+for manual installation of Docker Engine.
+These binaries are statically linked and you can use them on any Linux distribution.
+Release channels
+Docker Engine has two types of update channels,
+stable
+and
+test
+:
+The
+stable
+channel gives you the latest versions released for general availability.
+The
+test
+channel gives you pre-release versions that are ready for testing before
+general availability.
+Use the test chan

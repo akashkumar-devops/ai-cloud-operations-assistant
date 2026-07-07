@@ -1,31 +1,29 @@
-ike
-gzip
-or
-bzip2
-) when adding them
-to the image. Local tar archives are unpacked by default, whereas remote tar
-archives (where
-src
-is a URL) are downloaded without unpacking.
+nd matching using Go's
+filepath.Match
+rules.
+For example, to add all files starting with "hom", excluding files with a
+.txt
+extension:
 # syntax=docker/dockerfile:1
 FROM
-alpine
-# Download and unpack archive.tar.gz into /download:
-ADD
---unpack
-=
-true
-https://example.com/archive.tar.gz /download
-# Add local tar without unpacking:
-ADD
---unpack
-=
-false
-my-archive.tar.gz .
-ADD --exclude
-See
-COPY --exclude
-.
+scratch
 COPY
-COPY has two forms.
-The latter form is required
+--exclude
+=
+*.txt hom* /mydir/
+You can specify the
+--exclude
+option multiple times for a
+COPY
+instruction.
+Files matching any of the specified
+--exclude
+patterns are not copied,
+even if their paths match the pattern specified in
+<src>
+.
+To add all files starting with "hom", excluding files with either
+.txt
+or
+.md
+ext

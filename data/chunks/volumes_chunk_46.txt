@@ -1,36 +1,19 @@
-
-"/app"
-,
-"Driver"
-:
-"local"
-,
-"Mode"
-:
-""
-,
-"RW"
-:
-true
-,
-"Propagation"
-:
-""
-}
-]
-,
-This shows that the mount is a volume, it shows the correct source and
-destination, and that the mount is read-write.
-Stop the container and remove the volume. Note volume removal is a separate
-step.
+ the container,
+detach the loop device to remove the device from the host system:
 $
-docker container stop devtest
-$
-docker container rm devtest
-$
-docker volume rm myvol2
-Use a volume with Docker Compose
-The following example shows a single Docker Compose service with a volume:
-services
+losetup -d /dev/loop5
+Back up, restore, or migrate data volumes
+Volumes are useful for backups, restores, and migrations.
+Use the
+--volumes-from
+flag to create a new container that mounts that volume.
+Back up a volume
+For example, create a new container named
+dbstore
 :
-frontend
+$
+docker run -v /dbdata --name dbstore ubuntu /bin/bash
+In the next command:
+Launch a new container and mount the volume from the
+dbstore
+containe

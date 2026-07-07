@@ -1,19 +1,49 @@
-he character used to escape characters in a
-Dockerfile. If not specified, the default escape character is
-\
+st
+FROM
 .
-The escape character is used both to escape characters in a line, and to
-escape a newline. This allows a Dockerfile instruction to
-span multiple lines. Note that regardless of whether the
-escape
-parser
-directive is included in a Dockerfile, escaping is not performed in
-a
+ARG
+CODE_VERSION
+=
+latest
+FROM
+base:${CODE_VERSION
+}
+CMD
+/code/run-app
+FROM
+extras:${CODE_VERSION
+}
+CMD
+/code/run-extras
+An
+ARG
+declared before a
+FROM
+is outside of a build stage, so it
+can't be used in any instruction after a
+FROM
+. To use the default value of
+an
+ARG
+declared before the first
+FROM
+use an
+ARG
+instruction without
+a value inside of a build stage:
+ARG
+VERSION
+=
+latest
+FROM
+busybox:$VERSION
+ARG
+VERSION
 RUN
-command, except at the end of a line.
-Setting the escape character to
-`
-is especially useful on
-Windows
-, where
-\
+echo
+$VERSION
+> image_version
+RUN
+The
+RUN
+instruction will execute 

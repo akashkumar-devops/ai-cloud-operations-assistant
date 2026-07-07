@@ -1,24 +1,22 @@
-ories after it will be preserved. This may be especially useful copies between stages
-with
---from
-where the source paths need to be absolute.
-# syntax=docker/dockerfile:1
-FROM
-scratch
-COPY
---parents ./x/./y/*.txt /parents/
-# Build context:
-# ./x/y/a.txt
-# ./x/y/b.txt
-#
-# Output:
-# /parents/y/a.txt
-# /parents/y/b.txt
+ host-dependent. This is to preserve image
+portability, since a given host directory can't be guaranteed to be available
+on all hosts. For this reason, you can't mount a host directory from
+within the Dockerfile. The
+VOLUME
+instruction does not support specifying a
+host-dir
+parameter. You must specify the mountpoint when you create or run the container.
+USER
+USER
+<user>[:<group
+>
+]
+or
+USER
+<UID>[:<GID
+>
+]
 The
-**
-wildcard matches any number of path components, including none, and
-can be used to recursively match files across directory levels:
-# syntax=docker/dockerfile:1
-FROM
-scratch
-C
+USER
+instruction sets the user name (or UID) and optionally the user
+group (or GID) to 

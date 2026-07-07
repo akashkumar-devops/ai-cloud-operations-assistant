@@ -1,35 +1,25 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+t base, and each of them begins a new
+stage of the build. You can selectively copy artifacts from one stage to
+another, leaving behind everything you don't want in the final image.
+The following Dockerfile has two separate stages: one for building a binary,
+and another where the binary gets copied from the first stage into the next stage.
+# syntax=docker/dockerfile:1
+FROM
+golang:1.25
+WORKDIR
+/src
+COPY
+<<EOF ./main.go
+package main
+import
+"fmt"
+func main
+()
+{
+fmt.Println
+(
+"hello, world"
+)
+}
+EOF
+R

@@ -1,19 +1,22 @@
-<src> ... <dest>
-Enabling this flag in
-COPY
-or
-ADD
-commands allows you to copy files with
-enhanced semantics where your files remain independent on their own layer and
-don't get invalidated when commands on previous layers are changed.
-When
---link
-is used your source files are copied into an empty destination
-directory. That directory is turned into a layer that is linked on top of your
-previous state.
-# syntax=docker/dockerfile:1
-FROM
-alpine
-COPY
---link /foo /bar
-Is equivalent of doing two buil
+ specified
+ENTRYPOINT
+is not
+PID 1
+.
+If you then run
+docker stop test
+, the container will not exit cleanly - the
+stop
+command will be forced to send a
+SIGKILL
+after the timeout:
+$
+docker
+exec
+-it
+test
+ps waux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.4  0.0   2612   604 pts/0    Ss+  13:58   0:00 /bin/sh -c top -b --ignored-param2
+root         6  0.0  0.1   5956  3188 pts/0    S+   13:58   0:00 top -b
+root         7  0.0  0.1   5884  2816 pts/1  

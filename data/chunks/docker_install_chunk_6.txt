@@ -1,24 +1,11 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+nel with caution. Pre-release versions include experimental and
+early-access features that are subject to breaking changes.
+Support
+Docker Engine is an open source project, supported by the Moby project maintainers
+and community members. Docker doesn't provide support for Docker Engine.
+Docker provides support for Docker products, including Docker Desktop, which uses
+Docker Engine as one of its components.
+For information about the open source project, refer to the
+Moby project website
+.
+Upgrade

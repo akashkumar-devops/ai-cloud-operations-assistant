@@ -1,25 +1,16 @@
-all-runner
-docker model launch
-docker model list
-docker model logs
-docker model package
-docker model ps
-docker model pull
-docker model purge
-docker model push
-docker model reinstall-runner
-docker model requests
-docker model restart-runner
-docker model rm
-docker model run
-docker model search
-docker model show
-docker model skills
-docker model start-runner
-docker model status
-docker model stop-runner
-docker model tag
-docker model uninstall-runner
-docker model unload
-docker model version
-docker netw
+alue
+# syntax=value
+Non line-breaking whitespace is permitted in a parser directive. Hence, the
+following lines are all treated identically:
+#directive=value
+# directive =value
+#	directive= value
+# directive = value
+#	  dIrEcTiVe=value
+syntax
+Use the
+syntax
+parser directive to declare the Dockerfile syntax version to
+use for the build. If unspecified, BuildKit uses a bundled version of the
+Dockerfile frontend. Declaring a syntax version lets you automatically use the
+latest Dockerfile version wi

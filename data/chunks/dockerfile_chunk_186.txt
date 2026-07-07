@@ -1,32 +1,24 @@
-he Dockerfile. For example, consider this Dockerfile:
-FROM
-busybox
-USER
-${username:-some_user
-}
-ARG
-username
-USER
-$username
-# ...
-A user builds this file by calling:
-$
-docker build --build-arg
-username
-=
-what_user .
-The
-USER
-instruction on line 2 evaluates to the
-some_user
-fallback,
-because the
-username
-variable is not yet declared.
-The
-username
-variable is declared on line 3, and available for reference in
-Dockerfile instruction from that point onwards.
-The
-USER
-instruction on line 4 evaluates 
+ health check will first run
+interval
+seconds after the container is
+started, and then again
+interval
+seconds after each previous check completes.
+During the
+start period
+, health checks run at
+start interval
+frequency
+instead.
+If a single run of the check takes longer than
+timeout
+seconds then the check
+is considered to have failed. The process performing the check is abruptly stopped
+with a
+SIGKILL
+.
+It takes
+retries
+consecutive failures of the health check for the container
+to be considered
+u

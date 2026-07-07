@@ -1,35 +1,11 @@
-manage domains
-Single sign-on
-Setup
-Manage connections
-Troubleshoot
-FAQs
-General
-Domains
-Enforcement
-Identity providers
-User management
-Provision
-SCIM
-Setup
-Group mapping
-Migrate
-Just-in-Time
-Auto-provision
-Troubleshoot
-Enforce sign-in
-Configure
-Roles and permissions
-Core roles
-Custom roles
-Hardened Docker Desktop
-Enhanced Container Isolation
-Enable ECI
-Configure advanced settings
-Limitations
-FAQs
-Settings Management
-Use a JSON file
-Use the Admin Console
-Desktop settings reporting
-Settings refer
+n your processes as non-privileged users inside the container.
+You can add an extra layer of safety by enabling AppArmor, SELinux,
+GRSEC, or another appropriate hardening system.
+If you think of ways to make docker more secure, we welcome feature requests,
+pull requests, or comments on the Docker community forums.
+Related information
+Use trusted images
+Seccomp security profiles for Docker
+AppArmor security profiles for Docker
+On the Security of Containers (2014)
+Docker swarm mode overlay network

@@ -1,19 +1,11 @@
-umes, this field is omitted.
-destination
-,
-dst
-,
-target
-The path where the file or directory is mounted in the container.
-volume-subpath
-A path to a subdirectory within the volume to mount into the container. The subdirectory must exist in the volume before the volume is mounted to a container. See
-Mount a volume subdirectory
-.
-readonly
-,
-ro
-If present, causes the volume to be
-mounted into the container as read-only
-.
-volume-nocopy
-If present, data at the destination isn't copied into the volume
+-opt type=cifs \
+--opt device=//uxxxxx.your-server.de/backup \
+--opt o=addr=uxxxxx.your-server.de,username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
+--name cifs-volume
+The
+addr
+option is required if you specify a hostname instead of an IP.
+This lets Docker perform the hostname lookup.
+Block storage devices
+You can mount a block storage device, such as an external drive or a drive partition, to a container.
+The following example shows how to create and use a file as a block storage d

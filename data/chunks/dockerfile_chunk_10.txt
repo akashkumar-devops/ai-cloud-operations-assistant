@@ -1,21 +1,13 @@
-atalog list
-docker mcp catalog ls
-docker mcp catalog pull
-docker mcp catalog push
-docker mcp catalog remove
-docker mcp catalog rm
-docker mcp catalog server
-docker mcp catalog server add
-docker mcp catalog server inspect
-docker mcp catalog server ls
-docker mcp catalog server remove
-docker mcp catalog show
-docker mcp catalog tag
-docker mcp client
-docker mcp client connect
-docker mcp client disconnect
-docker mcp client ls
-docker mcp feature
-docker mcp feature disable
-docker mcp feature enable
-docke
+ck
+(since Dockerfile v1.8.0)
+Once a comment, empty line or builder instruction has been processed, BuildKit
+no longer looks for parser directives. Instead it treats anything formatted
+as a parser directive as a comment and doesn't attempt to validate if it might
+be a parser directive. Therefore, all parser directives must be at the
+top of a Dockerfile.
+Parser directive keys, such as
+syntax
+or
+check
+, aren't case-sensitive, but
+they're lowercase by convention. Values for a directive are case-sens

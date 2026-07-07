@@ -1,21 +1,10 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+ another container, they
+are essential to fend off some denial-of-service attacks. They are
+particularly important on multi-tenant platforms, like public and
+private PaaS, to guarantee a consistent uptime (and performance) even
+when some applications start to misbehave.
+Control Groups have been around for a while as well: the code was
+started in 2006, and initially merged in kernel 2.6.24.
+Docker daemon attack surface
+Running containers (and applications) with Docker implies running the
+Docker d

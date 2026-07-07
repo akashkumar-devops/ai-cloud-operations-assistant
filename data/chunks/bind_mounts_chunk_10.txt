@@ -1,17 +1,37 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+ficant.
+$
+docker run --mount
+type
+=
+bind,src
+=
+<host-path>,dst
+=
+<container-path>
+[
+,<key>
+=
+<value>...
+]
+Valid options for
+--mount type=bind
+include:
+Option
+Description
+source
+,
+src
+The location of the file or directory on the host. This can be an absolute or relative path.
+destination
+,
+dst
+,
+target
+The path where the file or directory is mounted in the container. Must be an absolute path.
+readonly
+,
+ro
+If present, causes the bind mount to be
+mounted into the container as read-only
+.
+bind-prop

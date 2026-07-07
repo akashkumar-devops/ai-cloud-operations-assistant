@@ -1,17 +1,9 @@
-
-a non-existing or empty directory
-a drive other than
-C:
-Changing the volume from within the Dockerfile
-: If any build steps change the
-data within the volume after it has been declared, those changes will be discarded
-when using the legacy builder. When using Buildkit, the changes will instead be kept.
-JSON formatting
-: The list is parsed as a JSON array.
-You must enclose words with double quotes (
-"
-) rather than single quotes (
-'
-).
-The host directory is declared at container run-time
-: The h
+eam build, as if it had been inserted immediately after the
+FROM
+instruction in the downstream Dockerfile.
+This is useful if you are building an image which will be used as a base
+to build other images, for example an application build environment or a
+daemon which may be customized with user-specific configuration.
+For example, if your image is a reusable Python application builder, it
+will require application source code to be added in a particular
+directory, and it might require a build scrip

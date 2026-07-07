@@ -1,38 +1,24 @@
-cified in the
-exec form
+aded from the URL. For example,
+ADD http://example.com/foo /bar
+creates the file
+/bar
 .
-Note
-Don't confuse
-RUN
-with
-CMD
+If your URL files are protected using authentication, you need to use
+RUN wget
+,
+RUN curl
+or use another tool from within the container as the
+ADD
+instruction
+doesn't support authentication.
+Secrets
+You can use the
+HTTP_AUTH_HEADER_<host>
+and
+HTTP_AUTH_TOKEN_<host>
+secrets
+to set credentials for remote sources. For more information, see
+Build secrets
 .
-RUN
-actually runs a command and commits
-the result;
-CMD
-doesn't execute anything at build time, but specifies
-the intended command for the image.
-LABEL
-LABEL
-<key>
-=
-<value>
-[
-<key>
-=
-<value>...
-]
-The
-LABEL
-instruction adds metadata to an image. A
-LABEL
-is a
-key-value pair. To include spaces within a
-LABEL
-value, use quotes and
-backslashes as you would in command-line parsing. A few usage examples:
-LABEL
-"com.example.vendor"
-=
-"ACME Inc
+Adding files from a Git repository
+To use a Git repositor

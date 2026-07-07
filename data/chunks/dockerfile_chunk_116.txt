@@ -1,26 +1,49 @@
-<src>
-may contain wildcards and matching will be done
-using Go's
-filepath.Match
-rules.
-For example, to add all files and directories in the root of the build context
-ending with
-.png
-:
-ADD
-*.png /dest/
-In the following example,
-?
-is a single-character wildcard, matching e.g.
-index.js
-and
-index.ts
+ing the executable bit on files
+that already have it. (Capital
+X
+means "executable only if it's a directory or
+already executable.")
+For more information about symbolic notation syntax, see the
+chmod(1) manual
 .
-ADD
-index.?s /dest/
-When adding files or directories that contain special characters (such as
-[
-and
-]
-), you need to escape those paths following the Golang rules to prevent
-them from being treated as
+Examples using octal notation:
+COPY
+--chmod
+=
+755
+app.sh /app/
+COPY
+--chmod
+=
+644
+file.txt /data/
+ARG
+MODE
+=
+440
+COPY
+--chmod
+=
+$MODE
+. .
+Examples using symbolic notation:
+COPY
+--chmod
+=
++x script.sh /app/
+COPY
+--chmod
+=
+u
+=
+rwX,go
+=
+rX . /app/
+COPY
+--chmod
+=
+g
+=
+u config/ /config/
+The
+-

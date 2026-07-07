@@ -1,15 +1,17 @@
-rs where you have also set the
--m/--memory
-option. If the
--m
-flag is not set, this can result in the host
-running out of memory and require killing the host's system processes to free
-memory.
-The following example limits the memory to 100M and disables the OOM killer for
-this container:
-$
-docker run -it -m 100M --oom-kill-disable ubuntu:24.04 /bin/bash
-The following example, illustrates a dangerous way to use the flag:
-$
-docker run -it --oom-kill-disable ubuntu:24.04 /bin/bash
-The container has 
+ operations.
+SYS_BOOT
+Use reboot(2) and kexec_load(2), reboot and load a new kernel for later execution.
+SYS_MODULE
+Load and unload kernel modules.
+SYS_NICE
+Raise process nice value (nice(2), setpriority(2)) and change the nice value for arbitrary processes.
+SYS_PACCT
+Use acct(2), switch process accounting on or off.
+SYS_PTRACE
+Trace arbitrary processes using ptrace(2).
+SYS_RAWIO
+Perform I/O port operations (iopl(2) and ioperm(2)).
+SYS_RESOURCE
+Override resource Limits.
+SYS_TIME
+Set system clock

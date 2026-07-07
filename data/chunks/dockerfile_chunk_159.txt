@@ -1,28 +1,35 @@
-e exec form of
-ENTRYPOINT
-to set fairly stable default commands
-and arguments and then use
-CMD
-to set additional defaults that are more
-likely to be changed.
-When combining exec form
-ENTRYPOINT
-with
-CMD
-, use the exec form of
-CMD
-as well. Using the shell form of
-CMD
-causes it to be wrapped in
-/bin/sh -c
-, which means the
-ENTRYPOINT
-receives a shell invocation as its
-argument rather than the bare command and parameters. See
-Understand how CMD and ENTRYPOINT interact
-.
+ne or more
+ARG
+instructions. For example,
+the following is a valid Dockerfile:
 FROM
-ubuntu
-ENTRYPOINT
-[
-"to
+busybox
+ARG
+user1
+ARG
+buildno
+# ...
+Default values
+An
+ARG
+instruction can optionally include a default value:
+FROM
+busybox
+ARG
+user1
+=
+someuser
+ARG
+buildno
+=
+1
+# ...
+If an
+ARG
+instruction has a default value and if there is no value passed
+at build-time, the builder uses the default.
+Scope
+An
+ARG
+variable comes into effect from the line on which it is declared in
+the Dockerfile. For example, consider this Dockerf

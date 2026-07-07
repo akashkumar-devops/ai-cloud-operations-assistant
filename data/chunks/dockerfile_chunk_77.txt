@@ -1,24 +1,27 @@
-ntainer.
-secret
-Allow the build container to access secure files such as private keys without baking them into the image or build cache.
-ssh
-Allow the build container to access SSH keys via SSH agents, with support for passphrases.
-RUN --mount=type=bind
-This mount type allows binding files or directories to the build container. A
-bind mount is read-only by default.
-Option
-Description
-target
-,
-dst
-,
-destination
-1
-Mount path.
-source
-Source path in the
-from
-. Defaults to the root of the
-from
+e
+$
+docker run -p 80:80/tcp -p 80:80/udp ...
+To set up port redirection on the host system, see
+using the -P flag
 .
-from
+The
+docker network
+command supports creating networks for communication among
+containers without the need to expose or publish specific ports, because the
+containers connected to the network can communicate with each other over any
+port. For detailed information, see the
+overview of this feature
+.
+ENV
+ENV
+<key>
+=
+<value>
+[
+<key>
+=
+<value>...
+]
+The
+ENV
+instruction sets the environme

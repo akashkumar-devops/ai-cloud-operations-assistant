@@ -1,27 +1,31 @@
-KDIR
-doesn't exist, it will be created even if it's not used in any
-subsequent Dockerfile instruction.
-The
-WORKDIR
-instruction can be used multiple times in a Dockerfile. If a
-relative path is provided, it will be relative to the path of the previous
-WORKDIR
-instruction. For example:
-WORKDIR
-/a
-WORKDIR
-b
-WORKDIR
-c
+D
 RUN
-pwd
-The output of the final
-pwd
-command in this Dockerfile would be
-/a/b/c
-.
-The
-WORKDIR
-instruction can resolve environment variables previously set using
-ENV
-. You can only use e
+/usr/local/bin/python-build --dir /app/src
+Copy or mount from stage, image, or context
+As of Dockerfile syntax 1.11, you can use
+ONBUILD
+with instructions that copy
+or mount files from other stages, images, or build contexts. For example:
+# syntax=docker/dockerfile:1.11
+FROM
+alpine
+AS
+baseimage
+ONBUILD
+COPY
+--from
+=
+build /usr/bin/app /app
+ONBUILD
+RUN
+--mount
+=
+from
+=
+config,target
+=
+/opt/appconfig ...
+If the source of
+from
+is a build stage, the stage must be defined in the
+Dockerfile wher

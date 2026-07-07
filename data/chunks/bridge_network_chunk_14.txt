@@ -1,32 +1,21 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+Maximum Transmission Unit (MTU).
+com.docker.network.container_iface_prefix
+eth
+Set a custom prefix for container interfaces.
+com.docker.network.bridge.inhibit_ipv4
+false
+Prevent Docker from
+assigning an IP address
+to the bridge.
+Some of these options are also available as flags to the
+dockerd
+CLI, and you
+can use them to configure the default
+docker0
+bridge when starting the Docker
+daemon. The following table shows which options have equivalent flags in the
+dockerd
+CLI.
+Option
+Flag
+com.docker.ne

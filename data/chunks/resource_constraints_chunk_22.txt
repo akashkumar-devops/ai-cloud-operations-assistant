@@ -1,27 +1,13 @@
-s
-Archive
-Delete
-Settings
-Usage and limits
-Pulls
-Optimize usage
-Troubleshoot
-Release notes
-Docker Scout
-Install
-Quickstart
-Explore
-Dashboard
-Docker Scout image analysis
-Docker Scout metrics exporter
-Image details view
-Manage vulnerability exceptions
-How-tos
-Create an exception using the GUI
-Create an exception using the VEX
-Docker Scout environment variables
-Docker Scout SBOMs
-Use Scout with different artifact types
-Deep dive
-Advisory database sources and matching service
-Data collection and sto
+tation for your
+operating system.
+Configure the Docker daemon
+To run containers using the real-time scheduler, run the Docker daemon with
+the
+--cpu-rt-runtime
+flag set to the maximum number of microseconds reserved
+for real-time tasks per runtime period. For instance, with the default period of
+1000000 microseconds (1 second), setting
+--cpu-rt-runtime=950000
+ensures that
+containers using the real-time scheduler can run for 950000 microseconds for every
+1000000-microsecond period, leaving at leas

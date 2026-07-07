@@ -1,35 +1,24 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+s are different from the
+--live-restore
+flag of the
+dockerd
+command. Using
+--live-restore
+lets you to keep your containers running during
+a Docker upgrade, though networking and user input are interrupted.
+Use a restart policy
+To configure the restart policy for a container, use the
+--restart
+flag
+when using the
+docker run
+command. The value of the
+--restart
+flag can be
+any of the following:
+Flag
+Description
+no
+Don't automatically restart the container. (Default)
+on-failure[:max-retries]
+Restart

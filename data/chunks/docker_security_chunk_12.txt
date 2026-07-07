@@ -1,39 +1,15 @@
-
-Docker Offload
-Quickstart
-About
-Configure
-Usage
-Optimize usage
-Troubleshoot
-Give feedback
-Docker Build
-Core concepts
-Docker Build Overview
-Dockerfile overview
-Build context
-Build checks
-Building
-Multi-stage
-Variables
-Secrets
-Multi-platform
-Export binaries
-Container Device Interface (CDI)
-Best practices
-Base images
-Builders
-Build drivers
-Docker container driver
-Docker driver
-Kubernetes driver
-Remote driver
-Manage builders
-Bake
-Introduction
-Targets
-Inheritance
-Variables
-Expressions
-Functions
-Matr
+endpoints with
+HTTPS and certificates
+.
+Exposing the daemon API over HTTP without TLS is not permitted,
+and such a configuration causes the daemon to fail early on startup, see
+Unauthenticated TCP connections
+.
+It is also recommended to ensure that it is reachable only from a trusted
+network or VPN.
+You can also use
+DOCKER_HOST=ssh://USER@HOST
+or
+ssh -L /path/to/docker.sock:/var/run/docker.sock
+instead if you prefer SSH over TLS.
+The daemon is also potentially vulnerable to other inputs, such as

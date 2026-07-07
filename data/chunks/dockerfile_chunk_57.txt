@@ -1,12 +1,19 @@
-ENTRYPOINT
-instructions all have two possible forms:
-INSTRUCTION ["executable","param1","param2"]
-(exec form)
-INSTRUCTION command param1 param2
-(shell form)
-The exec form makes it possible to avoid shell string munging, and to invoke
-commands using a specific command shell, or any other executable. It uses a
-JSON array syntax, where each element in the array is a command, flag, or
-argument.
-The shell form is more relaxed, and emphasizes ease of use, flexibility, and
-readability. The shell form a
+limit on the size of the filesystem.
+RUN --mount=type=secret
+This mount type allows the build container to access secret values, such as
+tokens or private keys, without baking them into the image.
+By default, the secret is mounted as a file. You can also mount the secret as
+an environment variable by setting the
+env
+option.
+Option
+Description
+id
+ID of the secret. Defaults to basename of the target path.
+target
+,
+dst
+,
+destination
+Mount the secret to the specified path. Defaults to
+/run/secrets/

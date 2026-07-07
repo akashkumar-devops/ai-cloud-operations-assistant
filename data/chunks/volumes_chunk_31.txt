@@ -1,9 +1,28 @@
-e safely shared among multiple containers.
-New volumes can have their content pre-populated by a container or build.
-When your application requires high-performance I/O.
-Volumes are not a good choice if you need to access the files from the host, as
-the volume is completely managed by Docker. Use
-bind mounts
-if you need to access files or directories from both containers and the host.
-Volumes are often a better choice than writing data directly to a container,
-because a volume doesn't increase t
+ logs to
+/var/log/app1
+and
+/var/log/app2
+.
+$
+docker volume create logs
+$
+docker run --rm
+\
+--mount src=logs,dst=/logs \
+alpine mkdir -p /logs/app1 /logs/app2
+$
+docker run -d
+\
+--name=app1 \
+--mount src=logs,dst=/var/log/app1,volume-subpath=app1 \
+app1:latest
+$
+docker run -d
+\
+--name=app2 \
+--mount src=logs,dst=/var/log/app2,volume-subpath=app2 \
+app2:latest
+With this setup, the containers write their logs to separate subdirectories of
+the
+logs
+volume. The containers can't access the other contai

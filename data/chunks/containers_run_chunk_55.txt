@@ -1,16 +1,30 @@
- to set user memory usage:
-Option
-Result
-memory=inf, memory-swap=inf
-(default)
-There is no memory limit for the container. The container can use
-as much memory as needed.
-memory=L<inf, memory-swap=inf
-(specify memory and set memory-swap as
--1
-) The container is
-not allowed to use more than L bytes of memory, but can use as much swap
-as is needed (if the host supports swap memory).
-memory=L<inf, memory-swap=2*L
-(specify memory without memory-swap) The container is not allowed to
-use more than L b
+ccess to a specific device or devices you can use
+the
+--device
+flag. It allows you to specify one or more devices that
+will be accessible within the container.
+$
+docker run --device
+=
+/dev/snd:/dev/snd ...
+By default, the container will be able to
+read
+,
+write
+, and
+mknod
+these devices.
+This can be overridden using a third
+:rwm
+set of options to each
+--device
+flag:
+$
+docker run --device
+=
+/dev/sda:/dev/xvdc --rm -it ubuntu fdisk  /dev/xvdc
+Command (m for help): q
+$
+docker run --device
+=
+/dev/sda

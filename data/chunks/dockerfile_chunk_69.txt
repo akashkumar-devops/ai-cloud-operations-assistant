@@ -1,36 +1,36 @@
-ne
-escapes
-, or
 with
-heredocs
-:
+CMD
+.
 RUN
-<<EOF
-apt-get update
-apt-get install -y curl
-EOF
-The available
-[OPTIONS]
-for the
-RUN
-instruction are:
-Option
-Minimum Dockerfile version
---device
-1.14-labs
---mount
-1.2
---network
-1.3
---security
-1.20
-Cache invalidation for RUN instructions
-The cache for
-RUN
-instructions isn't invalidated automatically during
-the next build. The cache for an instruction like
-RUN apt-get dist-upgrade -y
-will be reused during the next build. The
-cache for
-RUN
-instructions can be inv
+actually runs a command and commits
+the result;
+CMD
+doesn't execute anything at build time, but specifies
+the intended command for the image.
+LABEL
+LABEL
+<key>
+=
+<value>
+[
+<key>
+=
+<value>...
+]
+The
+LABEL
+instruction adds metadata to an image. A
+LABEL
+is a
+key-value pair. To include spaces within a
+LABEL
+value, use quotes and
+backslashes as you would in command-line parsing. A few usage examples:
+LABEL
+"com.example.vendor"
+=
+"ACME Incorporated"
+LABEL
+com.example.label-with-value
+=
+"

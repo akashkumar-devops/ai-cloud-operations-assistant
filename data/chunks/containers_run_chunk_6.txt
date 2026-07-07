@@ -1,24 +1,30 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+commands and arguments for the container to run when it starts up. For example,
+you can specify
+sh
+as the
+[COMMAND]
+, combined with the
+-i
+and
+-t
+flags,
+to start an interactive shell in the container (if the image you select has an
+sh
+executable on
+PATH
+).
+$
+docker run -it IMAGE sh
+Note
+Depending on your Docker system configuration, you may be
+required to preface the
+docker run
+command with
+sudo
+. To avoid
+having to use
+sudo
+with the
+docker
+command, your system
+administrator can create a Unix gr

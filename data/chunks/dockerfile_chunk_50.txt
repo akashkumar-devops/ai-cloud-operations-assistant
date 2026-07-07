@@ -1,31 +1,19 @@
-e, like
-${foo}_bar
-.
-The
-${variable_name}
-syntax also supports a few of the standard
-bash
-modifiers as specified below:
-${variable:-word}
-indicates that if
-variable
-is set and non-empty then
-the result will be that value. If
-variable
-is unset or empty then
-word
-will be the result.
-${variable-word}
-indicates that if
-variable
-is set (even if empty) then
-the result will be that value. If
-variable
-is unset then
-word
-will be
-the result.
-${variable:+word}
-indicates that if
-variable
-is set and non-empt
+that the build can access.
+This can be used to:
+Create bind mount to the host filesystem or other build stages
+Access build secrets or ssh-agent sockets
+Use a persistent package management cache to speed up your build
+The supported mount types are:
+Type
+Description
+bind
+(default)
+Bind-mount context directories (read-only).
+cache
+Mount a temporary directory to cache directories for compilers and package managers.
+tmpfs
+Mount a
+tmpfs
+in the build container.
+secret
+Allow the build container to acce

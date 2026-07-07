@@ -1,17 +1,15 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+ needs.
+To prevent Docker from copying a container's pre-existing files into an empty
+volume, use the
+volume-nocopy
+option, see
+Options for --mount
+.
+Named and anonymous volumes
+A volume may be named or anonymous. Anonymous volumes are given a random name
+that's guaranteed to be unique within a given Docker host. Just like named
+volumes, anonymous volumes persist even if you remove the container that uses
+them, except if you use the
+--rm
+flag when creating the container, in which
+case the anonym

@@ -1,29 +1,49 @@
-pment
-Install
-Plugin
-Standalone (Legacy)
-Uninstall
-Quickstart
-How-tos
-Specify a project name
-Use lifecycle hooks
-Use service profiles
-Control startup order
-Use environment variables
-Set environment variables
-Environment variables precedence
-Pre-defined environment variables
-Interpolation
-Best practices
-Build dependent images
-Use Compose Watch
-Secrets in Compose
-Networking
-Use multiple Compose files
-Merge
-Extend
-Include
-Enable GPU support
-Use Compose in production
-OCI artifact applications
-Use pr
+rget=/app \
+nginx:latest
+$
+docker run -d
+\
+-it \
+--name devtest \
+-v "$(pwd)"/target:/app \
+nginx:latest
+Use
+docker inspect devtest
+to verify that the bind mount was created
+correctly. Look for the
+Mounts
+section:
+"Mounts"
+:
+[
+{
+"Type"
+:
+"bind"
+,
+"Source"
+:
+"/tmp/source/target"
+,
+"Destination"
+:
+"/app"
+,
+"Mode"
+:
+""
+,
+"RW"
+:
+true
+,
+"Propagation"
+:
+"rprivate"
+}
+]
+,
+This shows that the mount is a
+bind
+mount, it shows the correct source and
+destination, it shows that the mount is read-write, and th

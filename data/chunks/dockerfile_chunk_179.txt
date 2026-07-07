@@ -1,17 +1,20 @@
-r UID) and optionally the user
-group (or GID) to use as the default user and group for the remainder of the
-current stage. The specified user is used for
-RUN
-instructions and at
-runtime runs the relevant
-ENTRYPOINT
-and
-CMD
-commands.
-Note that when specifying a group for the user, the user will have
-only
+t build stage.
+Here's how it works:
+When it encounters an
+ONBUILD
+instruction, the builder adds a
+trigger to the metadata of the image being built. The instruction
+doesn't otherwise affect the current build.
+At the end of the build, a list of all triggers is stored in the
+image manifest, under the key
+OnBuild
+. They can be inspected with
 the
-specified group membership. Any other configured group memberships will be ignored.
-Warning
-When the user doesn't have a primary group then the image (or the next
-instructions) will be run wi
+docker inspect
+command.
+Later the image may be used as a base for a new build, using the
+FROM
+instruction. As part of processing the
+FROM
+instruction,
+the d

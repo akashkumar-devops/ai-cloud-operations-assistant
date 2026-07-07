@@ -1,28 +1,24 @@
-omment
-INSTRUCTION arguments
-The instruction is not case-sensitive. However, convention is for them to
-be UPPERCASE to distinguish them from arguments more easily.
-Docker runs instructions in a Dockerfile in order. A Dockerfile
-must
-begin with a
-FROM
-instruction
-. This may be after
-parser
-directives
+ec form does not.
+Exec form
+The exec form is parsed as a JSON array, which means that
+you must use double-quotes (") around words, not single-quotes (').
+ENTRYPOINT
+[
+"/bin/bash"
 ,
-comments
-, and globally scoped
-ARGs
-. The
-FROM
-instruction specifies the
-base
-image
-from which you are
-building.
-FROM
-may only be preceded by one or more
-ARG
-instructions, which
-declare arguments t
+"-c"
+,
+"echo hello"
+]
+The exec form is best used to specify an
+ENTRYPOINT
+instruction, combined
+with
+CMD
+for setting default arguments that can be overridden at runtime. For
+more information, see
+ENTRYPOINT
+.
+Variable substitution
+Using the exec form doesn't automatically invoke a command shell. This means
+that normal

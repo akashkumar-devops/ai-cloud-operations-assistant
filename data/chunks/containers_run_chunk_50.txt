@@ -1,40 +1,24 @@
-number>[<unit>]
-). Number is a positive integer. Unit can be one of
-b
-,
-k
-,
-m
-, or
-g
-. Minimum is 6M.
---memory-swap=""
-Total memory limit (memory + swap, format:
-<number>[<unit>]
-). Number is a positive integer. Unit can be one of
-b
-,
-k
-,
-m
-, or
-g
-.
---memory-reservation=""
-Memory soft limit (format:
-<number>[<unit>]
-). Number is a positive integer. Unit can be one of
-b
-,
-k
-,
-m
-, or
-g
-.
--c
-,
---cpu-shares=0
-CPU shares (relative weight)
---cpus=0.000
-Number of CPUs. Number is a fractional number. 0.
+vice-read-bps /dev/sda:1mb ubuntu
+The
+--device-write-bps
+flag limits the write rate (bytes per second) to a device.
+For example, this command creates a container and limits the write rate to
+1mb
+per second for
+/dev/sda
+:
+$
+docker run -it --device-write-bps /dev/sda:1mb ubuntu
+Both flags take limits in the
+<device-path>:<limit>[unit]
+format. Both read
+and write rates must be a positive integer. You can specify the rate in
+kb
+(kilobytes),
+mb
+(megabytes), or
+gb
+(gigabytes).
+The
+--device-read-iops
+f

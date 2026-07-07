@@ -1,28 +1,16 @@
-entrypoint
-flag.
-The shell form of
-ENTRYPOINT
-ignores any
-CMD
-or
-docker run
-command line
-arguments. It also starts your
-ENTRYPOINT
-as a subcommand of
-/bin/sh -c
-,
-which does not pass signals. This means that the executable will not be the
-container's
-PID 1
-, and will not receive Unix signals. In this case, your
-executable doesn't receive a
-SIGTERM
-from
-docker stop <container>
-.
-Only the last
-ENTRYPOINT
-instruction in the Dockerfile will have an effect.
-Exec form ENTRYPOINT example
-You can use th
+vailable
+in the final container.
+Warning
+It isn't recommended to use build arguments for passing secrets such as
+user credentials, API tokens, etc. Build arguments are visible in the
+docker history
+command and in
+max
+mode provenance attestations,
+which are attached to the image by default if you use the Buildx GitHub Actions
+and your GitHub repository is public.
+Refer to the
+RUN --mount=type=secret
+section to
+learn about secure ways to use secrets when building images.
+A Dockerfile may include o

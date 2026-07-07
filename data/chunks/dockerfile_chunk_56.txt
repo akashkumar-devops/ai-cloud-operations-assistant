@@ -1,39 +1,24 @@
-tution use the same value for each variable
-throughout the entire instruction. Changing the value of a variable only takes
-effect in subsequent instructions. Consider the following example:
-ENV
-abc
-=
-hello
-ENV
-abc
-=
-bye
-def
-=
-$abc
-ENV
-ghi
-=
-$abc
-The value of
-def
-becomes
-hello
-The value of
-ghi
-becomes
-bye
-.dockerignore file
-You can use
-.dockerignore
-file to exclude files and directories from the
-build context. For more information, see
-.dockerignore file
-.
-Shell and exec form
-The
-RUN
+e access to its data, so the caches use the option
+sharing=locked
+, which will make sure multiple parallel builds using
+the same cache mount will wait for each other and not access the same
+cache files at the same time. You could also use
+sharing=private
+if
+you prefer to have each build create another cache directory in this
+case.
+RUN --mount=type=tmpfs
+This mount type allows mounting
+tmpfs
+in the build container.
+Option
+Description
+target
 ,
-CMD
-, and
+dst
+,
+destination
+1
+Mount path.
+size
+Specify an upper 

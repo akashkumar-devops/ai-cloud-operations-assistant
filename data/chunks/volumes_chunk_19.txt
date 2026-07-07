@@ -1,33 +1,53 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+-mount source=myvol2,target=/app \
+nginx:latest
+$
+docker run -d
+\
+--name devtest \
+-v myvol2:/app \
+nginx:latest
+Use
+docker inspect devtest
+to verify that Docker created the volume and it mounted
+correctly. Look for the
+Mounts
+section:
+"Mounts"
+:
+[
+{
+"Type"
+:
+"volume"
+,
+"Name"
+:
+"myvol2"
+,
+"Source"
+:
+"/var/lib/docker/volumes/myvol2/_data"
+,
+"Destination"
+:
+"/app"
+,
+"Driver"
+:
+"local"
+,
+"Mode"
+:
+""
+,
+"RW"
+:
+true
+,
+"Propagation"
+:
+""
+}
+]
+,
+This shows that the mount is a volume, it shows the correc

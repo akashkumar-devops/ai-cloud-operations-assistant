@@ -1,24 +1,8 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+ts are created to the Docker daemon host, not the client.
+If you're using a remote Docker daemon, you can't create a bind mount to
+access files on the client machine in a container.
+For Docker Desktop, the daemon runs inside a Linux VM, not directly on the
+native host. Docker Desktop has built-in mechanisms that transparently handle
+bind mounts, allowing you to share native host filesystem paths with
+containers running in the virtual machine.
+Containers with bind mounts are strongly tied to the 

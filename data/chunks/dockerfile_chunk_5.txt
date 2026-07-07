@@ -1,24 +1,24 @@
-ig create
-docker config inspect
-docker config ls
-docker config rm
-docker container
-docker container attach
-docker container commit
-docker container cp
-docker container create
-docker container diff
-docker container exec
-docker container export
-docker container inspect
-docker container kill
-docker container logs
-docker container ls
-docker container pause
-docker container port
-docker container prune
-docker container rename
-docker container restart
-docker container rm
-docker container run
-docker con
+a container's health on startup.
+LABEL
+Add metadata to an image.
+MAINTAINER
+Specify the author of an image.
+ONBUILD
+Specify instructions for when the image is used in a build.
+RUN
+Execute build commands.
+SHELL
+Set the default shell of an image.
+STOPSIGNAL
+Specify the system call signal for exiting a container.
+USER
+Set user and group ID.
+VOLUME
+Create volume mounts.
+WORKDIR
+Change working directory.
+Format
+Here is the format of the Dockerfile:
+# Comment
+INSTRUCTION arguments
+The instruction is n

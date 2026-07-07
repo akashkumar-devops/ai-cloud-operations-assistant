@@ -1,27 +1,18 @@
-s
-Archive
-Delete
-Settings
-Usage and limits
-Pulls
-Optimize usage
-Troubleshoot
-Release notes
-Docker Scout
-Install
-Quickstart
-Explore
-Dashboard
-Docker Scout image analysis
-Docker Scout metrics exporter
-Image details view
-Manage vulnerability exceptions
-How-tos
-Create an exception using the GUI
-Create an exception using the VEX
-Docker Scout environment variables
-Docker Scout SBOMs
-Use Scout with different artifact types
-Deep dive
-Advisory database sources and matching service
-Data collection and sto
+at itself contains mounts, those submounts are
+also included in the bind mount by default. This behavior is configurable,
+using the
+bind-recursive
+option for
+--mount
+. This option is only supported
+with the
+--mount
+flag, not with
+-v
+or
+--volume
+.
+If the bind mount is read-only, the Docker Engine makes a best-effort attempt
+at making the submounts read-only as well. This is referred to as recursive
+read-only mounts. Recursive read-only mounts require Linux kernel version 5.12
+or later. If you're 

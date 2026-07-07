@@ -1,46 +1,21 @@
-
-RUN
-pip install awscli
-RUN
---mount
-=
-type
-=
-secret,id
-=
-aws,target
-=
-/root/.aws/credentials
-\
-aws s3 cp s3://... ...
-$
-docker buildx build --secret
-id
-=
-aws,src
-=
-$HOME
-/.aws/credentials .
-Example: Mount as environment variable
-The following example takes the secret
-API_KEY
-and mounts it as an
-environment variable with the same name.
-# syntax=docker/dockerfile:1
-FROM
-alpine
-RUN
---mount
-=
-type
-=
-secret,id
-=
-API_KEY,env
-=
-API_KEY
-\
-some-command --token-from-env
-$API_KEY
-Assuming that the
-API_KEY
+git@github.com:user/repo.git /usr/src/things/
+BuildKit detects the type of
+<src>
+and processes it accordingly.
+If
+<src>
+is a local file or directory, the contents of the directory are
+copied to the specified destination. See
+Adding files from the build context
+.
+If
+<src>
+is a local tar archive, it is decompressed and extracted to the
+specified destination. See
+Adding local tar archives
+.
+If
+<src>
+is a URL, the contents of the URL are downloaded and placed at
+the specified destination. See
+Adding

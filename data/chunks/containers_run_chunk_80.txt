@@ -1,14 +1,89 @@
-side a Docker container. This is because
-by default a container is not allowed to access any devices, but a
-"privileged" container is given access to all devices (see
-the documentation on
-cgroups devices
-).
-The
---privileged
-flag gives all capabilities to the container. When the operator
-executes
-docker run --privileged
-, Docker enables access to all devices on
-the host, and reconfigures AppArmor or SELinux to allow the container
-nearly all the same access to the host as processes running outside
+ogramData
+ProgramFiles
+=
+C:
+\
+Program
+Files
+ProgramFiles
+(
+x86
+)=
+C:
+\
+Program
+Files
+(
+x86
+)
+ProgramW6432
+=
+C:
+\
+Program
+Files
+PROMPT
+=
+$P$G
+PUBLIC
+=
+C:
+\
+Users
+\
+Public
+SystemDrive
+=
+C:
+SystemRoot
+=
+C:
+\
+Windows
+TEMP
+=
+C:
+\
+Users
+\
+ContainerAdministrator
+\
+AppData
+\
+Local
+\
+Temp
+TMP
+=
+C:
+\
+Users
+\
+ContainerAdministrator
+\
+AppData
+\
+Local
+\
+Temp
+USERDOMAIN
+=
+User
+Manager
+USERNAME
+=
+ContainerAdministrator
+USERPROFILE
+=
+C:
+\
+Users
+\
+ContainerAdministrator
+windir
+=
+C:
+\
+Windows
+Healthchecks
+The fol

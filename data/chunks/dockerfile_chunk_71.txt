@@ -1,32 +1,22 @@
-protected by the
-device
-entitlement, which needs
-to be enabled when starting the buildkitd daemon with
---allow-insecure-entitlement device
-flag or in
-buildkitd config
-,
-and for a build request with
---allow device
-flag
-.
-The device
-name
-is provided by the CDI specification registered in BuildKit.
-In the following example, multiple devices are registered in the CDI
-specification for the
-vendor1.com/device
-vendor.
-cdiVersion
-:
-"0.6.0"
-kind
-:
-"vendor1.com/device"
-devices
-:
--
-name
-:
-foo
-containerEdit
+=
+"value1"
+\
+multi.label2
+=
+"value2"
+\
+other
+=
+"value3"
+Note
+Be sure to use double quotes and not single quotes. Particularly when you are
+using string interpolation (e.g.
+LABEL example="foo-$ENV_VAR"
+), single
+quotes will take the string as is without unpacking the variable's value.
+Labels included in base images (images in the
+FROM
+line) are inherited by
+your image. If a label already exists but with a different value, the
+most-recently-applied value overrides any previously-set value.
+In a mu

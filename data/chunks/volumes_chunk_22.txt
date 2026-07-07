@@ -1,27 +1,22 @@
-s
-Archive
-Delete
-Settings
-Usage and limits
-Pulls
-Optimize usage
-Troubleshoot
-Release notes
-Docker Scout
-Install
-Quickstart
-Explore
-Dashboard
-Docker Scout image analysis
-Docker Scout metrics exporter
-Image details view
-Manage vulnerability exceptions
-How-tos
-Create an exception using the GUI
-Create an exception using the VEX
-Docker Scout environment variables
-Docker Scout SBOMs
-Use Scout with different artifact types
-Deep dive
-Advisory database sources and matching service
-Data collection and sto
+container uses its own
+local volume. None of the containers can share this data if you use the
+local
+volume driver. However, some volume drivers do support shared storage.
+The following example starts an
+nginx
+service with four replicas, each of which
+uses a local volume called
+myvol2
+.
+$
+docker service create -d
+\
+--replicas=4 \
+--name devtest-service \
+--mount source=myvol2,target=/app \
+nginx:latest
+Use
+docker service ps devtest-service
+to verify that the service is running:
+$
+docker service 

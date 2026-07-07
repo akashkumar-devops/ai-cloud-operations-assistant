@@ -1,12 +1,13 @@
-n for executing processes and is default
-Linux Scheduler used by the kernel. Set this value to 50000 to limit the container
-to 50% of a CPU resource. For multiple CPUs, adjust the
---cpu-quota
-as necessary.
-For more information, see the
-CFS documentation on bandwidth limiting
-.
-Block IO bandwidth (Blkio) constraint
-By default, all containers get the same proportion of block IO bandwidth
-(blkio). This proportion is 500. To modify this proportion, change the
-container's blkio weight relative to the
+ou how to run a Bash shell in a container that has been set up
+to automatically run some other binary (like
+/usr/bin/redis-server
+):
+$
+docker run -it --entrypoint /bin/bash example/redis
+The following examples show how to pass additional parameters to the custom
+entrypoint, using the positional command arguments:
+$
+docker run -it --entrypoint /bin/bash example/redis -c ls -l
+$
+docker run -it --entrypoint /usr/bin/redis-cli example/redis --help
+You can reset a containers entrypoint by passing an 

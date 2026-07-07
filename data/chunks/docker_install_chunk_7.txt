@@ -1,21 +1,14 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+ path
+Patch releases are always backward compatible with its major and minor version.
+Licensing
+Commercial use of Docker Engine obtained via Docker Desktop
+within larger enterprises (exceeding 250 employees OR with annual revenue surpassing
+$10 million USD), requires a
+paid subscription
+.
+Apache License, Version 2.0. See
+LICENSE
+for the full license.
+Reporting security issues
+If you discover a security issue, we request that you bring it to our attention immediately.
+DO NOT file a public issue. 

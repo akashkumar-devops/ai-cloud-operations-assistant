@@ -1,21 +1,23 @@
-y then
-word
-will be the result, otherwise the result is the empty string.
-${variable+word}
-indicates that if
-variable
-is set (even if empty) then
-word
-will be the result, otherwise the result is the empty string.
-The following variable replacements are supported in a pre-release version of
-Dockerfile syntax, when using the
-# syntax=docker/dockerfile-upstream:master
-syntax
-directive in your Dockerfile:
-${variable#pattern}
-removes the shortest match of
-pattern
-from
-variable
+ss secure files such as private keys without baking them into the image or build cache.
+ssh
+Allow the build container to access SSH keys via SSH agents, with support for passphrases.
+RUN --mount=type=bind
+This mount type allows binding files or directories to the build container. A
+bind mount is read-only by default.
+Option
+Description
+target
 ,
-seeking from the star
+dst
+,
+destination
+1
+Mount path.
+source
+Source path in the
+from
+. Defaults to the root of the
+from
+.
+from
+Build stage, context, or image name for the root

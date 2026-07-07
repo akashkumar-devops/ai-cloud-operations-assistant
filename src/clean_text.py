@@ -28,7 +28,7 @@ AI Cloud Operations Assistant
 import os
 import re
 
-from config import RAW_DATA_DIR, CLEAN_DATA_DIR
+from src.config import RAW_DATA_DIR, CLEAN_DATA_DIR
 
 # =====================================================
 # Create output directory

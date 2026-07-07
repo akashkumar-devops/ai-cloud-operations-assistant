@@ -1,16 +1,34 @@
-es from the build context, paths are interpreted as
-relative to the root of the context.
-Specifying a source path with a leading slash or one that navigates outside the
-build context, such as
-COPY ../something /something
-, automatically removes
-any parent directory navigation (
-../
-). Trailing slashes in the source path
-are also disregarded, making
-COPY something/ /something
-equivalent to
-COPY something /something
+fault commands
+and arguments and then use
+CMD
+to set additional defaults that are more
+likely to be changed.
+When combining exec form
+ENTRYPOINT
+with
+CMD
+, use the exec form of
+CMD
+as well. Using the shell form of
+CMD
+causes it to be wrapped in
+/bin/sh -c
+, which means the
+ENTRYPOINT
+receives a shell invocation as its
+argument rather than the bare command and parameters. See
+Understand how CMD and ENTRYPOINT interact
 .
-If the source is a directory, the contents of the directory are copied,
-includin
+FROM
+ubuntu
+ENTRYPOINT
+[
+"top"
+,
+"-b"
+]
+CMD
+[
+"-c"
+]
+When you run the contain

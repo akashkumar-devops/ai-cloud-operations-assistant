@@ -1,12 +1,18 @@
--mount source=myvol2,target=/app \
-nginx:latest
-Use
-docker service ps devtest-service
-to verify that the service is running:
-$
-docker service ps devtest-service
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
-4d7oz1j85wwn        devtest-service.1   nginx:latest        moby                Running             Running 14 seconds ago
-You can remove the service to stop the running tasks:
-$
-docker se
+are two types
+of volumes to consider:
+Named volumes have a specific name, for example,
+awesome:/bar
+, where
+awesome
+is the name.
+Anonymous volumes have no specific name. Therefore, when the container is deleted, you can instruct the Docker Engine daemon to remove them.
+Remove anonymous volumes
+To automatically remove anonymous volumes, use the
+--rm
+option. For example,
+this command creates an anonymous
+/foo
+volume. When you remove the container,
+the Docker Engine removes the
+/foo
+volume but not 

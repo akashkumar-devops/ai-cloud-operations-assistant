@@ -1,29 +1,15 @@
-pment
-Install
-Plugin
-Standalone (Legacy)
-Uninstall
-Quickstart
-How-tos
-Specify a project name
-Use lifecycle hooks
-Use service profiles
-Control startup order
-Use environment variables
-Set environment variables
-Environment variables precedence
-Pre-defined environment variables
-Interpolation
-Best practices
-Build dependent images
-Use Compose Watch
-Secrets in Compose
-Networking
-Use multiple Compose files
-Merge
-Extend
-Include
-Enable GPU support
-Use Compose in production
-OCI artifact applications
-Use pr
+
+data persistently on the host system. Filesystem mounts can also let you share
+data between containers and the host.
+Docker supports two main categories of mounts:
+Volume mounts
+Bind mounts
+Volume mounts are great for persistently storing data for containers, and for
+sharing data between containers. Bind mounts, on the other hand, are for
+sharing data between a container and the host.
+You can add a filesystem mount to a container using the
+--mount
+flag for the
+docker run
+command.
+The following 

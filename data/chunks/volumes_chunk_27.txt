@@ -1,27 +1,25 @@
-ence
-Air-gapped containers
-Registry Access Management
-Image Access Management
-Namespace access
-Organization access tokens
-/
-/
-Docker Engine
-/
-Storage
-/
-Volumes
-Volumes
-When to use volumes
-A volume's lifecycle
-Mounting a volume over existing data
-Named and anonymous volumes
-Syntax
-Options for --mount
-Options for --volume
-Create and manage volumes
-Start a container with a volume
-Use a volume with Docker Compose
-Start a service with volumes
-Populate a volume using a container
-Use a read-only volume
+ges the previous one. It mounts the directory as a read-only
+volume, by adding
+ro
+to the (empty by default) list of options, after the
+mount point within the container. Where multiple options are present, you can separate
+them using commas.
+The
+--mount
+and
+-v
+examples have the same result.
+--mount
+-v
+$
+docker run -d
+\
+--name=nginxtest \
+--mount source=nginx-vol,destination=/usr/share/nginx/html,readonly \
+nginx:latest
+$
+docker run -d
+\
+--name=nginxtest \
+-v nginx-vol:/usr/share/nginx/html:ro \
+n

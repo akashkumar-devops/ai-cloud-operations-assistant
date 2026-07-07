@@ -1,20 +1,13 @@
-se alpha dry-run
-docker compose alpha scale
-docker compose alpha watch
-docker compose attach
-docker compose bridge
-docker compose bridge convert
-docker compose bridge transformations
-docker compose bridge transformations create
-docker compose bridge transformations list
-docker compose build
-docker compose commit
-docker compose config
-docker compose convert
-docker compose cp
-docker compose create
-docker compose down
-docker compose events
-docker compose exec
-docker compose export
-docker compose im
+ning.
+Version and name top-level element
+Understand version and name attributes for Compose.
+Services top-level element
+Explore all services attributes for Compose.
+Networks top-level element
+Find all networks attributes for Compose.
+Volumes top-level element
+Explore all volumes attributes for Compose.
+Configs top-level element
+Find out about configs in Compose.
+Secrets top-level element
+Learn about secrets in Compose.

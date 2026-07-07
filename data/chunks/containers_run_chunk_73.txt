@@ -1,21 +1,19 @@
- weighting of all other running
-containers using the
---blkio-weight
-flag.
+empty string, for example:
+$
+docker run -it --entrypoint
+=
+""
+mysql bash
 Note
-The blkio weight setting is only available for direct IO. Buffered IO is not
-currently supported.
-The
---blkio-weight
-flag can set the weighting to a value between 10 to 1000.
-For example, the commands below create two containers with different blkio
-weight:
-$
-docker run -it --name c1 --blkio-weight
-300
-ubuntu:24.04 /bin/bash
-$
-docker run -it --name c2 --blkio-weight
-600
-ubuntu:24.04 /bin/bash
-If you do block IO in the
+Passing
+--entrypoint
+clears out any default command set on the image. That
+is, any
+CMD
+instruction in the Dockerfile used to build it.
+Exposed ports
+By default, when you run a container, none of the container's ports are exposed
+to the host. This means you won't be able to access any ports that the
+container might be listening on. To make a container's ports accessible from
+the host, you need to publish the ports.
+You 

@@ -1,31 +1,19 @@
-to the specified path. Defaults to
-/run/secrets/
-+
-id
-if unset and if
-env
-is also unset.
-env
-Mount the secret to an environment variable instead of a file, or both. (since Dockerfile v1.10.0)
-required
-If set to
-true
-, the instruction errors out when the secret is unavailable. Defaults to
-false
-.
-mode
-File mode for secret file in octal. Default
-0400
-.
-uid
-User ID for secret file. Default
-0
-.
-gid
-Group ID for secret file. Default
-0
-.
-Example: access to S3
-# syntax=docker/dockerfile:1
-FROM
-python:3
+estination. For example, to add two files,
+file1.txt
+and
+file2.txt
+, from the build context to
+/usr/src/things/
+in
+the build container:
+ADD
+file1.txt file2.txt /usr/src/things/
+If you specify multiple source files, either directly or using a wildcard, then
+the destination must be a directory (must end with a slash
+/
+).
+To add files from a remote location, you can specify a URL or the address of a
+Git repository as the source. For example:
+ADD
+https://example.com/archive.zip /usr/src/things/
+ADD

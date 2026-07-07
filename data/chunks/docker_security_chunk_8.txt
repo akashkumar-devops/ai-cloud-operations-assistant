@@ -1,20 +1,13 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
+aemon. This daemon requires
+root
+privileges unless you opt-in
+to
 Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+, and you should therefore be aware of
+some important details.
+First of all, only trusted users should be allowed to control your
+Docker daemon. This is a direct consequence of some powerful Docker
+features. Specifically, Docker allows you to share a directory between
+the Docker host and a guest container; and it allows you to do so
+without limiting the access rights of the container. This means that you
+can start a c

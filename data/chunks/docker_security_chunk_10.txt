@@ -1,17 +1,8 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+ul than usual with parameter checking, to make sure that
+a malicious user cannot pass crafted parameters causing Docker to create
+arbitrary containers.
+For this reason, the REST API endpoint (used by the Docker CLI to
+communicate with the Docker daemon) changed in Docker 0.5.2, and now
+uses a Unix socket instead of a TCP socket bound on 127.0.0.1 (the
+latter being prone to cross-site request forgery attacks if you happen to run
+Docker directly on your local machine, outside of a VM). You can the

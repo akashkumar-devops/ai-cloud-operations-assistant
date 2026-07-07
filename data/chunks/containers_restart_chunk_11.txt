@@ -1,33 +1,6 @@
-ork driver plugins
-Docker Plugin API
-Docker volume plugins
-Plugin Config Version 1 of Plugin V2
-Use Docker Engine plugins
-Release notes
-Engine v29
-Engine v28
-Engine v27
-Engine v26.1
-Engine v26.0
-Engine v25.0
-Engine v24.0
-Engine v23.0
-Engine v20.10
-Engine v19.03
-Engine v18.09
-Engine v18.06
-Engine v18.05
-Engine v18.04
-Engine v18.03
-Engine v18.02
-Engine v18.01
-Engine v17.12
-Engine v17.11
-Engine v17.10
-Engine v17.09
-Engine v17.07
-Engine v17.06
-Engine v17.05
-Engine v17.04
-Engine v17.03
-Prior releases
+and starts/restart it if not.
+Warning
+These aren't Docker-aware, and only monitor operating system processes within
+the container. Docker doesn't recommend this approach, because it's
+platform-dependent and may differ between versions of a given Linux
+distribution.

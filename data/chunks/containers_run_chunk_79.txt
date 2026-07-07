@@ -1,19 +1,90 @@
-group-add audio --group-add nogroup --group-add
-777
-busybox id
-uid=0(root) gid=0(root) groups=10(wheel),29(audio),99(nogroup),777
-Runtime privilege and Linux capabilities
-Option
-Description
---cap-add
-Add Linux capabilities
---cap-drop
-Drop Linux capabilities
---privileged
-Give extended privileges to this container
---device=[]
-Allows you to run devices inside the container without the
---privileged
-flag.
-By default, Docker containers are "unprivileged" and cannot, for
-example, run a Docker daemon in
+rAdministrator
+\
+AppData
+\
+Local
+NUMBER_OF_PROCESSORS
+=
+8
+OS
+=
+Windows_NT
+Path
+=
+C:
+\
+Windows
+\
+system32
+;
+C:
+\
+Windows
+;
+C:
+\
+Windows
+\
+System32
+\
+Wbem
+;
+C:
+\
+Windows
+\
+System32
+\
+WindowsPowerShell
+\
+v1
+.
+0
+\;
+C:
+\
+Users
+\
+ContainerAdministrator
+\
+AppData
+\
+Local
+\
+Microsoft
+\
+WindowsApps
+PATHEXT
+=.
+COM
+;.
+EXE
+;.
+BAT
+;.
+CMD
+PROCESSOR_ARCHITECTURE
+=
+AMD64
+PROCESSOR_IDENTIFIER
+=
+Intel64
+Family
+6
+Model
+62
+Stepping
+4
+,
+GenuineIntel
+PROCESSOR_LEVEL
+=
+6
+PROCESSOR_REVISION
+=
+3e04
+ProgramData
+=
+C:
+\
+Pr

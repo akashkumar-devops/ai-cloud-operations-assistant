@@ -1,27 +1,29 @@
- a matching pattern. For example, to add a file
-named
-arr[0].txt
-, use the following;
-ADD
-arr
-[[]
-0
+-chmod
+flag is not supported when building Windows containers.
+COPY --chown
+COPY
+[
+--chown
+=
+<user>:<group>
 ]
-.txt /dest/
-Adding local tar archives
-When using a local tar archive as the source for
-ADD
-, and the archive is in a
-recognized compression format (
-gzip
-,
-bzip2
-or
-xz
-, or uncompressed), the
-archive is decompressed and extracted into the specified destination. Local tar
-archives are extracted by default, see the [
-ADD --unpack
-flag].
-When a directory is extracted, it has the same behavior as
-ta
+<src> ... <dest>
+Sets ownership of copied files. Without this flag, files are created with UID
+and GID of 0.
+The flag accepts usernames, group names, UIDs, or GIDs in any combination.
+If you specify only a user, the GID is set to the same numeric value as the UID.
+COPY
+--chown
+=
+55:mygroup files* /somedir/
+COPY
+--chown
+=
+bin files* /somedir/
+COPY
+--chown
+=
+1
+files* /somedir/
+COPY
+--chown

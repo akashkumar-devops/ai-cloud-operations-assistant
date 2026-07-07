@@ -1,40 +1,34 @@
-wn using
-docker stop test
+le where the variable is declared.
+For more information, refer to
+variable scoping
 .
-The following Dockerfile shows using the
-ENTRYPOINT
-to run Apache in the
-foreground (i.e., as
-PID 1
-):
-FROM
-debian:stable
+Using ARG variables
+You can use an
+ARG
+or an
+ENV
+instruction to specify variables that are
+available to the
 RUN
-apt-get update
-&&
-apt-get install -y --force-yes apache2
-EXPOSE
-80
-443
-VOLUME
-[
-"/var/www"
-,
-"/var/log/apache2"
-,
-"/etc/apache2"
-]
-ENTRYPOINT
-[
-"/usr/sbin/apache2ctl"
-,
-"-D"
-,
-"FOREGROUND"
-]
-If you need to write a starter script for a single executable, you can ensure that
-the final executable receives the Unix signals by using
-exec
+instruction. Environment variables defined using the
+ENV
+instruction always override an
+ARG
+instruction of the same name. Consider
+this Dockerfile with an
+ENV
 and
-gosu
-co
+ARG
+instruction.
+FROM
+ubuntu
+ARG
+CONT_IMG_VER
+ENV
+CONT_IMG_VER
+=
+v1.0.0
+RUN
+echo
+$CONT_IMG_VER
+Then, assume this image is built with this co

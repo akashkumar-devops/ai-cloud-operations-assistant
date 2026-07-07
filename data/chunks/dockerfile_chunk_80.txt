@@ -1,17 +1,18 @@
-ile mode for new cache directory in octal. Default
-0755
-.
-uid
-User ID for new cache directory. Default
-0
-.
-gid
-Group ID for new cache directory. Default
-0
-.
-Contents of the cache directories persists between builder invocations without
-invalidating the instruction cache. Cache mounts should only be used for better
-performance. Your build should work with any contents of the cache directory as
-another build may overwrite the files or GC may clean it if more storage space
-is needed.
-Example: cache
+ or any ancestor. Refer to the
+multi-stage builds section
+in the manual for more information.
+Environment variable persistence can cause unexpected side effects. For example,
+setting
+ENV DEBIAN_FRONTEND=noninteractive
+changes the behavior of
+apt-get
+,
+and may confuse users of your image.
+If an environment variable is only needed during build, and not in the final
+image, consider setting a value for a single command instead:
+RUN
+DEBIAN_FRONTEND
+=
+noninteractive apt-get update
+&&
+apt-get install -

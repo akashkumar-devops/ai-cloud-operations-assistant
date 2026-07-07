@@ -1,29 +1,13 @@
-boration
-Slack
-Release notes
-CLI release notes
-Platform release notes
-Platform
-Support
-Billing
-Add or update a payment method
-Manage your billing information
-3D Secure authentication
-Invoices and billing history
-Change your billing cycle
-Submit a tax exemption certificate
-FAQs
-Docker accounts
-Accounts
-Create an account
-Manage an account
-Deactivate an account
-Security
-Personal access tokens
-Two-factor authentication
-Recover your Docker account
-FAQs
-General
-Container
-Network and VM
-Security announ
+mount).
+writable
+Submounts are read-write.
+readonly
+Submounts are read-only. Requires kernel v5.12 or later.
+Configure bind propagation
+Bind propagation defaults to
+rprivate
+for both bind mounts and volumes. It is
+only configurable for bind mounts, and only on Linux host machines. Bind
+propagation is an advanced topic and many users never need to configure it.
+Bind propagation refers to whether or not mounts created within a given
+bind-mount can be propagated to replicas of that mount. Consider

@@ -1,14 +1,27 @@
- the build container to test, lint, or compile a project.
-Bind-mounting over existing data
-If you bind mount file or directory into a directory in the container in which
-files or directories exist, the pre-existing files are obscured by the mount.
-This is similar to if you were to save files into
-/mnt
-on a Linux host, and
-then mounted a USB drive into
-/mnt
-. The contents of
-/mnt
-would be obscured
-by the contents of the USB drive until the USB drive was unmounted.
-With containers, there's no stra
+Docker.
+The
+z
+option indicates that the bind mount content is shared among multiple
+containers.
+The
+Z
+option indicates that the bind mount content is private and unshared.
+Use extreme caution with these options. Bind-mounting a system directory
+such as
+/home
+or
+/usr
+with the
+Z
+option renders your host machine
+inoperable and you may need to relabel the host machine files by hand.
+Important
+When using bind mounts with services, SELinux labels
+(
+:Z
+and
+:z
+), as well as
+:ro
+are ignored. See
+moby/mob

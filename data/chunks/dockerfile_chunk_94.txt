@@ -1,29 +1,16 @@
-table, in which
-case you must specify an
-ENTRYPOINT
-instruction as well.
-If you would like your container to run the same executable every time, then
-you should consider using
-ENTRYPOINT
-in combination with
-CMD
-. See
-ENTRYPOINT
-. If the user specifies arguments to
-docker run
-then they will override the default specified in
-CMD
-, but still use the
-default
-ENTRYPOINT
-.
-If
-CMD
-is used to provide default arguments for the
-ENTRYPOINT
-instruction,
-both the
-CMD
-and
-ENTRYPOINT
-instructions should be spe
+t extracted by default. To
+download and extract the archive, use the [
+ADD --unpack
+flag].
+If the destination ends with a trailing slash, then the filename is inferred
+from the URL path. For example,
+ADD http://example.com/foobar /
+would create
+the file
+/foobar
+. The URL must have a nontrivial path so that an appropriate
+filename can be discovered (
+http://example.com
+doesn't work).
+If the destination doesn't end with a trailing slash, the destination path
+becomes the filename of the file downlo

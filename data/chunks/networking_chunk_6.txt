@@ -1,24 +1,16 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+s a number of network drivers, as well as the default "bridge".
+On Linux, the following built-in network drivers are available:
+Driver
+Description
+bridge
+The default network driver.
+host
+Remove network isolation between the container and the Docker host.
+none
+Completely isolate a container from the host and other containers.
+overlay
+Swarm Overlay networks connect multiple Docker daemons together.
+ipvlan
+Connect containers to external VLANs.
+macvlan
+Containers appear as devices on the host's netw

@@ -1,27 +1,11 @@
-s to control things like resource constraints and
-networking.
-Commands and arguments
-You can use the
-[COMMAND]
-and
-[ARG...]
-positional arguments to specify
-commands and arguments for the container to run when it starts up. For example,
-you can specify
-sh
-as the
-[COMMAND]
-, combined with the
--i
-and
--t
-flags,
-to start an interactive shell in the container (if the image you select has an
-sh
-executable on
-PATH
-).
-$
-docker run -it IMAGE sh
-Note
-Depending on your Docker system configuration, you may b
+memory and 700M swap memory.
+Memory reservation is a kind of memory soft limit that allows for greater
+sharing of memory. Under normal circumstances, containers can use as much of
+the memory as needed and are constrained only by the hard limits set with the
+-m
+/
+--memory
+option. When memory reservation is set, Docker detects memory
+contention or low memory and forces containers to restrict their consumption to
+a reservation limit.
+Always set the memory reservation value below the hard limit, oth

@@ -1,26 +1,42 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+s and using the name in
+the
+COPY
+instruction. This means that even if the instructions in your
+Dockerfile are re-ordered later, the
+COPY
+doesn't break.
+# syntax=docker/dockerfile:1
+FROM
+golang:1.25
+AS
+build
+WORKDIR
+/src
+COPY
+<<EOF /src/main.go
+package main
+import
+"fmt"
+func main
+()
+{
+fmt.Println
+(
+"hello, world"
+)
+}
+EOF
+RUN
+go build -o /bin/hello ./main.go
+FROM
+scratch
+COPY
+--from
+=
+build /bin/hello /bin/hello
+CMD
+[
+"/bin/hello"
+]
+Stop at a specific build stage
+When you build your image, you don

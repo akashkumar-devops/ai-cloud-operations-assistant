@@ -1,24 +1,35 @@
-e following command starts a container from the
-nginx
-with its default
-content, listening on port 80:
-$
-docker run -i -t --rm -p 80:80 nginx
-Command line arguments to
-docker run <image>
-will be appended after all
-elements in an exec form
-ENTRYPOINT
-, and will override all elements specified
-using
-CMD
-.
-This allows arguments to be passed to the entry point, i.e.,
-docker run <image> -d
-will pass the
--d
-argument to the entry point. You can override
-the
-ENTRYPOINT
-instruction using the
-docker run --
+]
+[
+<name>
+[=
+<default value>
+]
+...
+]
+The
+ARG
+instruction defines a variable that users can pass at build time to
+the builder with the
+docker build
+command using the
+--build-arg <varname>=<value>
+flag. This variable can be used in subsequent instructions such as
+FROM
+,
+ENV
+,
+WORKDIR
+, and others using the
+${VAR}
+or
+$VAR
+template syntax.
+It is also passed to all subsequent
+RUN
+instructions as a build-time
+environment variable.
+Unlike
+ENV
+, an
+ARG
+variable is not embedded in the image and is not a

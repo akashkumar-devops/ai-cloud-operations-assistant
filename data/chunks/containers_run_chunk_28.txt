@@ -1,20 +1,29 @@
-constraint
-CPU period constraint
-Cpuset constraint
-CPU quota constraint
-Block IO bandwidth (Blkio) constraint
-Additional groups
-Runtime privilege and Linux capabilities
-Overriding image defaults
-Default command and options
-Default entrypoint
-Exposed ports
-Environment variables
-Healthchecks
-User
-Working directory
-Docker runs processes in isolated containers. A container is a process
-which runs on a host. The host may be local or remote. When you
-execute
-docker run
-, the container process that run
+er between 0 and 100.
+--shm-size=""
+Size of
+/dev/shm
+. The format is
+<number><unit>
+.
+number
+must be greater than
+0
+. Unit is optional and can be
+b
+(bytes),
+k
+(kilobytes),
+m
+(megabytes), or
+g
+(gigabytes). If you omit the unit, the system uses bytes. If you omit the size entirely, the system uses
+64m
+.
+User memory constraints
+We have four ways to set user memory usage:
+Option
+Result
+memory=inf, memory-swap=inf
+(default)
+There is no memory limit for the container. The container can use
+as much mem

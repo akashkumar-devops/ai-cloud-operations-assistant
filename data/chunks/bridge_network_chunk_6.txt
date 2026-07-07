@@ -1,24 +1,19 @@
-rlay network driver
-CA certificates
-Legacy container links
-Containers
-Start containers automatically
-Run multiple processes in a container
-Resource constraints
-GPU access
-Runtime metrics
-Running containers
-CLI
-Completion
-Proxy configuration
-Filter commands
-Format command and log output
-OpenTelemetry for the Docker CLI
-Daemon
-Start the daemon
-Use IPv6 networking
-Daemon proxy configuration
-Live restore
-Alternative container runtimes
-Collect Docker metrics with Prometheus
-Configure remote access fo
+esolution between containers
+.
+Containers on the default bridge network can only access each other by IP
+addresses, unless you use the
+--link
+option
+, which is
+considered legacy. On a user-defined bridge network, containers can resolve
+each other by name or alias.
+Imagine an application with a web front-end and a database back-end. If you call
+your containers
+web
+and
+db
+, the web container can connect to the db container
+at
+db
+, no matter which Docker host the application stack is running on.
+If

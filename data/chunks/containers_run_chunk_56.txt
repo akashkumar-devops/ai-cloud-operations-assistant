@@ -1,18 +1,21 @@
-ytes of memory, swap
-plus
-memory usage is double
-of that.
-memory=L<inf, memory-swap=S<inf, L<=S
-(specify both memory and memory-swap) The container is not allowed to
-use more than L bytes of memory, swap
-plus
-memory usage is limited
-by S.
-Examples:
+:/dev/xvdc:r --rm -it ubuntu fdisk  /dev/xvdc
+You will not be able to write the partition table.
+Command (m for help): q
 $
-docker run -it ubuntu:24.04 /bin/bash
-We set nothing about memory, this means the processes in the container can use
-as much memory and swap memory as they need.
+docker run --device
+=
+/dev/sda:/dev/xvdc:w --rm -it ubuntu fdisk  /dev/xvdc
+crash....
 $
-docker run -it -m 300M --memory-swap -1 ubuntu:24.04 /bin/bash
-We set memory limit an
+docker run --device
+=
+/dev/sda:/dev/xvdc:m --rm -it ubuntu fdisk  /dev/xvdc
+fdisk: unable to open /dev/xvdc: Operation not permitted
+In addition to
+--privileged
+, the operator can have fine grain control over the
+capabilities using
+--cap-add
+and
+--cap-drop
+. By default, Docker has a defau

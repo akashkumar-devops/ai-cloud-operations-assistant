@@ -1,29 +1,15 @@
-boration
-Slack
-Release notes
-CLI release notes
-Platform release notes
-Platform
-Support
-Billing
-Add or update a payment method
-Manage your billing information
-3D Secure authentication
-Invoices and billing history
-Change your billing cycle
-Submit a tax exemption certificate
-FAQs
-Docker accounts
-Accounts
-Create an account
-Manage an account
-Deactivate an account
-Security
-Personal access tokens
-Two-factor authentication
-Recover your Docker account
-FAQs
-General
-Container
-Network and VM
-Security announ
+ volume using a container
+If you start a container which creates a new volume, and the container
+has files or directories in the directory to be mounted such as
+/app/
+,
+Docker copies the directory's contents into the volume. The container then
+mounts and uses the volume, and other containers which use the volume also
+have access to the pre-populated content.
+To show this, the following example starts an
+nginx
+container and
+populates the new volume
+nginx-vol
+with the contents of the container's
+/

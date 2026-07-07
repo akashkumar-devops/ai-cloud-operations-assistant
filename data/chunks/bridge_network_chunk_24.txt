@@ -1,29 +1,45 @@
-boration
-Slack
-Release notes
-CLI release notes
-Platform release notes
-Platform
-Support
-Billing
-Add or update a payment method
-Manage your billing information
-3D Secure authentication
-Invoices and billing history
-Change your billing cycle
-Submit a tax exemption certificate
-FAQs
-Docker accounts
-Accounts
-Create an account
-Manage an account
-Deactivate an account
-Security
-Personal access tokens
-Two-factor authentication
-Recover your Docker account
-FAQs
-General
-Container
-Network and VM
-Security announ
+linked using the
+legacy
+--link
+flag
+.
+Configure the default bridge network
+To configure the default
+bridge
+network, you specify options in
+daemon.json
+.
+Here is an example
+daemon.json
+with several options specified. Only specify
+the settings you need to customize.
+{
+"bip"
+:
+"192.168.1.1/24"
+,
+"fixed-cidr"
+:
+"192.168.1.0/25"
+,
+"mtu"
+:
+1500
+,
+"default-gateway"
+:
+"192.168.1.254"
+,
+"dns"
+:
+[
+"10.20.1.2"
+,
+"10.20.1.3"
+]
+}
+In this example:
+The bridge's address is "192.168.1.1/24" (from
+bip
+).
+The brid

@@ -1,23 +1,29 @@
-nable model-runner
-docker desktop engine
-docker desktop engine ls
-docker desktop engine use
-docker desktop kubernetes
-docker desktop kubernetes images
-docker desktop logs
-docker desktop restart
-docker desktop start
-docker desktop status
-docker desktop stop
-docker desktop update
-docker desktop version
-docker dhi
-docker dhi attestation
-docker dhi attestation get
-docker dhi attestation list
-docker dhi attestation sbom
-docker dhi auth
-docker dhi auth apk
-docker dhi auth deb
-docker dhi catalog
-docker
+ldKit treats lines that begin with
+#
+as a comment, unless the line is
+a valid
+parser directive
+. A
+#
+marker anywhere
+else in a line is treated as an argument. This allows statements like:
+# Comment
+RUN
+echo
+'we are running some # of cool things'
+Comment lines are removed before the Dockerfile instructions are executed.
+The comment in the following example is removed before the shell executes
+the
+echo
+command.
+RUN
+echo
+hello
+\
+# comment
+world
+The following examples is equivalent.
+RUN
+echo
+hello
+\

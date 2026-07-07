@@ -1,44 +1,7 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+ share any application on any cloud platform, in multiple languages and frameworks.
+Quick installation and setup of a complete Docker development environment.
+Includes the latest version of Kubernetes.
+On Windows, the ability to toggle between Linux and Windows containers to build applications.
+Fast and reliable performance with native Windows Hyper-V virtualization.
+Ability to work natively on Linux through WSL 2 on Windows machines.
+Volume mounting for code and data, including file change noti

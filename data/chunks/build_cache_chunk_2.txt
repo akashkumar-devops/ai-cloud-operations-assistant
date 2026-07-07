@@ -1,35 +1,18 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+get install -y build-essentials
+COPY
+main.c Makefile /src/
+WORKDIR
+/src
+/
+RUN
+make build
+Each instruction in this Dockerfile translates to a layer in your final image.
+You can think of image layers as a stack, with each layer adding more content
+on top of the layers that came before it:
+Whenever a layer changes, that layer will need to be re-built. For example,
+suppose you make a change to your program in the
+main.c
+file. After this
+change, the
+COPY
+command will have to run again in order for th

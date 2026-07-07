@@ -1,17 +1,35 @@
-swarm security with public key infrastructure (PKI)
-Swarm task states
-Join nodes to a swarm
-Lock your swarm to protect its encryption key
-Manage nodes in a swarm
-Manage sensitive data with Docker secrets
-Manage swarm service networks
-Raft consensus in swarm mode
-Run Docker Engine in swarm mode
-Store configuration data using Docker Configs
-Swarm mode key concepts
-Use Swarm mode routing mesh
-Deprecated features
-Docker Engine plugins
-Access authorization plugin
-Docker log driver plugins
-Docker netw
+n
+gw-priority
+for the
+docker run
+and
+docker network connect
+commands.
+The default
+gw-priority
+is
+0
+and the gateway in the network with the
+highest priority is the default gateway. So, when a network should always
+be the default gateway, it is enough to set its
+gw-priority
+to
+1
+.
+$
+docker run --network
+name
+=
+gwnet,gw-priority
+=
+1
+--network anet1 --name myctr myimage
+$
+docker network connect anet2 myctr
+Published ports
+When you create or run a container using
+docker create
+or
+docker run
+, all
+por

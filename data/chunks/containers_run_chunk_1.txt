@@ -1,44 +1,27 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Running containers
+Table of contents
+General form
+Image references
+Options
+Commands and arguments
+Foreground and background
+Container identification
+Container networking
+Filesystem mounts
+Volume mounts
+Bind mounts
+Exit status
+125
+126
+127
+Other exit codes
+Runtime constraints on resources
+User memory constraints
+Swappiness constraint
+CPU share constraint
+CPU period constraint
+Cpuset constraint
+CPU quota constraint
+Block IO bandwidth (Blkio) constraint
+Additional groups
+Runtime privilege and Linux 

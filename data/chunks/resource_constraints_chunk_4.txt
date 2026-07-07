@@ -1,37 +1,9 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+n effectively bring the entire system down if the wrong
+process is killed.
+Docker attempts to mitigate these risks by adjusting the OOM priority on the
+Docker daemon so that it's less likely to be killed than other processes
+on the system. The OOM priority on containers isn't adjusted. This makes it more
+likely for an individual container to be killed than for the Docker daemon
+or other system processes to be killed. You shouldn't try to circumvent
+these safeguards by manually setting
+--oom-scor

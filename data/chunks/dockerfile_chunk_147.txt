@@ -1,8 +1,22 @@
-revious build generated is reused and merged on top of the new
-layers. This also means you can easily rebase your images when the base images
-receive updates, without having to execute the whole build again. In backends
-that support it, BuildKit can do this rebase action without the need to push or
-pull any layers between the client and the registry. BuildKit will detect this
-case and only create new image manifest that contains the new layers and old
-layers in correct order.
-The same behavior w
+s for an
+ENTRYPOINT
+command
+or for executing an ad-hoc command in a container.
+CMD
+will be overridden when running the container with alternative arguments.
+The table below shows what command is executed for different
+ENTRYPOINT
+/
+CMD
+combinations:
+No ENTRYPOINT
+ENTRYPOINT exec_entry p1_entry
+ENTRYPOINT ["exec_entry", "p1_entry"]
+No CMD
+error, not allowed
+/bin/sh -c exec_entry p1_entry
+exec_entry p1_entry
+CMD ["exec_cmd", "p1_cmd"]
+exec_cmd p1_cmd
+/bin/sh -c exec_entry p1_entry
+exec_entry p1_ent

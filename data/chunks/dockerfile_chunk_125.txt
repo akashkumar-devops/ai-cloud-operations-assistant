@@ -1,22 +1,26 @@
- the root of the current build stage.
-# create /abs/test.txt
-ADD
-test.txt /abs/
-Trailing slashes are significant. For example,
-ADD test.txt /abs
-creates a
-file at
-/abs
-, whereas
-ADD test.txt /abs/
-creates
-/abs/test.txt
+
 .
-If the destination path doesn't begin with a leading slash, it's interpreted as
-relative to the working directory of the build container.
-WORKDIR
-/usr/src/app
-# create /usr/src/app/rel/test.txt
-ADD
-test.txt rel/
-If destination doesn't exist, it's created, along with all missing 
+# syntax=docker/dockerfile:1
+FROM
+scratch
+COPY
+./x/a.txt ./y/a.txt /no_parents/
+COPY
+--parents ./x/a.txt ./y/a.txt /parents/
+# /no_parents/a.txt
+# /parents/x/a.txt
+# /parents/y/a.txt
+This behavior is similar to the
+Linux
+cp
+utility's
+--parents
+or
+rsync
+--relative
+flag.
+As with Rsync, it is possible to limit which parent directories are preserved by
+inserting a dot and a slash (
+./
+) into the source path. If such point exists, only parent
+directories after it will be preserved. This may be esp

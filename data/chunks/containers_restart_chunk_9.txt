@@ -1,19 +1,18 @@
-ity profiles for Docker
-Verify repository client with certificates
-Swarm mode
-Administer and maintain a swarm of Docker Engines
-Deploy a stack to a swarm
-Deploy services to a swarm
-Getting started with Swarm mode
-Create a swarm
-Add nodes to the swarm
-Deploy a service to the swarm
-Inspect a service on the swarm
-Scale the service in the swarm
-Delete the service running on the swarm
-Apply rolling updates to a service
-Drain a node on the swarm
-How swarm works
-How nodes work
-How services work
-Manage 
+bin/sh -c /start.sh"   9 seconds ago   Up 4 seconds             gallant_easley
+You can re-attach your terminal to the container between restarts, using the
+docker container attach
+command. It's detached again the next time the
+container exits.
+$
+docker container attach 081991b35afe
+4
+5
+Exiting...
+$
+Use a process manager
+If restart policies don't suit your needs, such as when processes outside
+Docker depend on Docker containers, you can use a process manager such as
+systemd
+or
+supervisor
+instead.

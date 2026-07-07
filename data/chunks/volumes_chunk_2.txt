@@ -1,35 +1,15 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+iner which creates a volume using a volume driver
+Create a service which creates an NFS volume
+Create CIFS/Samba volumes
+Block storage devices
+Back up, restore, or migrate data volumes
+Back up a volume
+Restore volume from a backup
+Remove volumes
+Remove anonymous volumes
+Remove all volumes
+Next steps
+Volumes are persistent data stores for containers, created and managed by
+Docker. You can create a volume explicitly using the
+docker volume create
+command, or Docker can create a volume during conta

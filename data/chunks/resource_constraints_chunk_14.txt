@@ -1,32 +1,19 @@
-
-Copy image between registries
-Export to Docker
-GitHub Builder
-New
-Architecture
-Build workflow
-Bake workflow
-Local registry
-Multi-platform image
-Named contexts
-Push to multiple registries
-Reproducible builds
-Share image between jobs
-Tags and labels
-Test before push
-Update Docker Hub description
-Validating builds
-Experimental
-Introduction
-Usage
-Image validation
-Git validation
-Templates & examples
-Testing
-Debugging
-Input reference
-Built-in functions
-Metadata
-Annotations
-Build attestations
-Image at
+-swap
+are set to the same value, this prevents
+containers from using any swap. This is because
+--memory-swap
+is the amount of
+combined memory and swap that can be used, while
+--memory
+is only the amount
+of physical memory that can be used.
+--memory-swappiness
+details
+A value of 0 turns off anonymous page swapping.
+A value of 100 sets all anonymous pages as swappable.
+By default, if you don't set
+--memory-swappiness
+, the value is
+inherited from the host machine.
+CPU
+By default, each container's 

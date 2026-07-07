@@ -1,27 +1,11 @@
-ix targets
-Contexts
-Bake file reference
-Bake standard library functions
-Building with Bake from a Compose file
-Overriding configurations
-Remote Bake file definition
-Cache
-Build cache invalidation
-Build garbage collection
-Cache storage backends
-Amazon S3 cache
-Azure Blob Storage cache
-GitHub Actions cache
-Inline cache
-Local cache
-Registry cache
-Optimize cache usage in builds
-CI
-GitHub Actions
-Annotations
-Attestations
-Build checks
-Build secrets
-Build summary
-BuildKit configuration
-Cache management
+ image
+loading from either disk with
+docker load
+, or from the network with
+docker pull
+. As of Docker 1.3.2, images are now extracted in a chrooted
+subprocess on Linux/Unix platforms, being the first-step in a wider effort
+toward privilege separation. As of Docker 1.10.0, all images are stored and
+accessed by the cryptographic checksums of their contents, limiting the
+possibility of an attacker causing a collision with an existing image.
+Finally, if you run Docker on a server, it is recommended

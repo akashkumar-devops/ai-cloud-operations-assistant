@@ -1,44 +1,10 @@
-ces
-Sharing agents
-Integrations
-A2A
-ACP
-MCP
-Configuration file
-Toolsets
-CLI
-Examples
-RAG
-Evals
-Application development
-Docker Desktop
-Setup
-Install
-Mac
-Mac permission requirements
-Windows
-Windows permission requirements
-Linux
-Ubuntu
-Debian
-Fedora
-Arch
-RHEL
-VM or VDI environments
-Sign in
-Allowlist
-Explore Docker Desktop
-Containers
-Images
-Volumes
-Builds
-Kubernetes
-Logs
-Resource Saver mode
-Pause Docker Desktop
-Features and capabilities
-Networking
-How-tos
-GPU support
-USB/IP support
-Synchronized file
+ainer and persist the
+files onto the host's filesystem.
+Sharing configuration files from the host machine to containers. This is how
+Docker provides DNS resolution to containers by default, by mounting
+/etc/resolv.conf
+from the host machine into each container.
+Bind mounts are also available for builds: you can bind mount source code from
+the host into the build container to test, lint, or compile a project.
+Bind-mounting over existing data
+If you bind mount file or directory into a directory in

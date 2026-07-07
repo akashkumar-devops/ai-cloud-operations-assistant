@@ -1,22 +1,15 @@
-atest
-To connect a
-running
-container to an existing user-defined bridge, use the
-docker network connect
-command. The following command connects an already-running
-my-nginx
-container to an already-existing
-my-net
-network:
+
+Clean up:
 $
-docker network connect my-net my-nginx
-Disconnect a container from a user-defined bridge
-To disconnect a running container from a user-defined bridge, use the
-docker network disconnect
-command. The following command disconnects
-the
-my-nginx
-container from the
-my-net
-network.
+docker container stop alpine1 alpine2 alpine3 alpine4
 $
+docker container rm alpine1 alpine2 alpine3 alpine4
+$
+docker network rm alpine-net
+Next steps
+Learn about
+networking from the container's point of view
+Learn about
+overlay networks
+Learn about
+Macvlan networks

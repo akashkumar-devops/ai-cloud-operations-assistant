@@ -1,35 +1,14 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+, development, testing, as
+well as CI workflows. It also has commands for managing the whole lifecycle of your application:
+Start, stop, and rebuild services
+View the status of running services
+Stream the log output of running services
+Run a one-off command on a service
+Why use Compose?
+Understand Docker Compose's key benefits
+How Compose works
+Understand how Compose works
+Install Compose
+Follow the instructions on how to install Docker Compose.
+Quickstart
+Learn the key concepts of Docker Compos

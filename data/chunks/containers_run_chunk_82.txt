@@ -1,24 +1,41 @@
- to each
---device
-flag:
+g the start period
+--no-healthcheck
+Disable any container-specified
+HEALTHCHECK
+Example:
 $
-docker run --device
+docker run --name
 =
-/dev/sda:/dev/xvdc --rm -it ubuntu fdisk  /dev/xvdc
-Command (m for help): q
+test
+-d
+\
+--health-cmd='stat /etc/passwd || exit 1' \
+--health-interval=2s \
+busybox sleep 1d
 $
-docker run --device
+sleep 2
+;
+docker inspect --format
 =
-/dev/sda:/dev/xvdc:r --rm -it ubuntu fdisk  /dev/xvdc
-You will not be able to write the partition table.
-Command (m for help): q
+'{{.State.Health.Status}}'
+test
+healthy
 $
-docker run --device
-=
-/dev/sda:/dev/xvdc:w --rm -it ubuntu fdisk  /dev/xvdc
-crash....
+docker
+exec
+test
+rm /etc/passwd
 $
-docker run --device
+sleep 2
+;
+docker inspect --format
 =
-/dev/sda:/dev/xvdc:m --rm -it ubuntu fdisk  /dev/xvdc
-fdisk: unable to open /dev/xvdc: Operation not permitted
+'{{json .State.Health}}'
+test
+{
+"Status": "unhealthy",
+"FailingStreak": 3,
+"Log": [
+{
+"Start": "2016-05-25T17:22:04.635478668Z",
+"End": "2016-05-

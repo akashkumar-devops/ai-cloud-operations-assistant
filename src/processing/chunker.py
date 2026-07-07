@@ -8,8 +8,8 @@ Splits cleaned documentation into embedding-ready chunks.
 Responsibilities
 ----------------
 - Prepare logical text units
-- Merge units into embedding-sized chunks
-- Preserve context as much as possible
+- Build embedding-sized chunks
+- Preserve context
 
 This component DOES NOT
 -----------------------
@@ -22,10 +22,7 @@ Project
 AI Cloud Operations Assistant
 """
 
-from config import (
-    DEFAULT_CHUNK_SIZE,
-    DEFAULT_CHUNK_OVERLAP,
-)
+from config import DEFAULT_CHUNK_SIZE
 
 
 class Chunker:
@@ -36,16 +33,6 @@ class Chunker:
     def chunk(self, text: str) -> list[str]:
         """
         Split cleaned documentation into chunks.
-
-        Parameters
-        ----------
-        text : str
-            Cleaned documentation.
-
-        Returns
-        -------
-        list[str]
-            Embedding-ready chunks.
         """
 
         if not text.strip():
@@ -53,9 +40,7 @@ class Chunker:
 
         units = self._prepare_units(text)
 
-        chunks = self._merge_units(units)
-
-        return chunks
+        return self._build_chunks(units)
 
     def _prepare_units(
         self,
@@ -73,22 +58,37 @@ class Chunker:
         - Semantic sections
         """
 
-        return [
-            unit.strip()
-            for unit in text.split("\n\n")
-            if unit.strip()
-        ]
+        units = []
+        current_unit = []
 
-    def _merge_units(
+        for line in text.splitlines():
+
+            line = line.strip()
+
+            if not line:
+
+                if current_unit:
+                    units.append("\n".join(current_unit))
+                    current_unit = []
+
+                continue
+
+            current_unit.append(line)
+
+        if current_unit:
+            units.append("\n".join(current_unit))
+
+        return units
+
+    def _build_chunks(
         self,
         units: list[str],
     ) -> list[str]:
         """
-        Merge logical units into embedding-sized chunks.
+        Build embedding-sized chunks.
         """
 
         chunks = []
-
         current_chunk = ""
 
         for unit in units:
@@ -106,14 +106,58 @@ class Chunker:
 
                 current_chunk += unit
 
-            else:
+                continue
 
-                if current_chunk:
-                    chunks.append(current_chunk)
+            self._finalize_chunk(
+                chunks,
+                current_chunk,
+            )
+
+            if len(unit) <= DEFAULT_CHUNK_SIZE:
 
                 current_chunk = unit
 
-        if current_chunk:
-            chunks.append(current_chunk)
+                continue
+
+            remaining = unit
+
+            while len(remaining) > DEFAULT_CHUNK_SIZE:
+
+                split_index = remaining.rfind(
+                    " ",
+                    0,
+                    DEFAULT_CHUNK_SIZE,
+                )
+
+                if split_index == -1:
+                    split_index = DEFAULT_CHUNK_SIZE
+
+                chunk = remaining[:split_index].strip()
+
+                self._finalize_chunk(
+                    chunks,
+                    chunk,
+                )
+
+                remaining = remaining[split_index:].strip()
+
+            current_chunk = remaining
+
+        self._finalize_chunk(
+            chunks,
+            current_chunk,
+        )
 
         return chunks
+
+    def _finalize_chunk(
+        self,
+        chunks: list[str],
+        current_chunk: str,
+    ) -> None:
+        """
+        Store a completed chunk.
+        """
+
+        if current_chunk:
+            chunks.append(current_chunk)

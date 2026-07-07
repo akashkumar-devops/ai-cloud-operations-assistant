@@ -1,23 +1,38 @@
-ommand
-shell. The shell form doesn't use the JSON array format, instead it's a regular
-string. The shell form string lets you escape newlines using the
-escape
-character
-(backslash by default) to continue a single instruction
-onto the next line. This makes it easier to use with longer commands, because
-it lets you split them up into multiple lines. For example, consider these two
-lines:
+de
+File mode for socket in octal. Default
+0600
+.
+uid
+User ID for socket. Default
+0
+.
+gid
+Group ID for socket. Default
+0
+.
+Example: access to GitLab
+# syntax=docker/dockerfile:1
+FROM
+alpine
 RUN
-source
-$HOME
-/.bashrc
+apk add --no-cache openssh-client
+RUN
+mkdir -p -m
+0700
+~/.ssh
 &&
-\
-echo
-$HOME
-They're equivalent to the following line:
+ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
 RUN
-source
-$HOME
-/.bashrc
+--mount
+=
+type
+=
+ssh
+\
+ssh -q -T git@gitlab.com 2>
 &
+1
+|
+tee /hello
+# "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
+# with the type of build progress is de

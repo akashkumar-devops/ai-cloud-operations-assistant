@@ -1,33 +1,18 @@
-the anonymous volume using the
-random volume ID.
-Syntax
-To mount a volume with the
-docker run
-command, you can use either the
---mount
-or
---volume
-flag.
+t=-o "sftp-password=$(cat file_containing_password_for_remote_host)" \
+nginx:latest
+Create a service which creates an NFS volume
+The following example shows how you can create an NFS volume when creating a service.
+It uses
+10.0.0.10
+as the NFS server and
+/var/docker-nfs
+as the exported directory on the NFS server.
+Note that the volume driver specified is
+local
+.
+NFSv3
 $
-docker run --mount
-type
-=
-volume,src
-=
-<volume-name>,dst
-=
-<mount-path>
-$
-docker run --volume <volume-name>:<mount-path>
-In general,
---mount
-is preferred. The main difference is that the
---mount
-flag is more explicit and supports all the available options.
-You must use
---mount
-if you want to:
-Specify
-volume driver options
-Mount a
-volume subdire
+docker service create -d
+\
+--name nfs-service \
+--mount 'type=volume,source=nfsvolume,target=/app,volume-driver=local,volume-op

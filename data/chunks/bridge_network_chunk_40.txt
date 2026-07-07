@@ -1,19 +1,7 @@
-cker.network.bridge.host_binding_ipv4
-all IPv4 and IPv6 addresses
-Default IP when binding container ports.
-com.docker.network.driver.mtu
-0
-(no limit)
-Set the containers network Maximum Transmission Unit (MTU).
-com.docker.network.container_iface_prefix
-eth
-Set a custom prefix for container interfaces.
-com.docker.network.bridge.inhibit_ipv4
-false
-Prevent Docker from
-assigning an IP address
-to the bridge.
-Some of these options are also available as flags to the
-dockerd
-CLI, and you
-can use them to 
+       alpine4
+fa1340b8d83e        alpine              "ash"               51 seconds ago       Up 51 seconds                           alpine3
+a535d969081e        alpine              "ash"               About a minute ago   Up About a minute                       alpine2
+0a02c449a6e9        alpine              "ash"               About a minute ago   Up About a minute                       alpine1
+Inspect both networks again to see which containers are connected:
+$
+docker network inspect bridge

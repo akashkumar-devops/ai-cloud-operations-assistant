@@ -1,37 +1,8 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+buntu release.
+Refer to the documentation of your distribution to find which Ubuntu release
+corresponds with your derivative version.
+Some Linux distributions provide a package of Docker Engine through their
+package repositories. These packages are built and maintained by the Linux
+distribution's package maintainers and may have differences in configuration
+or are built from modified source code. Docker isn't involved in releasing these
+packages and you should report any bugs or issues involving

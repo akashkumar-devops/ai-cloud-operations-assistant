@@ -1,27 +1,35 @@
-ix targets
-Contexts
-Bake file reference
-Bake standard library functions
-Building with Bake from a Compose file
-Overriding configurations
-Remote Bake file definition
-Cache
-Build cache invalidation
-Build garbage collection
-Cache storage backends
-Amazon S3 cache
-Azure Blob Storage cache
-GitHub Actions cache
-Inline cache
-Local cache
-Registry cache
-Optimize cache usage in builds
-CI
-GitHub Actions
-Annotations
-Attestations
-Build checks
-Build secrets
-Build summary
-BuildKit configuration
-Cache management
+te
+(default)
+Sets bind propagation to
+rprivate
+for this mount. See
+Configure bind propagation
+.
+private
+Sets bind propagation to
+private
+for this mount. See
+Configure bind propagation
+.
+rshared
+Sets bind propagation to
+rshared
+for this mount. See
+Configure bind propagation
+.
+shared
+Sets bind propagation to
+shared
+for this mount. See
+Configure bind propagation
+.
+rslave
+Sets bind propagation to
+rslave
+for this mount. See
+Configure bind propagation
+.
+slave
+Sets bind propagation to
+slave
+for this mo

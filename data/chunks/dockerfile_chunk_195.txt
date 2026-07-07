@@ -1,23 +1,25 @@
-lt. Eg
-linux/amd64
-,
-linux/arm/v7
-,
-windows/amd64
-.
-TARGETOS
-- OS component of TARGETPLATFORM
-TARGETARCH
-- architecture component of TARGETPLATFORM
-TARGETVARIANT
-- variant component of TARGETPLATFORM
-BUILDPLATFORM
-- platform of the node performing the build.
-BUILDOS
-- OS component of BUILDPLATFORM
-BUILDARCH
-- architecture component of BUILDPLATFORM
-BUILDVARIANT
-- variant component of BUILDPLATFORM
-These arguments are defined in the global scope so are not automatically
-available inside build sta
+ -ItemType Directory C:
+\E
+xample
+ADD
+Execute-MyCmdlet.ps1 c:
+\e
+xample
+\
+RUN c:
+\e
+xample
+\E
+xecute-MyCmdlet -sample
+'hello world'
+Resulting in:
+PS E:\myproject> docker build -t shell .
+Sending build context to Docker daemon 4.096 kB
+Step 1/5 : FROM microsoft/nanoserver
+---> 22738ff49c6d
+Step 2/5 : SHELL powershell -command
+---> Running in 6fcdb6855ae2
+---> 6331462d4300
+Removing intermediate container 6fcdb6855ae2
+Step 3/5 : RUN New-Item -ItemType Directory C:\Example
+---> Running in d0eef8386e

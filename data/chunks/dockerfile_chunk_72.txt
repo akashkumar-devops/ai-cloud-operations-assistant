@@ -1,58 +1,21 @@
-s
-:
-env
-:
--
-FOO=injected
--
-name
-:
-bar
-annotations
-:
-org.mobyproject.buildkit.device.class
-:
-class1
-containerEdits
-:
-env
-:
--
-BAR=injected
--
-name
-:
-baz
-annotations
-:
-org.mobyproject.buildkit.device.class
-:
-class1
-containerEdits
-:
-env
-:
--
-BAZ=injected
--
-name
-:
-qux
-annotations
-:
-org.mobyproject.buildkit.device.class
-:
-class2
-containerEdits
-:
-env
-:
--
-QUX=injected
-annotations
-:
-org.mobyproject.buildkit.device.autoallow
-:
-true
-The device name format is flexible and accepts various patterns to support
-m
+lti-stage build, labels from intermediate stages are only present in
+the final image if the final stage is directly or indirectly based on them
+(via
+FROM
+). Labels from a stage that you only reference with
+COPY --from
+or
+RUN --mount=from=
+are not included in the output image.
+Labels from the base image specified in the final
+FROM
+instruction are
+always inherited.
+To view an image's labels, use the
+docker image inspect
+command. You can use
+the
+--format
+option to show just the labels;
+$
+docker ima

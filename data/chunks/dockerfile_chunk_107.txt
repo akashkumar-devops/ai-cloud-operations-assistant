@@ -1,31 +1,16 @@
-oninteractive apt-get update
-&&
-apt-get install -y ...
-Or using
-ARG
-, which is not persisted in the final image:
-ARG
-DEBIAN_FRONTEND
-=
-noninteractive
-RUN
-apt-get update
-&&
-apt-get install -y ...
-Note
-Alternative syntax
-The
-ENV
-instruction also allows an alternative syntax
-ENV <key> <value>
-,
-omitting the
-=
-. For example:
-ENV
-MY_VAR my-value
-This syntax does not allow for multiple environment-variables to be set in a
-single
-ENV
-instruction, and can be confusing. For example, the following
-sets a 
+as
+relative to the root of the context.
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as
+COPY ../something /something
+, automatically removes
+any parent directory navigation (
+../
+). Trailing slashes in the source path
+are also disregarded, making
+COPY something/ /something
+equivalent to
+COPY something /something
+.
+If the source is a directory, the contents of the directory are copied,
+including filesystem metadata. The directory itself isn't

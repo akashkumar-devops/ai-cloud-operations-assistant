@@ -1,21 +1,23 @@
-e>:
-]
-<mount-path>
-[
-:opts
-]
-In the case of named volumes, the first field is the name of the volume, and is
-unique on a given host machine. For anonymous volumes, the first field is
-omitted. The second field is the path where the file or directory is mounted in
-the container.
-The third field is optional, and is a comma-separated list of options. Valid
-options for
---volume
-with a data volume include:
-Option
-Description
-readonly
+on top of the native mount features supported by the Linux kernel.
+If you're familiar with the
+Linux
+mount
+command
 ,
-ro
-If present, causes the volume to be
-mounted into the container 
+you can think of the
+--mount
+options as forwarded to the
+mount
+command in the following manner:
+$
+mount -t <mount.volume-opt.type> <mount.volume-opt.device> <mount.dst> -o <mount.volume-opts.o>
+To explain this further, consider the following
+mount
+command example.
+This command mounts the
+/dev/loop5
+device to the path
+/external-drive
+on the system.
+$
+mount -t ext4 /dev/loop5 /exter

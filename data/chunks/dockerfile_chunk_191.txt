@@ -1,26 +1,26 @@
-s arguments
-from the command line and persist them in the final image by leveraging the
-ENV
-instruction. Variable expansion is only supported for
-a limited set of
-Dockerfile instructions.
-Predefined ARGs
-Docker has a set of predefined
-ARG
-variables that you can use without a
-corresponding
-ARG
-instruction in the Dockerfile.
-HTTP_PROXY
-http_proxy
-HTTPS_PROXY
-https_proxy
-FTP_PROXY
-ftp_proxy
-NO_PROXY
-no_proxy
-ALL_PROXY
-all_proxy
-To use these, pass them on the command line using the
---build-arg
-flag,
+seful on Windows where there are
+two commonly used and quite different native shells:
+cmd
+and
+powershell
+, as
+well as alternate shells available including
+sh
+.
+The
+SHELL
+instruction can appear multiple times. Each
+SHELL
+instruction overrides
+all previous
+SHELL
+instructions, and affects all subsequent instructions. For example:
+FROM
+microsoft/windowsservercore
+# Executed as cmd /S /C echo default
+RUN
+echo
+default
+# Executed as cmd /S /C powershell -command Write-Host default
+RUN
+powershell -comma

@@ -1,41 +1,25 @@
-irectories to 755 and files to 644, while preserving the executable bit on files
-that already have it. (Capital
-X
-means "executable only if it's a directory or
-already executable.")
-For more information about symbolic notation syntax, see the
-chmod(1) manual
-.
-Examples using octal notation:
-COPY
---chmod
-=
-755
-app.sh /app/
-COPY
---chmod
-=
-644
-file.txt /data/
-ARG
-MODE
-=
-440
-COPY
---chmod
-=
-$MODE
-. .
-Examples using symbolic notation:
-COPY
---chmod
-=
-+x script.sh /app/
-COPY
---chmod
-=
-u
-=
-rwX,go
-=
-rX . 
+t
+docker stop
+will signal any long running
+ENTRYPOINT
+executable
+correctly, you need to remember to start it with
+exec
+:
+FROM
+ubuntu
+ENTRYPOINT
+exec
+top -b
+When you run this image, you'll see the single
+PID 1
+process:
+$
+docker run -it --rm --name
+test
+top
+Mem: 1704520K used, 352148K free, 0K shrd, 0K buff, 140368121167873K cached
+CPU:   5% usr   0% sys   0% nic  94% idle   0% io   0% irq   0% sirq
+Load average: 0.08 0.03 0.05 2/98 6
+PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+1     0 root   

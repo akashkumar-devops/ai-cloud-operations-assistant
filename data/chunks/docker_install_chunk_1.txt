@@ -1,44 +1,17 @@
+Install Docker Engine
+Table of contents
+Installation procedures for supported platforms
+Other Linux distributions
+Release channels
+Support
+Upgrade path
+Licensing
+Reporting security issues
 Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+This section describes how to install Docker Engine on Linux, also known as
+Docker CE. Docker Engine is also available for Windows, macOS, and Linux,
+through Docker Desktop. For instructions on how to install Docker Desktop,
+see:
+Overview of Docker Desktop
+.
+Installation procedures for supported pla

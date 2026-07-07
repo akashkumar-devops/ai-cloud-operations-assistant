@@ -1,21 +1,10 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+ork.
+More information can be found in the network driver specific pages, including
+their configuration options and details about their functionality.
+Native Windows containers have a different set of drivers, see
+Windows container network drivers
+.
+Connecting to multiple networks
+Connecting a container to a network can be compared to connecting an Ethernet
+cable to a physical host. Just as a host can be connected to multiple Ethernet
+networks, a container can be connected to multiple Docker netw

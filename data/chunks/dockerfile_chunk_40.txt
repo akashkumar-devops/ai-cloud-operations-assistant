@@ -1,19 +1,19 @@
-utomatically use the
-latest Dockerfile version without having to upgrade BuildKit or Docker Engine,
-or even use a custom Dockerfile implementation.
-Most users will want to set this parser directive to
-docker/dockerfile:1
+
+linux/amd64
 ,
-which causes BuildKit to pull the latest stable version of the Dockerfile
-syntax before the build.
-# syntax=docker/dockerfile:1
-For more information about how the parser directive works, see
-Custom Dockerfile syntax
-.
-escape
-# escape=\
-Or
-# escape=`
-The
-escape
-directive sets t
+linux/arm64
+, or
+windows/amd64
+. By default, the target platform of the build
+request is used. Global build arguments can be used in the value of this flag,
+for example
+automatic platform ARGs
+allow you to force a stage to native build platform (
+--platform=$BUILDPLATFORM
+),
+and use it to cross-compile to the target platform inside the stage.
+Understand how ARG and FROM interact
+FROM
+instructions support variables that are declared by any
+ARG
+instructions that occur before the fir

@@ -1,11 +1,9 @@
-he size of the containers using it. Using a
-volume is also faster; writing into a container's writable layer requires a
-storage driver
-to manage the
-filesystem. The storage driver provides a union filesystem, using the Linux
-kernel. This extra abstraction reduces performance as compared to using
-volumes, which write directly to the host filesystem.
-If your container generates non-persistent state data, consider using a
-tmpfs mount
-to avoid storing the data anywhere permanently, and to
-increase t
+ner's logs.
+Share data between machines
+When building fault-tolerant applications, you may need to configure multiple
+replicas of the same service to have access to the same files.
+There are several ways to achieve this when developing your applications.
+One is to add logic to your application to store files on a cloud object
+storage system like Amazon S3. Another is to create volumes with a driver that
+supports writing files to an external storage system like NFS or Amazon S3.
+Volume drivers le

@@ -1,18 +1,25 @@
-tion arguments, however, isn't ignored.
-The following example prints
-hello world
-with leading whitespace as specified:
+ array format, instead it's a regular
+string. The shell form string lets you escape newlines using the
+escape
+character
+(backslash by default) to continue a single instruction
+onto the next line. This makes it easier to use with longer commands, because
+it lets you split them up into multiple lines. For example, consider these two
+lines:
 RUN
+source
+$HOME
+/.bashrc
+&&
+\
 echo
-"\
-hello\
-world"
-Parser directives
-Parser directives are optional, and affect the way in which subsequent lines
-in a Dockerfile are handled. Parser directives don't add layers to the build,
-and don't show up as build steps. Parser directives are written as a
-special type of comment in the form
-# directive=value
-. A single directive
-may only be used once.
-The following p
+$HOME
+They're equivalent to the following line:
+RUN
+source
+$HOME
+/.bashrc
+&&
+echo
+$HOME
+You can also use heredocs with the s

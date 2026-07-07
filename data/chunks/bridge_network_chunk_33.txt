@@ -1,15 +1,28 @@
- back-end. If you call
-your containers
-web
+tainers:
+$
+docker network inspect bridge
+The output shows both containers connected, with their assigned IP addresses
+(
+172.17.0.2
+for
+alpine1
 and
-db
-, the web container can connect to the db container
-at
-db
-, no matter which Docker host the application stack is running on.
-If you run the same application stack on the default bridge network, you need
-to manually create links between the containers (using the legacy
---link
-flag). These links need to be created in both directions, so you can see this
-gets complex with more than two containers which need to communicate.
-Alternatively, you can man
+172.17.0.3
+for
+alpine2
+).
+Connect to
+alpine1
+:
+$
+docker attach alpine1
+/ #
+Show the network interfaces for
+alpine1
+from within the container:
+#
+ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+valid_lft forever preferred_lft fore

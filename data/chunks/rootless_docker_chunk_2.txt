@@ -1,35 +1,21 @@
-Catalog
-Profiles
-Toolkit UI
-Use with CLI
-Dynamic discovery
-Gateway
-Hub MCP server
-FAQs
-E2B sandboxes
-Model Runner
-Get started with DMR
-DMR REST API
-Configuration options
-DMR examples
-IDE and tool integrations
-Open WebUI integration
-Inference engines
-Gordon
-Use cases
-Concepts
-Capabilities
-Data privacy
-How-to guides
-Docker Desktop
-CLI
-Permissions
-Configure tools
-Usage limits
-AI and Docker Compose
-Use AI models in Compose
-Docker Agent
-Model providers
-Local models
-Building a coding agent
-Best practi
+ that
+with
+userns-remap
+mode, the daemon itself is running with root privileges,
+whereas in rootless mode, both the daemon and the container are running without
+root privileges.
+The two modes also differ in how they map container UIDs and GIDs to the
+host: see
+UID/GID mapping
+for details.
+Rootless mode does not use binaries with
+SETUID
+bits or file capabilities,
+except
+newuidmap
+and
+newgidmap
+, which are needed to allow multiple
+UIDs/GIDs to be used in the user namespace.
+Prerequisites
+You must 

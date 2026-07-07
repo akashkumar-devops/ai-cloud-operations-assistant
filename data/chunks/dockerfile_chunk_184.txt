@@ -1,15 +1,15 @@
-ariable is not embedded in the image and is not available
-in the final container.
-Warning
-It isn't recommended to use build arguments for passing secrets such as
-user credentials, API tokens, etc. Build arguments are visible in the
-docker history
-command and in
-max
-mode provenance attestations,
-which are attached to the image by default if you use the Buildx GitHub Actions
-and your GitHub repository is public.
-Refer to the
-RUN --mount=type=secret
-section to
-learn about secure ways to use secrets
+ECK
+The
+HEALTHCHECK
+instruction has two forms:
+HEALTHCHECK [OPTIONS] CMD command
+(check container health by running a command inside the container)
+HEALTHCHECK NONE
+(disable any healthcheck inherited from the base image)
+The
+HEALTHCHECK
+instruction tells Docker how to test a container to check that
+it's still working. This can detect cases such as a web server stuck in
+an infinite loop and unable to handle new connections, even though the server
+process is still running.
+When a container has a h

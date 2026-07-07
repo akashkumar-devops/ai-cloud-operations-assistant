@@ -1,20 +1,17 @@
-as read-only
-.
-volume-nocopy
-If present, data at the destination isn't copied into the volume if the volume is empty. By default, content at the target destination gets copied into a mounted volume if empty.
-Example
+nal-drive
+The following
+docker run
+command achieves a similar result, from the point of view of the container being run.
+Running a container with this
+--mount
+option sets up the mount in the same way as if you had executed the
+mount
+command from the previous example.
 $
-docker run -v myvolume:/data:ro
-Create and manage volumes
-Unlike a bind mount, you can create and manage volumes outside the scope of any
-container.
-Create a volume:
-$
-docker volume create my-vol
-List volumes:
-$
-docker volume ls
-local               my-vol
-Inspect a volume:
-$
-docker
+docker run
+\
+--mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4'
+You can't run the
+mount
+command inside the container directly,
+because the container is unable to access 

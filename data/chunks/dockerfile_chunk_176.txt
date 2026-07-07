@@ -1,25 +1,27 @@
-ing Dockerfile snippet:
-FROM
-ubuntu
-RUN
-mkdir /myvol
+G
+CONT_IMG_VER
+ENV
+CONT_IMG_VER
+=
+hello
 RUN
 echo
-"hello world"
-> /myvol/greeting
-VOLUME
-/myvol
-This Dockerfile results in an image that causes
-docker run
-to
-create a new mount point at
-/myvol
-and copy the
-greeting
-file
-into the newly created volume.
-Notes about specifying volumes
-Keep the following things in mind about volumes in the Dockerfile.
-Volumes on Windows-based containers
-: When using Windows-based containers,
-the destination of a volume inside the container must be one of:
+$CONT_IMG_VER
+Line 3 doesn't cause a cache miss because the value of
+CONT_IMG_VER
+is a
+constant (
+hello
+). As a result, the environment variables and values used on
+the
+RUN
+(line 4) doesn't change between builds.
+ONBUILD
+ONBUILD
+<INSTRUCTION>
+The
+ONBUILD
+instruction adds to the image a trigger instruction to
+be executed at a later time, when the image is used as the base for
+another build. The trigger will be executed in the context of the
+downstr

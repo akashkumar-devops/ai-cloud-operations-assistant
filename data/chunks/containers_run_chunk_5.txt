@@ -1,26 +1,20 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+0eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0
+digest:
+$
+docker run alpine@sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0 date
+Options
+[OPTIONS]
+let you configure options for the container. For example, you can
+give the container a name (
+--name
+), or run it as a background process (
+-d
+).
+You can also set options to control things like resource constraints and
+networking.
+Commands and arguments
+You can use the
+[COMMAND]
+and
+[ARG...]
+positional arguments to specify

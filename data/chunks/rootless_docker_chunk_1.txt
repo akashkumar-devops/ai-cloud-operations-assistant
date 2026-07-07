@@ -1,44 +1,18 @@
-Get started
-AI and agents
-Overview
-Docker Sandboxes
-Get started
-Usage
-Agents
-Claude Code
-Codex
-Copilot
-Cursor
-Droid
-Gemini
-Kiro
-OpenCode
-Docker Agent
-Shell
-Workflows
-Customize
-Early Access
-Templates
-Kits
-Spec reference
-Examples
-Build an agent
-Architecture
-Security model
-Isolation layers
-Defaults
-Credentials
-Governance
-Policy concepts
-Local policy
-Org policy
-Sign-in enforcement
-Monitoring policies
-Audit logs
-API reference
-Troubleshooting
-FAQ
-Release notes
-MCP Catalog and Toolkit
-Beta
-Get started
+Rootless mode
+Table of contents
+How it works
+Prerequisites
+Install
+Rootless mode lets you run the Docker daemon and containers as a non-root
+user to mitigate potential vulnerabilities in the daemon and
+the container runtime.
+Rootless mode does not require root privileges even during the installation of
+the Docker daemon, as long as the
+prerequisites
+are met.
+How it works
+Rootless mode executes the Docker daemon and containers inside a user namespace.
+This is similar to
+userns-remap
+mode
+, except

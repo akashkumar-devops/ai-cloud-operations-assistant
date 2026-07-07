@@ -1,33 +1,20 @@
-ork driver plugins
-Docker Plugin API
-Docker volume plugins
-Plugin Config Version 1 of Plugin V2
-Use Docker Engine plugins
-Release notes
-Engine v29
-Engine v28
-Engine v27
-Engine v26.1
-Engine v26.0
-Engine v25.0
-Engine v24.0
-Engine v23.0
-Engine v20.10
-Engine v19.03
-Engine v18.09
-Engine v18.06
-Engine v18.05
-Engine v18.04
-Engine v18.03
-Engine v18.02
-Engine v18.01
-Engine v17.12
-Engine v17.11
-Engine v17.10
-Engine v17.09
-Engine v17.07
-Engine v17.06
-Engine v17.05
-Engine v17.04
-Engine v17.03
-Prior releases
+ifier
+f78375b1c487
+Name
+evil_ptolemy
+The UUID identifier is a random ID assigned to the container by the daemon.
+The daemon generates a random string name for containers automatically. You can
+also define a custom name using
+the
+--name
+flag
+.
+Defining a
+name
+can be a handy way to add meaning to a container. If you
+specify a
+name
+, you can use it when referring to the container in a
+user-defined network. This works for both background and foreground Docker
+containers.
+A container identifier is no

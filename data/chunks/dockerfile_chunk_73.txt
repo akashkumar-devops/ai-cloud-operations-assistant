@@ -1,18 +1,45 @@
-ultiple device configurations:
-vendor1.com/device
-: request the first device found for this vendor
-vendor1.com/device=foo
-: request a specific device
-vendor1.com/device=*
-: request all devices for this vendor
-class1
-: request devices by
-org.mobyproject.buildkit.device.class
-annotation
-Note
-Annotations are supported by the CDI specification since 0.6.0.
-Note
-To automatically allow all devices registered in the CDI specification, you
-can set the
-org.mobyproject.buildkit.device.autoallow
-annotation
+ge inspect --format
+=
+'{{json .Config.Labels}}'
+myimage
+{
+"com.example.vendor"
+:
+"ACME Incorporated"
+,
+"com.example.label-with-value"
+:
+"foo"
+,
+"version"
+:
+"1.0"
+,
+"description"
+:
+"This text illustrates that label-values can span multiple lines."
+,
+"multi.label1"
+:
+"value1"
+,
+"multi.label2"
+:
+"value2"
+,
+"other"
+:
+"value3"
+}
+MAINTAINER (deprecated)
+MAINTAINER
+<name
+>
+The
+MAINTAINER
+instruction sets the
+Author
+field of the generated images.
+The
+LABEL
+instruction is a much more flexible version of 

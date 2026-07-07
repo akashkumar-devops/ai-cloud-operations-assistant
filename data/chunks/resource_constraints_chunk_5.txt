@@ -1,26 +1,14 @@
-ps
-Storage
-Volumes
-Bind mounts
-tmpfs mounts
-Storage drivers
-Select a storage driver
-BTRFS storage driver
-Device Mapper storage driver (deprecated)
-OverlayFS storage driver
-VFS storage driver
-windowsfilter storage driver
-ZFS storage driver
-containerd image store
-Networking
-Docker with iptables
-Docker with nftables
-Packet filtering and firewalls
-Port publishing and mapping
-Network drivers
-Bridge network driver
-Host network driver
-IPvlan network driver
-Macvlan network driver
-None network driver
-Ove
+e-adj
+to an extreme negative
+number on the daemon or a container, or by setting
+--oom-kill-disable
+on a
+container.
+For more information about the Linux kernel's OOM management, see
+Out of Memory Management
+.
+You can mitigate the risk of system instability due to OOME by:
+Perform tests to understand the memory requirements of your application
+before placing it into production.
+Ensure that your application runs only on hosts with adequate resources.
+Limit the amount of memory your container can us

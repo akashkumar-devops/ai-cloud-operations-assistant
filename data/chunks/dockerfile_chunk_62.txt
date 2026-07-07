@@ -1,54 +1,35 @@
-&
-echo
-$HOME
-You can also use heredocs with the shell form to break up supported commands.
-RUN
-<<EOF
-source
-$HOME
-/.bashrc
-echo
-$HOME
-EOF
-For more information about heredocs, see
-Here-documents
+fined as `plain`.
+$
+eval
+$(
+ssh-agent
+)
+$
+ssh-add ~/.ssh/id_rsa
+(Input your passphrase here)
+$
+docker buildx build --ssh
+default
+=
+$SSH_AUTH_SOCK
 .
-Use a different shell
-You can change the default shell using the
-SHELL
-command. For example:
-SHELL
-[
-"/bin/bash"
-,
-"-c"
-]
-RUN
-echo
-hello
-For more information, see
-SHELL
+You can also specify a path to
+*.pem
+file on the host directly instead of
+$SSH_AUTH_SOCK
 .
-FROM
-FROM
-[--platform=<platform
->
-]
-<image>
-[
-AS <name>
-]
-Or
-FROM
-[--platform=<platform
->
-]
-<image>
-[
-:<tag>
-]
-[
-AS <name>
-]
-Or
-FROM
+However, pem files with passphrases are not supported.
+RUN --network
+RUN
+--network
+=
+<TYPE>
+RUN --network
+allows control over which networking environment the command
+is run in.
+The supported network types are:
+Type
+Description
+default
+(default)
+Run in the defa

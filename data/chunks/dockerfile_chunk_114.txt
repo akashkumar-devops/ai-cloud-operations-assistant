@@ -1,8 +1,33 @@
-ta. The directory itself isn't copied, only its
-contents. If it contains subdirectories, these are also copied, and merged with
-any existing directories at the destination. Any conflicts are resolved in
-favor of the content being added, on a file-by-file basis, except if you're
-trying to copy a directory onto an existing file, in which case an error is
-raised.
-If the source is a file, the file and its metadata are copied to the
-destination. File permissions are preserved. If the source is a file
+ge in a
+multi-stage build
+,
+specify the name of the stage you want to copy from. You specify stage names
+using the
+AS
+keyword with the
+FROM
+instruction.
+# syntax=docker/dockerfile:1
+FROM
+alpine
+AS
+build
+COPY
+. .
+RUN
+apk add clang
+RUN
+clang -o /hello hello.c
+FROM
+scratch
+COPY
+--from
+=
+build /hello /
+You can also copy files directly from named contexts (specified with
+--build-context <name>=<source>
+) or images. The following example copies an
+nginx.conf
+file from the official Nginx image.
+COPY
+--

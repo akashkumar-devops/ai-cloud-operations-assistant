@@ -1,28 +1,12 @@
-testation storage
-Provenance attestations
-SBOM attestations
-SLSA definitions
-Exporters
-Image and registry exporters
-Local and tar exporters
-OCI and Docker exporters
-BuildKit
-buildkitd.toml
-Configure BuildKit
-Custom Dockerfile syntax
-Dockerfile release notes
-Debugging
-OpenTelemetry support
-Build release notes
-Docker Build Cloud
-Setup
-Usage
-Continuous integration
-Optimization
-Builder settings
-Release notes
-Docker Compose
-Introduction to Compose
-How Compose works
-Why use Compose?
-History and develo
+access to the host machine's CPU cycles is unlimited.
+You can set various constraints to limit a given container's access to the host
+machine's CPU cycles. Most users use and configure the
+default CFS scheduler
+. You can also
+configure the
+real-time scheduler
+.
+Configure the default CFS scheduler
+The CFS is the Linux kernel CPU scheduler for normal Linux processes. Several
+runtime flags let you configure the amount of access to CPU resources your
+container has. When you use these settings, Docke

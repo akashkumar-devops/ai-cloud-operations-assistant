@@ -1,33 +1,16 @@
-s
-Release lifecycle
-Supply chain security
-Docker Hardened Images
-Quickstart
-Features
-Explore
-Hardened images
-Build process
-Image types
-Scanner integrations
-Image testing
-Responsibility overview
-Malware scanning
-Feedback
-Migration
-Migration checklist
-AI-assisted migration
-Experimental
-Migrate from Alpine or Debian
-Migrate from Ubuntu
-Migrate from Wolfi
-Migration examples
-Go
-Python
-Node.js
-.NET
-Java
-How-tos
-Search and evaluate
-Mirror a repository
-Customize an image or chart
-Create and build an ima
+s damage, or to escalate
+to the host.
+This doesn't affect regular web apps, but reduces the vectors of attack by
+malicious users considerably. By default Docker
+drops all capabilities except
+those
+needed
+,
+an allowlist instead of a denylist approach. You can see a full list of
+available capabilities in
+Linux
+manpages
+.
+One primary risk with running Docker containers is that the default set
+of capabilities and mounts given to a container may provide incomplete
+isolation, either independently, or 

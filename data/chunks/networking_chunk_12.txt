@@ -1,39 +1,17 @@
-
-Docker Offload
-Quickstart
-About
-Configure
-Usage
-Optimize usage
-Troubleshoot
-Give feedback
-Docker Build
-Core concepts
-Docker Build Overview
-Dockerfile overview
-Build context
-Build checks
-Building
-Multi-stage
-Variables
-Secrets
-Multi-platform
-Export binaries
-Container Device Interface (CDI)
-Best practices
-Base images
-Builders
-Build drivers
-Docker container driver
-Docker driver
-Kubernetes driver
-Remote driver
-Manage builders
-Bake
-Introduction
-Targets
-Inheritance
-Variables
-Expressions
-Functions
-Matr
+d hostname
+When creating a network, IPv4 address allocation is enabled by default, it
+can be disabled using
+--ipv4=false
+. IPv6 address allocation can be enabled
+using
+--ipv6
+.
+$
+docker network create --ipv6 --ipv4
+=
+false
+v6net
+By default, the container gets an IP address for every Docker network it attaches to.
+A container receives an IP address out of the IP subnet of the network.
+The Docker daemon performs dynamic subnetting and IP address allocation for containers.
+Each network also has a d

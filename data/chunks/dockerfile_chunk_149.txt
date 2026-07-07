@@ -1,19 +1,20 @@
-ion
-directory was a path that contained a symlink,
-COPY/ADD
-can not follow it.
-In the final image the destination path created with
---link
-will always be a
-path containing only directories.
-If you don't rely on the behavior of following symlinks in the destination
-path, using
---link
-is always recommended. The performance of
---link
-is
-equivalent or better than the default behavior and, it creates much better
-conditions for cache reuse.
-When copying a path into a subdirectory,
---link
-will always c
+ The value can be a JSON array,
+VOLUME ["/var/log/"]
+, or a plain
+string with multiple arguments, such as
+VOLUME /var/log
+or
+VOLUME /var/log /var/db
+. For more information/examples and mounting instructions via the
+Docker client, refer to
+Share Directories via Volumes
+documentation.
+The
+docker run
+command initializes the newly created volume with any data
+that exists at the specified location within the base image. For example,
+consider the following Dockerfile snippet:
+FROM
+ubuntu
+RUN
+mkdir /my

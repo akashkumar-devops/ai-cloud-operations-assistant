@@ -1,28 +1,42 @@
-PY
-*.png /dest/
-In the following example,
-?
-is a single-character wildcard, matching e.g.
-index.js
-and
-index.ts
-.
-COPY
-index.?s /dest/
-When adding files or directories that contain special characters (such as
+'postgres'
+]
+;
+then
+chown -R postgres
+"
+$PGDATA
+"
+if
 [
-and
+-z
+"
+$(
+ls -A
+"
+$PGDATA
+"
+)
+"
 ]
-), you need to escape those paths following the Golang rules to prevent
-them from being treated as a matching pattern. For example, to add a file
-named
-arr[0].txt
-, use the following;
-COPY
-arr
-[[]
-0
-]
-.txt /dest/
-Destination
-If the destination path begins with a forward slash, it's 
+;
+then
+gosu postgres initdb
+fi
+exec
+gosu postgres
+"
+$@
+"
+fi
+exec
+"
+$@
+"
+Lastly, if you need to do some extra cleanup (or communicate with other containers)
+on shutdown, or are co-ordinating more than one executable, you may need to ensure
+that the
+ENTRYPOINT
+script receives the Unix signals, passes them on, and then
+does some more work:
+#!/bin/sh
+# Note: I've written this using sh so it works in the busybox co

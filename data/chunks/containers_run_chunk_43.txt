@@ -1,30 +1,27 @@
-aring data between a container and the host.
-You can add a filesystem mount to a container using the
---mount
-flag for the
-docker run
-command.
-The following sections show basic examples of how to create volumes and bind
-mounts. For more in-depth examples and descriptions, refer to the section of
-the
-storage section
-in the documentation.
-Volume mounts
-To create a volume mount:
+cpus
+with a float number to achieve the same purpose.
+For example, if there is 1 CPU, then
+--cpus=0.5
+will achieve the same result as
+setting
+--cpu-period=50000
+and
+--cpu-quota=25000
+(50% CPU).
+The default value for
+--cpus
+is
+0.000
+, which means there is no limit.
+For more information, see the
+CFS documentation on bandwidth limiting
+.
+Cpuset constraint
+We can set cpus in which to allow execution for containers.
+Examples:
 $
-docker run --mount
-source
+docker run -it --cpuset-cpus
 =
-<VOLUME_NAME>,target
-=[
-PATH
-]
-[
-IMAGE
-]
-[
-COMMAND...
-]
-The
---mount
-flag takes two parameter
+"1,3"
+ubuntu:24.04 /bin/bash
+This means pr

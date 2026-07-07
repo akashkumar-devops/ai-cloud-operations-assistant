@@ -1,36 +1,26 @@
-alidated by using the
---no-cache
-flag, for example
-docker build --no-cache
-.
-See the
-Dockerfile Best Practices
-guide
-for more information.
-The cache for
-RUN
-instructions can be invalidated by
-ADD
-and
-COPY
-instructions.
-RUN --device
-Note
-Not yet available in stable syntax, use
-docker/dockerfile:1-labs
-version. It also needs BuildKit 0.20.0 or later.
-RUN
---device
+foo"
+LABEL
+version
 =
-name,
-[
-required
-]
-RUN --device
-allows build to request
-CDI devices
-to be available to the build step.
-Warning
-The use of
---device
-is 
+"1.0"
+LABEL
+description
+=
+"This text illustrates \
+that label-values can span multiple lines."
+An image can have more than one label. You can specify multiple labels on a
+single line. Prior to Docker 1.10, this decreased the size of the final image,
+but this is no longer the case. You may still choose to specify multiple labels
+in a single instruction, in one of the following two ways:
+LABEL
+multi.label1
+=
+"value1"
+multi.label2
+=
+"value2"
+other
+=
+"value3"
+LABEL
+multi.label1

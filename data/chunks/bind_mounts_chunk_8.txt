@@ -1,20 +1,22 @@
-river
-Use a logging driver plugin
-Use docker logs with remote logging drivers
-Security
-Rootless mode
-UID/GID mapping
-Tips
-Troubleshooting
-Antivirus software and Docker
-AppArmor security profiles for Docker
-Content trust in Docker
-Automation with content trust
-Delegations for content trust
-Deploy Notary Server with Compose
-Manage keys for content trust
-Play in a content trust sandbox
-Docker security non-events
-Isolate containers with a user namespace
-Protect the Docker daemon socket
-Seccomp secur
+he
+--mount
+flag is more explicit and supports all the available options.
+If you use
+--volume
+to bind-mount a file or directory that does not yet
+exist on the Docker host, Docker automatically creates the directory on the
+host for you. It's always created as a directory.
+By default,
+--mount
+does not automatically create a directory if the specified mount
+path does not exist on the host. Instead, it produces an error:
+$
+docker run --mount
+type
+=
+bind,src
+=
+/dev/noexist,dst
+=
+/mnt/foo alpine
+docker

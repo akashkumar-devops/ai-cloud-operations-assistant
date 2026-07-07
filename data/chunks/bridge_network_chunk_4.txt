@@ -1,37 +1,8 @@
- shares
-containerd image store
-Wasm workloads
-Beta
-Docker Desktop CLI
-Virtual Machine Manager
-WSL
-Best practices
-Custom kernels
-Use WSL
-Settings and maintenance
-Change settings
-Backup and restore data
-Troubleshoot and support
-Troubleshoot and diagnose
-Common topics
-Known issues
-MacOS app damaged dialog
-FAQs
-General
-Mac
-Windows
-Linux
-Releases
-Give feedback
-Uninstall
-Release notes
-Docker Engine
-Install
-Ubuntu
-Debian
-RHEL
-Fedora
-Raspberry Pi OS (32-bit / armhf)
-CentOS
-Binaries
-Post-installation ste
+ lets
+containers connected to the same bridge network communicate, while providing
+isolation from containers that aren't connected to that bridge network. By
+default, the Docker bridge driver automatically installs rules in the host
+machine so that containers connected to different bridge networks can only
+communicate with each other using published ports.
+Bridge networks apply to containers running on the same Docker daemon host.
+For communication among containers running on different Docker da

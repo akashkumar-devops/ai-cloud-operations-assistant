@@ -1,19 +1,35 @@
-ables that were set using
-ENV
-by its
-parent stage or any ancestor. Refer to the
-multi-stage builds section
-in the manual for more information.
-Environment variable persistence can cause unexpected side effects. For example,
-setting
-ENV DEBIAN_FRONTEND=noninteractive
-changes the behavior of
-apt-get
-,
-and may confuse users of your image.
-If an environment variable is only needed during build, and not in the final
-image, consider setting a value for a single command instead:
+ash
+/
+).
+COPY
+accepts a flag
+--from=<name>
+that lets you specify the source location
+to be a build stage, context, or image. The following example copies files from
+a stage named
+build
+:
+FROM
+golang
+AS
+build
+WORKDIR
+/app
 RUN
-DEBIAN_FRONTEND
+--mount
 =
-n
+type
+=
+bind,target
+=
+. go build -o /myapp ./cmd
+COPY
+--from
+=
+build /myapp /usr/bin/
+For more information about copying from named sources, see the
+--from
+flag
+.
+Copying from the build context
+When copying source files from the build context, paths are interpreted 

@@ -1,39 +1,31 @@
-
-Docker Offload
-Quickstart
-About
-Configure
-Usage
-Optimize usage
-Troubleshoot
-Give feedback
-Docker Build
-Core concepts
-Docker Build Overview
-Dockerfile overview
-Build context
-Build checks
-Building
-Multi-stage
-Variables
-Secrets
-Multi-platform
-Export binaries
-Container Device Interface (CDI)
-Best practices
-Base images
-Builders
-Build drivers
-Docker container driver
-Docker driver
-Kubernetes driver
-Remote driver
-Manage builders
-Bake
-Introduction
-Targets
-Inheritance
-Variables
-Expressions
-Functions
-Matr
+ume
+flag.
+$
+docker run --mount
+type
+=
+volume,src
+=
+<volume-name>,dst
+=
+<mount-path>
+$
+docker run --volume <volume-name>:<mount-path>
+In general,
+--mount
+is preferred. The main difference is that the
+--mount
+flag is more explicit and supports all the available options.
+You must use
+--mount
+if you want to:
+Specify
+volume driver options
+Mount a
+volume subdirectory
+Mount a volume into a Swarm service
+Options for --mount
+The
+--mount
+flag consists of multiple key-value pairs, separated by commas
+and e

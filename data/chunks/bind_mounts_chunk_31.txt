@@ -1,9 +1,40 @@
-ightforward way of removing a mount to reveal
-the obscured files again. Your best option is to recreate the container without
-the mount.
-Considerations and constraints
-Bind mounts have write access to files on the host by default.
-One side effect of using bind mounts is that you can change the host
-filesystem via processes running in a container, including creating,
-modifying, or deleting important system files or directories. This capability
-can have security implications. For example, it may a
+y #32579
+for details.
+This example sets the
+z
+option to specify that multiple containers can share
+the bind mount's contents:
+It is not possible to modify the SELinux label using the
+--mount
+flag.
+$
+docker run -d
+\
+-it \
+--name devtest \
+-v "$(pwd)"/target:/app:z \
+nginx:latest
+Use a bind mount with Docker Compose
+A single Docker Compose service with a bind mount looks like this:
+services
+:
+frontend
+:
+image
+:
+node:lts
+volumes
+:
+-
+type
+:
+bind
+source
+:
+./static
+target
+:
+/opt/app/static
+volumes
+:
+m

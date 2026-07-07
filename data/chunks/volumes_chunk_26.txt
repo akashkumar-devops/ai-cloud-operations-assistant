@@ -1,35 +1,16 @@
-manage domains
-Single sign-on
-Setup
-Manage connections
-Troubleshoot
-FAQs
-General
-Domains
-Enforcement
-Identity providers
-User management
-Provision
-SCIM
-Setup
-Group mapping
-Migrate
-Just-in-Time
-Auto-provision
-Troubleshoot
-Enforce sign-in
-Configure
-Roles and permissions
-Core roles
-Custom roles
-Hardened Docker Desktop
-Enhanced Container Isolation
-Enable ECI
-Configure advanced settings
-Limitations
-FAQs
-Settings Management
-Use a JSON file
-Use the Admin Console
-Desktop settings reporting
-Settings refer
+ker container stop nginxtest
+$
+docker container rm nginxtest
+$
+docker volume rm nginx-vol
+Use a read-only volume
+For some development applications, the container needs to write into the bind
+mount so that changes are propagated back to the Docker host. At other times,
+the container only needs read access to the data. Multiple
+containers can mount the same volume. You can simultaneously mount a
+single volume as
+read-write
+for some containers and as
+read-only
+for others.
+The following example chan

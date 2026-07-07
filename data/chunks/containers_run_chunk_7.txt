@@ -1,21 +1,16 @@
-r Docker daemon
-Read the daemon logs
-Troubleshooting the Docker daemon
-Manage resources
-Docker contexts
-Docker object labels
-Prune unused Docker objects
-Logs and metrics
-Configure logging drivers
-Customize log driver output
-Logging drivers
-Amazon CloudWatch Logs logging driver
-ETW logging driver
-Fluentd logging driver
-Google Cloud Logging driver
-Graylog Extended Format logging driver
-Journald logging driver
-JSON File logging driver
-Local file logging driver
-Splunk logging driver
-Syslog logging d
+oup called
+docker
+and add users to
+it. For more information about this configuration, refer to the Docker
+installation documentation for your operating system.
+Foreground and background
+When you start a container, the container runs in the foreground by default.
+If you want to run the container in the background instead, you can use the
+--detach
+(or
+-d
+) flag. This starts the container without occupying your
+terminal window.
+$
+docker run -d <IMAGE>
+While the container runs in the background, you

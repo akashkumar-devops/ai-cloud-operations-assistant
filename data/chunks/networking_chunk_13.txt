@@ -1,27 +1,18 @@
-ix targets
-Contexts
-Bake file reference
-Bake standard library functions
-Building with Bake from a Compose file
-Overriding configurations
-Remote Bake file definition
-Cache
-Build cache invalidation
-Build garbage collection
-Cache storage backends
-Amazon S3 cache
-Azure Blob Storage cache
-GitHub Actions cache
-Inline cache
-Local cache
-Registry cache
-Optimize cache usage in builds
-CI
-GitHub Actions
-Annotations
-Attestations
-Build checks
-Build secrets
-Build summary
-BuildKit configuration
-Cache management
+efault subnet mask and gateway.
+You can connect a running container to multiple networks,
+either by passing the
+--network
+flag multiple times when creating the container,
+or using the
+docker network connect
+command for already running containers.
+In both cases, you can use the
+--ip
+or
+--ip6
+flags to specify the container's IP address on that particular network.
+In the same way, a container's hostname defaults to be the container's ID in Docker.
+You can override the hostname using
+--hostname
+.
+Wh

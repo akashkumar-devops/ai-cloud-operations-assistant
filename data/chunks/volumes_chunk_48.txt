@@ -1,20 +1,18 @@
- to the
-Volumes
-section in the Compose specification.
-Start a service with volumes
-When you start a service and define a volume, each service container uses its own
-local volume. None of the containers can share this data if you use the
-local
-volume driver. However, some volume drivers do support shared storage.
-The following example starts an
-nginx
-service with four replicas, each of which
-uses a local volume called
-myvol2
-.
+e.
+For example, create a new container named
+dbstore2
+:
 $
-docker service create -d
-\
---replicas=4 \
---name devtest-service \
--
+docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
+Then, un-tar the backup file in the new containerâs data volume:
+$
+docker run --rm --volumes-from dbstore2 -v
+$(
+pwd
+)
+:/backup ubuntu bash -c
+"cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+You can use these techniques to automate backup, migration, and restore
+testing using your preferred tools.
+Remove volumes
+A Docker data volume persists after you delete a container. There 

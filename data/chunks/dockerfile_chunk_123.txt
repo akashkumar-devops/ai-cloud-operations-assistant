@@ -1,10 +1,19 @@
-ore information about Git URL fragments,
-see
-URL fragments
-.
-When adding from a Git repository, the permissions bits for files
-are 644. If a file in the repository has the executable bit set, it will have
-permissions set to 755. Directories have permissions set to 755.
-When using a Git repository as the source, the repository must be accessible
-from the build context. To add a repository via SSH, whether public or private,
-you must pass an SSH key for authentication. For example, given the follo
+,
+COPY/ADD
+can not follow it.
+In the final image the destination path created with
+--link
+will always be a
+path containing only directories.
+If you don't rely on the behavior of following symlinks in the destination
+path, using
+--link
+is always recommended. The performance of
+--link
+is
+equivalent or better than the default behavior and, it creates much better
+conditions for cache reuse.
+When copying a path into a subdirectory,
+--link
+will always copy from the
+root of the filesystem. When copying
