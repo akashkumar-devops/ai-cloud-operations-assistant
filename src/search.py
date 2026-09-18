@@ -1,39 +1,93 @@
-import chromadb  # type: ignore[import]
+"""
+Filename: search.py
+
+Purpose
+-------
+Retrieves the most relevant chunks from ChromaDB
+using semantic search.
+
+Project
+-------
+AI Cloud Operations Assistant
+"""
+
+import chromadb
 from sentence_transformers import SentenceTransformer
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+from src.config import CHROMA_DB_DIR
 
-client = chromadb.PersistentClient(path="chroma_db")
+# =====================================================
+# Configuration
+# =====================================================
 
-collection = client.get_collection("docker_docs")
+COLLECTION_NAME = "cloud_operations_docs"
 
-question = input("Ask a question: ")
+# =====================================================
+# Load Embedding Model
+# =====================================================
 
-query_embedding = model.encode(question).tolist()
+print("Loading embedding model...")
+
+model = SentenceTransformer(
+    "all-MiniLM-L6-v2"
+)
+
+# =====================================================
+# Connect to ChromaDB
+# =====================================================
+
+client = chromadb.PersistentClient(
+    path=CHROMA_DB_DIR,
+)
+
+collection = client.get_collection(
+    COLLECTION_NAME,
+)
+
+print(f"Total Chunks : {collection.count()}")
+
+# =====================================================
+# Ask Question
+# =====================================================
+
+question = input("\nAsk a question: ")
+
+query_embedding = model.encode(
+    question
+).tolist()
+
+# =====================================================
+# Retrieve
+# =====================================================
 
 results = collection.query(
     query_embeddings=[query_embedding],
-    n_results=10,
-    include=["documents", "metadatas", "distances"]
+    n_results=5,
+    include=[
+        "documents",
+        "metadatas",
+        "distances",
+    ],
 )
-for i in range(10):
-    print("\n----")
-    print(results["documents"][0][i][:300])
-print(results.keys())
 
-print("\nTop Results:\n")
-print("Total documents:", collection.count())
+print("\n" + "=" * 60)
+print("Top Matching Chunks")
+print("=" * 60)
+
 for i in range(len(results["documents"][0])):
 
-    print(f"\nResult {i+1}")
-    print("-" * 50)
+    metadata = results["metadatas"][0][i]
 
-    print(
-        "Source:",
-        results["metadatas"][0][i]["source"]
-    )
-    print("Distance:", results["distances"][0][i])
-    print()
+    print(f"\nResult {i + 1}")
+    print("-" * 60)
+
+    print(f"Technology : {metadata['technology']}")
+    print(f"Document   : {metadata['document']}")
+    print(f"Chunk ID   : {metadata['chunk_id']}")
+    print(f"Distance   : {results['distances'][0][i]:.4f}")
+
+    print("\nContent:\n")
 
     print(results["documents"][0][i][:700])
-    
+
+print("\n" + "=" * 60)

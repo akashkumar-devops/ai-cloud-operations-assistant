@@ -19,6 +19,7 @@ AI Cloud Operations Assistant
 """
 
 import os
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -27,7 +28,7 @@ from src.config import (
     REQUEST_TIMEOUT,
 )
 
-from src.sources.docker_source import DockerSource
+from src.sources.registry import SOURCES
 
 
 def fetch_page(url):
@@ -86,12 +87,9 @@ def save_document(
 
 
 def main():
-
-    sources = [
-
-        DockerSource(),
-
-    ]
+    """
+    Run the scraping pipeline.
+    """
 
     total_saved = 0
     total_skipped = 0
@@ -100,7 +98,7 @@ def main():
     print("Knowledge Ingestion Engine")
     print("=" * 60)
 
-    for source in sources:
+    for source in SOURCES:
 
         print(f"\nProcessing Source: {source.name}")
 

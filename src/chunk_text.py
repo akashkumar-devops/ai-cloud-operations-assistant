@@ -1,34 +1,139 @@
+"""
+Filename: chunk_text.py
+
+Purpose
+-------
+Reads cleaned documentation, creates Chunk objects,
+adds metadata, and saves them as JSON files.
+
+Project
+-------
+AI Cloud Operations Assistant
+"""
+
+import json
 import os
 
-os.makedirs("data/chunks", exist_ok=True)
+from src.config import (
+    CLEAN_DATA_DIR,
+    CHUNK_DIR,
+)
 
-chunk_size = 500
+from src.processing.chunker import Chunker
+from src.processing.metadata import Metadata
+from src.sources.registry import get_source
 
-total_chunks = 0
 
-for filename in os.listdir("data/raw"):
+def save_chunk(
+    chunk,
+    output_folder,
+    filename,
+):
+    """
+    Save a Chunk as JSON.
+    """
 
-    if not filename.endswith(".txt"):
-        continue
+    os.makedirs(
+        output_folder,
+        exist_ok=True,
+    )
 
-    filepath = os.path.join("data/raw", filename)
+    filepath = os.path.join(
+        output_folder,
+        filename,
+    )
 
-    with open(filepath, "r", encoding="utf-8") as f:
-        text = f.read()
+    with open(
+        filepath,
+        "w",
+        encoding="utf-8",
+    ) as file:
 
-    source_name = filename.replace(".txt", "")
-
-    for i in range(0, len(text), chunk_size):
-
-        chunk = text[i:i + chunk_size]
-
-        chunk_file = (
-            f"data/chunks/{source_name}_chunk_{i//chunk_size + 1}.txt"
+        json.dump(
+            chunk.to_dict(),
+            file,
+            indent=4,
+            ensure_ascii=False,
         )
 
-        with open(chunk_file, "w", encoding="utf-8") as f:
-            f.write(chunk)
 
-        total_chunks += 1
+def main():
+    """
+    Execute the chunking pipeline.
+    """
 
-print(f"Total chunks created: {total_chunks}")
+    chunker = Chunker()
+    metadata = Metadata()
+
+    total_documents = 0
+    total_chunks = 0
+
+    print("=" * 60)
+    print("Chunk Generation Pipeline")
+    print("=" * 60)
+
+    for filename in sorted(os.listdir(CLEAN_DATA_DIR)):
+
+        if not filename.endswith(".txt"):
+            continue
+
+        document = filename.removesuffix(".txt")
+
+        source = get_source(document)
+
+        input_path = os.path.join(
+            CLEAN_DATA_DIR,
+            filename,
+        )
+
+        with open(
+            input_path,
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            text = file.read()
+
+        chunks = chunker.chunk(text)
+
+        output_folder = os.path.join(
+            CHUNK_DIR,
+            source.name,
+        )
+
+        print(f"\nDocument : {document}")
+        print(f"Technology : {source.name}")
+
+        for chunk in chunks:
+
+            metadata.create(
+                chunk=chunk,
+                source=source,
+                document=document,
+            )
+
+            output_filename = (
+                f"{document}_chunk_{chunk.chunk_id}.json"
+            )
+
+            save_chunk(
+                chunk=chunk,
+                output_folder=output_folder,
+                filename=output_filename,
+            )
+
+        print(f"Chunks Created : {len(chunks)}")
+
+        total_documents += 1
+        total_chunks += len(chunks)
+
+    print("\n" + "=" * 60)
+    print("Pipeline Summary")
+    print("=" * 60)
+    print(f"Documents Processed : {total_documents}")
+    print(f"Chunks Created      : {total_chunks}")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()

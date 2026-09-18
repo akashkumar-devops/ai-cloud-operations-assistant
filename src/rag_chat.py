@@ -1,75 +1,52 @@
-import os
-import chromadb
-import google.generativeai as genai
-from sentence_transformers import SentenceTransformer
-from dotenv import load_dotenv
-
-load_dotenv()
-
-genai.configure(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
-
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
-
-client = chromadb.PersistentClient(
-    path="chroma_db"
-)
-
-collection = client.get_collection(
-    "docker_docs"
-)
-
-model = genai.GenerativeModel(
-    "gemini-2.5-flash"
-)
-
-question = input("Ask a question: ")
-
-query_embedding = embedding_model.encode(
-    question
-).tolist()
-
-results = collection.query(
-    query_embeddings=[query_embedding],
-    n_results=3
-)
-
-context = "\n\n".join(
-    results["documents"][0]
-)
-
-prompt = f"""
-You are a Docker documentation assistant.
-
-Answer using the provided context.
-
-If the answer is partially available across multiple chunks,
-combine the information and provide a complete explanation.
-
-If the answer is not present, say so clearly.
-
-Context:
-{context}
-
-Question:
-{question}
-
-Answer:
 """
-print("\nRETRIEVED CONTEXT:\n")
-print(context[:5000])
-print("\nSources Used:")
+Filename: rag_chat.py
 
-for meta in results["metadatas"][0]:
-    print("-", meta["source"])
+Purpose
+-------
+Terminal interface for the AI Cloud Operations Assistant.
+"""
 
-response = model.generate_content(
-    prompt
-)
+from src.rag_engine import answer_question
 
-print("\nAnswer:\n")
-print(response.text)
-print("Total documents:", collection.count())
+
+def main():
+
+    print("=" * 60)
+    print("AI Cloud Operations Assistant")
+    print("=" * 60)
+
+    while True:
+
+        question = input("\nAsk a question (type 'exit' to quit): ").strip()
+
+        if question.lower() == "exit":
+            print("\nGoodbye!")
+            break
+
+        if not question:
+            continue
+
+        print("\nGenerating answer...\n")
+
+        result = answer_question(question)
+
+        print("=" * 60)
+        print("Assistant")
+        print("=" * 60)
+        print(result["answer"])
+
+        print("\nSources")
+        print("-" * 60)
+
+        for source in result["sources"]:
+            print(
+                f"{source['technology']} | "
+                f"{source['document']} | "
+                f"Chunk {source['chunk_id']}"
+            )
+
+        print("\nRetrieved Chunks :", result["retrieved_chunks"])
+
+
+if __name__ == "__main__":
+    main()

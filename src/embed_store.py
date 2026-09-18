@@ -1,90 +1,135 @@
 """
-embed_store.py
+Filename: embed_store.py
 
-Purpose:
----------
-Reads all chunk files from data/chunks,
-generates embeddings using Sentence Transformers,
+Purpose
+-------
+Reads JSON chunks, generates embeddings,
 and stores them in ChromaDB.
 
-Run Order:
-----------
+Pipeline
+--------
 1. scraper.py
-2. chunk_documents.py
-3. embed_store.py
-4. rag_chat.py
+2. clean_text.py
+3. chunk_text.py
+4. embed_store.py
+
+Project
+-------
+AI Cloud Operations Assistant
 """
 
+import json
 import os
 import shutil
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-# ---------------------------------------------------
-# Load embedding model
-# This converts text into vector embeddings.
-# ---------------------------------------------------
-print("Loading embedding model...")
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-# ---------------------------------------------------
-# ChromaDB Configuration
-# ---------------------------------------------------
-DB_PATH = "chroma_db"
-COLLECTION_NAME = "docker_docs"
-
-# ---------------------------------------------------
-# Delete old database
-# This prevents stale vectors from previous runs.
-# ---------------------------------------------------
-if os.path.exists(DB_PATH):
-    print("Removing old ChromaDB...")
-    shutil.rmtree(DB_PATH)
-
-# Create a fresh persistent database
-client = chromadb.PersistentClient(path=DB_PATH)
-
-# Create a new collection
-collection = client.create_collection(
-    name=COLLECTION_NAME
+from src.config import (
+    CHUNK_DIR,
+    CHROMA_DB_DIR,
 )
 
-# ---------------------------------------------------
-# Read all chunk files
-# ---------------------------------------------------
-CHUNK_DIR = "data/chunks"
+# =====================================================
+# Load Embedding Model
+# =====================================================
 
-chunk_files = sorted([
-    f for f in os.listdir(CHUNK_DIR)
-    if f.endswith(".txt")
-])
+print("Loading embedding model...")
 
-print(f"Found {len(chunk_files)} chunk files.")
+model = SentenceTransformer(
+    "all-MiniLM-L6-v2"
+)
 
-# ---------------------------------------------------
-# Generate embeddings and store them
-# ---------------------------------------------------
-for file in chunk_files:
+# =====================================================
+# ChromaDB Configuration
+# =====================================================
 
-    filepath = os.path.join(CHUNK_DIR, file)
+COLLECTION_NAME = "cloud_operations_docs"
 
-    with open(filepath, "r", encoding="utf-8") as f:
-        text = f.read()
+# =====================================================
+# Create Fresh Database
+# =====================================================
 
-    # Convert text into embedding vector
-    embedding = model.encode(text).tolist()
+if os.path.exists(CHROMA_DB_DIR):
 
-    # Store in ChromaDB
-    collection.add(
-        ids=[file],                     # Unique ID
-        documents=[text],               # Original text
-        embeddings=[embedding],         # Vector embedding
-        metadatas=[{
-            "source": file              # Used for citations
-        }]
+    print("Removing old ChromaDB...")
+
+    shutil.rmtree(CHROMA_DB_DIR)
+
+client = chromadb.PersistentClient(
+    path=CHROMA_DB_DIR,
+)
+
+collection = client.create_collection(
+    name=COLLECTION_NAME,
+)
+
+# =====================================================
+# Store Embeddings
+# =====================================================
+
+total_chunks = 0
+
+print("=" * 60)
+print("Embedding Pipeline")
+print("=" * 60)
+
+for technology in sorted(os.listdir(CHUNK_DIR)):
+
+    technology_folder = os.path.join(
+        CHUNK_DIR,
+        technology,
     )
 
-print("=" * 50)
-print(f"Successfully stored {len(chunk_files)} chunks.")
-print("Vector database is ready!")
-print("=" * 50)
+    if not os.path.isdir(technology_folder):
+        continue
+
+    print(f"\nTechnology : {technology}")
+
+    for filename in sorted(os.listdir(technology_folder)):
+
+        if not filename.endswith(".json"):
+            continue
+
+        filepath = os.path.join(
+            technology_folder,
+            filename,
+        )
+
+        with open(
+            filepath,
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            chunk = json.load(file)
+
+        content = chunk["content"]
+
+        metadata = chunk["metadata"]
+
+        embedding = model.encode(
+            content
+        ).tolist()
+
+        chunk_id = (
+            f"{metadata['technology']}_"
+            f"{metadata['document']}_"
+            f"{metadata['chunk_id']}"
+        )
+
+        collection.add(
+            ids=[chunk_id],
+            documents=[content],
+            embeddings=[embedding],
+            metadatas=[metadata],
+        )
+
+        total_chunks += 1
+
+print("\n" + "=" * 60)
+print("Embedding Summary")
+print("=" * 60)
+print(f"Chunks Stored : {total_chunks}")
+print(f"Collection    : {COLLECTION_NAME}")
+print("=" * 60)

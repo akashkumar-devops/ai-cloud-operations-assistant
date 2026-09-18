@@ -10,6 +10,7 @@ Responsibilities
 - Prepare logical text units
 - Build embedding-sized chunks
 - Preserve context
+- Create Chunk objects
 
 This component DOES NOT
 -----------------------
@@ -22,7 +23,8 @@ Project
 AI Cloud Operations Assistant
 """
 
-from config import DEFAULT_CHUNK_SIZE
+from src.config import DEFAULT_CHUNK_SIZE
+from src.models.chunk import Chunk
 
 
 class Chunker:
@@ -30,7 +32,7 @@ class Chunker:
     Splits cleaned documentation into chunks.
     """
 
-    def chunk(self, text: str) -> list[str]:
+    def chunk(self, text: str) -> list[Chunk]:
         """
         Split cleaned documentation into chunks.
         """
@@ -40,7 +42,23 @@ class Chunker:
 
         units = self._prepare_units(text)
 
-        return self._build_chunks(units)
+        chunk_contents = self._build_chunks(units)
+
+        chunks = []
+
+        for index, content in enumerate(
+            chunk_contents,
+            start=1,
+        ):
+
+            chunks.append(
+                Chunk(
+                    chunk_id=index,
+                    content=content,
+                )
+            )
+
+        return chunks
 
     def _prepare_units(
         self,

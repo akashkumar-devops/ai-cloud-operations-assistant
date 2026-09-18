@@ -217,3 +217,9 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 .env
+
+# Generated RAG data
+chroma_db/
+data/raw/
+data/cleaned/
+data/chunks/
