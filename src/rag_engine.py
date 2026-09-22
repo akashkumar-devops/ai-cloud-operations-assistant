@@ -22,6 +22,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 _embedding_model = SentenceTransformer(
     "sentence-transformers/all-MiniLM-L6-v2",
     backend="onnx",
+    model_kwargs={"file_name": "onnx/model_quint8_avx2.onnx"},
 )
 _llm = genai.GenerativeModel("gemini-2.5-flash")
 _client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
