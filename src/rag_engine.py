@@ -19,7 +19,10 @@ TOP_K = 3
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-_embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+_embedding_model = SentenceTransformer(
+    "sentence-transformers/all-MiniLM-L6-v2",
+    backend="onnx",
+)
 _llm = genai.GenerativeModel("gemini-2.5-flash")
 _client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
 _collection = _client.get_collection(COLLECTION_NAME)
