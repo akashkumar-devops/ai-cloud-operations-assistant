@@ -56,7 +56,7 @@ HEADERS = {
 RAW_DATA_DIR = "data/raw"
 CLEAN_DATA_DIR = "data/cleaned"
 CHUNK_DIR = "data/chunks"
-CHROMA_DB_DIR = "chroma_db"
+CHROMA_DB_DIR = "chroma_db_complete"
 
 # =====================================================
 # Processing Configuration

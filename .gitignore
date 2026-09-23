@@ -220,6 +220,11 @@ __marimo__/
 
 # Generated RAG data
 chroma_db/
+chroma_db_staging/
+chroma_db_previous/
+chroma_db_complete_staging/
+chroma_db_complete_previous/
+chroma_db_complete/
 data/raw/
 data/cleaned/
 data/chunks/

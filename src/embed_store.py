@@ -37,7 +37,9 @@ from src.config import (
 print("Loading embedding model...")
 
 model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
+    "sentence-transformers/all-MiniLM-L6-v2",
+    backend="onnx",
+    model_kwargs={"file_name": "onnx/model_quint8_avx2.onnx"},
 )
 
 # =====================================================
@@ -45,19 +47,22 @@ model = SentenceTransformer(
 # =====================================================
 
 COLLECTION_NAME = "cloud_operations_docs"
+STAGING_DB_DIR = f"{CHROMA_DB_DIR}_staging"
+PREVIOUS_DB_DIR = f"{CHROMA_DB_DIR}_previous"
 
 # =====================================================
-# Create Fresh Database
+# Build a replacement database separately so a failed rebuild cannot
+# destroy the currently usable index.
 # =====================================================
 
-if os.path.exists(CHROMA_DB_DIR):
+if os.path.exists(STAGING_DB_DIR):
 
-    print("Removing old ChromaDB...")
+    print("Removing incomplete staging ChromaDB...")
 
-    shutil.rmtree(CHROMA_DB_DIR)
+    shutil.rmtree(STAGING_DB_DIR)
 
 client = chromadb.PersistentClient(
-    path=CHROMA_DB_DIR,
+    path=STAGING_DB_DIR,
 )
 
 collection = client.create_collection(
@@ -133,3 +138,23 @@ print("=" * 60)
 print(f"Chunks Stored : {total_chunks}")
 print(f"Collection    : {COLLECTION_NAME}")
 print("=" * 60)
+
+# Swap the finished index into place. Keep the previous database as a
+# rollback copy until the replacement has been confirmed.
+if os.path.exists(PREVIOUS_DB_DIR):
+    raise FileExistsError(
+        f"Previous database already exists: {PREVIOUS_DB_DIR}. "
+        "Move or remove it before rebuilding."
+    )
+
+if os.path.exists(CHROMA_DB_DIR):
+    os.replace(CHROMA_DB_DIR, PREVIOUS_DB_DIR)
+
+try:
+    os.replace(STAGING_DB_DIR, CHROMA_DB_DIR)
+except Exception:
+    if os.path.exists(PREVIOUS_DB_DIR) and not os.path.exists(CHROMA_DB_DIR):
+        os.replace(PREVIOUS_DB_DIR, CHROMA_DB_DIR)
+    raise
+
+print(f"Index swapped into : {CHROMA_DB_DIR}")
