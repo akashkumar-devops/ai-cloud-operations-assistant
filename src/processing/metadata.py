@@ -56,7 +56,7 @@ class Metadata:
             Chunk enriched with metadata.
         """
 
-        chunk.metadata.update =(
+        chunk.metadata.update(
             {
             "technology": source.name,
             "document": document,
