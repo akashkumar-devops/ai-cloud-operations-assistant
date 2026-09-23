@@ -12,6 +12,127 @@ function scrollToLatest() {
   conversation.scrollTop = conversation.scrollHeight;
 }
 
+function appendInlineMarkdown(parent, text) {
+  const tokenPattern = /(`[^`]+`|\*\*[^*]+\*\*)/g;
+  let cursor = 0;
+  for (const match of text.matchAll(tokenPattern)) {
+    parent.append(document.createTextNode(text.slice(cursor, match.index)));
+    const token = match[0];
+    const element = document.createElement(token.startsWith('`') ? 'code' : 'strong');
+    element.textContent = token.startsWith('`') ? token.slice(1, -1) : token.slice(2, -2);
+    parent.append(element);
+    cursor = match.index + token.length;
+  }
+  parent.append(document.createTextNode(text.slice(cursor)));
+}
+
+function renderMarkdown(container, markdown) {
+  const lines = String(markdown).replace(/\r\n?/g, '\n').split('\n');
+  let paragraph = [];
+  let list = null;
+
+  const closeList = () => {
+    if (list) container.append(list);
+    list = null;
+  };
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    const p = document.createElement('p');
+    p.className = 'message-copy';
+    appendInlineMarkdown(p, paragraph.join(' '));
+    container.append(p);
+    paragraph = [];
+  };
+
+  for (let index = 0; index < lines.length;) {
+    const line = lines[index];
+    const fence = line.match(/^\s*```([^`]*)\s*$/);
+    if (fence) {
+      flushParagraph();
+      closeList();
+      const codeLines = [];
+      index += 1;
+      while (index < lines.length && !/^\s*```\s*$/.test(lines[index])) {
+        codeLines.push(lines[index]);
+        index += 1;
+      }
+      if (index < lines.length) index += 1;
+
+      const block = document.createElement('div');
+      block.className = 'code-block';
+      const toolbar = document.createElement('div');
+      toolbar.className = 'code-toolbar';
+      const language = document.createElement('span');
+      language.textContent = fence[1].trim() || 'CODE';
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-code';
+      copyButton.type = 'button';
+      copyButton.textContent = 'Copy';
+      copyButton.setAttribute('aria-label', 'Copy code');
+      const codeText = codeLines.join('\n');
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(codeText);
+          copyButton.textContent = 'Copied';
+          window.setTimeout(() => { copyButton.textContent = 'Copy'; }, 1500);
+        } catch {
+          copyButton.textContent = 'Select code to copy';
+        }
+      });
+      toolbar.append(language, copyButton);
+      const pre = document.createElement('pre');
+      const code = document.createElement('code');
+      code.textContent = codeText;
+      pre.append(code);
+      block.append(toolbar, pre);
+      container.append(block);
+      continue;
+    }
+
+    if (!line.trim()) {
+      flushParagraph();
+      closeList();
+      index += 1;
+      continue;
+    }
+
+    const heading = line.match(/^#{1,6}\s+(.+)$/);
+    if (heading) {
+      flushParagraph();
+      closeList();
+      const h = document.createElement('h3');
+      h.className = 'answer-heading';
+      appendInlineMarkdown(h, heading[1]);
+      container.append(h);
+      index += 1;
+      continue;
+    }
+
+    const bullet = line.match(/^\s*[-*]\s+(.+)$/);
+    const ordered = line.match(/^\s*\d+[.)]\s+(.+)$/);
+    if (bullet || ordered) {
+      flushParagraph();
+      const kind = bullet ? 'ul' : 'ol';
+      if (!list || list.tagName.toLowerCase() !== kind) {
+        closeList();
+        list = document.createElement(kind);
+        list.className = 'answer-list';
+      }
+      const item = document.createElement('li');
+      appendInlineMarkdown(item, (bullet || ordered)[1]);
+      list.append(item);
+      index += 1;
+      continue;
+    }
+
+    closeList();
+    paragraph.push(line.trim());
+    index += 1;
+  }
+  flushParagraph();
+  closeList();
+}
+
 function makeMessage(role, text) {
   const row = document.createElement('article');
   row.className = `message ${role}`;
@@ -32,10 +153,14 @@ function makeMessage(role, text) {
     name.textContent = 'CloudOps Assistant';
     body.append(name);
   }
-  const copy = document.createElement('p');
-  copy.className = 'message-copy';
-  copy.textContent = text;
-  body.append(copy);
+  if (role === 'assistant') {
+    renderMarkdown(body, text);
+  } else {
+    const copy = document.createElement('p');
+    copy.className = 'message-copy';
+    copy.textContent = text;
+    body.append(copy);
+  }
   row.append(body);
   return { row, body };
 }
@@ -92,7 +217,7 @@ async function sendQuestion(question) {
   messages.append(makeMessage('user', trimmed).row);
   const pending = makeMessage('assistant', '');
   pending.row.classList.add('pending');
-  pending.body.querySelector('.message-copy').remove();
+  pending.body.querySelectorAll('.message-copy').forEach((copy) => copy.remove());
   const dots = document.createElement('div');
   dots.className = 'loading-dots';
   dots.setAttribute('aria-label', 'Thinking');

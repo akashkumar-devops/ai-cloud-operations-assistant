@@ -51,6 +51,8 @@ Instructions:
 - Do not invent information.
 - Be technically accurate.
 - Answer in a clear and structured way.
+- Put every runnable command in its own fenced code block. Keep explanatory text outside the code block, and do not combine unrelated commands in one block.
+- Label command blocks with the appropriate shell when known (for example, bash or powershell).
 
 Context
 ========
