@@ -37,6 +37,8 @@ DOCKER_URLS = {
     "docker_desktop": "https://docs.docker.com/desktop/",
     "engine_daemon": "https://docs.docker.com/engine/daemon/",
     "daemon_logs": "https://docs.docker.com/engine/daemon/logs/",
+    "daemon_troubleshooting": "https://docs.docker.com/engine/daemon/troubleshoot/",
+    "docker_desktop_troubleshooting": "https://docs.docker.com/desktop/troubleshoot-and-support/troubleshoot/",
     "engine_cli_reference": "https://docs.docker.com/reference/cli/docker/",
     "daemon_cli_reference": "https://docs.docker.com/reference/cli/dockerd/",
     "engine_api_reference": "https://docs.docker.com/reference/api/",
@@ -57,6 +59,8 @@ DOCKER_URLS = {
     "multi_platform_builds": "https://docs.docker.com/build/building/multi-platform/",
     "buildkit": "https://docs.docker.com/build/buildkit/",
     "build_cache_backends": "https://docs.docker.com/build/cache/backends/",
+    "build_checks": "https://docs.docker.com/build/checks/",
+    "build_cache_invalidation": "https://docs.docker.com/build/cache/invalidation/",
 
     # =====================================================
     # Containers
@@ -92,6 +96,9 @@ DOCKER_URLS = {
     "compose_networking": "https://docs.docker.com/compose/how-tos/networking/",
     "compose_secrets": "https://docs.docker.com/compose/how-tos/use-secrets/",
     "compose_environment_variables": "https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/",
+    "compose_quickstart_debugging": "https://docs.docker.com/compose/gettingstarted/",
+    "compose_logs_reference": "https://docs.docker.com/reference/cli/docker/compose/logs/",
+    "compose_services_reference": "https://docs.docker.com/reference/compose-file/services/",
 
     # =====================================================
     # Docker Hub

@@ -139,8 +139,8 @@ print(f"Chunks Stored : {total_chunks}")
 print(f"Collection    : {COLLECTION_NAME}")
 print("=" * 60)
 
-# Swap the finished index into place. Keep the previous database as a
-# rollback copy until the replacement has been confirmed.
+# Copy the finished index into place. A copy works with cloud-synced
+# directories that cannot be renamed atomically. Keep a rollback copy.
 if os.path.exists(PREVIOUS_DB_DIR):
     raise FileExistsError(
         f"Previous database already exists: {PREVIOUS_DB_DIR}. "
@@ -148,13 +148,21 @@ if os.path.exists(PREVIOUS_DB_DIR):
     )
 
 if os.path.exists(CHROMA_DB_DIR):
-    os.replace(CHROMA_DB_DIR, PREVIOUS_DB_DIR)
+    shutil.copytree(CHROMA_DB_DIR, PREVIOUS_DB_DIR)
 
 try:
-    os.replace(STAGING_DB_DIR, CHROMA_DB_DIR)
+    shutil.copytree(
+        STAGING_DB_DIR,
+        CHROMA_DB_DIR,
+        dirs_exist_ok=True,
+    )
 except Exception:
-    if os.path.exists(PREVIOUS_DB_DIR) and not os.path.exists(CHROMA_DB_DIR):
-        os.replace(PREVIOUS_DB_DIR, CHROMA_DB_DIR)
+    if os.path.exists(PREVIOUS_DB_DIR):
+        shutil.copytree(
+            PREVIOUS_DB_DIR,
+            CHROMA_DB_DIR,
+            dirs_exist_ok=True,
+        )
     raise
 
 print(f"Index swapped into : {CHROMA_DB_DIR}")
