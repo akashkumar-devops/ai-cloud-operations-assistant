@@ -21,6 +21,7 @@ AI Cloud Operations Assistant
 import json
 import os
 import shutil
+import tempfile
 
 import chromadb
 from sentence_transformers import SentenceTransformer
@@ -37,7 +38,10 @@ from src.config import (
 print("Loading embedding model...")
 
 model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2",
+    os.getenv(
+        "EMBEDDING_MODEL_PATH",
+        "sentence-transformers/all-MiniLM-L6-v2",
+    ),
     backend="onnx",
     model_kwargs={"file_name": "onnx/model_quint8_avx2.onnx"},
 )
@@ -47,19 +51,16 @@ model = SentenceTransformer(
 # =====================================================
 
 COLLECTION_NAME = "cloud_operations_docs"
-STAGING_DB_DIR = f"{CHROMA_DB_DIR}_staging"
+STAGING_DB_DIR = os.path.join(
+    tempfile.gettempdir(),
+    f"ai-cloud-operations-assistant-chroma-staging-{os.getpid()}",
+)
 PREVIOUS_DB_DIR = f"{CHROMA_DB_DIR}_previous"
 
 # =====================================================
 # Build a replacement database separately so a failed rebuild cannot
 # destroy the currently usable index.
 # =====================================================
-
-if os.path.exists(STAGING_DB_DIR):
-
-    print("Removing incomplete staging ChromaDB...")
-
-    shutil.rmtree(STAGING_DB_DIR)
 
 client = chromadb.PersistentClient(
     path=STAGING_DB_DIR,
@@ -141,14 +142,12 @@ print("=" * 60)
 
 # Copy the finished index into place. A copy works with cloud-synced
 # directories that cannot be renamed atomically. Keep a rollback copy.
-if os.path.exists(PREVIOUS_DB_DIR):
-    raise FileExistsError(
-        f"Previous database already exists: {PREVIOUS_DB_DIR}. "
-        "Move or remove it before rebuilding."
-    )
-
 if os.path.exists(CHROMA_DB_DIR):
-    shutil.copytree(CHROMA_DB_DIR, PREVIOUS_DB_DIR)
+    shutil.copytree(
+        CHROMA_DB_DIR,
+        PREVIOUS_DB_DIR,
+        dirs_exist_ok=True,
+    )
 
 try:
     shutil.copytree(

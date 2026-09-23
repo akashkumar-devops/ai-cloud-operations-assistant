@@ -61,12 +61,18 @@ DOCKER_URLS = {
     "build_cache_backends": "https://docs.docker.com/build/cache/backends/",
     "build_checks": "https://docs.docker.com/build/checks/",
     "build_cache_invalidation": "https://docs.docker.com/build/cache/invalidation/",
+    "build_attestations": "https://docs.docker.com/build/metadata/attestations/",
+    "build_provenance_attestations": "https://docs.docker.com/build/metadata/attestations/slsa-provenance/",
 
     # =====================================================
     # Containers
     # =====================================================
 
     "containers_run": "https://docs.docker.com/engine/containers/run/",
+    "container_run_reference": "https://docs.docker.com/reference/cli/docker/container/run/",
+    "container_logs_reference": "https://docs.docker.com/reference/cli/docker/container/logs/",
+    "container_inspect_reference": "https://docs.docker.com/reference/cli/docker/inspect/",
+    "system_events_reference": "https://docs.docker.com/reference/cli/docker/system/events/",
     "containers_restart": "https://docs.docker.com/engine/containers/start-containers-automatically/",
     "resource_constraints": "https://docs.docker.com/engine/containers/resource_constraints/",
 
@@ -76,6 +82,7 @@ DOCKER_URLS = {
 
     "volumes": "https://docs.docker.com/engine/storage/volumes/",
     "bind_mounts": "https://docs.docker.com/engine/storage/bind-mounts/",
+    "volume_inspect_reference": "https://docs.docker.com/reference/cli/docker/volume/inspect/",
 
     # =====================================================
     # Networking
@@ -84,6 +91,7 @@ DOCKER_URLS = {
     "networking": "https://docs.docker.com/engine/network/",
     "bridge_network": "https://docs.docker.com/engine/network/drivers/bridge/",
     "port_publishing": "https://docs.docker.com/engine/network/port-publishing/",
+    "network_inspect_reference": "https://docs.docker.com/reference/cli/docker/network/inspect/",
 
     # =====================================================
     # Docker Compose
@@ -105,6 +113,8 @@ DOCKER_URLS = {
     # =====================================================
 
     "docker_hub": "https://docs.docker.com/docker-hub/",
+    "docker_hub_troubleshooting": "https://docs.docker.com/docker-hub/troubleshoot/",
+    "docker_hub_pull_usage": "https://docs.docker.com/docker-hub/usage/pulls/",
 
     # =====================================================
     # Security
@@ -112,6 +122,9 @@ DOCKER_URLS = {
 
     "docker_security": "https://docs.docker.com/engine/security/",
     "rootless_docker": "https://docs.docker.com/engine/security/rootless/",
+    "docker_scout": "https://docs.docker.com/scout/",
+    "docker_scout_quickstart": "https://docs.docker.com/scout/quickstart/",
+    "docker_scout_sboms": "https://docs.docker.com/scout/how-tos/view-create-sboms/",
 
     # =====================================================
     # Storage Drivers and Containerd Image Store
