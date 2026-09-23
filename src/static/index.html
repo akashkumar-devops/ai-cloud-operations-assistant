@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f5">
+  <meta name="description" content="Ask questions about cloud operations and get answers grounded in your indexed documentation.">
+  <title>Cloud Operations Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Cloud Operations Assistant home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M9.1 22.6h13.1a5.25 5.25 0 0 0 .5-10.48A7.6 7.6 0 0 0 8.2 13a4.85 4.85 0 0 0 .9 9.6Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="m12.5 18 2.3 2.3 4.8-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-name">CloudOps<span> Assistant</span></span>
+      </a>
+      <div class="topbar-right">
+        <span class="scope-label">KNOWLEDGE ASSISTANT</span>
+        <span class="service-status" id="service-status"><span class="status-dot"></span><span id="status-text">Connecting</span></span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" aria-label="Assistant information">
+        <div class="workspace-card">
+          <div class="workspace-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m4.5 7.8 7.5 4.4 7.5-4.4M12 12.2V20" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <p class="eyebrow">YOUR WORKSPACE</p>
+            <h2>Cloud knowledge</h2>
+          </div>
+          <span class="workspace-chevron" aria-hidden="true">⌄</span>
+        </div>
+
+        <div class="side-section">
+          <p class="eyebrow">TRY ASKING</p>
+          <button class="prompt-link" data-prompt="How do Docker bind mounts work?"><span class="prompt-symbol">↗</span>How do bind mounts work?</button>
+          <button class="prompt-link" data-prompt="How can I troubleshoot a Docker container that keeps restarting?"><span class="prompt-symbol">↗</span>Troubleshoot a container</button>
+          <button class="prompt-link" data-prompt="What is the difference between a Docker image and a container?"><span class="prompt-symbol">↗</span>Image vs. container</button>
+        </div>
+
+        <div class="side-note">
+          <span class="note-icon" aria-hidden="true">✦</span>
+          <p>Answers are generated from the indexed cloud operations documents. Check the cited sources for details.</p>
+        </div>
+        <div class="sidebar-footer"><span class="footer-dot"></span> Powered by Gemini and ChromaDB</div>
+      </aside>
+
+      <section class="chat-area" aria-label="Chat">
+        <div class="chat-heading">
+          <div>
+            <p class="eyebrow">CLOUD OPERATIONS</p>
+            <h1>What can I help you solve?</h1>
+            <p class="heading-copy">Ask a question about Docker and cloud operations. I’ll look for an answer in the project knowledge base.</p>
+          </div>
+          <button class="new-chat-button" id="new-chat" type="button" title="Clear this conversation">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span>New chat</span>
+          </button>
+        </div>
+
+        <div class="conversation" id="conversation" aria-live="polite" aria-label="Conversation">
+          <div class="welcome-card" id="welcome-card">
+            <div class="welcome-icon" aria-hidden="true">✳</div>
+            <h2>Start with a question</h2>
+            <p>Get a clear answer with references to the documentation it came from.</p>
+            <div class="suggestions" aria-label="Example questions">
+              <button class="suggestion" data-prompt="How do Docker bind mounts work?"><span>⌘</span> Explain Docker bind mounts</button>
+              <button class="suggestion" data-prompt="How can I troubleshoot a Docker container that keeps restarting?"><span>⌁</span> Troubleshoot a container</button>
+              <button class="suggestion" data-prompt="What is the difference between a Docker image and a container?"><span>◈</span> Compare images and containers</button>
+            </div>
+          </div>
+          <div class="messages" id="messages"></div>
+        </div>
+
+        <form class="composer" id="chat-form">
+          <label class="sr-only" for="question">Your question</label>
+          <textarea id="question" name="question" rows="1" maxlength="2000" placeholder="Ask a cloud operations question…" required></textarea>
+          <div class="composer-bottom">
+            <span class="composer-hint"><span class="hint-icon">↵</span> Enter to send <span class="hint-separator">·</span> Shift + Enter for a new line</span>
+            <button class="send-button" id="send-button" type="submit" aria-label="Send question">
+              <span>Send</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </form>
+        <p class="disclaimer">AI-generated answers can be incomplete. Use the sources to verify important details.</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

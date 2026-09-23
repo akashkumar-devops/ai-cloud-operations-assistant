@@ -7,8 +7,11 @@ FastAPI backend for the AI Cloud Operations Assistant.
 """
 
 import time
+from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from src.rag_engine import answer_question
@@ -18,6 +21,9 @@ app = FastAPI(
     version="1.0.0",
 )
 
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
 
 class ChatRequest(BaseModel):
     question: str
@@ -25,7 +31,11 @@ class ChatRequest(BaseModel):
 
 @app.get("/")
 def root():
+    return FileResponse(STATIC_DIR / "index.html")
 
+
+@app.get("/api/status")
+def api_status():
     return {
         "application": "AI Cloud Operations Assistant",
         "status": "running",
