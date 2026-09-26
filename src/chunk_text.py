@@ -13,6 +13,7 @@ AI Cloud Operations Assistant
 
 import json
 import os
+import argparse
 
 from src.config import (
     CLEAN_DATA_DIR,
@@ -21,7 +22,7 @@ from src.config import (
 
 from src.processing.chunker import Chunker
 from src.processing.metadata import Metadata
-from src.sources.registry import get_source
+from src.sources.registry import SOURCES, get_source
 
 
 def save_chunk(
@@ -72,9 +73,21 @@ def main():
     print("Chunk Generation Pipeline")
     print("=" * 60)
 
+    parser = argparse.ArgumentParser(description="Chunk cleaned documentation.")
+    parser.add_argument("--source", choices=[source.name for source in SOURCES])
+    selected_source = parser.parse_args().source
+    selected_documents = None
+    if selected_source:
+        selected_documents = next(
+            source for source in SOURCES if source.name == selected_source
+        ).urls
+
     for filename in sorted(os.listdir(CLEAN_DATA_DIR)):
 
         if not filename.endswith(".txt"):
+            continue
+
+        if selected_documents is not None and filename.removesuffix(".txt") not in selected_documents:
             continue
 
         document = filename.removesuffix(".txt")

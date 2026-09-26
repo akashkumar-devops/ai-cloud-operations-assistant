@@ -71,6 +71,7 @@ Answer
         sources.append({
             "technology": metadata["technology"],
             "document": metadata["document"],
+            "source_url": metadata.get("source_url"),
             "chunk_id": metadata["chunk_id"],
         })
 

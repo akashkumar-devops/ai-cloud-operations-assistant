@@ -13,10 +13,12 @@ AI Cloud Operations Assistant
 """
 
 from src.sources.docker_source import DockerSource
+from src.sources.kubernetes_source import KubernetesSource
 
 
 SOURCES = [
     DockerSource(),
+    KubernetesSource(),
 ]
 
 

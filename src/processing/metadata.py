@@ -58,9 +58,10 @@ class Metadata:
 
         chunk.metadata.update(
             {
-            "technology": source.name,
-            "document": document,
-            "chunk_id": chunk.chunk_id,
+                "technology": source.name,
+                "document": document,
+                "source_url": source.urls[document],
+                "chunk_id": chunk.chunk_id,
             }
         )
 

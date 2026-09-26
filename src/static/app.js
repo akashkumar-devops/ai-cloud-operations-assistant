@@ -196,7 +196,17 @@ function addSources(body, data) {
       const item = document.createElement('li');
       item.className = 'source-item';
       const parts = [source.technology, source.document, source.chunk_id].filter(Boolean);
-      item.textContent = parts.length ? parts.join(' · ') : 'Indexed document';
+      const label = parts.length ? parts.join(' · ') : 'Indexed document';
+      if (source.source_url) {
+        const link = document.createElement('a');
+        link.href = source.source_url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label;
+        item.append(link);
+      } else {
+        item.textContent = label;
+      }
       list.append(item);
     }
     details.append(list);

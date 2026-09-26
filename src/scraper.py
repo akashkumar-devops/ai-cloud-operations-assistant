@@ -19,6 +19,7 @@ AI Cloud Operations Assistant
 """
 
 import os
+import argparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -98,7 +99,14 @@ def main():
     print("Knowledge Ingestion Engine")
     print("=" * 60)
 
+    parser = argparse.ArgumentParser(description="Scrape registered documentation sources.")
+    parser.add_argument("--source", choices=[source.name for source in SOURCES])
+    selected_source = parser.parse_args().source
+
     for source in SOURCES:
+
+        if selected_source and source.name != selected_source:
+            continue
 
         print(f"\nProcessing Source: {source.name}")
 

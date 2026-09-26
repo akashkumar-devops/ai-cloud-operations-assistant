@@ -27,8 +27,10 @@ AI Cloud Operations Assistant
 
 import os
 import re
+import argparse
 
 from src.config import RAW_DATA_DIR, CLEAN_DATA_DIR
+from src.sources.registry import SOURCES
 
 # =====================================================
 # Create output directory
@@ -114,9 +116,21 @@ def main():
     print("Cleaning Documentation")
     print("=" * 60)
 
+    parser = argparse.ArgumentParser(description="Clean ingested documentation.")
+    parser.add_argument("--source", choices=[source.name for source in SOURCES])
+    selected_source = parser.parse_args().source
+    selected_documents = None
+    if selected_source:
+        selected_documents = next(
+            source for source in SOURCES if source.name == selected_source
+        ).urls
+
     for filename in sorted(os.listdir(RAW_DATA_DIR)):
 
         if not filename.endswith(".txt"):
+            continue
+
+        if selected_documents is not None and filename.removesuffix(".txt") not in selected_documents:
             continue
 
         input_path = os.path.join(RAW_DATA_DIR, filename)
