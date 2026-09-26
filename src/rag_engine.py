@@ -26,17 +26,65 @@ _llm = genai.GenerativeModel("gemini-2.5-flash")
 _client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
 _collection = _client.get_collection(COLLECTION_NAME)
 
+
+def _focused_search_queries(question: str) -> list[str]:
+    """Add precise Kubernetes searches when a question asks for diagnostics."""
+    normalized = question.lower()
+    kubernetes_terms = (
+        "kubernetes", "k8s", "kubectl", "pod", "pods", "namespace", "kubelet"
+    )
+    if not any(term in normalized for term in kubernetes_terms):
+        return []
+
+    queries = []
+    if "log" in normalized:
+        queries.append(
+            "Kubernetes Pod logs from current or previous crashed container: "
+            "kubectl logs --previous"
+        )
+    if any(term in normalized for term in ("event", "restart", "oom", "killed", "crash")):
+        queries.append(
+            "Kubernetes list Pod events by namespace: "
+            "kubectl get events Warning Reason Message"
+        )
+    if any(term in normalized for term in ("request", "limit", "memory", "cpu", "resource")):
+        queries.append(
+            "kubectl get pod -o yaml prints the full Pod spec configuration resources"
+        )
+    if any(term in normalized for term in ("oom", "out of memory", "memory limit")):
+        queries.append(
+            "Kubernetes OOMKilled Last State Terminated Exit Code 137 "
+            "describe Pod Restart Count"
+        )
+    return queries
+
+
 def answer_question(question: str) -> dict:
-    query_embedding = _embedding_model([question])[0].tolist()
+    search_queries = [question, *_focused_search_queries(question)]
+    query_embeddings = [
+        embedding.tolist()
+        for embedding in _embedding_model(search_queries)
+    ]
 
     results = _collection.query(
-        query_embeddings=[query_embedding],
+        query_embeddings=query_embeddings,
         n_results=TOP_K,
         include=["documents", "metadatas"],
     )
 
-    documents = results["documents"][0]
-    metadatas = results["metadatas"][0]
+    documents = []
+    metadatas = []
+    seen_ids = set()
+    for query_index, ids in enumerate(results["ids"]):
+        # Keep the original top three, then add the strongest hit for each
+        # focused diagnostic search without repeating a chunk.
+        result_limit = TOP_K if query_index == 0 else 1
+        for result_index, chunk_id in enumerate(ids[:result_limit]):
+            if chunk_id in seen_ids:
+                continue
+            seen_ids.add(chunk_id)
+            documents.append(results["documents"][query_index][result_index])
+            metadatas.append(results["metadatas"][query_index][result_index])
 
     context = "\n\n".join(documents)
 
