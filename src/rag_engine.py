@@ -9,8 +9,8 @@ Core RAG engine for AI Cloud Operations Assistant.
 import os
 import chromadb
 import google.generativeai as genai
+from chromadb.utils.embedding_functions.onnx_mini_lm_l6_v2 import ONNXMiniLM_L6_V2
 from dotenv import load_dotenv
-from sentence_transformers import SentenceTransformer
 from src.config import CHROMA_DB_DIR
 
 COLLECTION_NAME = "cloud_operations_docs"
@@ -19,17 +19,15 @@ TOP_K = 3
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-_embedding_model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2",
-    backend="onnx",
-    model_kwargs={"file_name": "onnx/model_quint8_avx2.onnx"},
+_embedding_model = ONNXMiniLM_L6_V2(
+    preferred_providers=["CPUExecutionProvider"],
 )
 _llm = genai.GenerativeModel("gemini-2.5-flash")
 _client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
 _collection = _client.get_collection(COLLECTION_NAME)
 
 def answer_question(question: str) -> dict:
-    query_embedding = _embedding_model.encode(question).tolist()
+    query_embedding = _embedding_model([question])[0].tolist()
 
     results = _collection.query(
         query_embeddings=[query_embedding],
