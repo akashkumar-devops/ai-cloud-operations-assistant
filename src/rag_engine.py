@@ -59,6 +59,44 @@ def _focused_search_queries(question: str) -> list[str]:
     return queries
 
 
+def _kubernetes_diagnostic_reference(question: str) -> str:
+    """Provide verified command examples when a Kubernetes question is diagnostic."""
+    normalized = question.lower()
+    kubernetes_terms = (
+        "kubernetes", "k8s", "kubectl", "pod", "pods", "namespace", "kubelet"
+    )
+    diagnostic_terms = (
+        "log", "event", "restart", "oom", "killed", "crash", "request",
+        "limit", "memory", "troubleshoot", "diagnos",
+    )
+    if not any(term in normalized for term in kubernetes_terms):
+        return ""
+    if not any(term in normalized for term in diagnostic_terms):
+        return ""
+
+    return """Verified Kubernetes troubleshooting commands from the official documentation:
+
+Current container logs:
+kubectl logs <pod-name> -c <container-name> -n <namespace>
+
+Logs from the previous, crashed container instance:
+kubectl logs <pod-name> -c <container-name> -n <namespace> --previous
+
+Pod state, restart count, container requests/limits, and recent events:
+kubectl describe pod <pod-name> -n <namespace>
+
+List events in the Pod's namespace:
+kubectl get events -n <namespace>
+
+Inspect the Pod specification, including each container's resources.requests and resources.limits:
+kubectl get pod <pod-name> -n <namespace> -o yaml
+
+Replace the angle-bracket placeholders with the actual Pod, container, and namespace. Official references:
+https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/
+https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+"""
+
+
 def answer_question(question: str) -> dict:
     search_queries = [question, *_focused_search_queries(question)]
     query_embeddings = [
@@ -87,6 +125,9 @@ def answer_question(question: str) -> dict:
             metadatas.append(results["metadatas"][query_index][result_index])
 
     context = "\n\n".join(documents)
+    diagnostic_reference = _kubernetes_diagnostic_reference(question)
+    if diagnostic_reference:
+        context += "\n\n" + diagnostic_reference
 
     prompt = f"""
 You are an AI Cloud Operations Assistant.
