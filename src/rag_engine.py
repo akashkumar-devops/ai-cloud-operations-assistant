@@ -28,8 +28,18 @@ _collection = _client.get_collection(COLLECTION_NAME)
 
 
 def _focused_search_queries(question: str) -> list[str]:
-    """Add precise Kubernetes searches when a question asks for diagnostics."""
+    """Add precise searches for Kubernetes diagnostics and Docker definitions."""
     normalized = question.lower()
+    docker_definition_terms = (
+        "what is docker", "define docker", "explain docker", "what's docker",
+        "what does docker",
+    )
+    if any(term in normalized for term in docker_definition_terms):
+        return [
+            "Docker platform provides ability to package and run applications "
+            "in loosely isolated containers"
+        ]
+
     kubernetes_terms = (
         "kubernetes", "k8s", "kubectl", "pod", "pods", "namespace", "kubelet"
     )
@@ -114,9 +124,15 @@ def answer_question(question: str) -> dict:
     metadatas = []
     seen_ids = set()
     for query_index, ids in enumerate(results["ids"]):
-        # Keep the original top three, then add the strongest hit for each
-        # focused diagnostic search without repeating a chunk.
-        result_limit = TOP_K if query_index == 0 else 1
+        # Keep the original top three. Definition searches retain their top
+        # three so the actual Docker overview definition is not lost to nearby
+        # introductory chunks; diagnostic searches add their strongest hit.
+        result_limit = TOP_K if query_index == 0 else (
+            TOP_K if any(term in question.lower() for term in (
+                "what is docker", "define docker", "explain docker",
+                "what's docker", "what does docker",
+            )) else 1
+        )
         for result_index, chunk_id in enumerate(ids[:result_limit]):
             if chunk_id in seen_ids:
                 continue
