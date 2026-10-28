@@ -179,20 +179,33 @@ def answer_question(question: str) -> dict:
         ),
     ]
     for query_index, technology, result_limit in search_plan:
+        # Chroma's filtered query path can fail with "Error finding id" when
+        # its metadata and HNSW index are temporarily out of sync. Retrieve a
+        # wider unfiltered candidate set, then apply the technology filter here.
+        candidate_limit = (
+            max(TOP_K * 5, result_limit * 5)
+            if technology
+            else result_limit
+        )
         query_args = {
             "query_embeddings": [query_embeddings[query_index]],
-            "n_results": result_limit,
+            "n_results": candidate_limit,
             "include": ["documents", "metadatas"],
         }
-        if technology:
-            query_args["where"] = {"technology": technology}
         results = _collection.query(**query_args)
-        for result_index, chunk_id in enumerate(results["ids"][0][:result_limit]):
+        added_from_query = 0
+        for result_index, chunk_id in enumerate(results["ids"][0]):
             if chunk_id in seen_ids:
+                continue
+            metadata = results["metadatas"][0][result_index]
+            if technology and metadata.get("technology") != technology:
                 continue
             seen_ids.add(chunk_id)
             documents.append(results["documents"][0][result_index])
-            metadatas.append(results["metadatas"][0][result_index])
+            metadatas.append(metadata)
+            added_from_query += 1
+            if added_from_query >= result_limit:
+                break
 
     context = "\n\n".join(documents)
     diagnostic_reference = _kubernetes_diagnostic_reference(question)
@@ -240,3 +253,4 @@ Answer
         "sources": sources,
         "retrieved_chunks": len(documents),
     }
+
