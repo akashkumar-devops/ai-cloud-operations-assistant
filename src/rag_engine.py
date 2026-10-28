@@ -51,18 +51,19 @@ def _retrieve_technology_chunks(
     technology: str,
     limit: int,
 ) -> list[tuple[str, str, dict]]:
-    """Rank one technology's records locally using cosine similarity."""
-    ids = _technology_ids(technology)
-    if not ids:
-        return []
-
+    """Rank one technology's records locally without Chroma ID or metadata filters."""
     records = _collection.get(
-        ids=ids,
         include=["documents", "metadatas", "embeddings"],
     )
     query_norm = sum(float(value) ** 2 for value in query_embedding) ** 0.5
     scored = []
     for index, chunk_id in enumerate(records["ids"]):
+        metadata = (records["metadatas"] or [])[index] or {}
+        metadata_technology = str(metadata.get("technology") or "").strip().casefold()
+        id_technology = str(chunk_id).casefold().split("_", 1)[0]
+        if technology.casefold() not in (metadata_technology, id_technology):
+            continue
+
         embedding = records["embeddings"][index]
         if embedding is None:
             continue
@@ -73,7 +74,6 @@ def _retrieve_technology_chunks(
             float(query_value) * float(document_value)
             for query_value, document_value in zip(query_embedding, embedding)
         ) / (query_norm * document_norm)
-        metadata = (records["metadatas"] or [])[index] or {}
         document = (records["documents"] or [])[index] or ""
         scored.append((similarity, chunk_id, document, metadata))
 
