@@ -35,7 +35,7 @@ def _load_chunks() -> list[tuple[str, str, dict]]:
     """Read indexed text and metadata from Chroma's SQLite store, without HNSW lookups."""
     global _chunks_cache
     if _chunks_cache is None:
-        db_path = Path(CHROMA_DB_DIR).resolve()
+        db_path = Path(CHROMA_DB_DIR).resolve() / "chroma.sqlite3"
         connection_uri = f"{db_path.as_uri()}?mode=ro"
         with sqlite3.connect(connection_uri, uri=True, timeout=5) as connection:
             rows = connection.execute(
