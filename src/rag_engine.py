@@ -199,7 +199,10 @@ def answer_question(question: str) -> dict:
         query_results = []
         for result_index, chunk_id in enumerate(results["ids"][0]):
             metadata = results["metadatas"][0][result_index]
-            if technology and metadata.get("technology") != technology:
+            metadata_technology = str(metadata.get("technology") or "").strip().casefold()
+            technology_prefix = f"{technology.casefold()}_" if technology else ""
+            id_matches_technology = str(chunk_id).casefold().startswith(technology_prefix)
+            if technology and metadata_technology != technology.casefold() and not id_matches_technology:
                 continue
             query_results.append((chunk_id, results["documents"][0][result_index], metadata))
             if len(query_results) >= result_limit:
