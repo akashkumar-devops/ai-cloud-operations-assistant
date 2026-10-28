@@ -90,10 +90,10 @@ def _load_docker_supplemental_chunks() -> list[tuple[str, str, dict]]:
     supplemental = []
     for index, section in enumerate(re.split(r"(?m)^## ", reference_text)[1:], start=1):
         title, _, body = section.partition("\n")
-        source_match = re.search(r"(?m)^Source:\\s*(https?://\\S+)", body)
+        source_match = re.search(r"(?m)^Source:\\*(https?://\\+)", body)
         if not title.strip() or not source_match:
             continue
-        body = re.sub(r"(?m)^Source:\\s*https?://\\S+\\s*", "", body, count=1).strip()
+        body = re.sub(r"(?m)^Source:\\*https?://\\+\\*", "", body, count=1).strip()
         if not body:
             continue
         metadata = {
