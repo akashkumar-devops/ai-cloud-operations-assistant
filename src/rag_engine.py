@@ -73,8 +73,37 @@ def _load_chunks() -> list[tuple[str, str, dict]]:
                 "chunk_id": source_chunk_id or chunk_id,
             }
             chunks.append((str(chunk_id), document_text, metadata))
+        chunks.extend(_load_docker_supplemental_chunks())
         _chunks_cache = chunks
     return _chunks_cache
+
+
+
+def _load_docker_supplemental_chunks() -> list[tuple[str, str, dict]]:
+    """Load small, curated Docker text references without embeddings or model loading."""
+    reference_path = Path(__file__).resolve().parents[1] / "data" / "docker_512mb_reference.md"
+    try:
+        reference_text = reference_path.read_text(encoding="utf-8")
+    except OSError:
+        return []
+
+    supplemental = []
+    for index, section in enumerate(re.split(r"(?m)^## ", reference_text)[1:], start=1):
+        title, _, body = section.partition("\n")
+        source_match = re.search(r"(?m)^Source:\\s*(https?://\\S+)", body)
+        if not title.strip() or not source_match:
+            continue
+        body = re.sub(r"(?m)^Source:\\s*https?://\\S+\\s*", "", body, count=1).strip()
+        if not body:
+            continue
+        metadata = {
+            "technology": "docker",
+            "document": title.strip(),
+            "source_url": source_match.group(1),
+            "chunk_id": f"supplemental_{index}",
+        }
+        supplemental.append((f"docker_reference_{index}", body, metadata))
+    return supplemental
 
 
 def _tokens(text: str) -> list[str]:
