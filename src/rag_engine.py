@@ -178,34 +178,63 @@ def answer_question(question: str) -> dict:
             for index, (_, technology, result_limit) in enumerate(focused_searches, start=1)
         ),
     ]
+    technology_candidates = {}
     for query_index, technology, result_limit in search_plan:
-        # Chroma's filtered query path can fail with "Error finding id" when
-        # its metadata and HNSW index are temporarily out of sync. Retrieve a
-        # wider unfiltered candidate set, then apply the technology filter here.
-        candidate_limit = (
-            max(TOP_K * 5, result_limit * 5)
-            if technology
-            else result_limit
-        )
-        query_args = {
-            "query_embeddings": [query_embeddings[query_index]],
-            "n_results": candidate_limit,
-            "include": ["documents", "metadatas"],
-        }
-        results = _collection.query(**query_args)
-        added_from_query = 0
-        for result_index, chunk_id in enumerate(results["ids"][0]):
+        query_vector = query_embeddings[query_index]
+        if technology:
+            # Use get() for metadata selection, then rank only that technology's
+            # embeddings locally. This avoids Chroma's failing filtered HNSW query.
+            if technology not in technology_candidates:
+                technology_candidates[technology] = _collection.get(
+                    where={"technology": technology},
+                    include=["documents", "metadatas", "embeddings"],
+                )
+            candidates = technology_candidates[technology]
+            query_norm = sum(value * value for value in query_vector) ** 0.5
+
+            def similarity(candidate_index):
+                embedding = candidates["embeddings"][candidate_index]
+                dot_product = sum(
+                    float(query_value) * float(candidate_value)
+                    for query_value, candidate_value in zip(query_vector, embedding)
+                )
+                candidate_norm = sum(
+                    float(value) * float(value) for value in embedding
+                ) ** 0.5
+                denominator = query_norm * candidate_norm
+                return dot_product / denominator if denominator else 0.0
+
+            ranked_indices = sorted(
+                range(len(candidates["ids"])),
+                key=similarity,
+                reverse=True,
+            )
+            query_results = [
+                (
+                    candidates["ids"][index],
+                    candidates["documents"][index],
+                    candidates["metadatas"][index],
+                )
+                for index in ranked_indices[:result_limit]
+            ]
+        else:
+            results = _collection.query(
+                query_embeddings=[query_vector],
+                n_results=result_limit,
+                include=["documents", "metadatas"],
+            )
+            query_results = list(zip(
+                results["ids"][0],
+                results["documents"][0],
+                results["metadatas"][0],
+            ))
+
+        for chunk_id, document, metadata in query_results:
             if chunk_id in seen_ids:
                 continue
-            metadata = results["metadatas"][0][result_index]
-            if technology and metadata.get("technology") != technology:
-                continue
             seen_ids.add(chunk_id)
-            documents.append(results["documents"][0][result_index])
+            documents.append(document)
             metadatas.append(metadata)
-            added_from_query += 1
-            if added_from_query >= result_limit:
-                break
 
     context = "\n\n".join(documents)
     diagnostic_reference = _kubernetes_diagnostic_reference(question)
