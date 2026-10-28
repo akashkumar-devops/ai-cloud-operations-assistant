@@ -26,6 +26,60 @@ _llm = genai.GenerativeModel("gemini-2.5-flash")
 _client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
 _collection = _client.get_collection(COLLECTION_NAME)
 
+_technology_ids_cache: dict[str, list[str]] | None = None
+
+
+def _technology_ids(technology: str) -> list[str]:
+    """Load IDs for one technology without Chroma metadata filters."""
+    global _technology_ids_cache
+    if _technology_ids_cache is None:
+        records = _collection.get(include=["metadatas"])
+        ids_by_technology: dict[str, list[str]] = {}
+        for index, chunk_id in enumerate(records["ids"]):
+            metadata = (records["metadatas"] or [])[index] or {}
+            metadata_technology = str(metadata.get("technology") or "").strip().casefold()
+            id_technology = str(chunk_id).casefold().split("_", 1)[0]
+            key = metadata_technology or id_technology
+            if key:
+                ids_by_technology.setdefault(key, []).append(chunk_id)
+        _technology_ids_cache = ids_by_technology
+    return _technology_ids_cache.get(technology.casefold(), [])
+
+
+def _retrieve_technology_chunks(
+    query_embedding: list[float],
+    technology: str,
+    limit: int,
+) -> list[tuple[str, str, dict]]:
+    """Rank one technology's records locally using cosine similarity."""
+    ids = _technology_ids(technology)
+    if not ids:
+        return []
+
+    records = _collection.get(
+        ids=ids,
+        include=["documents", "metadatas", "embeddings"],
+    )
+    query_norm = sum(float(value) ** 2 for value in query_embedding) ** 0.5
+    scored = []
+    for index, chunk_id in enumerate(records["ids"]):
+        embedding = records["embeddings"][index]
+        if embedding is None:
+            continue
+        document_norm = sum(float(value) ** 2 for value in embedding) ** 0.5
+        if not query_norm or not document_norm:
+            continue
+        similarity = sum(
+            float(query_value) * float(document_value)
+            for query_value, document_value in zip(query_embedding, embedding)
+        ) / (query_norm * document_norm)
+        metadata = (records["metadatas"] or [])[index] or {}
+        document = (records["documents"] or [])[index] or ""
+        scored.append((similarity, chunk_id, document, metadata))
+
+    scored.sort(key=lambda item: item[0], reverse=True)
+    return [(chunk_id, document, metadata) for _, chunk_id, document, metadata in scored[:limit]]
+
 
 def _focused_search_queries(question: str) -> list[tuple[str, str, int]]:
     """Return a query, technology filter, and result limit for focused retrieval."""
@@ -179,34 +233,23 @@ def answer_question(question: str) -> dict:
     else:
         search_plan = [(0, None, TOP_K)]
 
-    collection_size = None
     for query_index, technology, result_limit in search_plan:
-        query_args = {
-            "query_embeddings": [query_embeddings[query_index]],
-            "n_results": result_limit,
-            "include": ["documents", "metadatas"],
-        }
         if technology:
-            # Avoid Chroma's filtered query/get path, which can fail with
-            # "Error finding id" when metadata and HNSW state are out of sync.
-            if collection_size is None:
-                collection_size = _collection.count()
-            if collection_size == 0:
-                continue
-            query_args["n_results"] = collection_size
-
-        results = _collection.query(**query_args)
-        query_results = []
-        for result_index, chunk_id in enumerate(results["ids"][0]):
-            metadata = results["metadatas"][0][result_index]
-            metadata_technology = str(metadata.get("technology") or "").strip().casefold()
-            technology_prefix = f"{technology.casefold()}_" if technology else ""
-            id_matches_technology = str(chunk_id).casefold().startswith(technology_prefix)
-            if technology and metadata_technology != technology.casefold() and not id_matches_technology:
-                continue
-            query_results.append((chunk_id, results["documents"][0][result_index], metadata))
-            if len(query_results) >= result_limit:
-                break
+            query_results = _retrieve_technology_chunks(
+                query_embeddings[query_index],
+                technology,
+                result_limit,
+            )
+        else:
+            results = _collection.query(
+                query_embeddings=[query_embeddings[query_index]],
+                n_results=result_limit,
+                include=["documents", "metadatas"],
+            )
+            query_results = [
+                (chunk_id, results["documents"][0][index], results["metadatas"][0][index])
+                for index, chunk_id in enumerate(results["ids"][0])
+            ]
 
         for chunk_id, document, metadata in query_results:
             if chunk_id in seen_ids:
